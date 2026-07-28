@@ -1,0 +1,30 @@
+title: Let's Talk Science Now
+tagline: Making science simple, visual and fascinating.
+description: >-
+  Short visual science stories with deeper articles, references,
+  and pathways for continued exploration.
+url: "https://letstalksciencenow.com"
+baseurl: ""
+lang: en
+
+instagram_username: lets.talk.science.now
+
+# Each story is a folder under _stories/ (a "page bundle"):
+#   _stories/<id>/cover.png  — thumbnail (published at /stories/<id>/cover.png)
+#   _stories/<id>/index.md   — the article (added later)
+collections:
+  stories:
+    output: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - design/
+  - vendor/
+  - .bundle/

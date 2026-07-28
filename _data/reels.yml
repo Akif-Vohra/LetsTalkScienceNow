@@ -1,0 +1,151 @@
+  # ---------------------------------------------------------------------------
+# Source reels — Instagram captions + pinned comments, captured verbatim.
+# Each entry is the raw material for a future Story/article page.
+#
+# Fields:
+#   id             stable slug (used later for the story permalink)
+#   overlay_title  the on-screen text shown in the reel
+#   reel_url       Instagram permalink (TODO: fill in)
+#   youtube_url    YouTube Shorts link
+#   youtube_id     YouTube video id (embed via https://www.youtube.com/embed/<id>)
+#   image          cover/thumbnail path (_stories/<id>/cover.png)
+#   topic / series PROVISIONAL grouping — confirm during the content-plan phase
+#   location       geographic subject, if any
+#   tags           hashtags from the caption
+#   references     sources cited in the caption / pinned comment
+#   caption        the Instagram caption, verbatim
+#   pinned_comment the pinned comment, verbatim (null if none)
+# ---------------------------------------------------------------------------
+
+- id: meghalayan-age
+  overlay_title: "Earth 🌍 is currently in meghalayan geological age named after Meghalaya in India."
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/pOuevufwnMM
+  youtube_id: pOuevufwnMM
+  image: /stories/meghalayan-age/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Meghalaya, Northeast India"
+  tags: [science, funfact, didyouknow, geology, archeology]
+  references: []
+  caption: |
+    The Meghalayan Age represents the current and youngest geological chapter of Earth's history, spanning from 4,200 years ago to the present day. Officially ratified as the uppermost subdivision of the Holocene Epoch. It is named after Indian state of Meghalaya where evidence was found of this climate event in a rock formation. #science #funfact #didyouknow #geology #archeology
+  pinned_comment:
+
+- id: nagaland-ophiolite
+  overlay_title: "These hills of Nagaland were once floor of an ancient ocean 🌊"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/t_A9JI037gM
+  youtube_id: t_A9JI037gM
+  image: /stories/nagaland-ophiolite/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Nagaland, Northeast India"
+  tags: [science, didyouknow, geology, nagaland, earthscience]
+  references:
+    - "Verencar et al. (2021), Tectono-magmatic evolution of Tethyan oceanic lithosphere…, DOI: 10.1016/j.gsf.2020.10.003, CC BY-NC-ND 4.0 (ophiolite image credit)"
+  caption: |
+    The hills of Nagaland are one of the few places on Earth where you can walk on rocks that were once part of an ancient ocean floor.
+
+    These rocks, known as the Naga Hills Ophiolite, are fragments of the Tethys Ocean's crust and upper mantle. Around 100 million years ago, as the Indian Plate converged with the Burmese Plate, most of the oceanic crust sank into the mantle through subduction. However, a small slice was thrust upward instead of sinking, eventually becoming part of the Naga Hills.
+
+    Today, these rocks provide geologists with a rare opportunity to study ancient oceanic lithosphere without ever diving beneath the sea. Ophiolite image credit: Verencar et al. (2021), Tectono-magmatic evolution of Tethyan oceanic lithosphere…, DOI: 10.1016/j.gsf.2020.10.003, CC BY-NC-ND 4.0. #science #didyouknow #geology #nagaland #earthscience
+  pinned_comment: |
+    As always if you find mistakes in my understand or explanation please correct me 🙏🏻 if I got any local pronunciations wrong also please correct me so I get it right next time. Thank you!
+
+    *I have explained a highly simplified version of subduction and obduction to fit within the length of an Instagram reel. In reality, these processes are far more complex. Many researchers interpret the Naga Hills Ophiolite as having formed in a supra-subduction zone (SSZ) during the initiation of subduction. If you're interested in learning more, search for "Naga Hills Ophiolite origin" or "Naga Hills Ophiolite supra-subduction zone."
+
+    *The Naga Hills extend beyond Nagaland into Manipur, Arunachal Pradesh, and the Sagaing Region of Myanmar. However, I focused on Nagaland because its ophiolite exposures are among the most accessible and well-studied, and they are part of India's nomination to the UNESCO Tentative World Heritage List.
+
+    The entire Northeast is an incredible geological treasure, with countless opportunities to study Earth's history and experience spectacular natural landscapes.
+
+- id: arunachal-himalayan-syntaxis
+  overlay_title: "The Himalayas 🏔🏔🏔 take a 90 degree turn south and made Arunachal Pradesh the most diverse state in India!"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/uixKQ_6WPzk
+  youtube_id: uixKQ_6WPzk
+  image: /stories/arunachal-himalayan-syntaxis/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Arunachal Pradesh, Northeast India"
+  tags: [science, funfact, geology, himalayas]
+  references:
+    - "Reddy et al. (2017) — credited for one graphic"
+    - "Wikipedia and official Government of India sources — most graphics"
+  caption: |
+    Arunachal Pradesh is located in a unique geographic location where the Himalayan mountain range takes a sudden 90 degree southward turn. This feature is known as the Eastern Himalayan Syntaxis.
+
+    To understand why this matters, imagine pushing a carpet into the corner of a room. As long as there's space, the carpet moves forward. But once it reaches the corner, it starts to crumple, fold and bend.
+
+    Something similar happens here, except instead of a carpet, it's the Earth's crust.
+
+    The mountains in Arunachal Pradesh are more rugged, and deep river valleys formed between steep ridges. For most of history, travelling from one valley to another was extremely difficult. Communities that settled in these valleys remained isolated from each other for centuries. Over time, they developed their own languages, customs, clothing, architecture and traditions.
+
+    Today, Arunachal Pradesh is home to more than 25 major tribes, over 100 sub-tribes and dozens of distinct languages and dialects. Much of this extraordinary diversity can be traced back to the geography created by this single bend in the Himalayas.
+
+    Geology of Himalaya made Arunachal Pradesh one of the most beautiful and most ethnically diverse place in the world.#science #funfact #geology #funfact #himalayas
+  pinned_comment: |
+    As always if you see any mistakes in my understanding or explanation please correct me. 🙏🏻 I am trying to raise awareness about scientific and cultural heritage of north east India. On my profile you also find my reels on Nagaland and Meghalaya. Please check them out if you would like to know more about science of north east India !
+
+    I have used Wikipedia and official Government of India sources for most graphics. For one of the graphics I have given credit to the original research Reddy et al. (2017).
+
+    The rugged terrain of Arunachal Pradesh also makes it the most biodiverse place in India. For its biodiversity Indian government has nominated Namdapha National Park as a UNESCO World Heritage Site. It is one of the most biodiverse places in the world because of its incredible range of elevations in Arunachal Pradesh thanks to Himalayan Bend. Within a relatively short distance, the landscape rises from tropical rainforest to temperate forests, alpine meadows, and snow-covered mountains. Each elevation has its own climate and ecosystem, allowing thousands of plant and animal species to coexist. This steep environmental gradient, combined with heavy monsoon rainfall and the park's largely undisturbed forests, has created an extraordinary concentration of biodiversity.
+
+- id: tripura-mizoram-fold-belt
+  overlay_title: "Rolling hills and valleys of Tripura and Mizoram! 🏔🌄"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/8MH3ajkRFFU
+  youtube_id: 8MH3ajkRFFU
+  image: /stories/tripura-mizoram-fold-belt/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Tripura & Mizoram, Northeast India"
+  tags: [science, didyouknow, nature, geology, earthscience]
+  references:
+    - "Nandy, D. R., Dasgupta, S., Sarkar, K., & Ganguly, A. (1983). Tectonic Evolution of the Tripura–Mizoram Fold Belt, Surma Basin, Northeast India."
+  caption: |
+    Tripura and Mizoram have a stunning geological feature—long, rolling hills separated by deep valleys. This landscape is a direct result of a geological phenomenon known as the Tripura–Mizoram Fold-and-Thrust Belt. Around 20 million years ago, the region was a shallow marine and deltaic Surma Basin, where rivers deposited thick layers of sand, silt and mud. As the Indian Plate collided with the Burma Plate, these sedimentary layers were compressed and folded into giant anticlines and synclines. Millions of years of erosion then sculpted these folds into the spectacular parallel ridges and valleys we see today. What's even more fascinating is that this mountain belt is still tectonically active and continues to evolve. #science #didyouknow #nature #geology #earthscience
+  pinned_comment: |
+    As always, if you notice any mistakes in my understanding or explanation, please feel free to correct me🙏🏻
+
+    The main scientific paper I referred to while researching this topic is:
+
+    Nandy, D. R., Dasgupta, S., Sarkar, K., & Ganguly, A. (1983). Tectonic Evolution of the Tripura–Mizoram Fold Belt, Surma Basin, Northeast India.
+
+    * I have said that sandstone settled at the bottom and mudstone settled at the top, which is an oversimplification. In reality, since this process happened over millions of years, alternating layers of sandstone, mudstone and other sedimentary rocks were deposited as rivers shifted course, deltas advanced and retreated, and sea levels changed. As a result, the ridges and hills of Tripura and Mizoram are a geological treasure for studying different layers and periods of the Indian subcontinent's history.
+    * Another important factor in shaping the landscape is differential erosion. Sandstone is generally more resistant to erosion than mudstone or shale, so sandstone tends to remain as ridges, while the softer rocks erode more easily to form valleys. This is a simplification, as erosion also depends on factors such as rock structure, fractures, climate and drainage.
+    * The Tripura–Mizoram Fold-and-Thrust Belt is still geologically active today. The hills are still slowly being uplifted as the Indian Plate continues to push towards the Burmese Plate, while erosion is constantly shaping the landscape.
+
+- id: manipur-loktak-floating-park
+  overlay_title: "Floating national park and Geology of Manipur!"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/5sfTD634NTc
+  youtube_id: 5sfTD634NTc
+  image: /stories/manipur-loktak-floating-park/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Manipur (Loktak Lake, Imphal Valley), Northeast India"
+  tags: [science, didyouknow, nature, geology, earthscience]
+  references:
+    - "Singh, R.K. & Soibam, I. (2007). Transtensional Basin in Oblique Subduction Margin: Imphal Valley, An Example."
+    - "Loktak Lake: A Potential Site to Become the First UNESCO Global Geopark in Northeast India. Journal of the Geological Society of India (2024)."
+    - "Wikipedia, Google Maps, and official Government of India maps (graphics)"
+  caption: |
+    Manipur is home to the world's only floating national park: Keibul Lamjao National Park. This national park is located on Loktak Lake situated in Imphal Valley. This lake island surrounding valley are completely surrounded mountains on all sides and this unique geology actually contributed to why the floating national park could grow here.
+
+    The Imphal Valley was formed tectonically as a linear depression surrounded by hills on all sides. This was the result of the reactivation of the pre-existing Churachandpur–Mao Thrust and Thoubal Thrust during the oblique subduction of the Indian tectonic plate beneath the Burmese (Myanmar) Plate. This geological setting also resulted in an intermontane basin that developed a centripetal drainage pattern and consequently contributed to the formation of Loktak Lake.
+
+    Scientific references:
+
+    Singh, R.K. & Soibam, I. (2007). Transtensional Basin in Oblique Subduction Margin: Imphal Valley, An Example.
+    Loktak Lake: A Potential Site to Become the First UNESCO Global Geopark in Northeast India. Journal of the Geological Society of India (2024).
+
+    Graphics: I have used Wikipedia, Google Maps, and official Government of India maps for various graphics.#science #didyouknow #nature #geology #earthscience
+  pinned_comment: |
+    As always, if you spot any mistakes in my understanding or explanation, please let me know.
+
+    * The main scientific paper I based this reel on is Singh, R.K. & Soibam, I. (2007). Transtensional Basin in Oblique Subduction Margin: Imphal Valley, An Example.
+
+    * In the reel, I mention that the Indian Plate is colliding with the Burmese (Myanmar) Plate. I simplified it to avoid covering too many topics in one reel. More accurately, the interaction is oblique subduction, where the eastern margin of the Indian Plate is moving beneath the Burmese Plate.
+
+    * I also couldn't cover why the floating national park actually floats in a single reel. I plan to make a separate video explaining the formation of the phumdis (the unique floating masses of vegetation, soil, and organic matter) and well as the geology and ecology of Keibul Lamjao National Park.
