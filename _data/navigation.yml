@@ -1,0 +1,13 @@
+# Primary navigation — edit here, both header and footer read from the site.
+- name: Home
+  url: /
+- name: Stories
+  url: /stories/
+- name: Topics
+  url: /topics/
+- name: Series
+  url: /series/
+- name: Newsletter
+  url: /newsletter/
+- name: About
+  url: /about/

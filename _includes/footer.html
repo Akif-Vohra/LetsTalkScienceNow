@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__brand">
+        <div class="brandmark">Let's Talk Science <span class="now">Now</span></div>
+        <p>Understanding our world through science — one short, visual story at a time.</p>
+      </div>
+      <div class="site-footer__cols">
+        <div>
+          <h4>Explore</h4>
+          <a href="{{ '/stories/' | relative_url }}">Stories</a>
+          <a href="{{ '/topics/' | relative_url }}">Topics</a>
+          <a href="{{ '/series/' | relative_url }}">Series</a>
+        </div>
+        <div>
+          <h4>More</h4>
+          <a href="{{ '/about/' | relative_url }}">About</a>
+          <a href="{{ '/newsletter/' | relative_url }}">Newsletter</a>
+          <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="site-footer__bottom">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ site.title }}</span>
+      <span>@{{ site.instagram_username }}</span>
+    </div>
+  </div>
+</footer>
