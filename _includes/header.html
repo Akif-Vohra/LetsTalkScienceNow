@@ -6,6 +6,13 @@
         <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.name }}</a>
       {%- endfor -%}
     </nav>
-    <a class="btn btn-follow" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">Follow on Instagram</a>
+    <div class="social-buttons">
+      <a class="btn btn-social btn-social--ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+        {%- include icon-instagram.svg -%}<span>Instagram</span>
+      </a>
+      <a class="btn btn-social btn-social--yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+        {%- include icon-youtube.svg -%}<span>YouTube</span>
+      </a>
+    </div>
   </div>
 </header>

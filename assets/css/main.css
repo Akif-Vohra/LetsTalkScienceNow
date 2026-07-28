@@ -112,8 +112,15 @@ p{line-height:1.7;}
 .btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:var(--shadow-hover);}
 .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow);}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
-.btn-follow{padding:.6em 1.1em;font-size:.86rem;background:var(--blue);color:#fff;box-shadow:var(--shadow);}
-.btn-follow:hover{background:var(--blue-deep);transform:translateY(-1px);}
+/* Social follow buttons (Instagram / YouTube) */
+.social-buttons{display:flex;gap:.5rem;}
+.btn-social{gap:.45em;padding:.5em 1em;font-size:.85rem;background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow);}
+.btn-social:hover{transform:translateY(-1px);box-shadow:var(--shadow-hover);}
+.btn-social svg{width:1.05em;height:1.05em;flex:none;}
+.btn-social--ig svg{color:#e4405f;}
+.btn-social--yt svg{color:#ff0000;}
+.btn-social--ig:hover{border-color:#e4405f;}
+.btn-social--yt:hover{border-color:#ff0000;}
 
 /* Site header / navigation */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);}
@@ -269,6 +276,11 @@ p{line-height:1.7;}
   .story-grid{grid-template-columns:1fr;}
   .series-grid{grid-template-columns:1fr;}
   .nav-links{display:none;}
+}
+
+@media (max-width:560px){
+  .btn-social span{display:none;}
+  .btn-social{padding:.5em .6em;}
 }
 
 @media (prefers-reduced-motion:reduce){

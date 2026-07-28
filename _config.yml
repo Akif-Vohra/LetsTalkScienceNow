@@ -8,6 +8,7 @@ baseurl: ""
 lang: en
 
 instagram_username: lets.talk.science.now
+youtube_url: "https://www.youtube.com/@LetsTalkScienceNow"
 
 # Each story is a folder under _stories/ (a "page bundle"):
 #   _stories/<id>/cover.png  — thumbnail (published at /stories/<id>/cover.png)
