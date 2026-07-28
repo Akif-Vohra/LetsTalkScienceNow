@@ -1,0 +1,13 @@
+# Topic slug -> display name + card tint class (see main.css .tint-*)
+our-planet:
+  name: Our Planet
+  tint: tint-planet
+nature:
+  name: Nature
+  tint: tint-nature
+space:
+  name: Space
+  tint: tint-space
+human-ingenuity:
+  name: Human Ingenuity
+  tint: tint-ingenuity

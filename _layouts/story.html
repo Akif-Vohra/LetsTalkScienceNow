@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- assign reel = site.data.reels | where: "id", page.reel | first -%}
+{%- assign topic = site.data.topics[reel.topic] -%}
+<article class="story">
+  <div class="container container--narrow">
+
+    <a class="back-link" href="{{ '/stories/' | relative_url }}">← All stories</a>
+
+    <p class="eyebrow">{{ topic.name }}{% if reel.series %} · {{ site.data.series[reel.series] }}{% endif %}</p>
+    <h1 class="story__title">{{ reel.overlay_title }}</h1>
+    {% if reel.location %}<p class="story__meta">{{ reel.location }}</p>{% endif %}
+
+    {% if reel.youtube_id %}
+    <div class="video-embed">
+      <iframe src="https://www.youtube.com/embed/{{ reel.youtube_id }}"
+              title="{{ reel.overlay_title | escape }}"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen></iframe>
+    </div>
+    {% endif %}
+
+    {% if reel.caption %}
+    <div class="prose prose--pre">{{ reel.caption | strip | escape }}</div>
+    {% endif %}
+
+    {% if reel.pinned_comment %}
+    <section class="notes">
+      <h2 class="notes__title">Notes &amp; corrections</h2>
+      <div class="prose prose--pre">{{ reel.pinned_comment | strip | escape }}</div>
+    </section>
+    {% endif %}
+
+    {% if reel.references and reel.references.size > 0 %}
+    <section class="refs">
+      <h2>References</h2>
+      <ul>
+        {% for r in reel.references %}<li>{{ r | escape }}</li>{% endfor %}
+      </ul>
+    </section>
+    {% endif %}
+
+    <div class="story__links">
+      {% if reel.youtube_url %}<a class="btn btn-ghost" href="{{ reel.youtube_url }}" target="_blank" rel="noopener">▶ Watch on YouTube</a>{% endif %}
+      {% if reel.reel_url %}<a class="btn btn-ghost" href="{{ reel.reel_url }}" target="_blank" rel="noopener">View on Instagram</a>{% endif %}
+    </div>
+
+  </div>
+</article>

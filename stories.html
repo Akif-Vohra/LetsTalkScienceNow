@@ -1,0 +1,37 @@
+---
+layout: default
+permalink: /stories/
+title: Stories
+description: Short visual science stories — each with the reel, a deeper explanation, references, and notes.
+---
+
+<header class="page-head">
+  <div class="container">
+    <p class="eyebrow">Stories</p>
+    <h1>One question about the world, at a time.</h1>
+    <p>Every story pairs a short visual reel with a deeper explanation, real references, and honest notes.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="story-grid">
+      {% for story in site.stories %}
+        {%- assign reel = site.data.reels | where: "id", story.reel | first -%}
+        {%- assign topic = site.data.topics[reel.topic] -%}
+        <a class="story-card {{ topic.tint }}" href="{{ story.url | relative_url }}">
+          <div class="story-card__thumb">
+            {% if reel.image %}<img class="story-card__img" src="{{ reel.image | relative_url }}" alt="{{ reel.overlay_title | escape }}" loading="lazy">{% endif %}
+            {% if reel.youtube_id %}<span class="story-card__play"></span>{% endif %}
+            {% if reel.series %}<span class="story-card__kicker">{{ site.data.series[reel.series] }}</span>{% endif %}
+          </div>
+          <div class="story-card__body">
+            <p class="story-card__sub">{{ topic.name }}</p>
+            <h3>{{ reel.overlay_title }}</h3>
+            {% if reel.location %}<p class="story-card__meta">{{ reel.location }}</p>{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
