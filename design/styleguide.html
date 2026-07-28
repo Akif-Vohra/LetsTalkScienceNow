@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LTSN — Design Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============ GUIDE CHROME (neutral studio) ============ */
+:root{
+  --g-bg:#FBFAF8;
+  --g-surface:#FFFFFF;
+  --g-line:#E7E6E1;
+  --g-ink:#1C1F24;
+  --g-muted:#71757C;
+  --g-label:#3D5A73;
+  --maxw:1120px;
+  --radius:16px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--g-bg);
+  color:var(--g-ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+h1,h2,h3,h4,.brandname{font-family:'Poppins',sans-serif;}
+
+/* Guide header */
+.guidehead{border-bottom:1px solid var(--g-line);padding:34px 0 30px;background:var(--g-surface);}
+.kicker{font-family:'Poppins';font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g-label);}
+.guidehead h1{font-size:2.3rem;font-weight:700;letter-spacing:-.02em;margin:10px 0 8px;text-wrap:balance;}
+.guidehead p{color:var(--g-muted);max-width:60ch;font-size:1.02rem;}
+
+section.block{padding:56px 0;border-bottom:1px solid var(--g-line);}
+.sec-eyebrow{font-family:'Poppins';font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g-label);margin-bottom:8px;}
+.sec-title{font-size:1.6rem;font-weight:600;letter-spacing:-.01em;margin-bottom:6px;}
+.sec-note{color:var(--g-muted);max-width:64ch;margin-bottom:30px;}
+
+/* ---- Typography specimen ---- */
+.typerow{display:grid;grid-template-columns:130px 1fr;gap:24px;align-items:baseline;padding:16px 0;border-top:1px solid var(--g-line);}
+.typerow .meta{font-size:.78rem;color:var(--g-muted);font-weight:500;padding-top:.35em;}
+.t-display{font-family:'Poppins';font-weight:700;font-size:2.6rem;letter-spacing:-.025em;line-height:1.05;}
+.t-h2{font-family:'Poppins';font-weight:600;font-size:1.75rem;letter-spacing:-.01em;}
+.t-h3{font-family:'Poppins';font-weight:600;font-size:1.15rem;}
+.t-eyebrow{font-family:'Poppins';font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g-label);}
+.t-body{font-family:'Inter';font-weight:400;font-size:1.02rem;line-height:1.75;max-width:65ch;}
+.t-meta{font-family:'Inter';font-weight:500;font-size:.82rem;color:var(--g-muted);}
+.weights{display:flex;gap:22px;flex-wrap:wrap;margin-top:6px;}
+.weights span{font-family:'Poppins';font-size:1.1rem;}
+
+/* ============ PALETTE PANELS ============ */
+.palettes{display:flex;flex-direction:column;gap:40px;}
+.pal{
+  border:1px solid var(--g-line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  background:var(--g-surface);
+  box-shadow:0 1px 2px rgba(0,0,0,.03),0 12px 30px rgba(20,25,35,.05);
+}
+/* each palette exposes tokens; components below read them */
+.pal-body{background:var(--ground);color:var(--ink);padding:0;}
+
+/* mini site header inside a palette */
+.mh{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 24px;border-bottom:1px solid var(--hair);}
+.mh-brand{display:flex;align-items:center;gap:11px;}
+.mh-brand img{width:34px;height:34px;object-fit:contain;}
+.mh-brand .bn{font-family:'Poppins';font-weight:700;font-size:1.02rem;letter-spacing:-.01em;line-height:1;color:var(--ink);}
+.mh-brand .bn .now{color:var(--primary);}
+.mh-nav{display:flex;gap:22px;align-items:center;}
+.mh-nav a{font-family:'Poppins';font-weight:500;font-size:.86rem;color:var(--ink);opacity:.82;text-decoration:none;}
+.mh-nav a:hover{opacity:1;color:var(--primary);}
+.mh-follow{font-family:'Poppins';font-weight:600;font-size:.82rem;padding:9px 16px;border-radius:50px;background:var(--primary);color:var(--on-primary);text-decoration:none;white-space:nowrap;}
+
+/* palette info strip */
+.pal-info{padding:26px 24px 8px;}
+.pal-name{font-family:'Poppins';font-weight:700;font-size:1.35rem;letter-spacing:-.01em;color:var(--ink);}
+.pal-mood{color:var(--muted);font-size:.95rem;margin-top:3px;max-width:62ch;}
+
+/* swatches */
+.swatches{display:flex;flex-wrap:wrap;gap:10px;padding:18px 24px 4px;}
+.sw{display:flex;flex-direction:column;gap:7px;width:96px;}
+.sw .chip{height:52px;border-radius:10px;border:1px solid rgba(128,128,128,.18);}
+.sw .nm{font-size:.72rem;font-weight:600;color:var(--ink);font-family:'Inter';}
+.sw .hex{font-size:.68rem;color:var(--muted);font-family:'Inter';font-variant-numeric:tabular-nums;letter-spacing:.02em;}
+
+/* "in use" demo */
+.demo{padding:20px 24px 30px;display:grid;grid-template-columns:1.15fr 1fr;gap:30px;align-items:start;}
+.demo-eyebrow{font-family:'Poppins';font-weight:600;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--primary);}
+.demo h3{font-family:'Poppins';font-weight:600;font-size:1.5rem;letter-spacing:-.015em;color:var(--ink);margin:8px 0 10px;line-height:1.15;text-wrap:balance;}
+.demo p{font-family:'Inter';font-size:.95rem;line-height:1.7;color:var(--muted);max-width:52ch;}
+.btns{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap;}
+.btn-primary{font-family:'Poppins';font-weight:600;font-size:.88rem;padding:11px 20px;border-radius:50px;background:var(--primary);color:var(--on-primary);border:none;cursor:pointer;}
+.btn-ghost{font-family:'Poppins';font-weight:600;font-size:.88rem;padding:11px 20px;border-radius:50px;background:transparent;color:var(--ink);border:1.5px solid var(--hair2);cursor:pointer;}
+.chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px;}
+.chip-topic{font-family:'Poppins';font-weight:600;font-size:.76rem;padding:6px 13px;border-radius:50px;color:#fff;}
+.c1{background:var(--t1);}.c2{background:var(--t2);}.c3{background:var(--t3);}.c4{background:var(--t4);}
+
+/* sample story card */
+.card{background:var(--surface);border:1px solid var(--hair);border-radius:14px;overflow:hidden;box-shadow:0 10px 26px rgba(10,15,25,.10);}
+.card .thumb{height:118px;background:linear-gradient(135deg,var(--t3),var(--t1));position:relative;}
+.card .thumb .tag{position:absolute;left:12px;top:12px;font-family:'Poppins';font-weight:600;font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;background:rgba(255,255,255,.92);color:#1a1a1a;padding:4px 9px;border-radius:50px;}
+.card .cbody{padding:15px 16px 18px;}
+.card .csub{font-family:'Poppins';font-weight:600;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--primary);}
+.card .ctitle{font-family:'Poppins';font-weight:600;font-size:1.05rem;line-height:1.25;color:var(--ink);margin:6px 0 8px;letter-spacing:-.01em;}
+.card .cmeta{font-family:'Inter';font-size:.78rem;color:var(--muted);}
+
+/* ===== token sets per direction ===== */
+.pal-A{
+  --ground:#F2EFE6;--surface:#FBF9F3;--ink:#2B2620;--muted:#7A7263;
+  --hair:#E2DCCC;--hair2:#CFC7B4;
+  --primary:#B4472A;--on-primary:#FFF7F1;
+  --t1:#A9552F;--t2:#5B7A3C;--t3:#3A4A78;--t4:#B07A2E;
+}
+.pal-B{
+  --ground:#0E1524;--surface:#17203A;--ink:#EAF0F7;--muted:#94A2B8;
+  --hair:#24304C;--hair2:#33415F;
+  --primary:#4CC7E6;--on-primary:#06121C;
+  --t1:#3FB6A8;--t2:#6FD07A;--t3:#7FA6FF;--t4:#F2A93B;
+}
+.pal-C{
+  --ground:#FAFCFE;--surface:#FFFFFF;--ink:#14202B;--muted:#5D6C7A;
+  --hair:#E5EBF1;--hair2:#CDD8E2;
+  --primary:#135FC7;--on-primary:#FFFFFF;
+  --t1:#1D74C4;--t2:#2E9E5B;--t3:#6D5CE0;--t4:#E5793B;
+}
+
+footer.note{padding:44px 0 70px;color:var(--g-muted);font-size:.95rem;}
+footer.note strong{color:var(--g-ink);font-weight:600;font-family:'Poppins';}
+
+@media(max-width:860px){
+  .demo{grid-template-columns:1fr;}
+  .mh-nav{display:none;}
+  .typerow{grid-template-columns:1fr;gap:6px;}
+  .t-display{font-size:2rem;}
+}
+</style>
+</head>
+<body>
+
+<header class="guidehead">
+  <div class="wrap">
+    <div class="kicker">Let's Talk Science Now · Design system v1</div>
+    <h1>Type &amp; three colour directions</h1>
+    <p>One typographic system (Poppins + Inter) shown against three distinct colour worlds. Everything below is built with real components — nav, buttons, topic chips, and a story card — so you can judge each direction in use, not as swatches.</p>
+  </div>
+</header>
+
+<!-- TYPOGRAPHY -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-eyebrow">Typography</div>
+    <h2 class="sec-title">Poppins for headings · Inter for reading</h2>
+    <p class="sec-note">Poppins carries the brand (it's already your logo). Inter does the quiet work in long articles, captions, and references — crisp on screens, comfortable at length.</p>
+
+    <div class="typerow"><div class="meta">Poppins 700<br>Display / H1</div><div class="t-display">The Meghalayan age, named after Meghalaya</div></div>
+    <div class="typerow"><div class="meta">Poppins 600<br>H2</div><div class="t-h2">These hills of Nagaland were once an ocean floor</div></div>
+    <div class="typerow"><div class="meta">Poppins 600<br>H3</div><div class="t-h3">Why the Himalayas made the world's largest fertile basin</div></div>
+    <div class="typerow"><div class="meta">Poppins 600<br>Eyebrow / label</div><div class="t-eyebrow">Our Planet · Indian Geology</div></div>
+    <div class="typerow"><div class="meta">Inter 400<br>Body · 65ch</div><div class="t-body">The Indian subcontinent first came together about three billion years ago, when five ancient landmasses — the cratons — joined into a single shield. Everything that followed, from the oil beneath Assam to the biodiversity of Sikkim, is written into that deep history.</div></div>
+    <div class="typerow"><div class="meta">Inter 500<br>Meta / caption</div><div class="t-meta">Published in Story of Earth · 6 min read · watch the reel</div></div>
+    <div class="typerow"><div class="meta">Poppins<br>Weights</div><div class="weights"><span style="font-weight:400">Regular 400</span><span style="font-weight:500">Medium 500</span><span style="font-weight:600">SemiBold 600</span><span style="font-weight:700">Bold 700</span></div></div>
+  </div>
+</section>
+
+<!-- PALETTES -->
+<section class="block">
+  <div class="wrap">
+    <div class="sec-eyebrow">Colour</div>
+    <h2 class="sec-title">Three directions to compare</h2>
+    <p class="sec-note">Each is grounded in what you actually make. Same fonts, same layout — only the colour world changes. The four topic chips (Our Planet · Nature · Space · Human Ingenuity) get a consistent tint set inside each direction for wayfinding.</p>
+
+    <div class="palettes">
+
+      <!-- ============ A ============ -->
+      <div class="pal">
+        <div class="pal-body pal-A">
+          <div class="mh">
+            <div class="mh-brand"><img src="/mascot.png" alt=""><span class="bn">Let's Talk Science <span class="now">Now</span></span></div>
+            <nav class="mh-nav"><a>Home</a><a>Stories</a><a>Topics</a><a>Series</a><a>Newsletter</a><a>About</a></nav>
+            <a class="mh-follow">Follow</a>
+          </div>
+          <div class="pal-info">
+            <div class="pal-name">A · Field Notes</div>
+            <div class="pal-mood">Warm limestone paper, iron-oxide rust, and ancient-ocean teal — a naturalist's field journal. Leans into the geology and Earth-science core.</div>
+          </div>
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#F2EFE6"></div><span class="nm">Paper</span><span class="hex">#F2EFE6</span></div>
+            <div class="sw"><div class="chip" style="background:#2B2620"></div><span class="nm">Ink</span><span class="hex">#2B2620</span></div>
+            <div class="sw"><div class="chip" style="background:#B4472A"></div><span class="nm">Rust</span><span class="hex">#B4472A</span></div>
+            <div class="sw"><div class="chip" style="background:#A9552F"></div><span class="nm">Planet</span><span class="hex">#A9552F</span></div>
+            <div class="sw"><div class="chip" style="background:#5B7A3C"></div><span class="nm">Nature</span><span class="hex">#5B7A3C</span></div>
+            <div class="sw"><div class="chip" style="background:#3A4A78"></div><span class="nm">Space</span><span class="hex">#3A4A78</span></div>
+            <div class="sw"><div class="chip" style="background:#B07A2E"></div><span class="nm">Ingenuity</span><span class="hex">#B07A2E</span></div>
+          </div>
+          <div class="demo">
+            <div>
+              <div class="demo-eyebrow">Featured Story</div>
+              <h3>Start with a question about the world.</h3>
+              <p>Short visual science stories with deeper articles, references, and pathways for continued exploration.</p>
+              <div class="btns"><button class="btn-primary">Read the story</button><button class="btn-ghost">Watch the reel</button></div>
+              <div class="chips"><span class="chip-topic c1">Our Planet</span><span class="chip-topic c2">Nature</span><span class="chip-topic c3">Space</span><span class="chip-topic c4">Human Ingenuity</span></div>
+            </div>
+            <div class="card">
+              <div class="thumb"><span class="tag">Indian Geology</span></div>
+              <div class="cbody"><div class="csub">Our Planet</div><div class="ctitle">Why Assam sits on a sea of oil</div><div class="cmeta">6 min read · reel included</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ B ============ -->
+      <div class="pal">
+        <div class="pal-body pal-B">
+          <div class="mh">
+            <div class="mh-brand"><img src="/mascot.png" alt=""><span class="bn">Let's Talk Science <span class="now">Now</span></span></div>
+            <nav class="mh-nav"><a>Home</a><a>Stories</a><a>Topics</a><a>Series</a><a>Newsletter</a><a>About</a></nav>
+            <a class="mh-follow">Follow</a>
+          </div>
+          <div class="pal-info">
+            <div class="pal-name">B · Deep Field</div>
+            <div class="pal-mood">Midnight navy with luminous earthshine-cyan and solar amber. A premium, documentary-at-night mood — made for the Moon, eclipse, and Milky Way reels.</div>
+          </div>
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#0E1524"></div><span class="nm">Midnight</span><span class="hex">#0E1524</span></div>
+            <div class="sw"><div class="chip" style="background:#EAF0F7"></div><span class="nm">Ink</span><span class="hex">#EAF0F7</span></div>
+            <div class="sw"><div class="chip" style="background:#4CC7E6"></div><span class="nm">Earthshine</span><span class="hex">#4CC7E6</span></div>
+            <div class="sw"><div class="chip" style="background:#3FB6A8"></div><span class="nm">Planet</span><span class="hex">#3FB6A8</span></div>
+            <div class="sw"><div class="chip" style="background:#6FD07A"></div><span class="nm">Nature</span><span class="hex">#6FD07A</span></div>
+            <div class="sw"><div class="chip" style="background:#7FA6FF"></div><span class="nm">Space</span><span class="hex">#7FA6FF</span></div>
+            <div class="sw"><div class="chip" style="background:#F2A93B"></div><span class="nm">Ingenuity</span><span class="hex">#F2A93B</span></div>
+          </div>
+          <div class="demo">
+            <div>
+              <div class="demo-eyebrow">Featured Story</div>
+              <h3>Start with a question about the world.</h3>
+              <p>Short visual science stories with deeper articles, references, and pathways for continued exploration.</p>
+              <div class="btns"><button class="btn-primary">Read the story</button><button class="btn-ghost">Watch the reel</button></div>
+              <div class="chips"><span class="chip-topic c1">Our Planet</span><span class="chip-topic c2">Nature</span><span class="chip-topic c3">Space</span><span class="chip-topic c4">Human Ingenuity</span></div>
+            </div>
+            <div class="card">
+              <div class="thumb"><span class="tag">Moon Explained</span></div>
+              <div class="cbody"><div class="csub">Space</div><div class="ctitle">Why the Moon is farther than you'd guess</div><div class="cmeta">5 min read · reel included</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============ C ============ -->
+      <div class="pal">
+        <div class="pal-body pal-C">
+          <div class="mh">
+            <div class="mh-brand"><img src="/mascot.png" alt=""><span class="bn">Let's Talk Science <span class="now">Now</span></span></div>
+            <nav class="mh-nav"><a>Home</a><a>Stories</a><a>Topics</a><a>Series</a><a>Newsletter</a><a>About</a></nav>
+            <a class="mh-follow">Follow</a>
+          </div>
+          <div class="pal-info">
+            <div class="pal-name">C · Bright &amp; Curious</div>
+            <div class="pal-mood">Crisp cool white, a confident cobalt, and a fresh coral accent. An energetic, Instagram-native evolution of your current landing page.</div>
+          </div>
+          <div class="swatches">
+            <div class="sw"><div class="chip" style="background:#FAFCFE"></div><span class="nm">Cloud</span><span class="hex">#FAFCFE</span></div>
+            <div class="sw"><div class="chip" style="background:#14202B"></div><span class="nm">Ink</span><span class="hex">#14202B</span></div>
+            <div class="sw"><div class="chip" style="background:#135FC7"></div><span class="nm">Cobalt</span><span class="hex">#135FC7</span></div>
+            <div class="sw"><div class="chip" style="background:#1D74C4"></div><span class="nm">Planet</span><span class="hex">#1D74C4</span></div>
+            <div class="sw"><div class="chip" style="background:#2E9E5B"></div><span class="nm">Nature</span><span class="hex">#2E9E5B</span></div>
+            <div class="sw"><div class="chip" style="background:#6D5CE0"></div><span class="nm">Space</span><span class="hex">#6D5CE0</span></div>
+            <div class="sw"><div class="chip" style="background:#E5793B"></div><span class="nm">Ingenuity</span><span class="hex">#E5793B</span></div>
+          </div>
+          <div class="demo">
+            <div>
+              <div class="demo-eyebrow">Featured Story</div>
+              <h3>Start with a question about the world.</h3>
+              <p>Short visual science stories with deeper articles, references, and pathways for continued exploration.</p>
+              <div class="btns"><button class="btn-primary">Read the story</button><button class="btn-ghost">Watch the reel</button></div>
+              <div class="chips"><span class="chip-topic c1">Our Planet</span><span class="chip-topic c2">Nature</span><span class="chip-topic c3">Space</span><span class="chip-topic c4">Human Ingenuity</span></div>
+            </div>
+            <div class="card">
+              <div class="thumb"><span class="tag">Nature</span></div>
+              <div class="cbody"><div class="csub">Nature</div><div class="ctitle">A daisy is really hundreds of flowers</div><div class="cmeta">4 min read · reel included</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="note">
+  <div class="wrap">
+    Pick a direction (or mix — e.g. <strong>C's brightness with B's dark article pages</strong>) and I'll turn it into real CSS design tokens, then wire the navigation and page layouts on top of it.
+  </div>
+</footer>
+
+</body>
+</html>
