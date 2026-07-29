@@ -1,18 +1,27 @@
 <header class="site-header">
   <div class="container site-nav">
     <a class="brandmark" href="{{ '/' | relative_url }}">Let's Talk Science <span class="now">Now</span></a>
-    <nav class="nav-links" aria-label="Primary">
-      {%- for item in site.data.navigation -%}
-        <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.name }}</a>
-      {%- endfor -%}
-    </nav>
-    <div class="social-buttons">
-      <a class="btn btn-social btn-social--ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener" aria-label="Follow on Instagram">
-        {%- include icon-instagram.svg -%}<span>Instagram</span>
-      </a>
-      <a class="btn btn-social btn-social--yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
-        {%- include icon-youtube.svg -%}<span>YouTube</span>
-      </a>
+
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-controls="site-menu" aria-expanded="false">
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+      <span class="nav-toggle__bar"></span>
+    </button>
+
+    <div class="site-menu" id="site-menu">
+      <nav class="nav-links" aria-label="Primary">
+        {%- for item in site.data.navigation -%}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active" aria-current="page"{% endif %}>{{ item.name }}</a>
+        {%- endfor -%}
+      </nav>
+      <div class="social-buttons">
+        <a class="btn btn-social btn-social--ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener" aria-label="Follow on Instagram">
+          {%- include icon-instagram.svg -%}<span>Instagram</span>
+        </a>
+        <a class="btn btn-social btn-social--yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener" aria-label="Subscribe on YouTube">
+          {%- include icon-youtube.svg -%}<span>YouTube</span>
+        </a>
+      </div>
     </div>
   </div>
 </header>
