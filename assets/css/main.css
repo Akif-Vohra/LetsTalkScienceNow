@@ -242,6 +242,7 @@ p{line-height:1.7;}
 .page-head{padding-block:var(--sp-2xl) var(--sp-xl);text-align:center;background:var(--sky);}
 .page-head h1{font-size:clamp(2rem,4.5vw,3rem);margin-top:var(--sp-xs);}
 .page-head p{max-width:60ch;margin:var(--sp-md) auto 0;color:var(--muted);font-size:var(--fs-lead);}
+.page-head .eyebrow{color:var(--tint,var(--blue));}
 
 /* Single story */
 .story{padding-block:var(--sp-2xl) var(--sp-3xl);}

@@ -1,13 +1,17 @@
-# Topic slug -> display name + card tint class (see main.css .tint-*)
+# Topic slug -> display name, card tint class (see main.css .tint-*), and summary
 our-planet:
   name: Our Planet
   tint: tint-planet
+  summary: "Geology, deep time, landforms, and the forces that shape the Earth."
 nature:
   name: Nature
   tint: tint-nature
+  summary: "Animals, plants, evolution, and the living systems all around us."
 space:
   name: Space
   tint: tint-space
+  summary: "The Moon, planets, stars, and our place in the wider cosmos."
 human-ingenuity:
   name: Human Ingenuity
   tint: tint-ingenuity
+  summary: "Engineering, materials, inventions, and the history of science."

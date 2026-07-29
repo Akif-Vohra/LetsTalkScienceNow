@@ -1,0 +1,24 @@
+---
+layout: default
+---
+{%- assign t = site.data.topics[page.topic] -%}
+{%- assign stories = site.data.reels | where: "topic", page.topic | sort: "date" | reverse -%}
+<header class="page-head {{ t.tint }}">
+  <div class="container">
+    <p class="eyebrow">Topic</p>
+    <h1>{{ t.name }}</h1>
+    {% if t.summary %}<p>{{ t.summary }}</p>{% endif %}
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head split">
+      <div><p class="eyebrow">{{ stories.size }} stor{% if stories.size == 1 %}y{% else %}ies{% endif %}</p></div>
+      <a class="text-link" href="{{ '/stories/' | relative_url }}">All stories &rarr;</a>
+    </div>
+    <div class="story-grid">
+      {% for reel in stories %}{% include story-card.html reel=reel %}{% endfor %}
+    </div>
+  </div>
+</section>

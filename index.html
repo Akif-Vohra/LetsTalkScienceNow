@@ -30,10 +30,7 @@ description: >-
       <h2>Follow curiosity across four worlds.</h2>
     </div>
     <div class="topic-grid">
-      <a class="topic-card tint-planet" href="{{ '/topics/our-planet/' | relative_url }}"><span class="dot"></span><h3>Our Planet</h3><p>Geology, deep time, landforms, and the forces that shape the Earth.</p><span class="go">Explore →</span></a>
-      <a class="topic-card tint-nature" href="{{ '/topics/nature/' | relative_url }}"><span class="dot"></span><h3>Nature</h3><p>Animals, plants, evolution, and the living systems all around us.</p><span class="go">Explore →</span></a>
-      <a class="topic-card tint-space" href="{{ '/topics/space/' | relative_url }}"><span class="dot"></span><h3>Space</h3><p>The Moon, planets, stars, and our place in the wider cosmos.</p><span class="go">Explore →</span></a>
-      <a class="topic-card tint-ingenuity" href="{{ '/topics/human-ingenuity/' | relative_url }}"><span class="dot"></span><h3>Human Ingenuity</h3><p>Engineering, materials, inventions, and the history of science.</p><span class="go">Explore →</span></a>
+      {% for entry in site.data.topics %}{% assign tslug = entry[0] %}{% include topic-card.html slug=tslug %}{% endfor %}
     </div>
   </div>
 </section>
