@@ -4,6 +4,7 @@
 #
 # Fields:
 #   id             stable slug (used later for the story permalink)
+#   date           publish/added date (YYYY-MM-DD) — newest sorts first in listings
 #   overlay_title  the on-screen text shown in the reel
 #   reel_url       Instagram permalink (TODO: fill in)
 #   youtube_url    YouTube Shorts link
@@ -18,6 +19,7 @@
 # ---------------------------------------------------------------------------
 
 - id: meghalayan-age
+  date: 2026-07-24
   overlay_title: "Earth 🌍 is currently in meghalayan geological age named after Meghalaya in India."
   reel_url:
   youtube_url: https://www.youtube.com/shorts/pOuevufwnMM
@@ -33,6 +35,7 @@
   pinned_comment:
 
 - id: nagaland-ophiolite
+  date: 2026-07-25
   overlay_title: "These hills of Nagaland were once floor of an ancient ocean 🌊"
   reel_url:
   youtube_url: https://www.youtube.com/shorts/t_A9JI037gM
@@ -60,6 +63,7 @@
     The entire Northeast is an incredible geological treasure, with countless opportunities to study Earth's history and experience spectacular natural landscapes.
 
 - id: arunachal-himalayan-syntaxis
+  date: 2026-07-26
   overlay_title: "The Himalayas 🏔🏔🏔 take a 90 degree turn south and made Arunachal Pradesh the most diverse state in India!"
   reel_url:
   youtube_url: https://www.youtube.com/shorts/uixKQ_6WPzk
@@ -92,6 +96,7 @@
     The rugged terrain of Arunachal Pradesh also makes it the most biodiverse place in India. For its biodiversity Indian government has nominated Namdapha National Park as a UNESCO World Heritage Site. It is one of the most biodiverse places in the world because of its incredible range of elevations in Arunachal Pradesh thanks to Himalayan Bend. Within a relatively short distance, the landscape rises from tropical rainforest to temperate forests, alpine meadows, and snow-covered mountains. Each elevation has its own climate and ecosystem, allowing thousands of plant and animal species to coexist. This steep environmental gradient, combined with heavy monsoon rainfall and the park's largely undisturbed forests, has created an extraordinary concentration of biodiversity.
 
 - id: tripura-mizoram-fold-belt
+  date: 2026-07-27
   overlay_title: "Rolling hills and valleys of Tripura and Mizoram! 🏔🌄"
   reel_url:
   youtube_url: https://www.youtube.com/shorts/8MH3ajkRFFU
@@ -117,6 +122,7 @@
     * The Tripura–Mizoram Fold-and-Thrust Belt is still geologically active today. The hills are still slowly being uplifted as the Indian Plate continues to push towards the Burmese Plate, while erosion is constantly shaping the landscape.
 
 - id: manipur-loktak-floating-park
+  date: 2026-07-28
   overlay_title: "Floating national park and Geology of Manipur!"
   reel_url:
   youtube_url: https://www.youtube.com/shorts/5sfTD634NTc
@@ -149,3 +155,43 @@
     * In the reel, I mention that the Indian Plate is colliding with the Burmese (Myanmar) Plate. I simplified it to avoid covering too many topics in one reel. More accurately, the interaction is oblique subduction, where the eastern margin of the Indian Plate is moving beneath the Burmese Plate.
 
     * I also couldn't cover why the floating national park actually floats in a single reel. I plan to make a separate video explaining the formation of the phumdis (the unique floating masses of vegetation, soil, and organic matter) and well as the geology and ecology of Keibul Lamjao National Park.
+
+- id: western-ghats-madagascar
+  date: 2026-07-29
+  overlay_title: "Western Ghats of India were reconnected to Madagascar once! 🏔🏔🏔"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/RT8jixSWCiM
+  youtube_id: RT8jixSWCiM
+  image: /stories/western-ghats-madagascar/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Western Ghats, India (and Central Highlands, Madagascar)"
+  tags: [science, westernghat, geology, earthscience, india]
+  references:
+    - "Subrahmanya, K. R. — Evolution of the Western Ghats, India – A Simple Model"
+    - "Storey et al. (1995), Timing of Hot Spot–Related Volcanism and the Breakup of Madagascar and India"
+    - "Images from Wikipedia or edited by the author"
+  caption: |
+    Western Ghats of India and the Central Highlands of Madagascar show a strikingly similar geological profile. They have a similar north-to-south length of about 1,600 km, similar elevation profiles with extensive uplands around 1–1.5 km above sea level, and similar geological features which mirror each other. They are also home to remarkably similar Precambrian rocks, and even share matching tectonic structures such as the Palakkad Gap in India and the Ranotsara Shear Zone in Madagascar. Their highest peaks, Anamudi (2,695 m) and Maromokotro (2,876 m), are also comparable in elevation.
+
+    The reason for this is that the process that created the Western Ghats is the same process that also broke Madagascar away from the Indian subcontinent about 90 million years ago.
+
+    The process started when India and Madagascar were still joined together and moving northeast. As they passed over the Marion hotspot about 90 million years ago, this geological hotspot was pushing extremely hot mantle material towards the surface beneath them. This intense heat caused the overlying rocks to expand and create a broad dome or bulge in a process known as crustal doming. Eventually, the constant heating combined with the northeast movement of the Indian subcontinent weakened and stretched the continental crust. The increasing tectonic stress finally caused the continent to break apart, separating Madagascar from India.
+
+    All images used are from Wikipedia or edited by me.
+
+    For further reading, I can recommend "Evolution of the Western Ghats, India – A Simple Model" by K. R. Subrahmanya. #science #westernghat #geology #earthscience #india
+  pinned_comment: |
+    As always if you see any mistakes in my understanding or explanation please let me know. 🙏🏼
+
+    Western Ghats were designated as a UNESCO World Heritage Site for their extremely important ecological significance and unique geological history.
+
+    I have intentionally used some simplified phrasing. For example, the mantle in the deeper Earth is not really lava as a lot of people presume it to be. Instead, it is mostly solid rock because the pressure there is so high that, despite the high temperatures, it remains solid. Small parts can melt and become magma as they rise towards the upper layers where the pressure drops. Once magma reaches the Earth's surface, it is called lava.
+
+    After the creation of the Western Ghats and Central Highlands of Madagascar they both continued to shape up due to erosion, weathering and further tectonic processes. In the Western Ghats, erosion created a narrow strip of flat land just west of the mountains where many of India's big cities such as Mumbai are located. Towards the east it created a gentle slope, which is why most rivers in southern India flow west to east.
+
+    One more interesting thing is that both the Western Ghats and Madagascar have a matching low-elevation gap. In India it is known as the Palakkad Gap, while in Madagascar it is known as the Ranotsara Shear Zone. These were already zones of weakness before India and Madagascar broke apart, so they remained lower than the surrounding rocks during uplift.
+
+    About 66 million years ago the northern half of the Western Ghats went through another massive geological event known as the Deccan Traps. This covered the northern half with basaltic lava, which is why the northern and southern parts of the Western Ghats have very different surface rock profiles. I will talk more about this event in my next videos.
+
+    There are many studies on this subject, but a simple language reading which I really loved is "Evolution of the Western Ghats, India – A Simple Model" by K. R. Subrahmanya. One more recent study is Storey et al. (1995), Timing of Hot Spot–Related Volcanism and the Breakup of Madagascar and India.
