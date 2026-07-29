@@ -344,3 +344,285 @@
   tags: [science, opticalillusion, perception, didyouknow, physics]
   caption: |
     The wagon wheel effect is a visual illusion where a rotating, spoked object appears to spin slower than its actual speed, stop entirely, or spin in reverse. It most commonly occurs when viewing continuous rotation through intermittent frames (like in a movie or under a flashing light), or occasionally with the naked eye.#science #opticalillusion #perception #didyouknow #physics
+
+- id: why-plants-green
+  date: 2026-06-02
+  overlay_title: "Why are most plants and trees green?"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/why-plants-green/cover.svg
+  topic: nature
+  tags: [science, funfact, nature, trees, plants]
+  caption: |
+    I tried to find out why most plants and trees are green! At first the answer seemed simple. Chlorophyll! Until I started to question deeper and then it wasn't. #science #funfact #nature #trees #plants
+
+- id: composite-flower
+  date: 2026-06-03
+  overlay_title: "A daisy is really hundreds of tiny flowers"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/composite-flower/cover.svg
+  topic: nature
+  tags: [science, funfact, nature, didyouknow, plants]
+  caption: |
+    A composite flower is an inflorescence where what appears to be a single blossom is actually a dense cluster of hundreds of tiny, individual flowers (called florets) packed tightly together. This unique arrangement serves as a highly efficient evolutionary strategy to maximize pollination and ensure plant survival #science #funfact #nature #didyouknow #plants
+
+- id: heliotropic-daisies
+  date: 2026-06-04
+  overlay_title: "Daisies follow the sun across the sky"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/heliotropic-daisies/cover.svg
+  topic: nature
+  tags: [science, funfact, nature, plants, daisies]
+  caption: |
+    Daisies (specifically Bellis perennis) are famously heliotropic. This means their flower heads physically track the sun's trajectory across the sky from east to west, allowing them to maximize warmth and sunlight. #science #funfact #nature #plants #daisies
+
+- id: pink-elephant-anxiety
+  date: 2026-06-05
+  overlay_title: "The pink elephant theory and quieting anxious thoughts"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/pink-elephant-anxiety/cover.svg
+  topic: nature
+  tags: [science, anxiety, stress, mentalhealth]
+  caption: |
+    I want to share the science of how I reduced my anxiety and worrying thoughts and what I found when researching science of worrying. Especially the pink elephant theory 🐘💕 #science #anxiety #stress #mentalhealth
+
+- id: earth-moon-sun-model
+  date: 2026-06-06
+  overlay_title: "A tabletop Earth-Moon-Sun model"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/earth-moon-sun-model/cover.svg
+  topic: space
+  series: moon-explained
+  tags: [science, funfact, space, earth, moon]
+  caption: |
+    I didn't fully comprehend a few things about moons orbit around the earth so to understand it better I repurposed a Chrismas decoration ball as earth 🌍, a table tennis ball as moon 🌒, and a lamp as sun ☀️! It was really interesting so I decided to share it here as well! The first thing I tried to figure out how far moon really is to earth. It earth was 6.3cm in diameter like my miniature model here, moon would be about 190cm (almost 2 meters) away! #science #funfact #space #earth #moon
+
+- id: categories-of-science
+  date: 2026-06-07
+  overlay_title: "How the branches of science are divided"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/categories-of-science/cover.svg
+  topic: human-ingenuity
+  tags: [science, didyouknow, naturalscience, formalscience, socialscience]
+  caption: |
+    I tried to find out on what basis are the main branches of science divided. I.e formal science, natural science, social science. I forgot to mention in video but as always if you find mistakes in my understanding please correct me #science #didyouknow #naturalscience #formalscience #socialscience
+
+- id: why-eclipses-are-rare
+  date: 2026-06-08
+  overlay_title: "Why we don't get a solar eclipse every month"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/why-eclipses-are-rare/cover.svg
+  topic: space
+  series: moon-explained
+  tags: [science, funfact, moon, sun, solareclipse]
+  caption: |
+    We would have a solar eclipse once a month but because Moons orbit has a 5degree tilt in relation to earths orbit around the sun this causes the geometry to only allow solar eclipse once or twice a year. #science #funfact #moon #sun #solareclipse
+
+- id: moon-tidal-locking
+  date: 2026-06-09
+  overlay_title: "Why we only ever see one side of the Moon"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/moon-tidal-locking/cover.svg
+  topic: space
+  series: moon-explained
+  tags: [science, funfact, moon, earth, space]
+  caption: |
+    We only see one side of the moon because it is tidally locked to Earth. This means the moon rotates on its own axis at the exact same speed it takes to complete one orbit around our planet in about 27.3 days for each. #science #funfact #moon #earth #space
+
+- id: palm-lines-entropy
+  date: 2026-06-10
+  overlay_title: "Why your palm lines are basically biological randomness"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/palm-lines-entropy/cover.svg
+  topic: nature
+  tags: [biology, science, funfact, cryptography, exploremore]
+  caption: |
+    Palm lines are basically biological entropy. Genetics creates the framework, but tiny movements before birth influence the final pattern. It reminds me of creating randomness to generate a private key. #biology #science #funfact #cryptography #exploremore
+
+- id: emotional-tears
+  date: 2026-06-11
+  overlay_title: "Why humans shed emotional tears"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/emotional-tears/cover.svg
+  topic: nature
+  tags: [science, didyouknow, crying, emotions, biology]
+  caption: |
+    Crying and tears and why humans can shed emotional tears? #science #didyouknow #crying #emotions #biology
+
+- id: earthshine
+  date: 2026-06-12
+  overlay_title: "Earthshine: the old Moon in the new Moon's arms"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/earthshine/cover.svg
+  topic: space
+  series: moon-explained
+  tags: [science, funfact, moon, space, earth]
+  caption: |
+    Earthshine is the faint, ghostly glow that illuminates the unlit portion of a crescent moon. It happens when sunlight reflects off Earth's clouds, oceans, and ice caps, travels to the Moon, and bounces back to our eyes. It is also poetically known as "the old Moon in the new Moon's arms" #science #funfact #moon #space #earth
+
+- id: milky-way-band
+  date: 2026-06-13
+  overlay_title: "Why the Milky Way looks like a glowing band"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/milky-way-band/cover.svg
+  topic: space
+  tags: [science, funfact, space, milkywaygalaxy, explorepage]
+  caption: |
+    We are inside the Milky Way, so when we look across its disk, billions of distant stars merge into a glowing band.
+
+    It's similar to standing inside a tunnel of trees.
+    Looking along the path makes everything appear dense and packed together.
+
+    The brightest region is the direction of the galaxy's center 🌌 #science #funfact #space #milkywaygalaxy #explorepage
+
+- id: earth-rotation-latitude
+  date: 2026-06-14
+  overlay_title: "How fast are you spinning with the Earth?"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/earth-rotation-latitude/cover.svg
+  topic: our-planet
+  tags: [science, funfact, didyouknow, earth, explorer]
+  caption: |
+    Earth rotates differently at each latitude with speed of rotation fastest on equators and lowest on the poles. #science #funfact #didyouknow #earth #explorer
+
+- id: pigeon-nests
+  date: 2026-06-15
+  overlay_title: "Why pigeon nests look so hilariously flimsy"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/pigeon-nests/cover.svg
+  topic: nature
+  tags: [science, funfact, didyouknow, nature, birds]
+  caption: |
+    Pigeon nests are famous for being incredibly flimsy and minimalist, often looking like a random, chaotic pile of just a few twigs thrown onto a flat surface. They do this because the evolved from rock doves and they used to live on cliff edges. So the main goal was to keep the egg from rolling over and falling down the cliff #science #funfact #didyouknow #nature #birds
+
+- id: history-vs-prehistory
+  date: 2026-06-16
+  overlay_title: "History vs prehistory: it began with writing"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/history-vs-prehistory/cover.svg
+  topic: human-ingenuity
+  tags: [science, funfact, didyouknow, history, prehistory]
+  caption: |
+    The fundamental difference between history and prehistory is the invention and use of written records. Prehistory refers to the vast time period before humans developed systems of writing, whereas history encompasses the period from the invention of writing to the present day. That's why history started roughly around 3-5 thousand years ago in different parts of the world depending on when first writing systems emerged. #science #funfact #didyouknow #history #prehistory
+
+- id: nasal-cycle
+  date: 2026-06-17
+  overlay_title: "The nasal cycle: why you breathe through one nostril"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/nasal-cycle/cover.svg
+  topic: nature
+  tags: [science, funfact, humananatomy, biology]
+  caption: |
+    The nasal cycle is the completely normal, subconscious shifting of airflow between your nostrils. Controlled by the autonomic nervous system, blood vessels in your nasal passages periodically swell on one side while shrinking on the other. This automatic shift alternates every 2 to 6 hours. It should not be confused with pathological nasal issues where one or both nostrils are blocked by a medical problem like cold allergy, flu or something else. So always see a doctor if one side is always closed. #science #funfact #humananatomy #biology
+
+- id: tree-age-growth-factor
+  date: 2026-06-18
+  overlay_title: "How to estimate a tree's age without cutting it"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/tree-age-growth-factor/cover.svg
+  topic: nature
+  tags: [science, funfact, tree, treeage, didyouknow]
+  caption: |
+    The growth factor method estimates a tree's age without cutting it down. You calculate it by multiplying the tree's Diameter at Breast Height (DBH) by a species-specific growth factor (the number of years it takes the tree to grow one inch in diameter). While this gives a rough approximation it's also often influenced by local growing conditions of a specific tree. #science #funfact #tree #treeage #didyouknow
+
+- id: nectar-to-honey
+  date: 2026-06-19
+  overlay_title: "The hard work bees put into making honey"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/nectar-to-honey/cover.svg
+  topic: nature
+  tags: [science, funfact, didyouknow, nature, honeybee]
+  caption: |
+    The bees put in a lot of hard work to convert nectar into honey. 🍯 🐝 #science #funfact #didyouknow #nature #honeybee
+
+- id: pigeon-head-bob
+  date: 2026-06-20
+  overlay_title: "Why pigeons bob their heads when they walk"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/pigeon-head-bob/cover.svg
+  topic: nature
+  tags: [science, funfact, didyouknow, birds, pigeons]
+  caption: |
+    pigeons and many other birds bob their head when walking as it aids their visual perception by stabilising their vision. They do this in part because their eyes have limited mobility. #science #funfact #didyouknow #birds #pigeons
+
+- id: hollow-tree-alive
+  date: 2026-06-21
+  overlay_title: "How a tree survives with a hollow trunk"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/hollow-tree-alive/cover.svg
+  topic: nature
+  tags: [science, didyouknow, nature, trees, botany]
+  caption: |
+    In most woody trees, only a thin outer ring of tissue is alive. The phloem, cambium, and outer sapwood transport food, water, and produce new growth, while the inner heartwood is dead wood that provides strength and support. This is why a tree can survive with a hollow trunk but dies if its living outer layers are destroyed. #science #didyouknow #nature #trees #botany
+
+- id: mcgurk-effect
+  date: 2026-06-22
+  overlay_title: "The McGurk effect: when your eyes change what you hear"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/mcgurk-effect/cover.svg
+  topic: nature
+  tags: [science, funfact, biology, brain, hearing]
+  caption: |
+    The McGurk effect is about perception of our brain when it comes to hearing. Our brain combines visual and auditory signals to figure out what's being said. So if visual signal doesn't match the auditory signals brain can mishear.
+
+    What happens?
+
+    If you hear one speech sound but see a person articulating a different sound, your brain may combine the two and perceive a third sound.
+
+    #science #funfact #biology #brain #hearing
+
+- id: geological-eons-names
+  date: 2026-06-23
+  overlay_title: "How Earth's geological eons got their names"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/geological-eons-names/cover.svg
+  topic: our-planet
+  series: story-of-earth
+  tags: [science, didyouknow, geology, earthscience, biology]
+  caption: |
+    Many of Earth's geological time periods are named based on the events, characteristics, or places associated with that time period. Therefore, understanding the story behind each of Earth's geological time periods makes them much easier to remember and understand in relation to each other.
+
+    Earth's four geological eons are also named after the story behind them. Hadean, Archean, Proterozoic, and Phanerozoic all got their names from the underlying conditions prevalent on Earth during those eons. #science #didyouknow #geology #earthscience #biology
