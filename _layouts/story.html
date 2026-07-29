@@ -4,48 +4,118 @@ layout: default
 {%- assign reel = site.data.reels | where: "id", page.reel | first -%}
 {%- assign topic = site.data.topics[reel.topic] -%}
 <article class="story">
-  <div class="container container--narrow">
+  <div class="container">
 
-    <a class="back-link" href="{{ '/stories/' | relative_url }}">← All stories</a>
+    <a class="back-link" href="{{ '/stories/' | relative_url }}">&larr; All stories</a>
 
-    <p class="eyebrow">{{ topic.name }}{% if reel.series %} · {{ site.data.series[reel.series].name }}{% endif %}</p>
-    <h1 class="story__title">{{ reel.overlay_title }}</h1>
-    {% if reel.location %}<p class="story__meta">{{ reel.location }}</p>{% endif %}
+    <div class="story__grid{% unless reel.youtube_id %} story__grid--single{% endunless %}">
 
-    {% if reel.youtube_id %}
-    <div class="video-embed">
-      <iframe src="https://www.youtube.com/embed/{{ reel.youtube_id }}"
-              title="{{ reel.overlay_title | escape }}"
-              loading="lazy"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              allowfullscreen></iframe>
-    </div>
-    {% endif %}
+      <header class="story__header">
+        <p class="eyebrow">{{ topic.name }}{% if reel.series %} &middot; {{ site.data.series[reel.series].name }}{% endif %}</p>
+        <h1 class="story__title">{{ reel.overlay_title }}</h1>
+        {% if reel.location %}<p class="story__meta">{{ reel.location }}</p>{% endif %}
+      </header>
 
-    {% if reel.caption %}
-    <div class="prose prose--pre">{{ reel.caption | strip | escape }}</div>
-    {% endif %}
+      {% if reel.youtube_id %}
+      <aside class="story__aside">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/{{ reel.youtube_id }}"
+                  title="{{ reel.overlay_title | escape }}"
+                  loading="lazy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowfullscreen></iframe>
+        </div>
+        <div class="story__links">
+          <a class="btn btn-ghost btn-yt" href="{{ reel.youtube_url | default: site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}Watch on YouTube</a>
+          {% if reel.reel_url %}<a class="btn btn-ghost btn-ig" href="{{ reel.reel_url }}" target="_blank" rel="noopener">{%- include icon-instagram.svg -%}Instagram</a>{% endif %}
+        </div>
+      </aside>
+      {% endif %}
 
-    {% if reel.pinned_comment %}
-    <section class="notes">
-      <h2 class="notes__title">Notes &amp; corrections</h2>
-      <div class="prose prose--pre">{{ reel.pinned_comment | strip | escape }}</div>
+      <div class="story__main">
+
+        {% if reel.summary %}
+        <aside class="big-idea">
+          <p class="big-idea__label">The big idea</p>
+          <p class="big-idea__text">{{ reel.summary }}</p>
+        </aside>
+        {% endif %}
+
+        {% if reel.body %}
+        <div class="prose story__body">{{ reel.body | markdownify }}</div>
+        {% elsif reel.caption %}
+        <div class="prose prose--pre">{{ reel.caption | strip | escape }}</div>
+        {% endif %}
+
+        {% if reel.key_terms %}
+        <section class="key-terms">
+          <h2>Key terms</h2>
+          <dl>
+            {% for t in reel.key_terms %}
+              <dt>{{ t.term }}</dt>
+              <dd>{{ t.definition }}</dd>
+            {% endfor %}
+          </dl>
+        </section>
+        {% endif %}
+
+        {% unless reel.body %}{% if reel.pinned_comment %}
+        <section class="notes">
+          <h2 class="notes__title">Notes &amp; corrections</h2>
+          <div class="prose prose--pre">{{ reel.pinned_comment | strip | escape }}</div>
+        </section>
+        {% endif %}{% endunless %}
+
+        {% if reel.further_reading %}
+        <section class="further">
+          <h2>Sources &amp; further reading</h2>
+          {% for group in reel.further_reading %}
+          <div class="further__group">
+            <h3>{{ group.label }}</h3>
+            <ul>
+              {% for item in group.items %}
+              <li>
+                {% if item.url %}<a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.text }}</a>{% else %}{{ item.text }}{% endif %}
+                {% if item.note %}<span class="further__note">{{ item.note }}</span>{% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+        </section>
+        {% elsif reel.references and reel.references.size > 0 %}
+        <section class="refs">
+          <h2>References</h2>
+          <ul>
+            {% for r in reel.references %}<li>{{ r | escape }}</li>{% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        {% if reel.transcript %}
+        <details class="transcript">
+          <summary>Full transcript</summary>
+          <div class="prose prose--pre">{{ reel.transcript | strip | escape }}</div>
+        </details>
+        {% endif %}
+
+      </div><!-- /story__main -->
+
+    </div><!-- /story__grid -->
+
+    {% if reel.series %}
+    {%- assign related = site.data.reels | where: "series", reel.series | sort: "date" | reverse -%}
+    <section class="related">
+      <div class="section-head split">
+        <div><p class="eyebrow">More in {{ site.data.series[reel.series].name }}</p></div>
+        <a class="text-link" href="{{ reel.series | prepend: '/series/' | append: '/' | relative_url }}">See the series &rarr;</a>
+      </div>
+      <div class="story-grid">
+        {%- assign shown = 0 -%}
+        {% for r in related %}{% if r.id != reel.id and shown < 3 %}{% include story-card.html reel=r %}{%- assign shown = shown | plus: 1 -%}{% endif %}{% endfor %}
+      </div>
     </section>
     {% endif %}
-
-    {% if reel.references and reel.references.size > 0 %}
-    <section class="refs">
-      <h2>References</h2>
-      <ul>
-        {% for r in reel.references %}<li>{{ r | escape }}</li>{% endfor %}
-      </ul>
-    </section>
-    {% endif %}
-
-    <div class="story__links">
-      {% if reel.youtube_url %}<a class="btn btn-ghost" href="{{ reel.youtube_url }}" target="_blank" rel="noopener">▶ Watch on YouTube</a>{% endif %}
-      {% if reel.reel_url %}<a class="btn btn-ghost" href="{{ reel.reel_url }}" target="_blank" rel="noopener">View on Instagram</a>{% endif %}
-    </div>
 
   </div>
 </article>
