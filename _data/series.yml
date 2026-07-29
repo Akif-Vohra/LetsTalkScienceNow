@@ -1,6 +1,16 @@
-# Series slug -> display name
-indian-geology: Indian Geology
-story-of-earth: Story of Earth
-moon-explained: Moon Explained
-biodiversity-of-india: Biodiversity of India
-great-scientists: Great Scientists
+# Series slug -> display name + summary. A story joins a series via its `series:` field.
+indian-geology:
+  name: Indian Geology
+  summary: "Oil, mountains, basins, cratons, and the deep stories beneath India."
+story-of-earth:
+  name: Story of Earth
+  summary: "Deep time, tectonics, climate, and the making of our planet."
+moon-explained:
+  name: Moon Explained
+  summary: "Tides, craters, phases, earthshine, and the science of exploration."
+biodiversity-of-india:
+  name: Biodiversity of India
+  summary: "India's staggering variety of life, from the Himalayas to the Western Ghats."
+great-scientists:
+  name: Great Scientists
+  summary: "The people and the ideas behind the science."

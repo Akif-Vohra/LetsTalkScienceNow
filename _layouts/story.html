@@ -8,7 +8,7 @@ layout: default
 
     <a class="back-link" href="{{ '/stories/' | relative_url }}">← All stories</a>
 
-    <p class="eyebrow">{{ topic.name }}{% if reel.series %} · {{ site.data.series[reel.series] }}{% endif %}</p>
+    <p class="eyebrow">{{ topic.name }}{% if reel.series %} · {{ site.data.series[reel.series].name }}{% endif %}</p>
     <h1 class="story__title">{{ reel.overlay_title }}</h1>
     {% if reel.location %}<p class="story__meta">{{ reel.location }}</p>{% endif %}
 

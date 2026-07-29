@@ -1,0 +1,26 @@
+---
+layout: default
+permalink: /series/
+title: Series
+description: Multi-part story arcs from Let's Talk Science Now — build understanding one story at a time.
+---
+
+<header class="page-head">
+  <div class="container">
+    <p class="eyebrow">Explore</p>
+    <h1>Build understanding, story by story.</h1>
+    <p>Series group related stories into a bigger picture. Pick one and follow the thread.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="series-grid">
+      {% for entry in site.data.series %}
+        {%- assign sslug = entry[0] -%}
+        {%- assign scount = site.data.reels | where: "series", sslug | size -%}
+        {% if scount > 0 %}{% include series-card.html slug=sslug %}{% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -63,9 +63,7 @@ description: >-
       <a class="text-link" href="{{ '/series/' | relative_url }}">Browse all series →</a>
     </div>
     <div class="series-grid">
-      <a class="series-card" href="{{ '/series/indian-geology/' | relative_url }}"><p class="series-card__n">7 stories</p><h3>Indian Geology</h3><p>Oil, mountains, basins, cratons, and the deep stories beneath India.</p></a>
-      <a class="series-card" href="{{ '/series/story-of-earth/' | relative_url }}"><p class="series-card__n">5 stories</p><h3>Story of Earth</h3><p>Deep time, tectonics, climate, and the making of our planet.</p></a>
-      <a class="series-card" href="{{ '/series/moon-explained/' | relative_url }}"><p class="series-card__n">4 stories</p><h3>Moon Explained</h3><p>Tides, craters, phases, earthshine, and the science of exploration.</p></a>
+      {% for entry in site.data.series %}{% assign sslug = entry[0] %}{% assign scount = site.data.reels | where: "series", sslug | size %}{% if scount > 0 %}{% include series-card.html slug=sslug %}{% endif %}{% endfor %}
     </div>
   </div>
 </section>

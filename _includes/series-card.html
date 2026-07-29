@@ -1,0 +1,7 @@
+{%- assign s = site.data.series[include.slug] -%}
+{%- assign count = site.data.reels | where: "series", include.slug | size -%}
+<a class="series-card" href="{{ include.slug | prepend: '/series/' | append: '/' | relative_url }}">
+  <p class="series-card__n">{{ count }} stor{% if count == 1 %}y{% else %}ies{% endif %}</p>
+  <h3>{{ s.name }}</h3>
+  {% if s.summary %}<p>{{ s.summary }}</p>{% endif %}
+</a>
