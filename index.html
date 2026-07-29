@@ -49,18 +49,8 @@ description: >-
       <a class="text-link" href="{{ '/stories/' | relative_url }}">View all stories →</a>
     </div>
     <div class="story-grid">
-      <a class="story-card tint-planet" href="#">
-        <div class="story-card__thumb"><span class="story-card__play"></span><span class="story-card__kicker">Indian Geology</span></div>
-        <div class="story-card__body"><p class="story-card__sub">Our Planet</p><h3>These hills of Nagaland were once an ocean floor</h3><p class="story-card__meta">6 min read · reel included</p></div>
-      </a>
-      <a class="story-card tint-nature" href="#">
-        <div class="story-card__thumb"><span class="story-card__play"></span><span class="story-card__kicker">Living Systems</span></div>
-        <div class="story-card__body"><p class="story-card__sub">Nature</p><h3>A daisy is really hundreds of flowers working together</h3><p class="story-card__meta">4 min read · reel included</p></div>
-      </a>
-      <a class="story-card tint-space" href="#">
-        <div class="story-card__thumb"><span class="story-card__play"></span><span class="story-card__kicker">Moon Explained</span></div>
-        <div class="story-card__body"><p class="story-card__sub">Space</p><h3>The Moon is a lot farther than you'd probably guess</h3><p class="story-card__meta">5 min read · reel included</p></div>
-      </a>
+      {%- assign latest = site.data.reels | sort: "date" | reverse -%}
+      {% for reel in latest limit: 3 %}{% include story-card.html reel=reel %}{% endfor %}
     </div>
   </div>
 </section>
