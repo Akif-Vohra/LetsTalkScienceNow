@@ -195,3 +195,152 @@
     About 66 million years ago the northern half of the Western Ghats went through another massive geological event known as the Deccan Traps. This covered the northern half with basaltic lava, which is why the northern and southern parts of the Western Ghats have very different surface rock profiles. I will talk more about this event in my next videos.
 
     There are many studies on this subject, but a simple language reading which I really loved is "Evolution of the Western Ghats, India – A Simple Model" by K. R. Subrahmanya. One more recent study is Storey et al. (1995), Timing of Hot Spot–Related Volcanism and the Breakup of Madagascar and India.
+
+- id: crown-shyness
+  date: 2026-07-05
+  overlay_title: "Crown shyness: the trees that never touch"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/crown-shyness/cover.svg
+  topic: nature
+  tags: [science, trees, nature]
+  caption: |
+    Crown shyness : a phenomenon observed in some tree species, in which the crowns of fully stocked trees do not touch each other, forming a canopy with channel-like gaps.#science #trees #nature
+
+- id: bookland-check-digits
+  date: 2026-07-06
+  overlay_title: "The fictional countries 'Bookland' and 'Musicland'"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/bookland-check-digits/cover.svg
+  topic: human-ingenuity
+  tags: [books, funfact, trivia, countries, mathisfun, computerscience]
+  caption: |
+    Did you know about the fictional countries "bookland" and "musicland" 😆 #books #funfact #trivia #countries
+  pinned_comment: |
+    They usually include a check digit — a final digit used to help detect simple mistakes, like typing one number wrong or swapping two digits.
+
+    For card numbers, this is commonly checked using the Luhn algorithm.
+
+    And this idea shows up in many other places too: ISBNs on books, barcodes on products, bank numbers, ID numbers, and more.
+
+    Just a small example of everyday math! #science #mathisfun #computerscience #funfact
+
+- id: eye-floaters
+  date: 2026-07-07
+  overlay_title: "Eye floaters: the squiggles drifting across your vision"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/eye-floaters/cover.svg
+  topic: nature
+  tags: [science, EyeFloaters, HumanBody, sciencefact]
+  caption: |
+    Ever noticed tiny squiggles drifting across your vision? 👁️
+
+    They're called eye floaters — tiny clumps or fibers inside the gel-like fluid of your eye.
+
+    You usually notice them more when looking at a bright sky, white wall, or screen because they cast tiny shadows on your retina. Google says that most floaters are harmless, but if you suddenly see lots of new floaters, flashes of light, or a dark curtain in your vision, you should get your eyes checked.
+
+    I made this reel just to share my knowledge and explain the science in a simple way. For any questions or concerns related to eye health, always rely on a medically certified doctor.
+
+    #science #EyeFloaters #HumanBody #sciencefact
+
+- id: dandelion-parachute
+  date: 2026-07-08
+  overlay_title: "How dandelion puffs know when to fly"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/dandelion-parachute/cover.svg
+  topic: nature
+  tags: [science, nature, plants, didyouknow]
+  caption: |
+    Dandelion puffs have a unique parachute mechanism to spread their seeds far. When the air is dry, they open up so the seeds can fly farther. When it's damp or rainy, they close in to avoid launching at the wrong time.#science #nature #plants #didyouknow
+
+- id: dark-clouds-from-above
+  date: 2026-07-09
+  overlay_title: "Dark clouds aren't dark from above"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/dark-clouds-from-above/cover.svg
+  topic: our-planet
+  tags: [funfact, science, clouds, letstalkscience]
+  caption: |
+    Clouds appear dark when they are thick enough to scatter a lot of light passing through them. For this reason dark clouds aren't actually dark if you are looking at them from above! #funfact #science #clouds #letstalkscience
+
+- id: why-sky-colour-rayleigh
+  date: 2026-07-10
+  overlay_title: "Why the sky is blue and sunsets turn red"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/why-sky-colour-rayleigh/cover.svg
+  topic: our-planet
+  tags: [science, funfact, nature, sun, sunkissed]
+  caption: |
+    higher-frequency, shorter-wavelength light is scattered more by the atmosphere. This is mainly Rayleigh scattering. 🌈🌈🌈 #science #funfact #nature #sun #sunkissed
+
+- id: earth-moon-true-scale
+  date: 2026-07-11
+  overlay_title: "The Earth and Moon, at their true distance"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/earth-moon-true-scale/cover.svg
+  topic: space
+  series: moon-explained
+  tags: [science, funfact, sun, moon, nature]
+  caption: |
+    Most images of earth and moon together don't show earth moon distance on its true scale as otherwise they won't fit on a page or a computer screen!#science #funfact #sun #moon #nature
+
+- id: sexual-dimorphism-birds
+  date: 2026-07-12
+  overlay_title: "Sexual dimorphism: why males and females differ"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/sexual-dimorphism-birds/cover.svg
+  topic: nature
+  tags: [science, funfact, nature, didyouknow, birds]
+  caption: |
+    Sexual dimorphism is the condition where males and females of the same species exhibit distinct physical or behavioral differences beyond their reproductive organs. These variations—which include differences in body size, color, weapons, or vocalizations—are typically driven by sexual selection and evolutionary survival strategies.#science #funfact #nature #didyouknow #birds
+
+- id: mongol-yam-postal
+  date: 2026-07-13
+  overlay_title: "The Yam: the Mongol Empire's 200-mile-a-day post"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/mongol-yam-postal/cover.svg
+  topic: human-ingenuity
+  tags: [didyouknow, history, mongol, communication, military]
+  caption: |
+    The Yam (or Örtöö) was a vast and highly efficient postal relay system established by the Mongol Empire. It featured a network of way stations spaced every 20 to 30 miles, providing messengers with food, shelter, and fresh horses, enabling communications to travel up to 200 miles a day.#didyouknow #history #mongol #communication #military
+
+- id: fidget-spinner-physics
+  date: 2026-07-14
+  overlay_title: "Why does a fidget spinner spin so long?"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/fidget-spinner-physics/cover.svg
+  topic: human-ingenuity
+  tags: [science, funfact, physic]
+  caption: |
+    I tried to find out why does fidget spinner spin so long? In the process I found about ball bearings, moment of inertia and angular momentum. #science #funfact #physic
+
+- id: wagon-wheel-effect
+  date: 2026-07-15
+  overlay_title: "The wagon wheel effect: wheels that spin backwards"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/wagon-wheel-effect/cover.svg
+  topic: human-ingenuity
+  tags: [science, opticalillusion, perception, didyouknow, physics]
+  caption: |
+    The wagon wheel effect is a visual illusion where a rotating, spoked object appears to spin slower than its actual speed, stop entirely, or spin in reverse. It most commonly occurs when viewing continuous rotation through intermittent frames (like in a movie or under a flashing light), or occasionally with the naked eye.#science #opticalillusion #perception #didyouknow #physics
