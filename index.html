@@ -6,25 +6,47 @@ description: >-
 ---
 
 <!-- HERO -->
-<section class="hero">
-  <div class="container hero__grid">
-    <div class="hero__intro">
-      <h1 class="hero__title">Hello! I am Akif.</h1>
-      <p class="hero__lede">
-        I post the things I learn so we can learn together. If you find my mistakes, please correct me! 🌻
-      </p>
-      <p class="hero__lede">
-        I would like to raise awareness about the scientific heritage of the Indian subcontinent, Asia, and the world, with a particular focus on the Indian subcontinent and the Asian continent.
-      </p>
-      <p class="hero__cta-line">So, <span class="ltsn">let's talk science <span class="now">now</span>?</span> Browse any of the stories from the feed below to start.</p>
-      <div class="hero__actions">
-        <a class="btn btn-primary" href="{{ '/stories/' | relative_url }}">Explore the stories</a>
-        <a class="btn btn-ghost btn-ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">{%- include icon-instagram.svg -%}Watch on Instagram</a>
-        <a class="btn btn-ghost btn-yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}Watch on YouTube</a>
+<section class="hero" data-slider aria-label="Featured stories">
+  {%- comment -%} Slider = every story with a `cover:` in _data/reels.yml, newest first {%- endcomment -%}
+  {%- assign featured = site.data.reels | where_exp: "r", "r.cover" | sort: "date" | reverse -%}
+  <div class="hero__track">
+    {%- for reel in featured -%}
+      {%- assign ftopic = site.data.topics[reel.topic] -%}
+      <div class="hero__slide" style="background-image:url('{{ reel.cover | relative_url }}')">
+        <a class="hero__slide-link" href="{{ reel.id | prepend: '/stories/' | append: '/' | relative_url }}" aria-label="{{ reel.cover_title | default: reel.overlay_title | escape }}"></a>
+        <div class="hero__slide-cap">
+          <span class="hero__slide-kicker">{{ ftopic.name }}{% if reel.series %} &middot; {{ site.data.series[reel.series].name }}{% endif %}</span>
+          <h2 class="hero__slide-title">{{ reel.cover_title | default: reel.overlay_title }}</h2>
+          <span class="hero__slide-go">Read the story &rarr;</span>
+          {% if reel.cover_credit %}<span class="cover-credit">{{ reel.cover_credit | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}</span>{% endif %}
+        </div>
+      </div>
+    {%- endfor -%}
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__content-inner">
+      <div class="hero__text">
+        <h1 class="hero__title">Hello! I am Akif.</h1>
+        <p class="hero__lede">
+          I am fascinated by Science. I would like to raise awareness about the scientific heritage of the world, with a particular focus on the Indian subcontinent and the Asian continent, by explaining them in as simple a manner as possible. I would like to increase scientific discussions in society.
+        </p>
+        <p class="hero__lede">
+          I post the things I learn so we can learn together. If you find my mistakes, please correct me! 🌻
+        </p>
+        <p class="hero__cta-line">So, <span class="ltsn">let's talk science <span class="now">now</span>?</span></p>
+        <div class="hero__actions">
+          <a class="btn btn-primary" href="{{ '/stories/' | relative_url }}">Explore the stories</a>
+          <a class="btn btn-ghost btn-ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">{%- include icon-instagram.svg -%}Instagram</a>
+          <a class="btn btn-ghost btn-yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}YouTube</a>
+        </div>
       </div>
     </div>
-    <div class="hero__mascot"><img src="{{ '/mascot.png' | relative_url }}" alt="Let's Talk Science Now mascot"></div>
   </div>
+
+  <button class="hero__slide-btn hero__slide-btn--prev" type="button" aria-label="Previous story">‹</button>
+  <button class="hero__slide-btn hero__slide-btn--next" type="button" aria-label="Next story">›</button>
+  <div class="hero__dots" aria-hidden="true"></div>
 </section>
 
 <!-- LATEST STORIES -->

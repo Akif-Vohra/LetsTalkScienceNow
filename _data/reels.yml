@@ -19,6 +19,9 @@
 # ---------------------------------------------------------------------------
 
 - id: meghalayan-age
+  cover: /assets/covers/meghalayan-age.jpg
+  cover_title: "We live in the Meghalayan Age, named after Meghalaya"
+  cover_credit: 'Mawmluh Cave, Meghalaya · [Incredible India](https://www.incredibleindia.gov.in/en/meghalaya/cherrapunjee/mawmluh-cave)'
   date: 2026-07-24
   overlay_title: "Earth 🌍 is currently in meghalayan geological age named after Meghalaya in India."
   reel_url:
@@ -35,6 +38,9 @@
   pinned_comment:
 
 - id: nagaland-ophiolite
+  cover: /assets/covers/nagaland-ophiolite.jpg
+  cover_title: "Nagaland's hills were once an ancient ocean floor"
+  cover_credit: 'Naga Hills, Kiphire by Joli Rumi · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
   date: 2026-07-25
   overlay_title: "These hills of Nagaland were once floor of an ancient ocean 🌊"
   reel_url:
@@ -63,6 +69,9 @@
     The entire Northeast is an incredible geological treasure, with countless opportunities to study Earth's history and experience spectacular natural landscapes.
 
 - id: arunachal-himalayan-syntaxis
+  cover: /assets/covers/arunachal-himalayan-syntaxis.jpg
+  cover_title: "The Himalayas turn 90° and make Arunachal India's most diverse state"
+  cover_credit: 'Ziro Valley, Arunachal Pradesh by Arunachal2007 · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
   date: 2026-07-26
   overlay_title: "The Himalayas 🏔🏔🏔 take a 90 degree turn south and made Arunachal Pradesh the most diverse state in India!"
   reel_url:
@@ -96,6 +105,9 @@
     The rugged terrain of Arunachal Pradesh also makes it the most biodiverse place in India. For its biodiversity Indian government has nominated Namdapha National Park as a UNESCO World Heritage Site. It is one of the most biodiverse places in the world because of its incredible range of elevations in Arunachal Pradesh thanks to Himalayan Bend. Within a relatively short distance, the landscape rises from tropical rainforest to temperate forests, alpine meadows, and snow-covered mountains. Each elevation has its own climate and ecosystem, allowing thousands of plant and animal species to coexist. This steep environmental gradient, combined with heavy monsoon rainfall and the park's largely undisturbed forests, has created an extraordinary concentration of biodiversity.
 
 - id: tripura-mizoram-fold-belt
+  cover: /assets/covers/tripura-mizoram-fold-belt.jpg
+  cover_title: "The rolling fold-belt hills of Tripura & Mizoram"
+  cover_credit: 'Mizoram forests by Lalnunfela Hlawndo · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
   date: 2026-07-27
   overlay_title: "Rolling hills and valleys of Tripura and Mizoram! 🏔🌄"
   reel_url:
@@ -122,6 +134,9 @@
     * The Tripura–Mizoram Fold-and-Thrust Belt is still geologically active today. The hills are still slowly being uplifted as the Indian Plate continues to push towards the Burmese Plate, while erosion is constantly shaping the landscape.
 
 - id: manipur-loktak-floating-park
+  cover: /assets/covers/manipur-loktak-floating-park.jpg
+  cover_title: "Manipur's Loktak Lake and its floating national park"
+  cover_credit: 'Loktak Lake, Manipur by Sudiptorana · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
   date: 2026-07-28
   overlay_title: "Floating national park and Geology of Manipur!"
   reel_url:
@@ -157,6 +172,9 @@
     * I also couldn't cover why the floating national park actually floats in a single reel. I plan to make a separate video explaining the formation of the phumdis (the unique floating masses of vegetation, soil, and organic matter) and well as the geology and ecology of Keibul Lamjao National Park.
 
 - id: western-ghats-madagascar
+  cover: /assets/covers/western-ghats-madagascar.jpg
+  cover_title: "The Western Ghats were once joined to Madagascar"
+  cover_credit: 'Western Ghats, Top Station by Jefin · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)'
   date: 2026-07-29
   overlay_title: "Western Ghats of India were reconnected to Madagascar once! 🏔🏔🏔"
   reel_url:
