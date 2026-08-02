@@ -18,6 +18,74 @@
 #   pinned_comment the pinned comment, verbatim (null if none)
 # ---------------------------------------------------------------------------
 
+- id: deccan-traps
+  cover: /assets/covers/deccan-traps.jpg
+  cover_title: "The Deccan Traps, one of Earth's largest volcanic provinces"
+  cover_credit: 'Matheran, Western Ghats (Deccan Traps) by Nicholas (Nichalp) · [CC BY-SA 2.5](https://creativecommons.org/licenses/by-sa/2.5/)'
+  date: 2026-07-30
+  overlay_title: "The Deccan Traps 🌋 one of Earth's largest volcanic events"
+  reel_url:
+  youtube_url: https://www.youtube.com/shorts/AcvEl8BU_hk
+  youtube_id: AcvEl8BU_hk
+  image: /stories/deccan-traps/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Deccan Plateau, Western & Central India"
+  tags: [science, deccantraps, geology, earthscience, india]
+  references:
+    - "Verma, O., & Khosla, A. (2019). Developments in the Stratigraphy of the Deccan Volcanic Province, Peninsular India."
+    - "Schoene, B., et al. (2015). U-Pb Geochronology of the Deccan Traps and Relation to the End-Cretaceous Mass Extinction."
+    - "Glišović, P., & Forte, A. M. (2017). On the Deep-Mantle Origin of the Deccan Traps."
+  summary: >-
+    The Deccan Traps are one of Earth's largest volcanic provinces, formed about 66 million
+    years ago as the Indian plate drifted over the Réunion hotspot. Their eroded, step-like
+    basalt landscape gives them their name and still shapes the soils, water, and rivers of
+    western and central India.
+  body: |
+    The Deccan Traps formed roughly 66 million years ago, as the Indian subcontinent drifted northwards over the Réunion hotspot after the breakup of Gondwana. Hot mantle material generated magma that rose through faults and fractures in the Indian plate and flowed over large areas of central and western India between about 68 and 66 million years ago, with the most intense eruptions around 66 million years ago.
+
+    New layers of lava stacked on top of one another for almost a million years and cooled into basalt. Over the 66 million years since, weather and rain have eroded these rocks into a characteristic step-like landscape. That is where the name comes from: "Traps" is from the Swedish word *trappa*, meaning "stairs." Hence, the Deccan Traps.
+
+    The Deccan Traps are not only one of Earth's largest volcanic provinces but also one of India's most important geological regions. Their basalt has weathered into the fertile black cotton (regur) soils that support agriculture across much of western and central India. The rocks store large amounts of groundwater in their fractures and weathered layers, and their step-like terrain has shaped rivers, waterfalls, and biodiversity across the region. They also continue to offer valuable clues about Earth's interior, plate tectonics, and one of the largest volcanic events in our planet's history.
+
+    ### The eruptions and the mass extinction
+    The Indian Plate passed over the Réunion hotspot over several million years, but most of the Deccan eruptions happened within about 750,000 years around 66 million years ago — more than 90% of the total lava volume erupted in this main phase. This coincided with the extinction of the non-avian dinosaurs, and for a long time scientists asked whether the Deccan Traps caused it. The current consensus is that the Chicxulub asteroid impact was the primary cause, while the Deccan Traps likely contributed through significant environmental and climate change.
+
+    ### Where the hotspot first struck
+    The northern Indo-Gangetic Plains (today covering much of northern India, including Uttar Pradesh) formed much later, after the Himalayas began to rise. So when the Indian Plate passed over the Réunion hotspot around 66 million years ago, the northern plains did not yet exist. The first major continental region affected was what is today northern Madhya Pradesh and parts of southern and eastern Rajasthan.
+
+    ### The hotspot today
+    The Réunion hotspot is still active beneath Réunion Island. But the Indian Plate has long since moved away, and today the Somali Plate is moving over it in a different direction — which is why the direction of the younger volcanic island chain (Mauritius, the Mascarene Islands) changes.
+
+    Lakshadweep and the Maldives are coral islands, not volcanic islands directly created by eruptions. But they sit on an older volcanic foundation built by the same Réunion hotspot: over millions of years, corals grew around these submerged volcanic mountains to form the islands we see today.
+
+    *I feel I could have explained this better — the topic is complex and hard to simplify within the length of a reel. As always, if you find any mistakes in my understanding or explanation, please let me know.*
+  key_terms:
+    - term: Deccan Traps
+      definition: "A vast series of stacked basalt lava flows covering much of western and central India, formed by massive eruptions around 66 million years ago."
+    - term: Flood basalt (Large Igneous Province)
+      definition: "An enormous outpouring of basalt lava over a short span of geological time. The Deccan is one of the largest such provinces on Earth."
+    - term: Hotspot
+      definition: "A fixed plume of hot material rising from deep in the mantle. As a tectonic plate drifts over it, it drives volcanism at the surface."
+    - term: Basalt
+      definition: "The dark, fine-grained rock left when runny, iron-rich lava cools. It weathers into the fertile black 'regur' soils of the Deccan."
+    - term: Chicxulub impact
+      definition: "The asteroid strike about 66 million years ago now regarded as the primary cause of the end-Cretaceous mass extinction, with Deccan volcanism a likely contributor."
+  further_reading:
+    - label: "Go deeper — academic"
+      items:
+        - text: "Verma, O. & Khosla, A. (2019) — Developments in the Stratigraphy of the Deccan Volcanic Province, Peninsular India"
+        - text: "Schoene, B. et al. (2015) — U-Pb Geochronology of the Deccan Traps and Relation to the End-Cretaceous Mass Extinction"
+        - text: "Glišović, P. & Forte, A. M. (2017) — On the Deep-Mantle Origin of the Deccan Traps"
+    - label: "Background reading"
+      items:
+        - text: "Deccan Traps (Wikipedia)"
+          url: "https://en.wikipedia.org/wiki/Deccan_Traps"
+        - text: "Réunion hotspot (Wikipedia)"
+          url: "https://en.wikipedia.org/wiki/R%C3%A9union_hotspot"
+        - text: "Flood basalt (Wikipedia)"
+          url: "https://en.wikipedia.org/wiki/Flood_basalt"
+
 - id: meghalayan-age
   cover: /assets/covers/meghalayan-age.jpg
   cover_title: "We live in the Meghalayan Age, named after Meghalaya"
