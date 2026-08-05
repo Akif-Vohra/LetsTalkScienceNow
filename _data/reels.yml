@@ -18,6 +18,70 @@
 #   pinned_comment the pinned comment, verbatim (null if none)
 # ---------------------------------------------------------------------------
 
+- id: gondwana
+  date: 2026-07-31
+  overlay_title: "Gondwana means “the Forest of the Gonds” 🌏🌳"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/gondwana/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Gondwana region, Central India (and the southern continents)"
+  tags: [science, gondwana, geology, earthscience, india]
+  references:
+    - "Suess, E. (1885). Das Antlitz der Erde (The Face of the Earth)."
+    - "Tewari, R., Joshi, A. & Agnihotri, D. (2017). The Glossopteris Flora of Manuguru Area, Godavari Graben, Telangana, India. (CC BY-NC 4.0)"
+    - "Encyclopaedia Britannica — Gondwana & Glossopteris"
+    - "Geological Survey of India (GSI) — Gondwana Supergroup & Gondwana Coal"
+    - "Scotese, C. R. — PALEOMAP Project (Pangaea and Gondwana reconstructions)"
+  summary: >-
+    “Gondwana” means “the Forest of the Gonds.” The Austrian geologist Eduard Suess named the
+    ancient southern supercontinent in 1885 after a region of India, because the same
+    Glossopteris plant fossils turn up across India, Africa, South America, Antarctica, and
+    Australia — proof that they were once joined.
+  body: |
+    The name Gondwana, for the ancient supercontinent, was first used by the Austrian geologist Eduard Suess in 1885, while he was studying plant fossils from the Gondwana region of India. That region is named after the Gond people, one of the largest tribal communities in India. The name combines *Gond* with the Sanskrit word for forest, *vana* — so Gondwana means "the Forest of the Gonds."
+
+    Suess was studying fossils of a plant called Glossopteris, which lived roughly 250–300 million years ago. He noticed remarkable similarities between Glossopteris fossils from Gondwana in India and those found in Africa and South America, and proposed that these lands must once have been connected by a land bridge. He named this ancient southern landmass Gondwanaland, after the Gondwana region of India.
+
+    About 50 years later, geologists discovered that continents go through a cycle of breaking apart and rejoining, known as the supercontinent cycle. During one such cycle, about 300 million years ago, India, Africa, South America, Antarctica, and Australia formed the southern half of the supercontinent Pangaea. Geologists kept Suess's name, Gondwana, for this southern part.
+
+    ### Glossopteris — the plant that proved it
+    Glossopteris was one of the dominant plant groups of Gondwana during the Permian Period, about 250–300 million years ago. It is among the most common plant fossils of that period across India, Africa, South America, Antarctica, and Australia — a shared record of their history as parts of one supercontinent.
+
+    ### Why India's coal is "Gondwana coal"
+    Gondwana's climate supported vast, cool, waterlogged swamps where Glossopteris and many other plants thrived. Over millions of years, the buried organic matter turned into coal. Today about 98% of India's coal reserves are Gondwana coal, formed when India was part of the supercontinent during the Permian.
+
+    ### A note on Gond art
+    Gond art is truly beautiful — intricate patterns of dots and lines, vibrant colours, and nature-inspired motifs. It was originally used to decorate homes and to tell the folk stories, beliefs, and traditions of Gond communities. If you plan to buy Gond art, please consider supporting local and independent Gond artists.
+  key_terms:
+    - term: Gondwana
+      definition: "The ancient southern supercontinent — India, Africa, South America, Antarctica, and Australia. Named in 1885 after the Gondwana region of India."
+    - term: Glossopteris
+      definition: "An extinct seed-fern whose fossils, found across all the southern continents, first hinted that they were once joined."
+    - term: Pangaea
+      definition: "The single supercontinent that existed about 300 million years ago; Gondwana was its southern half."
+    - term: Supercontinent cycle
+      definition: "The long-term cycle in which Earth's continents repeatedly gather into one supercontinent and then break apart."
+    - term: Gondwana coal
+      definition: "Coal formed from Permian Gondwana swamp plants; about 98% of India's coal reserves."
+  further_reading:
+    - label: "Go deeper — academic"
+      items:
+        - text: "Suess, E. (1885) — Das Antlitz der Erde (The Face of the Earth)"
+          note: "Where the name Gondwanaland was first proposed."
+        - text: "Tewari, Joshi & Agnihotri (2017) — The Glossopteris Flora of Manuguru Area, Godavari Graben, Telangana, India"
+        - text: "Scotese, C. R. — PALEOMAP Project (Pangaea and Gondwana reconstructions)"
+    - label: "Background reading"
+      items:
+        - text: "Gondwana (Wikipedia)"
+          url: "https://en.wikipedia.org/wiki/Gondwana"
+        - text: "Glossopteris (Wikipedia)"
+          url: "https://en.wikipedia.org/wiki/Glossopteris"
+        - text: "Gondwana (Encyclopaedia Britannica)"
+          url: "https://www.britannica.com/place/Gondwana-supercontinent"
+
 - id: deccan-traps
   cover: /assets/covers/deccan-traps.jpg
   cover_title: "The Deccan Traps, one of Earth's largest volcanic provinces"
