@@ -31,12 +31,19 @@ description: An interactive map of the geological features of the Indian subcont
   .timebar__readout .t-eon{font-size:.95rem;color:var(--muted);}
   .timebar__scale{position:relative;height:26px;}
   .timebar__bands{position:absolute;inset:0;border-radius:6px;overflow:hidden;}
-  .timebar__bands span{position:absolute;top:0;height:100%;}
+  .timebar__bands span{position:absolute;top:0;height:100%;cursor:pointer;}
+  /* Selected window — a box between the two handles; bands outside it are dimmed. */
+  .timebar__bands span{opacity:.4;transition:opacity .1s;}
+  .timebar__bands span.in-window{opacity:1;}
+  .timebar__window{position:absolute;top:-2px;bottom:-2px;box-sizing:border-box;pointer-events:none;
+    border:2px solid #111;border-radius:6px;background:rgba(255,255,255,.12);}
+  /* Two range inputs share the track; only the thumbs catch the pointer, so a click on a
+     band underneath still selects that period. */
   .timebar__scale input[type=range]{position:absolute;inset:0;width:100%;height:100%;margin:0;
-    -webkit-appearance:none;appearance:none;background:transparent;cursor:pointer;}
-  .timebar__scale input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:8px;height:38px;
+    -webkit-appearance:none;appearance:none;background:transparent;pointer-events:none;}
+  .timebar__scale input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;pointer-events:auto;width:8px;height:38px;
     margin-top:-6px;background:#fff;border:2px solid #111;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);cursor:grab;}
-  .timebar__scale input[type=range]::-moz-range-thumb{width:8px;height:38px;background:#fff;border:2px solid #111;
+  .timebar__scale input[type=range]::-moz-range-thumb{pointer-events:auto;width:8px;height:38px;background:#fff;border:2px solid #111;
     border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);cursor:grab;}
   /* Rotated segment names (eons + Phanerozoic periods) sitting under the bands. */
   .timebar__names{position:relative;height:3.4rem;margin-top:.15rem;font-size:.62rem;color:var(--ink);}
@@ -69,12 +76,15 @@ description: An interactive map of the geological features of the Indian subcont
       </div>
       <div class="timebar__scale">
         <div class="timebar__bands" id="eon-bands"></div>
-        <input type="range" id="time-slider" min="0" max="1000" value="1000"
-               aria-label="Geological time — drag to travel back through Earth's history">
+        <div class="timebar__window" id="time-window"></div>
+        <input type="range" id="time-start" min="0" max="10000" value="0"
+               aria-label="Older edge of the time window — drag">
+        <input type="range" id="time-end" min="0" max="10000" value="10000"
+               aria-label="Younger edge of the time window — drag">
       </div>
       <div class="timebar__names" id="eon-names"></div>
       <div class="timebar__ticks" id="eon-ticks"></div>
-      <p class="timebar__hint">Drag back through Earth’s history — features disappear before they had formed.</p>
+      <p class="timebar__hint">Drag the two handles to pick a time window — or click a period to select it. Only features that formed inside the window stay on the map.</p>
     </div>
   </div>
 </section>
@@ -204,10 +214,15 @@ description: An interactive map of the geological features of the Indian subcont
     var seg = document.createElement('span');
     seg.style.left = (s.start * 100) + '%'; seg.style.width = (s.w * 100) + '%';
     seg.style.background = s.color;
+    seg.title = 'Select ' + s.name;
+    seg.addEventListener('click', function () { pickSeg(s); });
     bands.appendChild(seg);
+    s.el = seg;
     var lab = document.createElement('span');
     lab.style.left = (s.start * 100) + '%';
+    lab.style.cursor = 'pointer';
     lab.textContent = s.name;
+    lab.addEventListener('click', function () { pickSeg(s); });
     names.appendChild(lab);
   });
   // A few numeric boundaries — spaced enough not to collide.
@@ -219,18 +234,48 @@ description: An interactive map of the geological features of the Indian subcont
     ticks.appendChild(s);
   });
 
-  var slider = document.getElementById('time-slider');
+  var startH = document.getElementById('time-start');   // older edge (small t)
+  var endH   = document.getElementById('time-end');      // younger edge (large t)
+  var win    = document.getElementById('time-window');
   var ageEl = document.getElementById('t-age'), eonEl = document.getElementById('t-eon');
+  function segLabel(s) { return s.eon === 'Phanerozoic' ? s.name + ' Period' : s.name + ' Eon'; }
+
+  var MAXV = 10000, EPS = 0.002;                          // EPS: ignore hair-width boundary touches
+  function pickSeg(s) {                                   // click a band -> window = that band's full span
+    startH.value = Math.round(s.start * MAXV);
+    endH.value   = Math.round((s.start + s.w) * MAXV);
+    update();
+  }
+
   function update() {
-    var age = tToAge(slider.value / slider.max);
-    var s = segOf(age);
-    ageEl.textContent = fmtAge(age);
-    eonEl.textContent = s.eon === 'Phanerozoic' ? s.name + ' Period · Phanerozoic Eon' : s.name + ' Eon';
-    pins.forEach(function (p) {                       // show a feature only once it has formed
-      if (p.age >= age) p.marker.addTo(map);
+    var tA = Math.min(startH.value, endH.value) / MAXV;  // older edge
+    var tB = Math.max(startH.value, endH.value) / MAXV;  // younger edge
+    var ageOld   = tA <= 0 ? AGE_MAX : tToAge(tA);        // full-left  => include the oldest
+    var ageYoung = tB >= 1 ? 0       : tToAge(tB);        // full-right => include the present (age 0)
+
+    win.style.left  = (tA * 100) + '%';
+    win.style.width = ((tB - tA) * 100) + '%';
+    var inWin = SEG.filter(function (s) {                 // bands the window really covers (not just grazes)
+      return (s.start + EPS) < tB && (s.start + s.w - EPS) > tA;
+    });
+    SEG.forEach(function (s) { s.el.classList.toggle('in-window', inWin.indexOf(s) > -1); });
+
+    if (tA <= 0 && tB >= 1) {
+      ageEl.textContent = 'All time';
+      eonEl.textContent = 'Archean → present';
+    } else {
+      ageEl.textContent = fmtAge(ageOld) + ' – ' + fmtAge(ageYoung);
+      var so = inWin[0] || segOf(ageOld), sy = inWin[inWin.length - 1] || so;
+      eonEl.textContent = so === sy ? segLabel(so) : (so.name + ' → ' + sy.name);
+    }
+    var loA = ageYoung <= 0 ? -1 : ageYoung * (1 - 1e-4); // pad a hair so a feature sitting exactly
+    var hiA = ageOld * (1 + 1e-4);                        // on a boundary (e.g. Deccan at 66 Ma) counts
+    pins.forEach(function (p) {                           // keep features that formed inside the window
+      if (p.age >= loA && p.age <= hiA) p.marker.addTo(map);
       else map.removeLayer(p.marker);
     });
   }
-  slider.addEventListener('input', update);
+  startH.addEventListener('input', update);
+  endH.addEventListener('input', update);
   update();
 </script>
