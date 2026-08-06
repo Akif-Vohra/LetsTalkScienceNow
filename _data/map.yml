@@ -1,0 +1,29 @@
+# Pins for the /map/ page. latlng = [lat, lon], approximate — tweak freely.
+# `story` is a reel id in reels.yml; the popup pulls its summary + links to /stories/<id>/.
+- title: "Western Ghats"
+  latlng: [15.3, 74.0]
+  story: western-ghats-madagascar
+- title: "Deccan Traps"
+  latlng: [18.5, 74.5]
+  story: deccan-traps
+- title: "Gondwana region"
+  latlng: [20.0, 80.0]
+  story: gondwana
+- title: "Indian Cratons"
+  latlng: [24.5, 78.8]   # Bundelkhand craton, central India (representative)
+  story: indian-cratons
+- title: "Eastern Himalayan Syntaxis"
+  latlng: [28.2, 94.7]
+  story: arunachal-himalayan-syntaxis
+- title: "Meghalaya"
+  latlng: [25.3, 91.7]
+  story: meghalayan-age
+- title: "Naga Hills"
+  latlng: [25.9, 94.8]
+  story: nagaland-ophiolite
+- title: "Tripura & Mizoram Fold Belt"
+  latlng: [23.5, 92.3]
+  story: tripura-mizoram-fold-belt
+- title: "Loktak Lake, Manipur"
+  latlng: [24.5, 93.8]
+  story: manipur-loktak-floating-park
