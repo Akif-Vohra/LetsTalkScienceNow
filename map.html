@@ -103,8 +103,9 @@ description: An interactive map of the geological features of the Indian subcont
       { title: {{ pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.story | prepend: "/stories/" | append: "/" | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %} },
       {%- endfor -%}
     ],
-    geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }}
+    geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }},
+    rivers: {{ '/assets/geo/rivers.geojson' | relative_url | jsonify }}
   };
 </script>
-<script src="{{ '/assets/js/map.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/map.js' | relative_url }}?{{ site.time | date: '%s' }}"></script>
 

@@ -21,6 +21,14 @@
           '<circle cx="12" cy="12" r="4" fill="#fff"/></svg>',
     iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -24]
   });
+  // Major rivers (GSI, via Bhukosh) — optional context overlay, toggled from the layer control.
+  var rivers = L.geoJSON(null, {
+    interactive: false, attribution: 'Rivers &copy; GSI (Bhukosh)',
+    style: { color: '#3d8bd6', weight: 1, opacity: 0.7 }
+  });
+  fetch(window.MAP.rivers).then(function (r) { return r.json(); }).then(function (geo) { rivers.addData(geo); });
+  L.control.layers(null, { 'Rivers': rivers }, { collapsed: false }).addTo(map);
+
   var reader = document.getElementById('reader');
   var activeShape = null, activeShapePin = null;        // only the last-clicked feature's outline is drawn
   function showShape(p) {

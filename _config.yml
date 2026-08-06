@@ -30,3 +30,6 @@ exclude:
   - vendor/
   - .bundle/
   - maps/
+  - assets/geo/*.zip      # archived Bhukosh source, kept in git but not published
+  - assets/geo/Rivers/
+  - assets/geo/Reservoir/

@@ -14,3 +14,7 @@ vendor/
 
 # datameet/maps checkout — source for assets/geo, not shipped
 maps/
+
+# Unzipped Bhukosh shapefiles — the .zip archives are committed, the extracted dirs are not
+assets/geo/Rivers/
+assets/geo/Reservoir/
