@@ -1,29 +1,39 @@
 # Pins for the /map/ page. latlng = [lat, lon], approximate — tweak freely.
 # `story` is a reel id in reels.yml; the popup pulls its summary + links to /stories/<id>/.
+# `age_ma` = formation/event age in millions of years ago (drives the time slider). Approximate.
 - title: "Western Ghats"
   latlng: [15.3, 74.0]
   story: western-ghats-madagascar
+  age_ma: 88          # India–Madagascar rifting, Late Cretaceous
 - title: "Deccan Traps"
   latlng: [18.5, 74.5]
   story: deccan-traps
+  age_ma: 66          # flood basalts at the K–Pg boundary
 - title: "Gondwana region"
   latlng: [20.0, 80.0]
   story: gondwana
+  age_ma: 300         # Gondwana supercontinent, Carboniferous
 - title: "Indian Cratons"
   latlng: [24.5, 78.8]   # Bundelkhand craton, central India (representative)
   story: indian-cratons
+  age_ma: 3000        # Archean cratonic crust, ~3 billion years
 - title: "Eastern Himalayan Syntaxis"
   latlng: [28.2, 94.7]
   story: arunachal-himalayan-syntaxis
+  age_ma: 50          # India–Asia collision, Himalayan orogeny
 - title: "Meghalaya"
   latlng: [25.3, 91.7]
   story: meghalayan-age
+  age_ma: 0.0042      # Meghalayan Age, began ~4,200 years ago
 - title: "Naga Hills"
   latlng: [25.9, 94.8]
   story: nagaland-ophiolite
+  age_ma: 120         # obducted ophiolite, Cretaceous ocean floor
 - title: "Tripura & Mizoram Fold Belt"
   latlng: [23.5, 92.3]
   story: tripura-mizoram-fold-belt
+  age_ma: 10          # folding, Mio–Pliocene
 - title: "Loktak Lake, Manipur"
   latlng: [24.5, 93.8]
   story: manipur-loktak-floating-park
+  age_ma: 0.02        # Quaternary lake, ~20,000 years
