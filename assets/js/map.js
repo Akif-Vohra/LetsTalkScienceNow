@@ -50,9 +50,14 @@
       .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
   }
 
-  var LABEL_ZOOM = 6;                                   // pin names appear at this zoom and closer
+  var LABEL_ZOOM = 6, FOCUS_ZOOM = 7;                   // labels appear at 6; a bare pin-click zooms to 7
+  function focusPin(p) {
+    loadStory(p);
+    showShape(p);                                       // shape pins get framed by the outline's fitBounds
+    if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
+  }
   pins.forEach(function (p) {
-    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { loadStory(p); showShape(p); });
+    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { focusPin(p); });
     p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [6, -12] });
   });
   function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
