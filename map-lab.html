@@ -1,0 +1,61 @@
+---
+layout: default
+title: Map lab
+permalink: /map-lab/
+description: Experiment page for basemap providers (Bhuvan WMS, etc.). Not linked in nav.
+---
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">Experiment</p>
+      <h2>Basemap lab.</h2>
+      <p>Scratch page for testing tile providers (Bhuvan WMS). Toggle layers top-right. Open the browser console to see tile errors (CORS / LayerNotDefined).</p>
+    </div>
+    <div id="map" style="height:min(72vh,640px);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);"></div>
+  </div>
+</section>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script>
+  // --- Working fallbacks (same as /map/) ---
+  var esriSat = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Imagery &copy; Esri', maxZoom: 19
+  });
+  var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
+  });
+
+  // --- Bhuvan (experiment) ---
+  // WMS is the easiest to wire in Leaflet (no tile-matrix maths, unlike WMTS).
+  // TODO: replace `layers` with a REAL Bhuvan layer name. Their GetCapabilities is
+  //   currently broken, so find names at https://bhuvan.nrsc.gov.in/gis/thematic/
+  //   For geology this is the interesting bit — try a geomorphology / lineament layer
+  //   as an OVERLAY on satellite, which is what Bhuvan actually does well.
+  // Heads-up: may fail in-browser with a CORS error even if the layer exists.
+  var bhuvanWms = L.tileLayer.wms('https://bhuvan-vec2.nrsc.gov.in/bhuvan/wms', {
+    layers: 'REPLACE_WITH_A_REAL_BHUVAN_LAYER',
+    format: 'image/png',
+    transparent: false,
+    version: '1.1.1',
+    attribution: 'Bhuvan &copy; NRSC / ISRO'
+  });
+
+  var map = L.map('map', { layers: [esriSat] }).setView([21, 82], 4);
+  L.control.layers({
+    'Esri Satellite': esriSat,
+    'OSM Streets': osm,
+    'Bhuvan WMS (experiment)': bhuvanWms
+  }, null, { collapsed: false }).addTo(map);
+
+  // Reuse the same pins as /map/ for a fair comparison.
+  var pins = [
+    {%- for pin in site.data.map -%}
+    { title: {{ pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}] },
+    {%- endfor -%}
+  ];
+  pins.forEach(function (p) { L.marker(p.latlng).addTo(map).bindPopup(p.title); });
+  if (pins.length) map.fitBounds(pins.map(function (p) { return p.latlng; }), { padding: [40, 40] });
+</script>
