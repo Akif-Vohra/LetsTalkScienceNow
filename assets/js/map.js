@@ -50,9 +50,14 @@
       .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
   }
 
+  var LABEL_ZOOM = 6;                                   // pin names appear at this zoom and closer
   pins.forEach(function (p) {
     p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { loadStory(p); showShape(p); });
+    p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [6, -12] });
   });
+  function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
+  map.on('zoomend', toggleLabels);
+  toggleLabels();
 
   // India outline — sourced from DataMeet Community Maps (github.com/datameet/maps).
   fetch(window.MAP.geojson)
