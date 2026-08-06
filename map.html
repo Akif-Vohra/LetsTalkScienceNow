@@ -32,7 +32,7 @@ description: An interactive map of the geological features of the Indian subcont
 
   /* Time slider */
   .timebar{margin-top:var(--sp-lg);}
-  .timebar__readout{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.6rem;}
+  .timebar__readout{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem;}
   .timebar__readout .t-age{font-size:1.4rem;font-weight:600;color:var(--ink);}
   .timebar__readout .t-eon{font-size:.95rem;color:var(--muted);}
   .timebar__scale{position:relative;height:26px;}
@@ -74,6 +74,7 @@ description: An interactive map of the geological features of the Indian subcont
         <span class="t-age" id="t-age">Present</span>
         <span class="t-eon" id="t-eon">Phanerozoic Eon</span>
       </div>
+      <div class="timebar__ticks" id="eon-ticks"></div>
       <div class="timebar__scale">
         <div class="timebar__bands" id="eon-bands"></div>
         <div class="timebar__window" id="time-window"></div>
@@ -83,7 +84,6 @@ description: An interactive map of the geological features of the Indian subcont
                aria-label="Younger edge of the time window — drag">
       </div>
       <div class="timebar__names" id="eon-names"></div>
-      <div class="timebar__ticks" id="eon-ticks"></div>
     </div>
   </div>
   <div class="mapsplit">
