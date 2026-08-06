@@ -8,10 +8,21 @@ description: An interactive map of the geological features of the Indian subcont
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 
 <style>
-  /* Map page: minimal top space, full-bleed map. */
+  /* Map page: minimal top space, full-bleed split (map | story reader). */
   .map-page{padding-block:var(--sp-lg) var(--sp-xl);}
   .map-page .section-head{margin-bottom:var(--sp-md);}
-  #map{width:100vw;margin-inline:calc(50% - 50vw);height:min(78vh,780px);overflow:hidden;}
+  .mapsplit{display:flex;width:100vw;margin-inline:calc(50% - 50vw);height:min(78vh,780px);}
+  .mapsplit #map{flex:1 1 60%;height:100%;overflow:hidden;}
+  .reader{flex:1 1 40%;height:100%;overflow-y:auto;border-left:1px solid var(--line);background:var(--surface);}
+  .reader .story__cover{height:220px;}
+  .reader .back-link{display:none;}          /* no "all stories" link inside the panel */
+  .reader__empty{display:flex;align-items:center;justify-content:center;height:100%;
+    padding:var(--sp-xl);text-align:center;color:var(--muted);font-family:var(--font-body);font-size:1.05rem;}
+  @media (max-width:768px){
+    .mapsplit{flex-direction:column;height:auto;}
+    .mapsplit #map{height:56vh;}
+    .reader{height:70vh;}
+  }
 
   /* Time slider */
   .timebar{margin-top:var(--sp-lg);}
@@ -27,11 +38,12 @@ description: An interactive map of the geological features of the Indian subcont
     margin-top:-6px;background:#fff;border:2px solid #111;border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);cursor:grab;}
   .timebar__scale input[type=range]::-moz-range-thumb{width:8px;height:38px;background:#fff;border:2px solid #111;
     border-radius:4px;box-shadow:0 1px 4px rgba(0,0,0,.4);cursor:grab;}
-  .timebar__ticks{position:relative;height:1.2rem;margin-top:.35rem;font-size:.72rem;color:var(--muted);}
+  /* Rotated segment names (eons + Phanerozoic periods) sitting under the bands. */
+  .timebar__names{position:relative;height:3.4rem;margin-top:.15rem;font-size:.62rem;color:var(--ink);}
+  .timebar__names span{position:absolute;top:0;transform-origin:left top;transform:rotate(45deg);
+    white-space:nowrap;line-height:1;}
+  .timebar__ticks{position:relative;height:1.2rem;margin-top:.2rem;font-size:.72rem;color:var(--muted);}
   .timebar__ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap;}
-  .timebar__legend{display:flex;flex-wrap:wrap;gap:1rem;margin-top:.6rem;font-size:.78rem;color:var(--ink);}
-  .timebar__legend span{display:inline-flex;align-items:center;gap:.4rem;}
-  .timebar__legend i{width:.8rem;height:.8rem;border-radius:3px;display:inline-block;}
   .timebar__hint{margin-top:.5rem;font-size:.8rem;color:var(--muted);}
 </style>
 
@@ -43,7 +55,12 @@ description: An interactive map of the geological features of the Indian subcont
       <p>Tap a marker to jump to the story behind each feature.</p>
     </div>
   </div>
-  <div id="map"></div>
+  <div class="mapsplit">
+    <div id="map"></div>
+    <div id="reader" class="reader">
+      <div class="reader__empty">Tap a feature on the map to read its story here.</div>
+    </div>
+  </div>
   <div class="container">
     <div class="timebar">
       <div class="timebar__readout">
@@ -55,8 +72,8 @@ description: An interactive map of the geological features of the Indian subcont
         <input type="range" id="time-slider" min="0" max="1000" value="1000"
                aria-label="Geological time — drag to travel back through Earth's history">
       </div>
+      <div class="timebar__names" id="eon-names"></div>
       <div class="timebar__ticks" id="eon-ticks"></div>
-      <div class="timebar__legend" id="eon-legend"></div>
       <p class="timebar__hint">Drag back through Earth’s history — features disappear before they had formed.</p>
     </div>
   </div>
@@ -66,16 +83,14 @@ description: An interactive map of the geological features of the Indian subcont
 <script>
   var pins = [
     {%- for pin in site.data.map -%}
-      {%- assign r = site.data.reels | where: "id", pin.story | first -%}
     { title: {{ pin.title | jsonify }},
       latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}],
       url: {{ pin.story | prepend: "/stories/" | append: "/" | relative_url | jsonify }},
-      age: {{ pin.age_ma | default: 0 }},
-      snippet: {{ r.summary | default: r.overlay_title | strip_newlines | truncatewords: 26 | jsonify }} },
+      age: {{ pin.age_ma | default: 0 }} },
     {%- endfor -%}
   ];
 
-  var map = L.map('map').setView([21, 82], 4);
+  var map = L.map('map', { zoomSnap: 0.5 }).setView([21, 82], 4);
 
   // Satellite imagery only — no Esri boundaries/places overlay (it drew dotted disputed
   // borders on Arunachal/Kashmir). Our own india.geojson provides the border instead.
@@ -83,10 +98,30 @@ description: An interactive map of the geological features of the Indian subcont
     attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
   }).addTo(map);
 
+  // Small teardrop pin — the familiar marker shape, scaled down so many features stay tidy.
+  var pinIcon = L.divIcon({
+    className: 'pin',
+    html: '<svg width="20" height="28" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">' +
+          '<path d="M12 0C5.4 0 0 5.4 0 12c0 8.4 12 22 12 22s12-13.6 12-22C24 5.4 18.6 0 12 0z" ' +
+          'fill="#1667c6" stroke="#fff" stroke-width="1.5"/>' +
+          '<circle cx="12" cy="12" r="4" fill="#fff"/></svg>',
+    iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -24]
+  });
+  var reader = document.getElementById('reader');
+  function loadStory(p) {                               // fetch the story page, inject just its <article class="story">
+    reader.innerHTML = '<div class="reader__empty">Loading “' + p.title + '”…</div>';
+    fetch(p.url)
+      .then(function (r) { return r.text(); })
+      .then(function (html) {
+        var art = new DOMParser().parseFromString(html, 'text/html').querySelector('.story');
+        reader.innerHTML = art ? art.outerHTML : '<div class="reader__empty">Couldn’t load this story.</div>';
+        reader.scrollTop = 0;
+      })
+      .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
+  }
+
   pins.forEach(function (p) {
-    p.marker = L.marker(p.latlng)
-      .bindPopup('<strong>' + p.title + '</strong><br>' + p.snippet + '<br><a href="' + p.url + '">Read the story &rarr;</a>',
-        { maxWidth: 220 });
+    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { loadStory(p); });
   });
 
   // India outline — official land area incl. disputed territories (Survey of India, via datameet, CC-0).
@@ -97,71 +132,87 @@ description: An interactive map of the geological features of the Indian subcont
         interactive: false,
         style: { color: '#000000', weight: 1.5, opacity: 0.9, fill: false }
       }).addTo(map);
+      map.invalidateSize();                                       // container is a flex half — re-measure
       map.fitBounds(india.getBounds(), { padding: [20, 20] });   // frame the whole country
+      map.setZoom(map.getZoom() + 0.5);                           // then nudge a bit closer in
     });
 
   // --- Time slider -------------------------------------------------------
   // Features span ~3000 Ma (Archean cratons) to ~4000 yr (Meghalayan). A pure log axis
-  // crushes the Precambrian to a sliver, so we give each eon a FIXED share `w` of the bar
-  // (they sum to 1) and map ages log-uniformly WITHIN that share. t in [0,1]: 0 = oldest.
+  // crushes the deep past to a sliver, so every SEGMENT gets a FIXED share `w` of the bar
+  // (they sum to 1) and ages map log-uniformly WITHIN that share. t in [0,1]: 0 = oldest.
+  // The two Precambrian eons stay whole; the Phanerozoic is split into its 12 periods
+  // (ICS colours), which is where the recognisable time labels live.
   var AGE_MIN = 0.001;                                 // Ma (0.001 Ma = 1,000 yr ≈ "present")
-  var EONS = [
-    { name: 'Archean',     from: 4000, to: 2500,     color: '#8E4A9C', w: 0.15 },
-    { name: 'Proterozoic', from: 2500, to: 541,      color: '#C15B2E', w: 0.20 },
-    { name: 'Phanerozoic', from: 541,  to: AGE_MIN,  color: '#3F8E5B', w: 0.65 }
+  var SEG = [
+    { name: 'Archean',       eon: 'Archean',     from: 4000,  to: 2500,    color: '#8E4A9C', w: 0.15 },
+    { name: 'Proterozoic',   eon: 'Proterozoic', from: 2500,  to: 541,     color: '#C15B2E', w: 0.20 },
+    { name: 'Cambrian',      eon: 'Phanerozoic', from: 541,   to: 485.4,   color: '#7FA056' },
+    { name: 'Ordovician',    eon: 'Phanerozoic', from: 485.4, to: 443.8,   color: '#009270' },
+    { name: 'Silurian',      eon: 'Phanerozoic', from: 443.8, to: 419.2,   color: '#B3E1B6' },
+    { name: 'Devonian',      eon: 'Phanerozoic', from: 419.2, to: 358.9,   color: '#CB8C37' },
+    { name: 'Carboniferous', eon: 'Phanerozoic', from: 358.9, to: 298.9,   color: '#67A599' },
+    { name: 'Permian',       eon: 'Phanerozoic', from: 298.9, to: 251.9,   color: '#F04028' },
+    { name: 'Triassic',      eon: 'Phanerozoic', from: 251.9, to: 201.4,   color: '#812B92' },
+    { name: 'Jurassic',      eon: 'Phanerozoic', from: 201.4, to: 145.0,   color: '#34B2C9' },
+    { name: 'Cretaceous',    eon: 'Phanerozoic', from: 145.0, to: 66.0,    color: '#7FC64E' },
+    { name: 'Paleogene',     eon: 'Phanerozoic', from: 66.0,  to: 23.03,   color: '#FD9A52' },
+    { name: 'Neogene',       eon: 'Phanerozoic', from: 23.03, to: 2.58,    color: '#FFE619' },
+    { name: 'Quaternary',    eon: 'Phanerozoic', from: 2.58,  to: AGE_MIN, color: '#F9F97F' }
   ];
-  var AGE_MAX = EONS[0].from;
-  (function () { var c = 0; EONS.forEach(function (e) { e.start = c; c += e.w; }); })();  // cumulative left edge
+  var AGE_MAX = SEG[0].from;
+  (function () {                                        // the 12 periods split the leftover width evenly
+    var fixed = 0, n = 0;
+    SEG.forEach(function (s) { if (s.w) fixed += s.w; else n++; });
+    var per = (1 - fixed) / n, c = 0;
+    SEG.forEach(function (s) { if (!s.w) s.w = per; s.start = c; c += s.w; });
+  })();
 
   function ageToT(a) {                                  // age -> 0..1
-    for (var i = 0; i < EONS.length; i++) {
-      var e = EONS[i];
-      if (a >= e.to || i === EONS.length - 1) {
+    for (var i = 0; i < SEG.length; i++) {
+      var e = SEG[i];
+      if (a >= e.to || i === SEG.length - 1) {
         var local = Math.log(a / e.from) / Math.log(e.to / e.from);   // 0 at old edge, 1 at young edge
         return e.start + Math.max(0, Math.min(1, local)) * e.w;
       }
     }
   }
   function tToAge(t) {                                  // 0..1 -> age
-    for (var i = 0; i < EONS.length; i++) {
-      var e = EONS[i];
-      if (t <= e.start + e.w || i === EONS.length - 1) {
+    for (var i = 0; i < SEG.length; i++) {
+      var e = SEG[i];
+      if (t <= e.start + e.w || i === SEG.length - 1) {
         var local = (t - e.start) / e.w;
         return e.from * Math.pow(e.to / e.from, Math.max(0, Math.min(1, local)));
       }
     }
   }
-
+  function segOf(a) {                                   // age -> its segment
+    for (var i = 0; i < SEG.length; i++) if (a >= SEG[i].to) return SEG[i];
+    return SEG[SEG.length - 1];
+  }
   function fmtAge(a) {
     if (a <= AGE_MIN * 1.2) return 'Present';
     if (a < 1) return Math.round(a * 1e6).toLocaleString() + ' yr ago';   // sub-Ma -> years
     if (a < 1000) return Math.round(a) + ' Ma';
     return (a / 1000).toFixed(1) + ' Ga';
   }
-  function eonOf(a) {
-    for (var i = 0; i < EONS.length; i++) if (a >= EONS[i].to) return EONS[i].name;
-    return EONS[EONS.length - 1].name;
-  }
 
-  // Build the coloured eon bands + boundary ticks once.
+  // Build the coloured bands + rotated names once.
   var bands = document.getElementById('eon-bands');
-  var ticks = document.getElementById('eon-ticks');
-  var boundaryVals = [AGE_MAX];
-  EONS.forEach(function (e) {
-    var l = ageToT(e.from) * 100, r = ageToT(e.to) * 100;
+  var names = document.getElementById('eon-names');
+  SEG.forEach(function (s) {
     var seg = document.createElement('span');
-    seg.style.left = l + '%'; seg.style.width = (r - l) + '%';
-    seg.style.background = e.color;
+    seg.style.left = (s.start * 100) + '%'; seg.style.width = (s.w * 100) + '%';
+    seg.style.background = s.color;
     bands.appendChild(seg);
-    boundaryVals.push(e.to);
+    var lab = document.createElement('span');
+    lab.style.left = (s.start * 100) + '%';
+    lab.textContent = s.name;
+    names.appendChild(lab);
   });
-  var legend = document.getElementById('eon-legend');
-  EONS.forEach(function (e) {
-    var s = document.createElement('span');
-    s.innerHTML = '<i style="background:' + e.color + '"></i>' + e.name;
-    legend.appendChild(s);
-  });
-  boundaryVals.forEach(function (v) {
+  // A few numeric boundaries — spaced enough not to collide.
+  var ticks = document.getElementById('eon-ticks');
+  [4000, 2500, 541, 66, AGE_MIN].forEach(function (v) {
     var s = document.createElement('span');
     s.style.left = (ageToT(v) * 100) + '%';
     s.textContent = v <= AGE_MIN * 1.2 ? 'Today' : (v >= 1000 ? (v / 1000) + ' Ga' : v + ' Ma');
@@ -172,8 +223,9 @@ description: An interactive map of the geological features of the Indian subcont
   var ageEl = document.getElementById('t-age'), eonEl = document.getElementById('t-eon');
   function update() {
     var age = tToAge(slider.value / slider.max);
+    var s = segOf(age);
     ageEl.textContent = fmtAge(age);
-    eonEl.textContent = eonOf(age) + ' Eon';
+    eonEl.textContent = s.eon === 'Phanerozoic' ? s.name + ' Period · Phanerozoic Eon' : s.name + ' Eon';
     pins.forEach(function (p) {                       // show a feature only once it has formed
       if (p.age >= age) p.marker.addTo(map);
       else map.removeLayer(p.marker);

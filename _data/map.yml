@@ -37,3 +37,61 @@
   latlng: [24.5, 93.8]
   story: manipur-loktak-floating-park
   age_ma: 0.02        # Quaternary lake, ~20,000 years
+- title: "Sikkim"
+  latlng: [27.5, 88.5]
+  story: sikkim-biodiversity
+  age_ma: 20          # Neogene Himalayan uplift shaped the elevation-gradient biodiversity
+- title: "Himalayan Foreland Basin"
+  latlng: [26.5, 81.0]   # Indo-Gangetic Plain (representative, central)
+  story: himalayan-foreland-basin
+  age_ma: 40          # foreland basin flexural loading began as the Himalaya rose
+
+# --- Reference features (no reel yet — example pins with a short sourced note) ---
+- title: "Aravalli Range"
+  latlng: [25.5, 73.5]
+  story: aravalli-range
+  age_ma: 1800        # Proterozoic Aravalli–Delhi orogeny
+- title: "Singhbhum Craton"
+  latlng: [22.3, 85.8]
+  story: singhbhum-craton
+  age_ma: 3200        # Archean crust; suggested early emergent land ~3.2 Ga
+- title: "Kolar Gold Fields"
+  latlng: [12.96, 78.28]
+  story: kolar-gold-fields
+  age_ma: 2700        # Neoarchean Dharwar greenstone belt
+- title: "Kutch Basin"
+  latlng: [23.7, 69.8]
+  story: kutch-basin
+  age_ma: 160         # Jurassic rift basin (Gondwana break-up)
+- title: "St. Mary's Islands"
+  latlng: [13.38, 74.67]
+  story: st-marys-islands
+  age_ma: 88          # columnar basalt, India–Madagascar split
+- title: "Marble Rocks, Bhedaghat"
+  latlng: [23.13, 79.80]
+  story: bhedaghat-marble
+  age_ma: 1000        # Proterozoic marble gorge on the Narmada
+- title: "Indus–Tsangpo Suture Zone"
+  latlng: [34.2, 77.6]
+  story: indus-tsangpo-suture
+  age_ma: 50          # tectonic weld of India to Eurasia; Tethyan ophiolites
+- title: "Balasinor Dinosaur Fossils"
+  latlng: [22.9, 73.5]   # Raiyoli, Mahisagar, Gujarat
+  story: balasinor-dinosaurs
+  age_ma: 70          # Late Cretaceous Lameta Formation (Rajasaurus)
+- title: "Siwalik Hills"
+  latlng: [30.5, 77.5]
+  story: siwalik-hills
+  age_ma: 10          # Neogene molasse foothills, rich in fossil mammals
+- title: "Lonar Crater"
+  latlng: [19.976, 76.508]
+  story: lonar-crater
+  age_ma: 0.05        # Pleistocene meteorite impact in Deccan basalt (age debated)
+- title: "Barren Island Volcano"
+  latlng: [12.278, 93.858]
+  story: barren-island
+  age_ma: 0           # South Asia's only active volcano (Quaternary, still erupting)
+- title: "Majuli Island"
+  latlng: [26.95, 94.17]
+  story: majuli-island
+  age_ma: 0.005       # young Brahmaputra river island

@@ -1,0 +1,17 @@
+---
+layout: geo-feature
+permalink: /stories/aravalli-range/
+title: "The Aravalli Range"
+topic: our-planet
+location: "Rajasthan & Haryana, northwestern India"
+age_label: "Proterozoic · ~2.5–1 billion years"
+summary: "One of the oldest mountain systems on Earth — now worn down to low ridges, but once a towering Proterozoic range."
+sources:
+  - text: "Geological Survey of India"
+---
+
+The Aravalli Range is among the **oldest fold-mountain systems in the world**. It was built during the Proterozoic, through the long Aravalli–Delhi cycle of mountain-building that welded together some of the crust of northwestern India roughly two and a half to one billion years ago.
+
+What we see today is the deeply eroded root of that range. Hundreds of millions of years of weathering have reduced once-high peaks to a chain of low, rounded ridges running roughly from Gujarat through Rajasthan towards Delhi.
+
+The belt is also economically important: its ancient metamorphic and igneous rocks host major deposits of zinc, lead and marble that have been worked since antiquity.

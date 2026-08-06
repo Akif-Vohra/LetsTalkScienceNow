@@ -1,0 +1,51 @@
+---
+layout: default
+---
+{%- comment -%}
+  Self-contained geological feature page (not backed by a reel in reels.yml, so it
+  never shows up in the reel-driven listings). Facts live in this page's front matter
+  + markdown body. Outputs <article class="story"> so it reuses the story CSS and
+  loads cleanly into the /map/ reader panel.
+{%- endcomment -%}
+{%- assign topic = site.data.topics[page.topic] -%}
+<article class="story">
+  <div class="container">
+
+    <a class="back-link" href="{{ '/map/' | relative_url }}">&larr; Back to the map</a>
+
+    <div class="story__grid story__grid--single">
+
+      <header class="story__header">
+        <p class="eyebrow">{{ topic.name | default: "Our planet" }}{% if page.age_label %} &middot; {{ page.age_label }}{% endif %}</p>
+        <h1 class="story__title">{{ page.title }}</h1>
+        {% if page.location %}<p class="story__meta">{{ page.location }}</p>{% endif %}
+      </header>
+
+      <div class="story__main">
+
+        {% if page.summary %}
+        <aside class="big-idea">
+          <p class="big-idea__label">The big idea</p>
+          <p class="big-idea__text">{{ page.summary }}</p>
+        </aside>
+        {% endif %}
+
+        <div class="prose story__body">{{ content }}</div>
+
+        {% if page.sources %}
+        <section class="refs">
+          <h2>Sources</h2>
+          <ul>
+            {% for s in page.sources %}<li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>{% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+        <p class="story__meta" style="margin-top:var(--sp-lg);font-style:italic;">A short reference note — not one of the reel stories, but a feature that earns its place on India’s geological map.</p>
+
+      </div><!-- /story__main -->
+
+    </div><!-- /story__grid -->
+
+  </div>
+</article>
