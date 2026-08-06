@@ -11,7 +11,7 @@
   latlng: [18.5, 74.5]
   story: deccan-traps
   age_ma: 66          # flood basalts at the K–Pg boundary
-  # shape: /assets/geo/features/deccan-traps.geojson   # drop a GeoJSON here to draw its outline on click
+  shape: /assets/geo/features/deccan-traps.geojson     # GSI 1:2M outline, drawn on click
 - title: "Gondwana region"
   latlng: [20.0, 80.0]
   story: gondwana
