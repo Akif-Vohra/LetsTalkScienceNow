@@ -49,18 +49,6 @@ description: >-
   <div class="hero__dots" aria-hidden="true"></div>
 </section>
 
-<!-- MAP -->
-<section class="section">
-  <div class="container">
-    <div class="newsletter">
-      <p class="eyebrow">Explore</p>
-      <h2>India's geology, on a map.</h2>
-      <p>Every place a story touches, pinned across the subcontinent — with a time slider that runs from the Archean to today. Drag it back and watch the deep-time features appear, one era at a time.</p>
-      <a class="btn btn-primary" href="{{ '/map/' | relative_url }}">Open the map →</a>
-    </div>
-  </div>
-</section>
-
 <!-- LATEST STORIES -->
 <section class="section section-soft">
   <div class="container">
@@ -69,7 +57,10 @@ description: >-
         <p class="eyebrow">Latest Stories</p>
         <h2>Fresh from the feed.</h2>
       </div>
-      <a class="text-link" href="{{ '/stories/' | relative_url }}">View all stories →</a>
+      <div class="head-actions">
+        <a class="btn btn-primary" href="{{ '/map/' | relative_url }}">Explore the map →</a>
+        <a class="text-link" href="{{ '/stories/' | relative_url }}">View all stories →</a>
+      </div>
     </div>
     <div class="story-grid">
       {%- assign latest = site.data.reels | sort: "date" | reverse -%}

@@ -227,6 +227,7 @@ p{line-height:1.7;}
 .section-head{margin-bottom:var(--sp-xl);}
 .section-head.split{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--sp-md);flex-wrap:wrap;}
 .section-head h2{margin-top:var(--sp-xs);}
+.head-actions{display:flex;align-items:center;gap:var(--sp-md);flex:none;}
 
 /* Shared topic tints (used by topic + story cards) */
 .tint-planet{--tint:var(--t-planet);}
