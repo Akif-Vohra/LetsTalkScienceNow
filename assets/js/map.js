@@ -22,6 +22,22 @@
     iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -24]
   });
   var reader = document.getElementById('reader');
+  var activeShape = null, activeShapePin = null;        // only the last-clicked feature's outline is drawn
+  function showShape(p) {
+    if (activeShape) { map.removeLayer(activeShape); activeShape = null; activeShapePin = null; }
+    if (!p.shape) return;                               // point-features (crater, volcano, lake) have no outline
+    fetch(p.shape)
+      .then(function (r) { return r.json(); })
+      .then(function (geo) {
+        activeShape = L.geoJSON(geo, {
+          interactive: false,
+          style: { color: '#1667c6', weight: 2, opacity: 0.9, fillColor: '#1667c6', fillOpacity: 0.15 }
+        }).addTo(map);
+        activeShapePin = p;
+        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 8 });  // frame the whole feature
+      })
+      .catch(function () {});
+  }
   function loadStory(p) {                               // fetch the story page, inject just its <article class="story">
     reader.innerHTML = '<div class="reader__empty">Loading “' + p.title + '”…</div>';
     fetch(p.url)
@@ -35,7 +51,7 @@
   }
 
   pins.forEach(function (p) {
-    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { loadStory(p); });
+    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { loadStory(p); showShape(p); });
   });
 
   // India outline — sourced from DataMeet Community Maps (github.com/datameet/maps).
@@ -178,6 +194,9 @@
       if (p.age >= loA && p.age <= hiA) p.marker.addTo(map);
       else map.removeLayer(p.marker);
     });
+    if (activeShapePin && !map.hasLayer(activeShapePin.marker) && activeShape) {
+      map.removeLayer(activeShape); activeShape = null; activeShapePin = null;  // its pin left the window
+    }
   }
   startH.addEventListener('input', update);
   endH.addEventListener('input', update);

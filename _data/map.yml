@@ -1,6 +1,8 @@
 # Pins for the /map/ page. latlng = [lat, lon], approximate — tweak freely.
 # `story` is a reel id in reels.yml; the popup pulls its summary + links to /stories/<id>/.
 # `age_ma` = formation/event age in millions of years ago (drives the time slider). Approximate.
+# `shape` (optional) = path to a GeoJSON file under assets/geo/features/. When set, clicking the
+#   pin draws that feature's outline and zooms to fit it. Leave it off for point-features.
 - title: "Western Ghats"
   latlng: [15.3, 74.0]
   story: western-ghats-madagascar
@@ -9,6 +11,7 @@
   latlng: [18.5, 74.5]
   story: deccan-traps
   age_ma: 66          # flood basalts at the K–Pg boundary
+  # shape: /assets/geo/features/deccan-traps.geojson   # drop a GeoJSON here to draw its outline on click
 - title: "Gondwana region"
   latlng: [20.0, 80.0]
   story: gondwana
