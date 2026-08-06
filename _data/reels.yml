@@ -303,6 +303,69 @@
 
     * I also couldn't cover why the floating national park actually floats in a single reel. I plan to make a separate video explaining the formation of the phumdis (the unique floating masses of vegetation, soil, and organic matter) and well as the geology and ecology of Keibul Lamjao National Park.
 
+- id: sikkim-biodiversity
+  # cover: TODO add /assets/covers/sikkim-biodiversity.jpg to feature on the homepage slider
+  date: 2026-08-05
+  overlay_title: "Tiny Sikkim packs some of Earth's densest biodiversity 🏔🌿"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/sikkim-biodiversity/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Sikkim, Northeast India"
+  tags: [science, didyouknow, nature, geology, biodiversity]
+  references:
+    - "UNESCO — Khangchendzonga National Park (World Heritage Site)"
+    - "Sikkim Biodiversity Strategy and Action Plan (BSAP), Government of Sikkim"
+  caption: |
+    With this we finish geology of north east India series with 7 sister states and now the one brother Sikkim as well ❤️ you can find rest of the state videos on my profile! Please visit, read about, and invest in north east of India.
+
+    Khangchendzonga (or Kanchenjunga) National Park in Sikkim is a UNESCO World Heritage Site for its unique ecological and cultural significance. All statistics included in this reel are taken from UNESCO or official government reports, including the Sikkim Biodiversity Strategy and Action Plan (BSAP).
+
+    Arunachal Pradesh is still considered by many ecological studies to have the highest overall biodiversity of any Indian state. Sikkim, however, is recognized for having an exceptionally high concentration of biodiversity within a very small area, making it one of the world's most remarkable biodiversity hotspots. #science #didyouknow #nature #geology #biodiversity
+  pinned_comment: |
+    As always, if you spot any mistakes, please let me know in the comments.
+
+    All graphics and photos are from Indian government sources or Wikipedia. Two of the graphics are adapted from research papers, which are cited in the respective figures.
+
+    There are other geological factors that also contribute to Sikkim's rich biodiversity which I could not include in the reel due to time constraints. For example, during the Himalayan collision, large slices of older rocks were thrust over younger rocks in a process called thrust faulting. This stacked together rocks of different ages and compositions, helping create an exceptional diversity of soils. Today, Sikkim has 78 soil families, which support a wide variety of habitats, vegetation, and wildlife.
+
+    A lot of geological factors that apply to Sikkim also apply to eastern Nepal and western Bhutan. But since I am covering Indian states I have focused in Sikkim. Although I would like to also focus on geology of other countries in Asia in future.
+
+- id: himalayan-foreland-basin
+  # cover: TODO add /assets/covers/himalayan-foreland-basin.jpg to feature on the homepage slider
+  date: 2026-08-06
+  overlay_title: "The world's largest foreland basin built the Indo-Gangetic Plain 🏔🌾"
+  reel_url:
+  youtube_url:
+  youtube_id:
+  image: /stories/himalayan-foreland-basin/cover.png
+  topic: our-planet
+  series: indian-geology
+  location: "Indo-Gangetic Plain (northern India, eastern Pakistan, southern Nepal, Bangladesh)"
+  tags: [science, didyouknow, geology, nature, himalayas]
+  references:
+    - "Bhattacharjee, S., Bookhagen, B., & Sinha, R. (2022). Sediment-transport rates from decadal to millennial timescales across the Indo-Gangetic Plain: Impacts of tectonics, climatic processes, and vegetation cover. Earth-Science Reviews, 233, 104165."
+  caption: |
+    Himalayan foreland basin is the largest foreland basin of the world which was created through downward bend of the Indian subcontinents crust under the sheer weight of rising Himalayan range. This foreland basin creates a bowl like depression which then allows the river waters along with all the fertile erosion and sediments to accumulate and create a flat extremely fertile alluvial plain. The resulting Indo-Gangetic Plain is a massive, highly fertile flatland in South Asia spanning 700,000 km². Named after the Indus and Ganges river systems, it stretches across northern India, eastern Pakistan, southern Nepal, and Bangladesh. Formed by alluvial deposits, it is home to over 800 million people, making it one of the most densely populated regions on Earth. #science #didyouknow #geology #nature #himalayas
+  pinned_comment: |
+    As always, if you find any mistakes, please correct me.🙏🏻
+
+    I have tried to simplify some concepts to establish a basic geological understanding. If you find this topic interesting, you can find a detailed description of the Himalayan Foreland Basin on the National Data Repository of the Government of India by searching it on Google. It should be one of the first results.
+
+    One cool detail about this foreland basin is that it didn't just create a fertile plain once. As sediments accumulated, their weight caused the continental crust to bend even further, creating more space for additional sediments. Together with the continued uplift of the Himalayas, this created a self-sustaining feedback that kept the Indo-Gangetic Plain continuously replenished with fresh alluvial sediments over millions of years.
+
+    I usually only cite and recommend published scientific literature, but the Wikipedia pages on the Himalayan Foreland Basin and the Indo-Gangetic Plain are also well-written and easy to understand as introductory resources.
+
+    Clarification: In the video, I describe the asthenosphere as "semi-liquid" to simplify the concept. In reality, it is almost entirely solid rock. Under extremely high temperatures, these rocks become soft and ductile. Although the immense pressure prevents them from melting completely, they deform and flow very slowly over geological timescales.
+
+    All fold mountain belts develop foreland basins, such as the Alps in Europe and the Andes in South America. Due to the immense size of the Himalayas, however, the Himalayan Foreland Basin stretches for about 2,400 km. Over millions of years, rivers carried enormous amounts of alluvial sediments eroded from the Himalayas into this basin, gradually filling it and forming the Indo-Gangetic Plain, which spans about 700,000 km² across northern India, eastern Pakistan, southern Nepal, and Bangladesh.
+
+    Suggested scientific reference:
+
+    Bhattacharjee, S., Bookhagen, B., & Sinha, R. (2022). Sediment-transport rates from decadal to millennial timescales across the Indo-Gangetic Plain: Impacts of tectonics, climatic processes, and vegetation cover. Earth-Science Reviews, 233, 104165.
+
 - id: western-ghats-madagascar
   cover: /assets/covers/western-ghats-madagascar.jpg
   cover_title: "The Western Ghats were once joined to Madagascar"
