@@ -3,6 +3,8 @@
   url: /
 - name: Stories
   url: /stories/
+- name: Map
+  url: /map/
 - name: Topics
   url: /topics/
 - name: Series
