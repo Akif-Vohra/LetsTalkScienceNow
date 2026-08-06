@@ -11,3 +11,6 @@ vendor/
 # OS / editor cruft
 .DS_Store
 .idea/
+
+# datameet/maps checkout — source for assets/geo, not shipped
+maps/

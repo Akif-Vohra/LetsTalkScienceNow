@@ -7,15 +7,22 @@ description: An interactive map of the geological features of the Indian subcont
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 
-<section class="section">
+<style>
+  /* Map page: minimal top space, full-bleed map. */
+  .map-page{padding-block:var(--sp-lg) var(--sp-xl);}
+  .map-page .section-head{margin-bottom:var(--sp-md);}
+  #map{width:100vw;margin-inline:calc(50% - 50vw);height:min(84vh,860px);overflow:hidden;}
+</style>
+
+<section class="section map-page">
   <div class="container">
     <div class="section-head">
       <p class="eyebrow">Explore</p>
       <h2>Geology of the subcontinent.</h2>
-      <p>Tap a marker to jump to the story behind each feature. Switch between satellite and streets, top-right.</p>
+      <p>Tap a marker to jump to the story behind each feature.</p>
     </div>
-    <div id="map" style="height:min(72vh,640px);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);"></div>
   </div>
+  <div id="map"></div>
 </section>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
@@ -30,26 +37,27 @@ description: An interactive map of the geological features of the Indian subcont
     {%- endfor -%}
   ];
 
-  // Base layers — free, no API key.
-  var streets = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors', maxZoom: 19
-  });
-  var satellite = L.layerGroup([
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
-    }),
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
-      maxZoom: 19  // transparent place labels on top of the imagery
-    })
-  ]);
+  var map = L.map('map').setView([21, 82], 4);
 
-  var map = L.map('map', { layers: [satellite] }).setView([21, 82], 4);   // default to satellite
-  L.control.layers({ 'Satellite': satellite, 'Streets': streets }, null, { collapsed: false }).addTo(map);
+  // Satellite imagery only — no Esri boundaries/places overlay (it drew dotted disputed
+  // borders on Arunachal/Kashmir). Our own india.geojson provides the border instead.
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
+  }).addTo(map);
 
   pins.forEach(function (p) {
     L.marker(p.latlng).addTo(map)
       .bindPopup('<strong>' + p.title + '</strong><br>' + p.snippet + '<br><a href="' + p.url + '">Read the story &rarr;</a>');
   });
 
-  if (pins.length) map.fitBounds(pins.map(function (p) { return p.latlng; }), { padding: [40, 40] });
+  // India outline — official land area incl. disputed territories (Survey of India, via datameet, CC-0).
+  fetch({{ '/assets/geo/india.geojson' | relative_url | jsonify }})
+    .then(function (r) { return r.json(); })
+    .then(function (geo) {
+      var india = L.geoJSON(geo, {
+        interactive: false,
+        style: { color: '#000000', weight: 1.5, opacity: 0.9, fill: false }
+      }).addTo(map);
+      map.fitBounds(india.getBounds(), { padding: [20, 20] });   // frame the whole country
+    });
 </script>
