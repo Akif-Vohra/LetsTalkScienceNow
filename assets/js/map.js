@@ -138,7 +138,7 @@
                '<button class="pin-gallery__nav pin-gallery__next" type="button" aria-label="Next photo">›</button>' : '') +
       '<div class="pin-gallery__bar"><span class="pin-gallery__count"></span><span class="pin-gallery__cap"></span></div>' +
     '</div>';
-    galPopup = L.popup({ className: 'pin-gallery-popup', maxWidth: 260, minWidth: 260, autoPanPadding: [30, 70], offset: [0, -22] })
+    galPopup = L.popup({ className: 'pin-gallery-popup', maxWidth: 340, minWidth: 340, autoPanPadding: [30, 70], offset: [0, -22] })
       .setLatLng(p.latlng).setContent(html).openOn(map);
     galRender();
     var el = galPopup.getElement();
