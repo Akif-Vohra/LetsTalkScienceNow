@@ -42,7 +42,7 @@
           style: { color: '#1667c6', weight: 2, opacity: 0.9, fillColor: '#1667c6', fillOpacity: 0.15 }
         }).addTo(map);
         activeShapePin = p;
-        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 8 });  // frame the whole feature
+        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14 });  // frame the whole feature (cap lets tiny ones like Lonar zoom right in)
       })
       .catch(function () {});
   }

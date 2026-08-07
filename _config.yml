@@ -30,6 +30,9 @@ exclude:
   - vendor/
   - .bundle/
   - maps/
-  - assets/geo/*.zip      # archived Bhukosh source, kept in git but not published
+  - assets/geo/*.zip      # archived source, kept in git but not published
+  - assets/geo/*.tiff     # ditto — raw rasters/KML that derived geojson files were traced from
+  - assets/geo/*.kml
+  - assets/geo/gondwana.png
   - assets/geo/Rivers/
   - assets/geo/Reservoir/
