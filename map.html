@@ -25,6 +25,11 @@ description: An interactive map of the geological features of the Indian subcont
   }
 
   /* Pin labels — permanent tooltips, revealed only once zoomed in (see LABEL_ZOOM in map.js). */
+  /* Selected pin — pop it forward with a scale-up + glow so it's clear which we're reading. */
+  .pin{transition:transform .12s ease;transform-origin:50% 100%;}
+  .pin--active{transform:scale(1.4);z-index:1000 !important;}
+  .pin--active svg path{fill:#f4511e;}
+  .pin--active svg{filter:drop-shadow(0 0 6px rgba(244,81,30,.9));}
   .leaflet-tooltip.pin-label{display:none;background:rgba(17,17,17,.72);color:#fff;border:none;
     box-shadow:none;font:600 12px/1.2 var(--font-sans);padding:2px 7px;border-radius:5px;white-space:nowrap;}
   .leaflet-tooltip.pin-label::before{display:none;}   /* drop the little arrow */

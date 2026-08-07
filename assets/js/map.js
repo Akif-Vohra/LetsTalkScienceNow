@@ -59,7 +59,11 @@
   }
 
   var LABEL_ZOOM = 6, FOCUS_ZOOM = 7;                   // labels appear at 6; a bare pin-click zooms to 7
+  var activePin = null;                                 // highlight only the pin we're currently reading
   function focusPin(p) {
+    if (activePin && activePin.marker._icon) activePin.marker._icon.classList.remove('pin--active');
+    if (p.marker._icon) p.marker._icon.classList.add('pin--active');
+    activePin = p;
     loadStory(p);
     showShape(p);                                       // shape pins get framed by the outline's fitBounds
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
