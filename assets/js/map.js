@@ -11,16 +11,49 @@
     attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
   }).addTo(map);
 
-  // Dot when zoomed out, teardrop pin when zoomed in (swapped at PIN_ZOOM).
-  var dropIcon = L.divIcon({
-    className: 'pin pin--drop',
-    html: '<svg width="20" height="28" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">' +
-          '<path d="M12 0C5.4 0 0 5.4 0 12c0 8.4 12 22 12 22s12-13.6 12-22C24 5.4 18.6 0 12 0z" ' +
-          'fill="#1667c6" stroke="#fff" stroke-width="1.5"/>' +
-          '<circle cx="12" cy="12" r="4" fill="#fff"/></svg>',
-    iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -24]
-  });
-  var dotIcon = L.divIcon({ className: 'pin pin--dot', html: '', iconSize: [12, 12], iconAnchor: [6, 6] });
+  // Feature categories: colour the pins and drive the filter chips. Every feature_type
+  // maps to one of these by keyword (see catOf).
+  var CATS = [
+    { key: 'mountains', label: 'Mountains',        color: '#9c6b3f' },
+    { key: 'plateaus',  label: 'Plateaus',         color: '#b07d2b' },
+    { key: 'volcanic',  label: 'Volcanic',         color: '#d94a3d' },
+    { key: 'structure', label: 'Cratons & basins', color: '#8155b0' },
+    { key: 'rivers',    label: 'Rivers',           color: '#2b7fd4' },
+    { key: 'lakes',     label: 'Lakes',            color: '#12a5b3' },
+    { key: 'coasts',    label: 'Coasts & islands', color: '#22a06b' },
+    { key: 'deserts',   label: 'Deserts',          color: '#e6a417' },
+    { key: 'economic',  label: 'Economic',         color: '#c2455e' }
+  ];
+  var CAT = {};
+  CATS.forEach(function (c) { CAT[c.key] = c; });
+  function catOf(t) {
+    t = t || '';
+    if (/mountain|escarpment|fold|horst|pass|hills/i.test(t))                                 return 'mountains';
+    if (/plateau/i.test(t))                                                                   return 'plateaus';
+    if (/basalt|volcano|impact|columnar/i.test(t))                                            return 'volcanic';
+    if (/craton|suture|ophiolite|rift|foreland|sedimentary basin|gondwana|fossil/i.test(t))   return 'structure';
+    if (/river|delta|floodplain|badlands|waterfall|gorge/i.test(t))                           return 'rivers';
+    if (/lake/i.test(t))                                                                      return 'lakes';
+    if (/lagoon|salt marsh|coral|island arc/i.test(t))                                        return 'coasts';
+    if (/desert/i.test(t))                                                                    return 'deserts';
+    if (/coalfield|diamond|copper|iron-ore|oilfield|gold field/i.test(t))                     return 'economic';
+    return 'structure';                                                                       // fallback bucket
+  }
+  // A dot when zoomed out, a teardrop when zoomed in — both tinted by category.
+  function dotSvg(c)  { return '<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5" fill="' + c + '" stroke="#fff" stroke-width="2"/></svg>'; }
+  function dropSvg(c) { return '<svg width="20" height="28" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12c0 8.4 12 22 12 22s12-13.6 12-22C24 5.4 18.6 0 12 0z" fill="' + c + '" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>'; }
+  var iconCache = {};                                    // one shared icon instance per (dot|drop, colour)
+  function iconFor(p) {
+    var drop = map.getZoom() >= PIN_ZOOM;
+    var color = (CAT[p.cat] || {}).color || '#1667c6';
+    var key = (drop ? 'd' : 'o') + color;
+    if (!iconCache[key]) {
+      iconCache[key] = drop
+        ? L.divIcon({ className: 'pin pin--drop', html: dropSvg(color), iconSize: [20, 28], iconAnchor: [10, 28] })
+        : L.divIcon({ className: 'pin pin--dot',  html: dotSvg(color),  iconSize: [14, 14], iconAnchor: [7, 7] });
+    }
+    return iconCache[key];
+  }
   // Rivers overlay (GSI/Bhukosh), toggled from the layer control.
   var rivers = L.geoJSON(null, {
     interactive: false, attribution: 'Rivers &copy; GSI (Bhukosh)',
@@ -59,10 +92,12 @@
   }
 
   var LABEL_ZOOM = 6, FOCUS_ZOOM = 7, PIN_ZOOM = 6;    // <PIN_ZOOM: dots; >=PIN_ZOOM: teardrops (+ labels)
-  function iconFor() { return map.getZoom() >= PIN_ZOOM ? dropIcon : dotIcon; }
   function refreshIcons() {                             // swap dot <-> teardrop as you cross PIN_ZOOM
-    var ic = iconFor();
-    pins.forEach(function (p) { if (p.marker && p.marker.options.icon !== ic) p.marker.setIcon(ic); });
+    pins.forEach(function (p) {
+      if (!p.marker) return;
+      var ic = iconFor(p);
+      if (p.marker.options.icon !== ic) p.marker.setIcon(ic);
+    });
     if (activePin) markActive(activePin);              // setIcon rebuilt the element — re-apply the highlight
   }
   var activePin = null;                                 // the pin we're currently reading
@@ -78,13 +113,37 @@
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
   }
   pins.forEach(function (p) {
-    p.marker = L.marker(p.latlng, { icon: iconFor() }).on('click', function () { focusPin(p); });
+    p.cat = catOf(p.type);
+    p.marker = L.marker(p.latlng, { icon: iconFor(p) }).on('click', function () { focusPin(p); });
     p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [6, -12] });
   });
   function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
   map.on('zoomend', toggleLabels);
   map.on('zoomend', refreshIcons);
   toggleLabels();
+
+  // Category filter — a chip per category present; toggling one re-runs the filter.
+  var activeCats = {};
+  (function buildChips() {
+    var bar = document.getElementById('typefilter');
+    if (!bar) return;
+    var present = {};
+    pins.forEach(function (p) { present[p.cat] = true; });
+    CATS.forEach(function (c) {
+      if (!present[c.key]) return;
+      activeCats[c.key] = true;
+      var chip = document.createElement('button');
+      chip.className = 'typechip is-on';
+      chip.style.setProperty('--cat', c.color);
+      chip.textContent = c.label;
+      chip.addEventListener('click', function () {
+        activeCats[c.key] = !activeCats[c.key];
+        chip.classList.toggle('is-on', activeCats[c.key]);
+        update();
+      });
+      bar.appendChild(chip);
+    });
+  })();
 
   // India outline — sourced from DataMeet Community Maps (github.com/datameet/maps).
   fetch(window.MAP.geojson)
@@ -222,8 +281,8 @@
     }
     var loA = ageYoung <= 0 ? -1 : ageYoung * (1 - 1e-4); // pad a hair so a feature sitting exactly
     var hiA = ageOld * (1 + 1e-4);                        // on a boundary (e.g. Deccan at 66 Ma) counts
-    pins.forEach(function (p) {                           // keep features that formed inside the window
-      if (p.age >= loA && p.age <= hiA) p.marker.addTo(map);
+    pins.forEach(function (p) {                           // show features inside the time window AND an active category
+      if (p.age >= loA && p.age <= hiA && activeCats[p.cat]) p.marker.addTo(map);
       else map.removeLayer(p.marker);
     });
     if (activeShapePin && !map.hasLayer(activeShapePin.marker) && activeShape) {

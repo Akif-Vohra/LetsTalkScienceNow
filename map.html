@@ -8,42 +8,64 @@ description: An interactive map of the geological features of the Indian subcont
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
 
 <style>
-  /* Map page: minimal top space, full-bleed split (map | story reader). */
-  .map-page{padding-block:var(--sp-lg) var(--sp-xl);}
-  .map-page .section-head{margin-bottom:var(--sp-md);}
-  .mapsplit{display:flex;width:100vw;margin-inline:calc(50% - 50vw);height:min(78vh,780px);}
-  .mapsplit #map{flex:1 1 60%;height:100%;overflow:hidden;}
-  .reader{flex:1 1 40%;height:100%;overflow-y:auto;border-left:1px solid var(--line);background:var(--surface);}
+  /* Map page: map fills the left, right column stacks controls + story reader. */
+  .map-page{padding-block:var(--sp-md) var(--sp-xl);}
+  .mapsplit{display:flex;width:100vw;margin-inline:calc(50% - 50vw);height:min(82vh,860px);}
+  /* Left column: intro header sits above the map (shares the top row with the right controls). */
+  .leftcol{flex:1 1 62%;min-width:0;height:100%;display:flex;flex-direction:column;}
+  .map-intro{flex:0 0 auto;padding:0 var(--sp-md) var(--sp-sm);}
+  .map-intro h2{font-size:1.3rem;margin:0;line-height:1.2;}
+  .map-intro h2 span{font-weight:400;font-size:.88rem;color:var(--muted);}
+  .leftcol #map{flex:1 1 auto;min-height:0;overflow:hidden;}
+  /* Right column: controls pinned on top, story scrolls below. */
+  .rightcol{flex:1 1 38%;min-width:0;height:100%;display:flex;flex-direction:column;
+    border-left:1px solid var(--line);background:var(--surface);}
+  .controls{flex:0 0 auto;padding:var(--sp-md) var(--sp-lg) var(--sp-sm);border-bottom:1px solid var(--line);}
+  .controls__title{font-size:1.35rem;margin:0 0 var(--sp-sm);line-height:1.15;}
+  .controls .timebar{margin-top:var(--sp-sm);}
+  .controls .timebar__names{display:none;}   /* rotated period names don't fit the column; readout shows the period */
+  .reader{flex:1 1 auto;min-height:0;overflow-y:auto;background:var(--surface);}
   .reader .story__cover{height:220px;}
   .reader .back-link{display:none;}          /* no "all stories" link inside the panel */
   .reader__empty{display:flex;align-items:center;justify-content:center;height:100%;
     padding:var(--sp-xl);text-align:center;color:var(--muted);font-family:var(--font-body);font-size:1.05rem;}
   @media (max-width:768px){
     .mapsplit{flex-direction:column;height:auto;}
-    .mapsplit #map{height:56vh;}
-    .reader{height:70vh;}
+    .leftcol{height:auto;}
+    .leftcol #map{height:56vh;}
+    .rightcol{height:auto;}
+    .reader{height:auto;}
   }
 
   /* Pin labels: permanent tooltips shown only when zoomed in (LABEL_ZOOM in map.js). */
-  /* Dot vs teardrop icon (map.js swaps at PIN_ZOOM); both grow + turn coral when active. */
+  /* Dot (zoomed out) vs teardrop (zoomed in) — SVGs tinted by category in map.js.
+     Selected pin turns coral + glows. */
   .pin{transition:transform .12s ease;cursor:pointer;background:transparent;border:0;}
-  .pin--dot{box-sizing:border-box;width:12px;height:12px;border-radius:50%;background:#1667c6;
-    border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4);}
-  .pin--dot:hover{transform:scale(1.4);}
-  .pin--dot.pin--active{background:#f4511e;transform:scale(1.7);z-index:1000 !important;
-    box-shadow:0 0 9px rgba(244,81,30,.95);}
   .pin--drop{transform-origin:50% 100%;}
-  .pin--drop:hover{transform:scale(1.1);}
-  .pin--drop.pin--active{transform:scale(1.4);z-index:1000 !important;}
+  .pin:hover{transform:scale(1.25);}
+  .pin--active{z-index:1000 !important;}
+  .pin--dot.pin--active{transform:scale(1.6);}
+  .pin--drop.pin--active{transform:scale(1.35);}
+  .pin--dot.pin--active svg circle{fill:#f4511e;}
   .pin--drop.pin--active svg path{fill:#f4511e;}
-  .pin--drop.pin--active svg{filter:drop-shadow(0 0 6px rgba(244,81,30,.9));}
+  .pin--active svg{filter:drop-shadow(0 0 7px rgba(244,81,30,.95));}
+
+  /* Category filter chips (built in map.js; --cat is the category colour) */
+  .typefilter{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--line);}
+  .typechip{display:inline-flex;align-items:center;gap:.3rem;font:600 .68rem/1 var(--font-sans);
+    padding:.2rem .5rem;border-radius:999px;border:1px solid var(--line);background:#fff;
+    color:var(--muted);cursor:pointer;transition:opacity .12s,border-color .12s,color .12s;}
+  .typechip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cat);}
+  .typechip.is-on{border-color:var(--cat);color:var(--ink);}
+  .typechip:not(.is-on){opacity:.5;}
+  .typechip:not(.is-on)::before{background:var(--muted);}
   .leaflet-tooltip.pin-label{display:none;background:rgba(17,17,17,.72);color:#fff;border:none;
     box-shadow:none;font:600 12px/1.2 var(--font-sans);padding:2px 7px;border-radius:5px;white-space:nowrap;}
   .leaflet-tooltip.pin-label::before{display:none;}   /* drop the little arrow */
   .leaflet-container.show-labels .leaflet-tooltip.pin-label{display:block;}
 
   /* Time slider */
-  .timebar{margin-top:var(--sp-lg);}
+  .timebar{margin-top:var(--sp-sm);}
   .timebar__readout{display:flex;align-items:baseline;gap:.6rem;margin-bottom:.3rem;}
   .timebar__readout .t-age{font-size:1.4rem;font-weight:600;color:var(--ink);}
   .timebar__readout .t-eon{font-size:.95rem;color:var(--muted);}
@@ -73,35 +95,36 @@ description: An interactive map of the geological features of the Indian subcont
 </style>
 
 <section class="section map-page">
-  <div class="container">
-    <div class="section-head">
-      <p class="eyebrow">Explore</p>
-      <h2>Geology of the subcontinent.</h2>
-      <p>Tap a marker to jump to the story behind each feature. Drag the two handles to narrow features to a geological time range — or click a period to select one.</p>
-    </div>
-  </div>
-  <div class="container">
-    <div class="timebar">
-      <div class="timebar__readout">
-        <span class="t-age" id="t-age">Present</span>
-        <span class="t-eon" id="t-eon">Phanerozoic Eon</span>
-      </div>
-      <div class="timebar__ticks" id="eon-ticks"></div>
-      <div class="timebar__scale">
-        <div class="timebar__bands" id="eon-bands"></div>
-        <div class="timebar__window" id="time-window"></div>
-        <input type="range" id="time-start" min="0" max="10000" value="0"
-               aria-label="Older edge of the time window — drag">
-        <input type="range" id="time-end" min="0" max="10000" value="10000"
-               aria-label="Younger edge of the time window — drag">
-      </div>
-      <div class="timebar__names" id="eon-names"></div>
-    </div>
-  </div>
   <div class="mapsplit">
-    <div id="map"></div>
-    <div id="reader" class="reader">
-      <div class="reader__empty">Tap a feature on the map to read its story here.</div>
+    <div class="leftcol">
+      <div class="map-intro">
+        <h2>Interactive map of the geological features of India <span>(Use the slider to filter features by geological time period.)</span></h2>
+      </div>
+      <div id="map"></div>
+    </div>
+    <div class="rightcol">
+      <div class="controls">
+        <div class="timebar">
+          <div class="timebar__readout">
+            <span class="t-age" id="t-age">Present</span>
+            <span class="t-eon" id="t-eon">Phanerozoic Eon</span>
+          </div>
+          <div class="timebar__ticks" id="eon-ticks"></div>
+          <div class="timebar__scale">
+            <div class="timebar__bands" id="eon-bands"></div>
+            <div class="timebar__window" id="time-window"></div>
+            <input type="range" id="time-start" min="0" max="10000" value="0"
+                   aria-label="Older edge of the time window — drag">
+            <input type="range" id="time-end" min="0" max="10000" value="10000"
+                   aria-label="Younger edge of the time window — drag">
+          </div>
+          <div class="timebar__names" id="eon-names"></div>
+        </div>
+        <div class="typefilter" id="typefilter"></div>
+      </div>
+      <div id="reader" class="reader">
+        <div class="reader__empty">Tap a feature on the map to read its story here.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -113,7 +136,7 @@ description: An interactive map of the geological features of the Indian subcont
     pins: [
       {%- assign mappins = site.stories | where_exp: "s", "s.add_on_map" -%}
       {%- for pin in mappins -%}
-      { title: {{ pin.map_title | default: pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.url | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %} },
+      { title: {{ pin.map_title | default: pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.url | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}, type: {{ pin.feature_type | jsonify }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %} },
       {%- endfor -%}
     ],
     geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }},
