@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/narmada-rift/
 title: "Narmada Rift Valley"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh / Gujarat"
 age_label: "Rift along an ancient lineament"
 summary: "One of only a few large west-flowing rivers in India, running in a rift between the Vindhya and Satpura ranges."

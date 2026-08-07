@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/bailadila-iron/
 title: "Bailadila Range"
-topic: our-planet
+category: geology
 location: "Chhattisgarh"
 age_label: "Archean banded iron formation"
 summary: "A range of exceptionally rich iron ore in the Bastar forests — among the finest deposits in the world."

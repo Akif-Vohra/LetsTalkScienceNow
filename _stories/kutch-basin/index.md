@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/kutch-basin/
 title: "The Kutch (Kachchh) Basin"
-topic: our-planet
+category: geology
 location: "Kutch, Gujarat, western India"
 age_label: "Jurassic onward · ~160 million years"
 summary: "A rift basin born as Gondwana tore apart — rich in Jurassic marine fossils, and still shaking with earthquakes today."

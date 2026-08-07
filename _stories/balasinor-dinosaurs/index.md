@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/balasinor-dinosaurs/
 title: "Balasinor Dinosaur Fossils"
-topic: our-planet
+category: geology
 location: "Raiyoli, near Balasinor, Gujarat"
 age_label: "Late Cretaceous · ~70 million years"
 summary: "One of the world's great dinosaur nesting grounds, in the rocks laid down just before the dinosaurs vanished."

@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/st-marys-islands/
 title: "St. Mary's Islands"
-topic: our-planet
+category: geology
 location: "Off Malpe, near Udupi, Karnataka"
 age_label: "Late Cretaceous · ~88 million years"
 summary: "A cluster of small islands fringed with dramatic columns of basalt — a frozen record of the day India split from Madagascar."

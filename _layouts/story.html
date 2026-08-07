@@ -2,7 +2,7 @@
 layout: default
 ---
 {%- assign reel = site.data.reels | where: "id", page.reel | first -%}
-{%- assign topic = site.data.topics[reel.topic] -%}
+{%- assign topic = site.data.categories[reel.category] -%}
 <article class="story">
   {% if reel.cover %}<div class="story__cover" style="background-image:url('{{ reel.cover | relative_url }}')" role="img" aria-label="{{ reel.overlay_title | escape }}">{% if reel.cover_credit %}<span class="cover-credit">{{ reel.cover_credit | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}</span>{% endif %}</div>{% endif %}
   <div class="container">

@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/cuddapah-basin/
 title: "Cuddapah Basin"
-topic: our-planet
+category: geology
 location: "Andhra Pradesh"
 age_label: "Proterozoic sedimentary basin"
 summary: "A great crescent-shaped basin of ancient sediment on the Dharwar craton, rich in minerals and uranium."

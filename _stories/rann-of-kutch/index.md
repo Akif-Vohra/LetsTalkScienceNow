@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/rann-of-kutch/
 title: "Rann of Kutch"
-topic: our-planet
+category: geology
 location: "Gujarat"
 age_label: "Holocene salt marsh"
 summary: "A vast seasonal salt marsh that floods in the monsoon and bakes to a white crust in the dry season."

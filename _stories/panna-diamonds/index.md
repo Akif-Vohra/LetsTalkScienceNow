@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/panna-diamonds/
 title: "Panna Diamond Belt"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh"
 age_label: "Proterozoic diamond pipe"
 summary: "India's only actively mined diamond field — once the source of the subcontinent's legendary stones."

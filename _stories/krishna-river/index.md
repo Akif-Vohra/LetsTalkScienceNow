@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/krishna-river/
 title: "Krishna River"
-topic: our-planet
+category: geology
 location: "Maharashtra – Karnataka – Andhra Pradesh"
 age_label: "Neogene peninsular drainage"
 summary: "The second-largest east-flowing peninsular river, born high in the Western Ghats at Mahabaleshwar."

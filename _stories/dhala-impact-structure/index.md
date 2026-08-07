@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/dhala-impact-structure/
 title: "Dhala Impact Structure"
-topic: our-planet
+category: geology
 location: "Shivpuri district, Madhya Pradesh"
 summary: "India's largest confirmed meteorite-impact crater — a deeply eroded, billion-year-old scar in the Bundelkhand granite."
 sources:

@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/kolar-gold-fields/
 title: "Kolar Gold Fields"
-topic: our-planet
+category: geology
 location: "Karnataka, southern India"
 age_label: "Neoarchean · ~2.7 billion years"
 summary: "An ancient greenstone belt that hosted one of the deepest mines humans have ever dug in pursuit of gold."

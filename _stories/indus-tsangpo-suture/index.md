@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/indus-tsangpo-suture/
 title: "The Indus–Tsangpo Suture Zone"
-topic: our-planet
+category: geology
 location: "Ladakh, northern India"
 age_label: "Cenozoic collision · ~50 million years"
 summary: "The seam where India was welded to Asia — and where the floor of a vanished ocean is now stranded high in the mountains."

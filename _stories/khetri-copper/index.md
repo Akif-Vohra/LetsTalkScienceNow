@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/khetri-copper/
 title: "Khetri Copper Belt"
-topic: our-planet
+category: geology
 location: "Rajasthan"
 age_label: "Proterozoic copper belt"
 summary: "The ancient copper belt of the Aravallis, mined since prehistoric times and still India's classic copper district."

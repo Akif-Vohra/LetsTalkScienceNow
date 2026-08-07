@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/aravalli-range/
 title: "The Aravalli Range"
-topic: our-planet
+category: geology
 location: "Rajasthan & Haryana, northwestern India"
 age_label: "Proterozoic · ~2.5–1 billion years"
 summary: "One of the oldest mountain systems on Earth — now worn down to low ridges, but once a towering Proterozoic range."

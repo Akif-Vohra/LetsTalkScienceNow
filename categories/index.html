@@ -1,0 +1,22 @@
+---
+layout: default
+permalink: /categories/
+title: Categories
+description: Browse Let's Talk Science Now by category — Geology, Biology, Astronomy, and Technology.
+---
+
+<header class="page-head">
+  <div class="container">
+    <p class="eyebrow">Explore</p>
+    <h1>Browse by category.</h1>
+    <p>Four fields of curiosity — pick one and follow the stories within.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="topic-grid">
+      {% for entry in site.data.categories %}{% assign cslug = entry[0] %}{% include category-card.html slug=cslug %}{% endfor %}
+    </div>
+  </div>
+</section>

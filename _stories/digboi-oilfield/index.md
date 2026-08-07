@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/digboi-oilfield/
 title: "Digboi Oilfield"
-topic: our-planet
+category: geology
 location: "Assam (Assam–Arakan Basin)"
 summary: "The birthplace of India's oil — a unique double-plate-boundary geology once made Assam the country's only oil-producing state."
 custom_writeup: true

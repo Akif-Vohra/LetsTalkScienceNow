@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/eastern-ghats/
 title: "Eastern Ghats"
-topic: our-planet
+category: geology
 location: "Odisha – Andhra Pradesh – Tamil Nadu"
 summary: "India's Eastern Ghats and East Antarctica were once the same mountain belt — the billion-year-old Rayner–Eastern Ghats Orogen."
 custom_writeup: true

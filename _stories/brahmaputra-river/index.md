@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/brahmaputra-river/
 title: "Brahmaputra"
-topic: our-planet
+category: geology
 location: "Arunachal Pradesh / Assam"
 summary: "A braided giant that drains the eastern Himalaya and shapes the whole Assam valley."
 sources:

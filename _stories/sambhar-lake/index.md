@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/sambhar-lake/
 title: "Sambhar Lake"
-topic: our-planet
+category: geology
 location: "Rajasthan"
 age_label: "Salt playa · Quaternary"
 summary: "India's largest inland salt lake, a shimmering playa on the edge of the Thar."

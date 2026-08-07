@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/chambal-ravines/
 title: "Chambal Ravines"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh / Rajasthan / Uttar Pradesh"
 age_label: "Quaternary badland erosion"
 summary: "A wilderness of gullies and badlands carved by the Chambal into soft alluvium."

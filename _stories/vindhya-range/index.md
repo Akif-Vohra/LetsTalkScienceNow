@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/vindhya-range/
 title: "Vindhya Range"
-topic: our-planet
+category: geology
 location: "Central India"
 age_label: "Proterozoic · ~1.4 billion-year-old sediments"
 summary: "The scarp-and-plateau range that traditionally divides the Indo-Gangetic north from the peninsular south."

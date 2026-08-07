@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/pangong-tso/
 title: "Pangong Tso"
-topic: our-planet
+category: geology
 location: "Ladakh"
 age_label: "High-altitude endorheic lake"
 summary: "A long, brilliantly blue lake on the Ladakh plateau, with no outlet to the sea."

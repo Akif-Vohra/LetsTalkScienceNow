@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/siwalik-hills/
 title: "The Siwalik Hills"
-topic: our-planet
+category: geology
 location: "Sub-Himalayan foothills, northern India"
 age_label: "Neogene–Quaternary · last ~10 million years"
 summary: "The youngest, outermost ranks of the Himalaya — built from the mountains' own debris, and packed with fossils."

@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/singhbhum-craton/
 title: "The Singhbhum Craton"
-topic: our-planet
+category: geology
 location: "Jharkhand & Odisha, eastern India"
 age_label: "Archean · older than 3 billion years"
 summary: "A slab of some of Earth's oldest continental crust — and possibly one of the planet's earliest patches of dry land."

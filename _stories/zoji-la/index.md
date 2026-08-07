@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/zoji-la/
 title: "Zoji La"
-topic: our-planet
+category: geology
 location: "Ladakh"
 age_label: "Cut through the Himalaya · orogeny ~50 million years"
 summary: "The high pass that carries the road from the Kashmir Valley across the mountains toward Ladakh."

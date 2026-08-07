@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/wular-lake/
 title: "Wular Lake"
-topic: our-planet
+category: geology
 location: "Jammu & Kashmir"
 age_label: "Tectonic basin · Quaternary"
 summary: "One of the largest freshwater lakes in India, cradled in the tectonic basin of the Kashmir Valley."

@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/nathu-la/
 title: "Nathu La"
-topic: our-planet
+category: geology
 location: "Sikkim"
 age_label: "Cut through the Himalaya · orogeny ~50 million years"
 summary: "A historic trade pass on the old Silk Route linking Sikkim with the Tibetan plateau."

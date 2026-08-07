@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/tapi-river/
 title: "Tapi River"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh – Maharashtra – Gujarat"
 summary: "One of the few large west-flowing rivers of peninsular India, running through a trough between the Satpura ranges to the Arabian Sea."
 sources:

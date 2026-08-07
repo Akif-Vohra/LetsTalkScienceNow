@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/lonar-crater/
 title: "Lonar Crater"
-topic: our-planet
+category: geology
 location: "Lonar, Maharashtra"
 age_label: "Pleistocene · tens of thousands of years (debated)"
 summary: "A meteorite scar in the Deccan lava — and one of the very few impact craters on Earth punched into hard basalt."

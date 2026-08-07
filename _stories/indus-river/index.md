@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/indus-river/
 title: "Indus River"
-topic: our-planet
+category: geology
 location: "Ladakh (India) → Arabian Sea"
 summary: "The river that gave India its name — from the Tibetan plateau through Ladakh to the Arabian Sea."
 sources:

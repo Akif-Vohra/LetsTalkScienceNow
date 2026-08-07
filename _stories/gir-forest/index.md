@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/gir-forest/
 title: "Gir Forest"
-topic: nature
+category: biology
 location: "Gujarat"
 age_label: "Deccan basalt woodland"
 summary: "The last wild home of the Asiatic lion, set in dry forest on the Deccan basalt of Saurashtra."

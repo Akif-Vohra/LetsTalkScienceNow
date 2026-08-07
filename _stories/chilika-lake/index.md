@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/chilika-lake/
 title: "Chilika Lake"
-topic: our-planet
+category: geology
 location: "Odisha"
 age_label: "Holocene coastal lagoon"
 summary: "Asia's largest brackish-water lagoon, sealed from the sea by a long sandy bar."

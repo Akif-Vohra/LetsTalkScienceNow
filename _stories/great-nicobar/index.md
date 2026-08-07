@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/great-nicobar/
 title: "Great Nicobar"
-topic: our-planet
+category: geology
 location: "Andaman & Nicobar Islands"
 age_label: "Subduction outer-arc ridge"
 summary: "India's southernmost land — the tip of an island arc rising from a great subduction zone."

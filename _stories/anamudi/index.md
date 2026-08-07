@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/anamudi/
 title: "Anamudi"
-topic: our-planet
+category: geology
 location: "Kerala (Western Ghats)"
 age_label: "Precambrian charnockite basement"
 summary: "The highest peak in India south of the Himalaya, crowning the Western Ghats."

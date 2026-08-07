@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/godavari-river/
 title: "Godavari River"
-topic: our-planet
+category: geology
 location: "Maharashtra – Telangana – Andhra Pradesh"
 age_label: "Neogene peninsular drainage"
 summary: "The largest river of peninsular India, revered as the Dakshin Ganga — the Ganga of the south."

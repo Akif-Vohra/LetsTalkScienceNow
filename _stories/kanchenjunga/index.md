@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/kanchenjunga/
 title: "Kanchenjunga"
-topic: our-planet
+category: geology
 location: "Sikkim"
 age_label: "Himalayan collision · uplift ~50 million years"
 summary: "At 8,586 m, the highest mountain in India and the third highest on Earth."

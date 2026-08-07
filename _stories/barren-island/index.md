@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/barren-island/
 title: "Barren Island Volcano"
-topic: our-planet
+category: geology
 location: "Andaman Sea, Andaman & Nicobar Islands"
 age_label: "Quaternary · active today"
 summary: "The only active volcano in South Asia — a smoking island rising from a subduction zone in the Andaman Sea."

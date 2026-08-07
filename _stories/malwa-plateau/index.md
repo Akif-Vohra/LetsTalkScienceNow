@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/malwa-plateau/
 title: "Malwa Plateau"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh"
 age_label: "Deccan lava · ~65 million years"
 summary: "A fertile lava plateau of black soil, sloping gently north toward the Chambal and Mahi."

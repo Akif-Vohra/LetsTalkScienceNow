@@ -11,7 +11,7 @@ description: >-
   {%- assign featured = site.data.reels | where_exp: "r", "r.cover" | sort: "date" | reverse -%}
   <div class="hero__track">
     {%- for reel in featured -%}
-      {%- assign ftopic = site.data.topics[reel.topic] -%}
+      {%- assign ftopic = site.data.categories[reel.category] -%}
       <div class="hero__slide" style="background-image:url('{{ reel.cover | relative_url }}')">
         <a class="hero__slide-link" href="{{ reel.id | prepend: '/stories/' | append: '/' | relative_url }}" aria-label="{{ reel.cover_title | default: reel.overlay_title | escape }}"></a>
         <div class="hero__slide-cap">

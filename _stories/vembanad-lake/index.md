@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/vembanad-lake/
 title: "Vembanad Lake"
-topic: our-planet
+category: geology
 location: "Kerala"
 age_label: "Holocene backwater lagoon"
 summary: "The longest lake in India and the heart of the Kerala backwaters."

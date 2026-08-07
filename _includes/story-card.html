@@ -1,5 +1,5 @@
 {%- assign reel = include.reel -%}
-{%- assign topic = site.data.topics[reel.topic] -%}
+{%- assign topic = site.data.categories[reel.category] -%}
 <a class="story-card {{ topic.tint }}" href="{{ reel.id | prepend: '/stories/' | append: '/' | relative_url }}">
   <div class="story-card__thumb">
     {% if reel.image %}<img class="story-card__img" src="{{ reel.image | relative_url }}" alt="{{ reel.overlay_title | escape }}" loading="lazy">{% endif %}

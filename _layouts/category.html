@@ -1,11 +1,11 @@
 ---
 layout: default
 ---
-{%- assign t = site.data.topics[page.topic] -%}
-{%- assign stories = site.data.reels | where: "topic", page.topic | sort: "date" | reverse -%}
+{%- assign t = site.data.categories[page.category] -%}
+{%- assign stories = site.data.reels | where: "category", page.category | sort: "date" | reverse -%}
 <header class="page-head {{ t.tint }}">
   <div class="container">
-    <p class="eyebrow">Topic</p>
+    <p class="eyebrow">Category</p>
     <h1>{{ t.name }}</h1>
     {% if t.summary %}<p>{{ t.summary }}</p>{% endif %}
   </div>

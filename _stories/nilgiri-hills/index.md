@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/nilgiri-hills/
 title: "Nilgiri Hills"
-topic: our-planet
+category: geology
 location: "Tamil Nadu / Karnataka / Kerala"
 age_label: "Archean granulite · ~2.5 billion years"
 summary: "The high plateau where the Western and Eastern Ghats meet — built of some of the oldest deep-crustal rock in India."

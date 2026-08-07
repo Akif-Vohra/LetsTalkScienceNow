@@ -1,0 +1,8 @@
+{%- assign t = site.data.categories[include.slug] -%}
+{%- assign count = site.data.reels | where: "category", include.slug | size -%}
+<a class="topic-card {{ t.tint }}" href="{{ include.slug | prepend: '/categories/' | append: '/' | relative_url }}">
+  <span class="dot"></span>
+  <h3>{{ t.name }}</h3>
+  {% if t.summary %}<p>{{ t.summary }}</p>{% endif %}
+  <span class="go">{{ count }} stor{% if count == 1 %}y{% else %}ies{% endif %} &rarr;</span>
+</a>

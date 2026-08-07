@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/gulf-of-mannar/
 title: "Gulf of Mannar"
-topic: our-planet
+category: geology
 location: "Tamil Nadu"
 age_label: "Holocene coral reef"
 summary: "A shallow, reef-fringed gulf between India and Sri Lanka, and India's first marine biosphere reserve."

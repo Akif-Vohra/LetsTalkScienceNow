@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/satpura-range/
 title: "Satpura Range"
-topic: our-planet
+category: geology
 location: "Madhya Pradesh / Maharashtra"
 age_label: "Gondwana rocks in a block mountain"
 summary: "A block mountain of ancient rock lifted between two rift valleys — the Narmada to its north, the Tapi to its south."

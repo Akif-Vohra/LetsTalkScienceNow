@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/nanda-devi/
 title: "Nanda Devi"
-topic: our-planet
+category: geology
 location: "Uttarakhand"
 age_label: "Himalayan collision · uplift ~50 million years"
 summary: "The highest peak lying entirely within India, ringed by a near-impregnable wall of mountains."

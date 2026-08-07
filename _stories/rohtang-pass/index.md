@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/rohtang-pass/
 title: "Rohtang Pass"
-topic: our-planet
+category: geology
 location: "Himachal Pradesh"
 age_label: "Cut through the Pir Panjal · ~50 million years"
 summary: "The gateway from the Kullu Valley over the Pir Panjal toward Lahaul and Spiti."

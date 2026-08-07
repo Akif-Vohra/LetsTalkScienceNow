@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/chotanagpur-plateau/
 title: "Chotanagpur Plateau"
-topic: our-planet
+category: geology
 location: "Jharkhand"
 age_label: "Proterozoic gneiss · Gondwana coal on top"
 summary: "India's mineral heartland — a stepped plateau of ancient rock carrying the country's richest coal and metal belts."

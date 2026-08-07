@@ -25,7 +25,7 @@
   youtube_url:
   youtube_id:
   image: /stories/gondwana/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Gondwana region, Central India (and the southern continents)"
   tags: [science, gondwana, geology, earthscience, india]
@@ -92,7 +92,7 @@
   youtube_url: https://www.youtube.com/shorts/AcvEl8BU_hk
   youtube_id: AcvEl8BU_hk
   image: /stories/deccan-traps/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Deccan Plateau, Western & Central India"
   tags: [science, deccantraps, geology, earthscience, india]
@@ -160,7 +160,7 @@
   youtube_url: https://www.youtube.com/shorts/pOuevufwnMM
   youtube_id: pOuevufwnMM
   image: /stories/meghalayan-age/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Meghalaya, Northeast India"
   tags: [science, funfact, didyouknow, geology, archeology]
@@ -179,7 +179,7 @@
   youtube_url: https://www.youtube.com/shorts/t_A9JI037gM
   youtube_id: t_A9JI037gM
   image: /stories/nagaland-ophiolite/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Nagaland, Northeast India"
   tags: [science, didyouknow, geology, nagaland, earthscience]
@@ -210,7 +210,7 @@
   youtube_url: https://www.youtube.com/shorts/uixKQ_6WPzk
   youtube_id: uixKQ_6WPzk
   image: /stories/arunachal-himalayan-syntaxis/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Arunachal Pradesh, Northeast India"
   tags: [science, funfact, geology, himalayas]
@@ -246,7 +246,7 @@
   youtube_url: https://www.youtube.com/shorts/8MH3ajkRFFU
   youtube_id: 8MH3ajkRFFU
   image: /stories/tripura-mizoram-fold-belt/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Tripura & Mizoram, Northeast India"
   tags: [science, didyouknow, nature, geology, earthscience]
@@ -275,7 +275,7 @@
   youtube_url: https://www.youtube.com/shorts/5sfTD634NTc
   youtube_id: 5sfTD634NTc
   image: /stories/manipur-loktak-floating-park/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Manipur (Loktak Lake, Imphal Valley), Northeast India"
   tags: [science, didyouknow, nature, geology, earthscience]
@@ -311,7 +311,7 @@
   youtube_url:
   youtube_id:
   image: /stories/sikkim-biodiversity/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Sikkim, Northeast India"
   tags: [science, didyouknow, nature, geology, biodiversity]
@@ -341,7 +341,7 @@
   youtube_url:
   youtube_id:
   image: /stories/himalayan-foreland-basin/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Indo-Gangetic Plain (northern India, eastern Pakistan, southern Nepal, Bangladesh)"
   tags: [science, didyouknow, geology, nature, himalayas]
@@ -380,7 +380,7 @@
   youtube_url: https://www.youtube.com/shorts/RT8jixSWCiM
   youtube_id: RT8jixSWCiM
   image: /stories/western-ghats-madagascar/cover.png
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "Western Ghats, India (and Central Highlands, Madagascar)"
   tags: [science, westernghat, geology, earthscience, india]
@@ -472,7 +472,7 @@
   youtube_url:
   youtube_id:
   image: /stories/crown-shyness/cover.svg
-  topic: nature
+  category: biology
   tags: [science, trees, nature]
   caption: |
     Crown shyness : a phenomenon observed in some tree species, in which the crowns of fully stocked trees do not touch each other, forming a canopy with channel-like gaps.#science #trees #nature
@@ -484,7 +484,7 @@
   youtube_url:
   youtube_id:
   image: /stories/bookland-check-digits/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [books, funfact, trivia, countries, mathisfun, computerscience]
   caption: |
     Did you know about the fictional countries "bookland" and "musicland" 😆 #books #funfact #trivia #countries
@@ -504,7 +504,7 @@
   youtube_url:
   youtube_id:
   image: /stories/eye-floaters/cover.svg
-  topic: nature
+  category: biology
   tags: [science, EyeFloaters, HumanBody, sciencefact]
   caption: |
     Ever noticed tiny squiggles drifting across your vision? 👁️
@@ -524,7 +524,7 @@
   youtube_url:
   youtube_id:
   image: /stories/dandelion-parachute/cover.svg
-  topic: nature
+  category: biology
   tags: [science, nature, plants, didyouknow]
   caption: |
     Dandelion puffs have a unique parachute mechanism to spread their seeds far. When the air is dry, they open up so the seeds can fly farther. When it's damp or rainy, they close in to avoid launching at the wrong time.#science #nature #plants #didyouknow
@@ -536,7 +536,7 @@
   youtube_url:
   youtube_id:
   image: /stories/dark-clouds-from-above/cover.svg
-  topic: our-planet
+  category: geology
   tags: [funfact, science, clouds, letstalkscience]
   caption: |
     Clouds appear dark when they are thick enough to scatter a lot of light passing through them. For this reason dark clouds aren't actually dark if you are looking at them from above! #funfact #science #clouds #letstalkscience
@@ -548,7 +548,7 @@
   youtube_url:
   youtube_id:
   image: /stories/why-sky-colour-rayleigh/cover.svg
-  topic: our-planet
+  category: geology
   tags: [science, funfact, nature, sun, sunkissed]
   caption: |
     higher-frequency, shorter-wavelength light is scattered more by the atmosphere. This is mainly Rayleigh scattering. 🌈🌈🌈 #science #funfact #nature #sun #sunkissed
@@ -560,7 +560,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earth-moon-true-scale/cover.svg
-  topic: space
+  category: astronomy
   series: moon-explained
   tags: [science, funfact, sun, moon, nature]
   caption: |
@@ -573,7 +573,7 @@
   youtube_url:
   youtube_id:
   image: /stories/sexual-dimorphism-birds/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, nature, didyouknow, birds]
   caption: |
     Sexual dimorphism is the condition where males and females of the same species exhibit distinct physical or behavioral differences beyond their reproductive organs. These variations—which include differences in body size, color, weapons, or vocalizations—are typically driven by sexual selection and evolutionary survival strategies.#science #funfact #nature #didyouknow #birds
@@ -585,7 +585,7 @@
   youtube_url:
   youtube_id:
   image: /stories/mongol-yam-postal/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [didyouknow, history, mongol, communication, military]
   caption: |
     The Yam (or Örtöö) was a vast and highly efficient postal relay system established by the Mongol Empire. It featured a network of way stations spaced every 20 to 30 miles, providing messengers with food, shelter, and fresh horses, enabling communications to travel up to 200 miles a day.#didyouknow #history #mongol #communication #military
@@ -597,7 +597,7 @@
   youtube_url:
   youtube_id:
   image: /stories/fidget-spinner-physics/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [science, funfact, physic]
   caption: |
     I tried to find out why does fidget spinner spin so long? In the process I found about ball bearings, moment of inertia and angular momentum. #science #funfact #physic
@@ -609,7 +609,7 @@
   youtube_url:
   youtube_id:
   image: /stories/wagon-wheel-effect/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [science, opticalillusion, perception, didyouknow, physics]
   caption: |
     The wagon wheel effect is a visual illusion where a rotating, spoked object appears to spin slower than its actual speed, stop entirely, or spin in reverse. It most commonly occurs when viewing continuous rotation through intermittent frames (like in a movie or under a flashing light), or occasionally with the naked eye.#science #opticalillusion #perception #didyouknow #physics
@@ -621,7 +621,7 @@
   youtube_url:
   youtube_id:
   image: /stories/why-plants-green/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, nature, trees, plants]
   caption: |
     I tried to find out why most plants and trees are green! At first the answer seemed simple. Chlorophyll! Until I started to question deeper and then it wasn't. #science #funfact #nature #trees #plants
@@ -633,7 +633,7 @@
   youtube_url:
   youtube_id:
   image: /stories/composite-flower/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, nature, didyouknow, plants]
   caption: |
     A composite flower is an inflorescence where what appears to be a single blossom is actually a dense cluster of hundreds of tiny, individual flowers (called florets) packed tightly together. This unique arrangement serves as a highly efficient evolutionary strategy to maximize pollination and ensure plant survival #science #funfact #nature #didyouknow #plants
@@ -645,7 +645,7 @@
   youtube_url:
   youtube_id:
   image: /stories/heliotropic-daisies/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, nature, plants, daisies]
   caption: |
     Daisies (specifically Bellis perennis) are famously heliotropic. This means their flower heads physically track the sun's trajectory across the sky from east to west, allowing them to maximize warmth and sunlight. #science #funfact #nature #plants #daisies
@@ -657,7 +657,7 @@
   youtube_url:
   youtube_id:
   image: /stories/pink-elephant-anxiety/cover.svg
-  topic: nature
+  category: biology
   tags: [science, anxiety, stress, mentalhealth]
   caption: |
     I want to share the science of how I reduced my anxiety and worrying thoughts and what I found when researching science of worrying. Especially the pink elephant theory 🐘💕 #science #anxiety #stress #mentalhealth
@@ -669,7 +669,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earth-moon-sun-model/cover.svg
-  topic: space
+  category: astronomy
   series: moon-explained
   tags: [science, funfact, space, earth, moon]
   caption: |
@@ -682,7 +682,7 @@
   youtube_url:
   youtube_id:
   image: /stories/categories-of-science/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [science, didyouknow, naturalscience, formalscience, socialscience]
   caption: |
     I tried to find out on what basis are the main branches of science divided. I.e formal science, natural science, social science. I forgot to mention in video but as always if you find mistakes in my understanding please correct me #science #didyouknow #naturalscience #formalscience #socialscience
@@ -694,7 +694,7 @@
   youtube_url:
   youtube_id:
   image: /stories/why-eclipses-are-rare/cover.svg
-  topic: space
+  category: astronomy
   series: moon-explained
   tags: [science, funfact, moon, sun, solareclipse]
   caption: |
@@ -707,7 +707,7 @@
   youtube_url:
   youtube_id:
   image: /stories/moon-tidal-locking/cover.svg
-  topic: space
+  category: astronomy
   series: moon-explained
   tags: [science, funfact, moon, earth, space]
   caption: |
@@ -720,7 +720,7 @@
   youtube_url:
   youtube_id:
   image: /stories/palm-lines-entropy/cover.svg
-  topic: nature
+  category: biology
   tags: [biology, science, funfact, cryptography, exploremore]
   caption: |
     Palm lines are basically biological entropy. Genetics creates the framework, but tiny movements before birth influence the final pattern. It reminds me of creating randomness to generate a private key. #biology #science #funfact #cryptography #exploremore
@@ -732,7 +732,7 @@
   youtube_url:
   youtube_id:
   image: /stories/emotional-tears/cover.svg
-  topic: nature
+  category: biology
   tags: [science, didyouknow, crying, emotions, biology]
   caption: |
     Crying and tears and why humans can shed emotional tears? #science #didyouknow #crying #emotions #biology
@@ -744,7 +744,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earthshine/cover.svg
-  topic: space
+  category: astronomy
   series: moon-explained
   tags: [science, funfact, moon, space, earth]
   caption: |
@@ -757,7 +757,7 @@
   youtube_url:
   youtube_id:
   image: /stories/milky-way-band/cover.svg
-  topic: space
+  category: astronomy
   tags: [science, funfact, space, milkywaygalaxy, explorepage]
   caption: |
     We are inside the Milky Way, so when we look across its disk, billions of distant stars merge into a glowing band.
@@ -774,7 +774,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earth-rotation-latitude/cover.svg
-  topic: our-planet
+  category: geology
   tags: [science, funfact, didyouknow, earth, explorer]
   caption: |
     Earth rotates differently at each latitude with speed of rotation fastest on equators and lowest on the poles. #science #funfact #didyouknow #earth #explorer
@@ -786,7 +786,7 @@
   youtube_url:
   youtube_id:
   image: /stories/pigeon-nests/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, didyouknow, nature, birds]
   caption: |
     Pigeon nests are famous for being incredibly flimsy and minimalist, often looking like a random, chaotic pile of just a few twigs thrown onto a flat surface. They do this because the evolved from rock doves and they used to live on cliff edges. So the main goal was to keep the egg from rolling over and falling down the cliff #science #funfact #didyouknow #nature #birds
@@ -798,7 +798,7 @@
   youtube_url:
   youtube_id:
   image: /stories/history-vs-prehistory/cover.svg
-  topic: human-ingenuity
+  category: technology
   tags: [science, funfact, didyouknow, history, prehistory]
   caption: |
     The fundamental difference between history and prehistory is the invention and use of written records. Prehistory refers to the vast time period before humans developed systems of writing, whereas history encompasses the period from the invention of writing to the present day. That's why history started roughly around 3-5 thousand years ago in different parts of the world depending on when first writing systems emerged. #science #funfact #didyouknow #history #prehistory
@@ -810,7 +810,7 @@
   youtube_url:
   youtube_id:
   image: /stories/nasal-cycle/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, humananatomy, biology]
   caption: |
     The nasal cycle is the completely normal, subconscious shifting of airflow between your nostrils. Controlled by the autonomic nervous system, blood vessels in your nasal passages periodically swell on one side while shrinking on the other. This automatic shift alternates every 2 to 6 hours. It should not be confused with pathological nasal issues where one or both nostrils are blocked by a medical problem like cold allergy, flu or something else. So always see a doctor if one side is always closed. #science #funfact #humananatomy #biology
@@ -822,7 +822,7 @@
   youtube_url:
   youtube_id:
   image: /stories/tree-age-growth-factor/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, tree, treeage, didyouknow]
   caption: |
     The growth factor method estimates a tree's age without cutting it down. You calculate it by multiplying the tree's Diameter at Breast Height (DBH) by a species-specific growth factor (the number of years it takes the tree to grow one inch in diameter). While this gives a rough approximation it's also often influenced by local growing conditions of a specific tree. #science #funfact #tree #treeage #didyouknow
@@ -834,7 +834,7 @@
   youtube_url:
   youtube_id:
   image: /stories/nectar-to-honey/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, didyouknow, nature, honeybee]
   caption: |
     The bees put in a lot of hard work to convert nectar into honey. 🍯 🐝 #science #funfact #didyouknow #nature #honeybee
@@ -846,7 +846,7 @@
   youtube_url:
   youtube_id:
   image: /stories/pigeon-head-bob/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, didyouknow, birds, pigeons]
   caption: |
     pigeons and many other birds bob their head when walking as it aids their visual perception by stabilising their vision. They do this in part because their eyes have limited mobility. #science #funfact #didyouknow #birds #pigeons
@@ -858,7 +858,7 @@
   youtube_url:
   youtube_id:
   image: /stories/hollow-tree-alive/cover.svg
-  topic: nature
+  category: biology
   tags: [science, didyouknow, nature, trees, botany]
   caption: |
     In most woody trees, only a thin outer ring of tissue is alive. The phloem, cambium, and outer sapwood transport food, water, and produce new growth, while the inner heartwood is dead wood that provides strength and support. This is why a tree can survive with a hollow trunk but dies if its living outer layers are destroyed. #science #didyouknow #nature #trees #botany
@@ -870,7 +870,7 @@
   youtube_url:
   youtube_id:
   image: /stories/mcgurk-effect/cover.svg
-  topic: nature
+  category: biology
   tags: [science, funfact, biology, brain, hearing]
   caption: |
     The McGurk effect is about perception of our brain when it comes to hearing. Our brain combines visual and auditory signals to figure out what's being said. So if visual signal doesn't match the auditory signals brain can mishear.
@@ -888,7 +888,7 @@
   youtube_url:
   youtube_id:
   image: /stories/geological-eons-names/cover.svg
-  topic: our-planet
+  category: geology
   series: story-of-earth
   tags: [science, didyouknow, geology, earthscience, biology]
   caption: |
@@ -903,7 +903,7 @@
   youtube_url:
   youtube_id:
   image: /stories/indian-cratons/cover.svg
-  topic: our-planet
+  category: geology
   series: indian-geology
   location: "India"
   tags: [science, didyouknow, geology, earthscience, india]

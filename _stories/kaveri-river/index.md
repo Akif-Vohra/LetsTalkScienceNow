@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/kaveri-river/
 title: "Kaveri River"
-topic: our-planet
+category: geology
 location: "Karnataka / Tamil Nadu"
 age_label: "Neogene peninsular drainage"
 summary: "The sacred river of the south, whose delta has been the rice bowl of Tamil Nadu for two thousand years."

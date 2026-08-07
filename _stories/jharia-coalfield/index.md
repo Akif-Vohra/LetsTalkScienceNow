@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/jharia-coalfield/
 title: "Jharia Coalfield"
-topic: our-planet
+category: geology
 location: "Jharkhand"
 age_label: "Permian Gondwana coal"
 summary: "India's premier store of coking coal — and the site of underground fires that have burned for a century."

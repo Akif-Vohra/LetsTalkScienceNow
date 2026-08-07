@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/ganga-river/
 title: "Ganga (Ganges)"
-topic: our-planet
+category: geology
 location: "Uttarakhand → West Bengal (Indo-Gangetic Plain)"
 summary: "India's most sacred and most populous river — the lifeline of the northern plains."
 sources:

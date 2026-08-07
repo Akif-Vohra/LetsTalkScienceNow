@@ -48,15 +48,16 @@ Each reel entry:
 1. Append an entry to `_data/reels.yml`.
 2. Create `_stories/<id>/index.md` (copy an existing stub; change `reel`, `permalink`, `title`).
 3. Add `_stories/<id>/cover.png` (or a placeholder SVG — see below).
-4. It now appears automatically on the homepage feed, `/stories/`, and its topic/series pages.
+4. It now appears automatically on the homepage feed, `/stories/`, and its category/series pages.
 
-### Topics & Series
-- `/topics/` + `/topics/<slug>/`, `/series/` + `/series/<slug>/` — all data-driven from `_data/topics.yml` / `_data/series.yml` (each: `name`, `summary`, topics also `tint`).
-- A topic/series page is a tiny file in `topics/` or `series/` (`layout: topic`/`series`, front-matter `topic:`/`series:`, `permalink:`). **When a series/topic gains its first story, create its page file** or the listing link 404s.
+### Categories & Series
+- Every story/reel carries a `category:` (one of `geology`, `biology`, `astronomy`, `technology`).
+- `/categories/` + `/categories/<slug>/`, `/series/` + `/series/<slug>/` — all data-driven from `_data/categories.yml` / `_data/series.yml` (each: `name`, `summary`, categories also `tint`).
+- A category/series page is a tiny file in `categories/` or `series/` (`layout: category`/`series`, front-matter `category:`/`series:`, `permalink:`). **When a series gains its first story, create its page file** or the listing link 404s. (The four category pages already exist.)
 - Series with **zero** stories are auto-hidden from listings.
 
 ### Ordering
-Listings sort by the reel's `date` field, newest first. The sort lives in the **templates**, not the data — `site.data.reels | sort: "date" | reverse` in `stories.html:19`, `index.html` (homepage feed), and the topic/series layouts. Change a `date` → reorder.
+Listings sort by the reel's `date` field, newest first. The sort lives in the **templates**, not the data — `site.data.reels | sort: "date" | reverse` in `stories.html:19`, `index.html` (homepage feed), and the category/series layouts. Change a `date` → reorder.
 
 ### Covers
 - Real covers: `_stories/<id>/cover.png` (landscape-ish crops read best; cards are 16:10).

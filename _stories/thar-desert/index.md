@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/thar-desert/
 title: "Thar Desert"
-topic: our-planet
+category: geology
 location: "Rajasthan"
 age_label: "Quaternary aeolian desert"
 summary: "The Great Indian Desert — a sea of wind-built sand on the northwestern margin of the subcontinent."

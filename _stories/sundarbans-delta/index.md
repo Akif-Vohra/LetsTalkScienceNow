@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/sundarbans-delta/
 title: "Sundarbans Delta"
-topic: our-planet
+category: geology
 location: "West Bengal"
 age_label: "Holocene · the world's largest delta"
 summary: "Where the Ganga and Brahmaputra meet the sea — the largest delta and mangrove forest on Earth."

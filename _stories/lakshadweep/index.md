@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/lakshadweep/
 title: "Lakshadweep"
-topic: our-planet
+category: geology
 location: "Arabian Sea"
 age_label: "Coral atolls on a hotspot ridge"
 summary: "India's only coral atolls — rings of reef and sand strung along a drowned volcanic ridge."

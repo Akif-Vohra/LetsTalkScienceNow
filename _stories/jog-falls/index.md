@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/jog-falls/
 title: "Jog Falls"
-topic: our-planet
+category: geology
 location: "Karnataka"
 age_label: "Western Ghats escarpment · Neogene"
 summary: "One of India's highest waterfalls, where the Sharavati plunges off the edge of the Western Ghats."

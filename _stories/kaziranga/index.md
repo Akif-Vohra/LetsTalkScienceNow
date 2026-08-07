@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/kaziranga/
 title: "Kaziranga"
-topic: nature
+category: biology
 location: "Assam"
 age_label: "Brahmaputra floodplain · Holocene"
 summary: "A vast wet grassland on the Brahmaputra's floodplain, and the great stronghold of the one-horned rhino."

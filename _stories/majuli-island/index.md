@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/majuli-island/
 title: "Majuli Island"
-topic: our-planet
+category: geology
 location: "Brahmaputra river, Assam"
 age_label: "Quaternary · a living, shifting landform"
 summary: "One of the world's largest river islands — built, moved and eroded by the restless Brahmaputra."

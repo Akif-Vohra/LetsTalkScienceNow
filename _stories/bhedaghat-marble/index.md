@@ -2,7 +2,7 @@
 layout: geo-feature
 permalink: /stories/bhedaghat-marble/
 title: "Marble Rocks, Bhedaghat"
-topic: our-planet
+category: geology
 location: "Bhedaghat, near Jabalpur, Madhya Pradesh"
 age_label: "Proterozoic"
 summary: "A gorge where the Narmada river runs between soaring cliffs of ancient marble."
