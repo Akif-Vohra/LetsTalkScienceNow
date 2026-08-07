@@ -25,7 +25,7 @@ The `id` is the slug — it ties the reel, the story folder, and the map pin tog
 
 ## The map
 
-`/map/` is a split view: the map on the left, a story reader on the right that loads a story when you click a pin (fetched on demand, not all at once).
+`/geological-map-of-india/` is a split view: the map on the left, a story reader on the right that loads a story when you click a pin (fetched on demand, not all at once).
 
 **Add a pin** — four lines in `_data/map.yml`:
 

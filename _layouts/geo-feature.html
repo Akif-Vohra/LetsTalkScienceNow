@@ -5,13 +5,13 @@ layout: default
   Self-contained geological feature page (not backed by a reel in reels.yml, so it
   never shows up in the reel-driven listings). Facts live in this page's front matter
   + markdown body. Outputs <article class="story"> so it reuses the story CSS and
-  loads cleanly into the /map/ reader panel.
+  loads cleanly into the /geological-map-of-india/ reader panel.
 {%- endcomment -%}
 {%- assign topic = site.data.topics[page.topic] -%}
 <article class="story">
   <div class="container">
 
-    <a class="back-link" href="{{ '/map/' | relative_url }}">&larr; Back to the map</a>
+    <a class="back-link" href="{{ '/geological-map-of-india/' | relative_url }}">&larr; Back to the map</a>
 
     <div class="story__grid story__grid--single">
 

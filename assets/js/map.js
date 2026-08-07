@@ -17,6 +17,7 @@
     { key: 'mountains', label: 'Mountains',        color: '#9c6b3f' },
     { key: 'plateaus',  label: 'Plateaus',         color: '#b07d2b' },
     { key: 'volcanic',  label: 'Volcanic',         color: '#d94a3d' },
+    { key: 'impact',    label: 'Impact',           color: '#5d6d7e' },
     { key: 'structure', label: 'Cratons & basins', color: '#8155b0' },
     { key: 'rivers',    label: 'Rivers',           color: '#2b7fd4' },
     { key: 'lakes',     label: 'Lakes',            color: '#12a5b3' },
@@ -30,7 +31,8 @@
     t = t || '';
     if (/mountain|escarpment|fold|horst|pass|hills/i.test(t))                                 return 'mountains';
     if (/plateau/i.test(t))                                                                   return 'plateaus';
-    if (/basalt|volcano|impact|columnar/i.test(t))                                            return 'volcanic';
+    if (/impact|crater/i.test(t))                                                             return 'impact';
+    if (/basalt|volcano|columnar/i.test(t))                                                   return 'volcanic';
     if (/craton|suture|ophiolite|rift|foreland|sedimentary basin|gondwana|fossil/i.test(t))   return 'structure';
     if (/river|delta|floodplain|badlands|waterfall|gorge/i.test(t))                           return 'rivers';
     if (/lake/i.test(t))                                                                      return 'lakes';
@@ -87,6 +89,7 @@
         var art = new DOMParser().parseFromString(html, 'text/html').querySelector('.story');
         reader.innerHTML = art ? art.outerHTML : '<div class="reader__empty">Couldn’t load this story.</div>';
         reader.scrollTop = 0;
+        if (window.innerWidth <= 768) reader.scrollIntoView({ behavior: 'smooth', block: 'start' });  // mobile: the reader is below the map/controls
       })
       .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
   }

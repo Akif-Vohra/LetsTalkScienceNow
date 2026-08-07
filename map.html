@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Geological map of India
-permalink: /map/
+permalink: /geological-map-of-india/
 description: An interactive map of the geological features of the Indian subcontinent.
 ---
 
@@ -16,6 +16,9 @@ description: An interactive map of the geological features of the Indian subcont
   .map-intro{flex:0 0 auto;padding:0 var(--sp-md) var(--sp-sm);}
   .map-intro h2{font-size:1.3rem;margin:0;line-height:1.2;}
   .map-intro h2 span{font-weight:400;font-size:.88rem;color:var(--muted);}
+  .beta-badge{display:inline-block;vertical-align:middle;font:700 .64rem/1 var(--font-sans);letter-spacing:.07em;
+    text-transform:uppercase;color:#b8340f;background:#fbe4da;border:1px solid #f2b39c;
+    padding:.2rem .44rem;border-radius:5px;}
   .leftcol #map{flex:1 1 auto;min-height:0;overflow:hidden;}
   /* Right column: controls pinned on top, story scrolls below. */
   .rightcol{flex:1 1 38%;min-width:0;height:100%;display:flex;flex-direction:column;
@@ -27,6 +30,10 @@ description: An interactive map of the geological features of the Indian subcont
   .reader{flex:1 1 auto;min-height:0;overflow-y:auto;background:var(--surface);}
   .reader .story__cover{height:220px;}
   .reader .back-link{display:none;}          /* no "all stories" link inside the panel */
+  /* Reel-backed stories: in the narrow panel, stack (text, then video) instead of the
+     wide 2-column grid that squeezes the text. Standalone story pages keep 2 columns. */
+  #reader .story__grid{grid-template-columns:1fr;grid-template-areas:"main" "aside";column-gap:0;}
+  #reader .story__aside{position:static;top:auto;margin-top:var(--sp-md);}
   .reader__empty{display:flex;align-items:center;justify-content:center;height:100%;
     padding:var(--sp-xl);text-align:center;color:var(--muted);font-family:var(--font-body);font-size:1.05rem;}
   @media (max-width:768px){
@@ -95,13 +102,26 @@ description: An interactive map of the geological features of the Indian subcont
   .timebar__ticks{position:relative;height:1.2rem;margin-bottom:.35rem;font-size:.72rem;color:var(--muted);}
   .timebar__ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap;}
   .timebar__hint{margin-top:.5rem;font-size:.8rem;color:var(--muted);}
+
+  /* Testing / feedback note — dismissible card, bottom-right. */
+  .testing-note{position:fixed;right:18px;bottom:18px;z-index:1200;max-width:330px;
+    background:#fff;border:1px solid var(--line);border-left:4px solid var(--blue);border-radius:14px;
+    box-shadow:0 8px 28px rgba(0,0,0,.18);padding:.95rem 1.15rem;font-size:.85rem;line-height:1.5;color:var(--ink);}
+  .testing-note p{margin:0 0 .55rem;}
+  .testing-note p:last-child{margin:0;}
+  .testing-note__title{font-family:var(--font-head);font-weight:700;font-size:.98rem;}
+  .testing-note__x{position:absolute;top:.3rem;right:.5rem;border:0;background:none;font-size:1.35rem;
+    line-height:1;color:var(--muted);cursor:pointer;padding:.1rem .3rem;}
+  .testing-note__x:hover{color:var(--ink);}
+  .testing-note a{color:var(--blue);font-weight:600;}
+  @media (max-width:768px){ .testing-note{right:10px;left:10px;bottom:10px;max-width:none;} }
 </style>
 
 <section class="section map-page">
   <div class="mapsplit">
     <div class="leftcol">
       <div class="map-intro">
-        <h2>Interactive map of the geological features of India <span>(Use the slider to filter features by geological time period.)</span></h2>
+        <h2>Interactive map of the geological features of India <span class="beta-badge">Beta</span> <span>(Use the slider to filter features by geological time period.)</span></h2>
       </div>
       <div id="map"></div>
     </div>
@@ -130,6 +150,14 @@ description: An interactive map of the geological features of the Indian subcont
       </div>
     </div>
   </div>
+
+  <aside class="testing-note" id="testing-note">
+    <button class="testing-note__x" aria-label="Dismiss" onclick="this.parentNode.remove()">&times;</button>
+    <p class="testing-note__title">👋 Thanks for testing!</p>
+    <p>This is the first version of the app — a lot more is still to come.</p>
+    <p>The description shown when you tap a pin is written by me only for features from my Instagram geology series (Himalaya, Meghalaya … 11 so far). For the rest it’s currently sourced from the <strong>Geological Survey of India</strong> or <strong>Wikipedia</strong>, with custom versions planned.</p>
+    <p>Got feedback? <a href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">DM me on Instagram</a>.</p>
+  </aside>
 </section>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>

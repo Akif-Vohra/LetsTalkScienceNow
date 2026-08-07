@@ -1,7 +1,7 @@
-# assets/geo — geospatial data for the `/map/` page
+# assets/geo — geospatial data for the `/geological-map-of-india/` page
 
 This directory holds the source files and the derived GeoJSON used to draw the
-outlines of geological features on the [`/map/`](../../map.html) page. Only the
+outlines of geological features on the [`/geological-map-of-india/`](../../map.html) page. Only the
 `*.geojson` files are published; the raw sources (`*.zip`, `*.tiff`, `*.kml`,
 `*.png`) are committed for provenance but excluded from the built site (see
 `_config.yml`). Each published geojson carries its origin in a `_source` member.
