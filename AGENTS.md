@@ -63,17 +63,98 @@ Listings sort by the reel's `date` field, newest first. The sort lives in the **
 - Placeholders: topic-tinted `cover.svg` with the title (generated in past sessions via a throwaway script — hand-author one following any existing `_stories/*/cover.svg` if needed).
 - The card only renders `<img>` when `image:` is set; otherwise it shows a gradient fallback. So **set `image:` when you add a cover** (an "auto-detect cover.png" enhancement was discussed but not built).
 
+## The interactive geological map (the *other* content system)
+
+A major feature added after the initial build: an **interactive geology map of the
+Indian subcontinent** at **`/geological-map-of-india/`** (page: `map.html`; nav label
+"Geological map of India"). ⚠️ It was renamed from `/map/` — that old URL now 404s.
+
+**Logic lives in `assets/js/map.js`** (Leaflet 1.9.4 + a time-slider + a category
+filter). It's a *static* asset (no Liquid), so map.html injects data via a
+`window.MAP` blob. The Leaflet instance is trapped in an IIFE — a **`window.LTSN =
+{ map, pins }`** handle is exposed for console debugging (use it when verifying).
+Base map: keyless **Esri World Imagery** tiles; the black border is
+`assets/geo/india.geojson`; a toggleable **Rivers** overlay is `rivers.geojson`.
+
+### Pins come from STORY front matter — not a data file
+A pin is **any story with `add_on_map: true`**. map.html loops
+`site.stories | where_exp: "s", "s.add_on_map"`, so pins work for **both** the
+`geo-feature` layout (reference pages, no reel) and the reel-backed `story` layout.
+Relevant front-matter fields:
+- `add_on_map: true`
+- `latlng: [lat, lon]`
+- `age_ma:` number in Ma — drives the **time-slider filter** *and* the fact-card age.
+- `feature_type:` string from a controlled vocabulary — drives the **category + pin colour** (see `catOf` in map.js).
+- `shape:` *(optional)* `/assets/geo/features/<x>.geojson` — an outline drawn + zoomed-to on click. Polygons render filled; lines/rivers render as a thick stroke.
+- `map_title:` *(optional)* short label when the page title is long/catchy.
+- `age:` / `period_or_era:` *(optional)* string overrides for the fact-card.
+
+To **add a map feature**: a `geo-feature` story = a 2-paragraph note + those fields
+(no reel needed). A reel-backed `story` just adds the fields to its existing stub.
+
+### The fact-card & geological time
+- **`_includes/feature-box.html`** — the light-blue "fact card" (title · location ·
+  feature_type · age) shown on the page **and** in the map's reader panel. Shared by
+  both layouts. It **derives** the age string + period/era from `age_ma` using
+  **`_data/periods.yml`** (`>=1000 Ma → Ga`, `1–999 → Ma`, `<1 → ka`; Precambrian
+  shows the **era**, Phanerozoic the **period**). Override with `age`/`period_or_era`.
+- `_data/periods.yml` mirrors the `SEG` array in map.js (the slider bands). If you
+  change one, change the other.
+
+### Categories & filter
+`CATS` in map.js defines ~10 categories (Mountains, Plateaus, Volcanic, Impact
+craters, Cratons & basins, Rivers, Lakes, Coasts & islands, Deserts, Mining &
+energy). `catOf(feature_type)` maps a type string → category by keyword. Chips
+filter (multi-select + an "All" chip; from All, a click **isolates** one); pins are
+tinted per category.
+
+### Geo data & the tracing pipeline (`assets/geo/`)
+**Only `*.geojson` is published**; raw sources (`*.zip`/`*.tiff`/`*.kml`) are
+committed for provenance but **excluded from the build** (`_config.yml`). Full
+provenance + credits live in **`assets/geo/README.md`** (a Source / Transformation /
+Credit table — keep it updated when adding outlines). How outlines get made:
+1. **GSI-on-Esri:** `scripts/fetch-shape.sh` pulls a GSI supergroup from the Esri India Living Atlas (Deccan, Aravalli).
+2. **Bhukosh shapefile** → `npx mapshaper` reproject(`-proj wgs84`)+simplify → geojson (Rivers).
+3. **Raster tracing (the standard workflow):** maintainer georeferences a map on **georeference.ai** → exports a GeoTIFF → **`scripts/trace-geotiff.py`** colour-keys the highlighted region and traces it to a polygon. One command:
+   `python3 scripts/trace-geotiff.py IN.tiff features/OUT.geojson --name "…" --preview /tmp/x.png` (flags: `--sample X,Y`, `--color R,G,B`, `--simplify`, `--close`, `--downsample`). Used for Thar, Gondwana, Western Ghats, Himalayan foreland.
+4. **Google Earth KML** → geojson (Lonar rim).
+5. **Individual rivers:** filtered out of `rivers.geojson` by `rivname` into `features/*-river.geojson`.
+
+### Map gotchas (read before touching it)
+- **India-only sources clip trans-boundary features at the border.** GSI/Bhukosh
+  stops at India's edge (Ganga/Brahmaputra were cut off). For anything crossing a
+  border (rivers, Indus, etc.) use **Natural Earth** (public domain, global) instead.
+  Also: global datasets **split one river into several differently-named segments**
+  (Brahmaputra = Yarlung + Dihang + Brahmaputra) — grab the whole system, not just
+  the headline name, or you leave a gap.
+- **New story folders need a Jekyll restart** (new collection dirs aren't hot-detected).
+- **Cache-busting:** `map.js` (map.html) and `main.css` (head.html) load with
+  `?{{ site.time }}` — the browser/preview pane caches JS/CSS hard and would show
+  stale builds otherwise. **Keep it.**
+- **Disputed borders are never named** in comments/data; place border-sensitive pins
+  on the Indian side and describe features geologically.
+- **Attribution/licensing:** each traced geojson carries a `_source` member + a README
+  credit. Some are **share-alike** — the Gondwana image is **CC BY-SA 4.0**, so its
+  derived outline must stay CC BY-SA + keep attribution. Credit **Akif Vohra** for the
+  manual georeference.ai work.
+- **BETA:** map.html currently shows a dismissible "Thanks for testing" box + a BETA
+  badge (a small friendly test round is live). Remove both when the beta ends.
+
 ## Layout & structure
 
 ```
 _config.yml            site config + `stories` collection
-_data/                 reels.yml (content), navigation.yml, topics.yml, series.yml
-_layouts/              default, story, topic, series
-_includes/             head, header, footer, story-card, topic-card, series-card, icon-*.svg
-_stories/<id>/         index.md stub + cover.png|svg   (the collection)
-index.html             homepage      stories.html → /stories/
+_data/                 reels.yml (content), navigation.yml, topics.yml, series.yml, periods.yml (geo time bands)
+_layouts/              default, story, topic, series, geo-feature (map reference pages)
+_includes/             head, header, footer, *-card, icon-*.svg, feature-box.html (the map fact-card)
+_stories/<id>/         index.md stub + cover.png|svg   (the collection; map pins live here too, via add_on_map)
+index.html             homepage      stories.html → /stories/     about.html → /about/
 topics/                index.html + <slug>.html per topic
 series/                index.html + <slug>.html per series
+map.html               the interactive map → /geological-map-of-india/
+assets/js/             map.js (map logic), site.js (nav toggle)
+assets/geo/            india/rivers geojson, features/*.geojson (outlines), README (provenance), raw sources (excluded)
+scripts/               trace-geotiff.py (raster→polygon), fetch-shape.sh (GSI-on-Esri)
 assets/css/            main.css (design system), fonts.css (@font-face)
 assets/fonts/          self-hosted woff2 (Poppins static, Inter variable)
 mascot.png             brand mascot   CNAME → letstalksciencenow.com
@@ -97,9 +178,10 @@ design/styleguide.html palette/type reference (excluded from build)
 ## Open items / roadmap
 
 - **Topic imbalance:** many "human body & mind" reels (eye floaters, nasal cycle, McGurk, tears, palm lines, pink elephant, sexual dimorphism) are filed under **Nature**. A 5th topic ("Human Body" / "Mind & Body") was proposed but not yet added.
-- **About** and **Newsletter** nav pages are still stubs (`#`/unbuilt). Newsletter needs an email provider decision.
+- **About** is now built (`about.html` — bio + photo). **Newsletter** nav is still a stub and needs an email-provider decision.
 - **Germany / GDPR** (maintainer is Berlin-based): fonts already self-hosted ✅. Still open — switch YouTube embeds to `youtube-nocookie.com` (or click-to-load facade), and add an **Impressum** + privacy policy.
 - Most reels lack `youtube_id` and a real `cover.png` (placeholders in use) — the maintainer fills these in over time.
+- **Map — open items:** (a) the ~37 auto-generated `geo-feature` notes read a bit formulaic (every one is 2 paragraphs opening with a **bold term**) — a de-uniforming prose pass was flagged but not done; (b) for strict **CC BY-SA / IUCN** compliance the traced outlines' credit should ideally show *on the map* (only the Rivers layer has a live attribution today), not just in the repo; (c) more outlines/rivers can be added the same way (Indus etc.).
 
 ## Working with the maintainer
 
