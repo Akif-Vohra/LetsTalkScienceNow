@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [24.72, 80.18]
 age_ma: 1100
+feature_type: "Diamond deposit"
 ---
 
 Panna's diamonds come from the **Majhgawan pipe**, a deeply eroded volcanic vent of kimberlite-like rock over a billion years old that carried diamonds up from the mantle. Weathering has washed some into the surrounding Vindhyan gravels, which are also worked.

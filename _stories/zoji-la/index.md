@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [34.28, 75.47]
 age_ma: 50
+feature_type: "Mountain pass"
 ---
 
 Zoji La, at about 3,500 m, breaches the **Great Himalayan wall** between Sonamarg and Dras. It is a low point in a barrier raised by continental collision, and marks a sharp climatic threshold — green, monsoon-fed slopes to the west, cold high desert to the east.

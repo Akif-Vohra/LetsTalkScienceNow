@@ -6,5 +6,6 @@ title: How India formed from five ancient cratons
 add_on_map: true
 latlng: [24.5, 78.8]
 age_ma: 3000
+feature_type: "Craton (shield)"
 map_title: "Indian Cratons"
 ---

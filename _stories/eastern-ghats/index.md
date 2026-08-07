@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [18.5, 83.0]
 age_ma: 1300
+feature_type: "Fold mountains (mobile belt)"
 ---
 
 Unlike the near-continuous Western Ghats, the Eastern Ghats are **discontinuous hills** dissected by the great east-flowing rivers. They are built largely of the **Eastern Ghats Mobile Belt** — khondalite and charnockite deformed during Proterozoic mountain-building, when this crust was welded against the Indian craton.

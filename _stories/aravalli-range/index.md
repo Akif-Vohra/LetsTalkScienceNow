@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [25.5, 73.5]
 age_ma: 1800
+feature_type: "Fold mountains (relict orogen)"
 shape: /assets/geo/features/aravalli-range.geojson
 map_title: "Aravalli Range"
 ---

@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [27.39, 95.62]
 age_ma: 30
+feature_type: "Oilfield"
 ---
 
 Oil was struck at Digboi in the 1880s, trapped in folded **Tertiary sandstones** of the Assam–Arakan basin, where the sediments of an ancient delta were squeezed and buckled as the Indo-Burman ranges rose. The oil gathered in the crests of those folds.

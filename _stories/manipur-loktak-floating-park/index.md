@@ -6,5 +6,6 @@ title: Manipur's floating national park
 add_on_map: true
 latlng: [24.5, 93.8]
 age_ma: 0.02
+feature_type: "Lake"
 map_title: "Loktak Lake, Manipur"
 ---

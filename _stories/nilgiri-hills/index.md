@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [11.41, 76.69]
 age_ma: 2500
+feature_type: "Block mountains (granulite massif)"
 ---
 
 The Nilgiris rise abruptly as a **granulite massif** of charnockite and gneiss, rock that crystallised deep in the crust some 2.5 billion years ago and was later lifted to over 2,600 m at Doddabetta. Steep escarpments on every side make the plateau feel like an island in the sky.

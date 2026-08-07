@@ -35,12 +35,8 @@ layout: default
 
       <div class="story__main">
 
-        {% if reel.summary %}
-        <aside class="big-idea">
-          <p class="big-idea__label">The big idea</p>
-          <p class="big-idea__text">{{ reel.summary }}</p>
-        </aside>
-        {% endif %}
+        {% include feature-box.html %}
+        {% if reel.summary %}<p class="story__lead">{{ reel.summary }}</p>{% endif %}
 
         {% if reel.body %}
         <div class="prose story__body">{{ reel.body | markdownify }}</div>

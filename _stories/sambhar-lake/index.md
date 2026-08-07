@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [26.95, 75.08]
 age_ma: 0.01
+feature_type: "Salt lake (playa)"
 ---
 
 Sambhar is a shallow **saline playa** in a closed basin among the worn Aravalli hills. Seasonal streams carry in dissolved salts that have nowhere to drain; the water evaporates in the desert heat and leaves great crusts of **common salt** behind.

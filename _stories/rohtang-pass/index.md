@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [32.37, 77.25]
 age_ma: 50
+feature_type: "Mountain pass"
 ---
 
 Rohtang, near 3,980 m, crosses the **Pir Panjal** range and separates the humid Kullu Valley from the arid trans-Himalayan valleys of Lahaul and Spiti. The pass exposes the sharp rain-shadow contrast that the Himalayan barrier creates.

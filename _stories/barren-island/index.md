@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [12.278, 93.858]
 age_ma: 0
+feature_type: "Volcano"
 ---
 
 Barren Island is the **only confirmed active volcano in South Asia**. It sits along the volcanic arc of the **Andaman subduction zone**, where the Indian plate slides beneath the Burma plate and melts at depth, feeding magma to the surface.

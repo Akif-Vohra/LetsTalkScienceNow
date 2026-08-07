@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [27.39, 88.83]
 age_ma: 50
+feature_type: "Mountain pass"
 ---
 
 Nathu La sits at roughly 4,300 m on the Himalayan crest east of Gangtok. Like other passes here it is a saddle in crust thrust up during the India–Asia collision, threading between peaks toward the edge of the **Tibetan plateau**.

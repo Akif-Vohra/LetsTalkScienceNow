@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [13.38, 74.67]
 age_ma: 88
+feature_type: "Columnar basalt (volcanic)"
 ---
 
 St. Mary's Islands are famous for their **columnar basalt**: lava that cooled and contracted into striking polygonal columns, standing like a natural pavement of stone pillars. The Geological Survey of India has recognised them as a **National Geological Monument**.

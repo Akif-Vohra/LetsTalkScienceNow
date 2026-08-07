@@ -1,0 +1,32 @@
+{%- comment -%}
+  Geological "fact card" for a map feature. Reads the page's front matter:
+    feature_type     — e.g. "Flood-basalt province" (shown as-is)
+    age_ma           — number in Ma; the age string + period/era are derived from it
+    age              — optional string override (used when there's no age_ma, or for nuance)
+    period_or_era    — optional string override
+  Age formatting: >=1000 -> Ga, 1..999 -> Ma, <1 -> ka, 0 -> Present-day.
+  Period lookup: first _data/periods.yml band whose [to, from) contains age_ma.
+{%- endcomment -%}
+{%- assign a = page.age_ma -%}
+{%- assign ageStr = page.age -%}
+{%- unless ageStr -%}
+  {%- if a == 0 -%}{%- assign ageStr = 'Present-day' -%}
+  {%- elsif a >= 1000 -%}{%- assign ageStr = a | divided_by: 1000.0 | append: ' Ga' -%}
+  {%- elsif a >= 1 -%}{%- assign ageStr = a | round | append: ' Ma' -%}
+  {%- else -%}{%- assign ageStr = a | times: 1000 | round | append: ' ka' -%}
+  {%- endif -%}
+{%- endunless -%}
+{%- assign per = page.period_or_era -%}
+{%- unless per -%}
+  {%- for p in site.data.periods -%}
+    {%- if a >= p.to and a < p.from -%}{%- assign per = p.name -%}{%- break -%}{%- endif -%}
+  {%- endfor -%}
+{%- endunless -%}
+{%- if include.title or page.feature_type or ageStr -%}
+<aside class="factcard">
+  {% if include.title %}<h1 class="factcard__title">{{ include.title }}</h1>{% endif %}
+  {% if include.location %}<p class="factcard__loc">{{ include.location }}</p>{% endif %}
+  {% if page.feature_type %}<p class="factcard__type">{{ page.feature_type }}</p>{% endif %}
+  {% if ageStr %}<p class="factcard__age">{{ ageStr }}{% if per %} &middot; {{ per }}{% endif %}</p>{% endif %}
+</aside>
+{%- endif -%}

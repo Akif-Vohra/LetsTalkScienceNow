@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [10.17, 77.04]
 age_ma: 2500
+feature_type: "Block mountains"
 ---
 
 Anamudi tops out at 2,695 m in the **Anaimalai–Eravikulam highlands**, the loftiest point of peninsular India. It is a dome of **charnockite**, a tough Precambrian granulite that resists erosion and stands above rolling montane grassland.

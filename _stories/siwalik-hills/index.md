@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [30.5, 77.5]
 age_ma: 10
+feature_type: "Fold hills (molasse)"
 map_title: "Siwalik Hills"
 ---
 

@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [27.0, 71.5]
 age_ma: 0.1
+feature_type: "Desert (aeolian)"
 shape: /assets/geo/features/thar-desert.geojson   # WWF Thar ecoregion, traced via georeference.ai
 ---
 

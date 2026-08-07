@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [23.75, 86.42]
 age_ma: 280
+feature_type: "Coalfield"
 ---
 
 Jharia holds the country's best **coking (metallurgical) coal**, laid down in a **Gondwana rift basin** of the Damodar Valley some 280 million years ago, when cold-climate forests accumulated in a subsiding trough. These Permian seams feed India's steel industry.

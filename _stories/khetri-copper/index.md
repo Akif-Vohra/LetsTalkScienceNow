@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [27.98, 75.78]
 age_ma: 1700
+feature_type: "Copper belt"
 ---
 
 The Khetri belt runs along the northeastern **Aravalli–Delhi** fold belt, where Proterozoic metamorphic rocks host lodes of **copper sulphide**. The mineralisation is bound up with the deformation that built the ancient mountains here around 1.7 billion years ago.

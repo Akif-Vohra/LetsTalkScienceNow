@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [19.93, 73.53]
 age_ma: 20
+feature_type: "River"
 ---
 
 Rising at Trimbakeshwar in the Western Ghats, the Godavari crosses almost the whole peninsula to reach the Bay of Bengal, the **longest river of southern India**. Much of its middle course follows the **Pranhita–Godavari valley**, a Gondwana rift now floored with coal.

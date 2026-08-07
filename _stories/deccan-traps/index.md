@@ -6,6 +6,7 @@ title: The Deccan Traps
 add_on_map: true
 latlng: [18.5, 74.5]
 age_ma: 66
+feature_type: "Flood-basalt province"
 shape: /assets/geo/features/deccan-traps.geojson
 map_title: "Deccan Traps"
 ---

@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [19.976, 76.508]
 age_ma: 0.05
+feature_type: "Impact crater"
 shape: /assets/geo/features/lonar-crater.geojson
 ---
 

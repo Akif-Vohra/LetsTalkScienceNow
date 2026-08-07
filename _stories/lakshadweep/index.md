@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [10.57, 72.64]
 age_ma: 60
+feature_type: "Coral atoll"
 ---
 
 Lakshadweep sits atop the **Chagos–Laccadive Ridge**, a submarine rise left by the Reunion hotspot as the Indian plate drifted over it — the same track that produced the Deccan Traps. As the ridge subsided, **coral reefs** grew upward and built classic atolls: rings of reef enclosing shallow lagoons.

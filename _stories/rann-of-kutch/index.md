@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [23.95, 70.5]
 age_ma: 0.005
+feature_type: "Salt marsh"
 ---
 
 The Rann was once a shallow **arm of the Arabian Sea**; uplift and silting cut it off, leaving a huge low flat that the monsoon and high tides submerge, then the sun evaporates into a blinding sheet of salt. Historic earthquakes here have shifted the land and dammed rivers.

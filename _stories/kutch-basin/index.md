@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [23.7, 69.8]
 age_ma: 160
+feature_type: "Rift basin"
 map_title: "Kutch Basin"
 ---
 

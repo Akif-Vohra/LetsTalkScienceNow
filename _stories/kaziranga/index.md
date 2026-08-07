@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [26.58, 93.17]
 age_ma: 0.01
+feature_type: "Floodplain"
 ---
 
 Kaziranga spreads across the **active floodplain of the Brahmaputra**, a young landscape of shifting channels, sandbars and silt renewed by the river's annual floods. Those floods scour and fertilise the tall wet grasslands that define the park.

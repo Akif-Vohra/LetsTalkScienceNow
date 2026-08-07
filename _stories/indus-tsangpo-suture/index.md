@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [34.2, 77.6]
 age_ma: 50
+feature_type: "Suture zone"
 map_title: "Indus–Tsangpo Suture Zone"
 ---
 

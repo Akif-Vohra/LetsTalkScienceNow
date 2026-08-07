@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [23.3, 75.8]
 age_ma: 65
+feature_type: "Lava plateau"
 ---
 
 The Malwa plateau is the northern reach of the **Deccan Traps** — basalt lava that weathers into deep **black cotton soil**. Unusually for the peninsula, its rivers such as the Chambal and Mahi drain northward, away from the Vindhyan scarp that bounds it.

@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [27.7, 88.15]
 age_ma: 50
+feature_type: "Fold mountains"
 ---
 
 Kanchenjunga is a giant of **high-grade gneiss and schist**, crust thrust up and stacked as India collided with Asia. Its five summits — the name means roughly "five treasures of snow" — straddle the Sikkim frontier and feed glaciers that source the Teesta.

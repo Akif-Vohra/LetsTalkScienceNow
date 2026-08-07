@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [34.35, 74.58]
 age_ma: 2
+feature_type: "Lake (tectonic)"
 ---
 
 Wular fills part of the floor of the **Kashmir Valley**, a Plio-Pleistocene intermontane basin ponded between the Himalaya and Pir Panjal and filled with lake sediments called **Karewas**. The Jhelum flows through it, and the lake acts as the valley's great flood absorber.

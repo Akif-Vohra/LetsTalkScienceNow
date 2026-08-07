@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [21.12, 70.8]
 age_ma: 65
+feature_type: "Basalt upland"
 ---
 
 Gir's hills and plateaus are cut into the **Deccan Trap** basalt of the Saurashtra peninsula, weathering to the rocky, dry deciduous country that suits its teak and acacia woodland. Seasonal rivers cut through the lava flows.

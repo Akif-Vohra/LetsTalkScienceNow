@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [23.35, 85.33]
 age_ma: 1500
+feature_type: "Plateau"
 ---
 
 The Chotanagpur plateau is built on the **Chhotanagpur Granite–Gneiss Complex**, Precambrian crust worn down to a series of steps and pediplains. Down-faulted troughs across it trapped **Gondwana coal measures**, and the surrounding cratons carry iron, copper, mica and uranium.

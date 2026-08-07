@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [9.6, 76.4]
 age_ma: 0.006
+feature_type: "Coastal lagoon (backwater)"
 ---
 
 Vembanad is a long, narrow **backwater lagoon** running parallel to the Arabian Sea behind a coastal sand barrier — a Holocene landform typical of the Kerala coast, where a chain of such lagoons is linked into a natural inland waterway.

@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [22.3, 85.8]
 age_ma: 3200
+feature_type: "Craton (shield)"
 map_title: "Singhbhum Craton"
 ---
 

@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [12.38, 75.49]
 age_ma: 20
+feature_type: "River"
 ---
 
 The Kaveri rises at **Talakaveri** in the Kodagu hills and flows east across the Deccan to the Bay of Bengal. Over hard crystalline rock it forms falls and islands — Shivanasamudra, Srirangapatna — before fanning into a broad, ancient delta.

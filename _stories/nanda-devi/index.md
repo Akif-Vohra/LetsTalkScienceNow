@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [30.37, 79.97]
 age_ma: 50
+feature_type: "Fold mountains"
 ---
 
 At 7,816 m, Nanda Devi is the tallest summit wholly inside India. It sits inside a spectacular **glacial sanctuary** — a ring of high peaks enclosing a basin drained by the Rishiganga — carved from Himalayan crystalline rock uplifted in the collision.

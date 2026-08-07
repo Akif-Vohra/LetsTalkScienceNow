@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [6.75, 93.83]
 age_ma: 20
+feature_type: "Island arc (subduction)"
 ---
 
 Great Nicobar is part of the **outer-arc ridge** thrown up where the Indian plate dives beneath the Burma–Sunda plate. The islands are built of uplifted deep-sea sediments, and the same subduction drives the earthquakes and tsunamis of this seismically fierce belt.

@@ -15,20 +15,10 @@ layout: default
 
     <div class="story__grid story__grid--single">
 
-      <header class="story__header">
-        <p class="eyebrow">{{ topic.name | default: "Our planet" }}{% if page.age_label %} &middot; {{ page.age_label }}{% endif %}</p>
-        <h1 class="story__title">{{ page.title }}</h1>
-        {% if page.location %}<p class="story__meta">{{ page.location }}</p>{% endif %}
-      </header>
-
       <div class="story__main">
 
-        {% if page.summary %}
-        <aside class="big-idea">
-          <p class="big-idea__label">The big idea</p>
-          <p class="big-idea__text">{{ page.summary }}</p>
-        </aside>
-        {% endif %}
+        {% include feature-box.html title=page.title location=page.location %}
+        {% if page.summary %}<p class="story__lead">{{ page.summary }}</p>{% endif %}
 
         <div class="prose story__body">{{ content }}</div>
 

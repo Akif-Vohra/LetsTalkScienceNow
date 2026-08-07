@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [14.23, 74.81]
 age_ma: 20
+feature_type: "Waterfall"
 ---
 
 At Jog, the **Sharavati** leaps roughly 250 m in four distinct cascades over the sharp western scarp of the Ghats. The falls mark the **knickpoint** where rivers of the plateau drop suddenly to the narrow coastal plain — a signature of the uplifted, faulted western edge of peninsular India.

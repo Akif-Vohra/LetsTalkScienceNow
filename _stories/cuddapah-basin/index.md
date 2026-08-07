@@ -12,6 +12,7 @@ sources:
 add_on_map: true
 latlng: [14.47, 78.82]
 age_ma: 1600
+feature_type: "Sedimentary basin (Proterozoic)"
 ---
 
 The Cuddapah basin is a huge, sickle-shaped pile of **Proterozoic sediments** — quartzite, shale and limestone — laid down on the older Dharwar craton and gently folded along its eastern edge. It is one of India's classic Purana (Proterozoic) basins.

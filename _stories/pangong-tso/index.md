@@ -11,6 +11,7 @@ sources:
 add_on_map: true
 latlng: [33.75, 78.9]
 age_ma: 0.05
+feature_type: "Lake (endorheic)"
 ---
 
 Pangong Tso lies at about 4,350 m in a tectonic trough on the cold, arid **Ladakh plateau**. It is **endorheic** — water flows in but never out — so despite its Himalayan setting it is brackish and freezes solid in winter.

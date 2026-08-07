@@ -1,0 +1,24 @@
+# Geological time bands, oldest -> youngest, ages in Ma (millions of years).
+# Used by _includes/feature-box.html to turn a story's age_ma into a name.
+# Pre-Phanerozoic entries are ERAS (Archean/Proterozoic have no periods); the
+# Phanerozoic is split into its PERIODS. First band whose [to, from) contains
+# age_ma wins. See period_or_era override in front matter to force a value.
+- { name: Eoarchean,        from: 4000,  to: 3600 }
+- { name: Paleoarchean,     from: 3600,  to: 3200 }
+- { name: Mesoarchean,      from: 3200,  to: 2800 }
+- { name: Neoarchean,       from: 2800,  to: 2500 }
+- { name: Paleoproterozoic, from: 2500,  to: 1600 }
+- { name: Mesoproterozoic,  from: 1600,  to: 1000 }
+- { name: Neoproterozoic,   from: 1000,  to: 541 }
+- { name: Cambrian,         from: 541,   to: 485.4 }
+- { name: Ordovician,       from: 485.4, to: 443.8 }
+- { name: Silurian,         from: 443.8, to: 419.2 }
+- { name: Devonian,         from: 419.2, to: 358.9 }
+- { name: Carboniferous,    from: 358.9, to: 298.9 }
+- { name: Permian,          from: 298.9, to: 251.9 }
+- { name: Triassic,         from: 251.9, to: 201.4 }
+- { name: Jurassic,         from: 201.4, to: 145.0 }
+- { name: Cretaceous,       from: 145.0, to: 66.0 }
+- { name: Paleogene,        from: 66.0,  to: 23.03 }
+- { name: Neogene,          from: 23.03, to: 2.58 }
+- { name: Quaternary,       from: 2.58,  to: 0 }

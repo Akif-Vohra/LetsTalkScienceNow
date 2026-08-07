@@ -338,6 +338,15 @@ p{line-height:1.7;}
 .big-idea__label{font-family:var(--font-head);font-weight:600;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:.45rem;}
 .big-idea__text{font-family:var(--font-head);font-weight:500;font-size:1.12rem;line-height:1.55;color:var(--ink);}
 
+/* Feature fact card (map features): geological type + age, in the light-blue box */
+.factcard{max-width:65ch;margin:var(--sp-lg) auto 0;padding:1.3rem 1.6rem;border-radius:16px;background:var(--blue-soft);border-left:4px solid var(--blue);}
+.factcard__title{font-family:var(--font-head);font-weight:600;font-size:1.9rem;line-height:1.1;letter-spacing:-.01em;color:var(--ink);}
+.factcard__loc{color:var(--muted);font-size:.98rem;margin-top:.2rem;}
+.factcard__type{font-family:var(--font-head);font-weight:600;font-size:1.1rem;color:var(--ink);margin-top:.9rem;}
+.factcard__age{font-family:var(--font-head);font-weight:500;font-size:.95rem;color:var(--blue-deep);margin-top:.15rem;}
+/* Lead sentence under the fact card (was the "big idea" text, minus the label) */
+.story__lead{max-width:65ch;margin:var(--sp-lg) auto 0;font-family:var(--font-head);font-weight:500;font-size:1.12rem;line-height:1.55;color:var(--ink);}
+
 /* Story body (markdown) */
 .story__body h3{font-family:var(--font-head);font-weight:600;font-size:1.2rem;letter-spacing:-.01em;color:var(--ink);margin:var(--sp-lg) 0 .5rem;}
 .story__body p{margin-bottom:.95rem;}
