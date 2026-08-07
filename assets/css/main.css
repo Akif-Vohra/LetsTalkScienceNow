@@ -307,7 +307,9 @@ p{line-height:1.7;}
 .story__header{grid-area:header;margin-bottom:var(--sp-xl);}
 .story__aside{grid-area:aside;position:sticky;top:88px;}
 .story__main{grid-area:main;min-width:0;}
-.story__grid--single{grid-template-columns:minmax(0,760px);grid-template-areas:"header" "main";justify-content:center;}
+.story__grid--single{grid-template-columns:minmax(0,620px);grid-template-areas:"header" "main";justify-content:center;}
+/* single-column stories: let the fact card, lead and prose fill one shared (wider) measure instead of a narrow left-hugging block */
+.story__grid--single .factcard,.story__grid--single .story__lead,.story__grid--single .prose{max-width:none;}
 .story__aside .video-embed{max-width:100%;margin:0 0 var(--sp-md);}
 .story__aside .story__links{margin:0;}
 /* content in the reading column: left-aligned, capped for readability */
