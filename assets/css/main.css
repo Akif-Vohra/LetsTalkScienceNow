@@ -344,6 +344,8 @@ p{line-height:1.7;}
 .factcard__loc{color:var(--muted);font-size:.98rem;margin-top:.2rem;}
 .factcard__type{font-family:var(--font-head);font-weight:600;font-size:1.1rem;color:var(--ink);margin-top:.9rem;}
 .factcard__age{font-family:var(--font-head);font-weight:500;font-size:.95rem;color:var(--blue-deep);margin-top:.15rem;}
+.factcard__credit{color:var(--muted);font-size:.8rem;margin-top:.7rem;border-top:1px solid var(--line,#eee);padding-top:.55rem;}
+.factcard__credit a{color:inherit;}
 /* Lead sentence under the fact card (was the "big idea" text, minus the label) */
 .story__lead{max-width:65ch;margin:var(--sp-lg) auto 0;font-family:var(--font-head);font-weight:500;font-size:1.12rem;line-height:1.55;color:var(--ink);}
 

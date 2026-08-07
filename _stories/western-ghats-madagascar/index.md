@@ -9,4 +9,5 @@ age_ma: 88
 feature_type: "Escarpment (rifted margin)"
 map_title: "Western Ghats"
 shape: /assets/geo/features/western-ghats.geojson   # IUCN hotspot strip, traced via georeference.ai
+shape_credit: "traced from a Western Ghats figure (Molur et&nbsp;al. 2010, IUCN)"
 ---

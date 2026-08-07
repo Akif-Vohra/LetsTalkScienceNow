@@ -28,5 +28,6 @@
   {% if include.location %}<p class="factcard__loc">{{ include.location }}</p>{% endif %}
   {% if page.feature_type %}<p class="factcard__type">{{ page.feature_type }}</p>{% endif %}
   {% if ageStr %}<p class="factcard__age">{{ ageStr }}{% if per %} &middot; {{ per }}{% endif %}</p>{% endif %}
+  {% if page.shape_credit %}<p class="factcard__credit">Outline: {{ page.shape_credit | markdownify | remove: '<p>' | remove: '</p>' | strip_newlines }}</p>{% endif %}
 </aside>
 {%- endif -%}
