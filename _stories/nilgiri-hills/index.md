@@ -11,7 +11,7 @@ sources:
   - text: "UNESCO Man and the Biosphere Programme"
 add_on_map: true
 latlng: [11.41, 76.69]
-age_ma: 2500
+age_ma: 88
 feature_type: "Block mountains (granulite massif)"
 ---
 

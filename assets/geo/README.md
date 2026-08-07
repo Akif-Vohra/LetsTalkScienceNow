@@ -1,30 +1,28 @@
 # assets/geo — geospatial data for the `/geological-map-of-india/` page
 
 This directory holds the source files and the derived GeoJSON used to draw the
-outlines of geological features on the [`/geological-map-of-india/`](../../map.html) page. Only the
-`*.geojson` files are published; the raw sources (`*.zip`, `*.tiff`, `*.kml`,
-`*.png`) are committed for provenance but excluded from the built site (see
-`_config.yml`). Each published geojson carries its origin in a `_source` member.
+outlines of geological features on the [`/geological-map-of-india/`](../../map.html)
+page. Only the `*.geojson` files are published; the raw sources (`*.zip`, `*.tiff`,
+`*.kml`, `*.png`) are committed for provenance but excluded from the built site
+(see `_config.yml`). Each published geojson also carries its origin + credit in a
+`_source` member.
 
-> ⚠️ **Licensing:** GSI / Bhukosh data is for visualization and regional-level
-> analysis — confirm the reuse terms per layer. Credit is shown on the map as a
-> layer attribution and stored in each file's `_source`.
+> ⚠️ Reuse terms differ per source — check the **Credit** field of each row before
+> any non-personal reuse. Raster tracing uses [`scripts/trace-geotiff.py`](../../scripts/trace-geotiff.py).
 
-One row per outline drawn on the map — where the data came from, how it was
-transformed, and the file that ships.
+| Geo outline | Geo data — source · transformation · credit |
+|-------------|---------------------------------------------|
+| **India border**<br>`india.geojson` | **Source:** DataMeet Community Maps `Country/india-composite.geojson`.<br>**Transformation:** simplified with `npx mapshaper -simplify 4% keep-shapes` (10 MB → 161 KB).<br>**Credit:** © DataMeet Community Maps, **CC0**. |
+| **Rivers**<br>`rivers.geojson` | **Source:** `Rivers.zip` — a **Bhukosh** (GSI) shapefile in a projected CRS (Lambert Conformal Conic, metres).<br>**Transformation:** `npx mapshaper Rivers/Rivers.shp -proj wgs84 -filter-fields rivname,ba_name -simplify 4% keep-shapes -o rivers.geojson force precision=0.001` → 110 lines, ~196 KB gzipped.<br>**Credit:** © **GSI** (Bhukosh) — visualization / regional-level use. |
+| **Deccan Traps**<br>`features/deccan-traps.geojson` | **Source:** GSI geology data of India on the Esri India Living Atlas Feature Service — <https://livingatlas.esri.in/server1/rest/services/Geology/Geology/MapServer/0>.<br>**Transformation:** pulled + dissolved with [`scripts/fetch-shape.sh`](../../scripts/fetch-shape.sh).<br>**Credit:** © **GSI**, via Esri India Living Atlas. |
+| **Aravalli Range**<br>`features/aravalli-range.geojson` | **Source:** same GSI-on-Esri service (Aravalli + Delhi supergroups).<br>**Transformation:** pulled + both supergroups dissolved into one outline with `fetch-shape.sh`.<br>**Credit:** © **GSI**, via Esri India Living Atlas. |
+| **Himalayan Foreland Basin**<br>`features/himalayan-foreland-basin.geojson` | **Source:** georeferenced **Soar.earth** raster `Himalayan_foreland_basin_powered_by_soar.tiff`.<br>**Transformation:** colour-traced with `trace-geotiff.py`. Approximate — georeferencing slightly warped.<br>**Credit:** Soar.earth imagery. |
+| **Lonar Crater**<br>`features/lonar-crater.geojson` | **Source:** `Lonar.kml`.<br>**Transformation:** crater-lake rim drawn **manually in Google Earth by Akif Vohra** (repo author), converted to GeoJSON.<br>**Credit:** outline by Akif Vohra. |
+| **Thar Desert**<br>`features/thar-desert.geojson` | **Source:** WWF **Thar ecoregion** (IM1304) map (Wikipedia), as the georeferenced raster `Ecoregion_IM1304_powered_by_soar.tiff`.<br>**Transformation:** **manually georeferenced on georeference.ai by Akif Vohra** (repo author), then colour-traced with `trace-geotiff.py`. Approximate.<br>**Credit:** WWF ecoregion; georeferencing by Akif Vohra. |
+| **Gondwana region**<br>`features/gondwana.geojson` | **Source:** *Gondwana Kingdom* image, **Wikimedia Commons** — <https://commons.wikimedia.org/wiki/File:Gondwana_Kingdom_edited.jpg>.<br>**Transformation:** **manually traced/georeferenced on georeference.ai by Akif Vohra** (repo author), then colour-vectorised with `trace-geotiff.py`. Approximate.<br>**Credit:** © **BharatWale** (Wikimedia Commons), **CC BY-SA 4.0** — this derived outline is likewise **CC BY-SA 4.0**. (Namesake of the geological term.) |
+| **Western Ghats**<br>`features/western-ghats.geojson` | **Source:** *Western Ghats Hotspot* figure in **IUCN** — Molur, Smith, Daniel & Darwall (2010), *The Status and Distribution of Freshwater Biodiversity in the Western Ghats, India* (IUCN & Zoo Outreach Organization), via ResearchGate <https://www.researchgate.net/figure/Map-showing-the-Western-Ghats-Hotspot-and-the-wider-catchment-areas-that-delineate-the_fig3_255716543>.<br>**Transformation:** **manually traced/georeferenced on georeference.ai by Akif Vohra** (repo author), then colour-vectorised with `trace-geotiff.py`. Approximate.<br>**Credit:** © **IUCN** / Molur et al. (2010) — confirm IUCN reuse terms. |
 
-| Geo outline | Geo data — source · transformation · notes |
-|-------------|--------------------------------------------|
-| **India border** | `india.geojson`. **DataMeet** Community Maps `Country/india-composite.geojson` (CC-0), simplified with `npx mapshaper -simplify 4% keep-shapes` (10 MB → 161 KB). The black country outline the map fits to. |
-| **Rivers** | `rivers.geojson`, from `Rivers.zip` — a **Bhukosh** (GSI) shapefile in a projected CRS (Lambert Conformal Conic, metres). `npx mapshaper Rivers/Rivers.shp -proj wgs84 -filter-fields rivname,ba_name -simplify 4% keep-shapes -o rivers.geojson force precision=0.001` → 110 lines, ~727 KB (~196 KB gzipped). Toggled from the layer control. |
-| **Deccan Traps** | `features/deccan-traps.geojson`. Adapted from **GSI** (Geological Survey of India) geology data of India, found on **Esri** — the Living Atlas Feature Service, <https://livingatlas.esri.in/server1/rest/services/Geology/Geology/MapServer/0>. Pulled and dissolved with [`scripts/fetch-shape.sh`](../../scripts/fetch-shape.sh). |
-| **Aravalli Range** | `features/aravalli-range.geojson`. Same **GSI**-data-on-**Esri** source; the Aravalli + Delhi supergroups dissolved together into one outline. |
-| **Himalayan Foreland Basin** | `features/himalayan-foreland-basin.geojson`. Traced (roughly) from a georeferenced **Soar.earth** raster, `Himalayan_foreland_basin_powered_by_soar.tiff`. Approximate — the raster's georeferencing is slightly warped. |
-| **Lonar Crater** | `features/lonar-crater.geojson`. Mapped **manually** — the crater-lake rim traced in Google Earth (`Lonar.kml`) and converted to GeoJSON. |
-| **Thar Desert** | `features/thar-desert.geojson`. The WWF **Thar ecoregion** (IM1304), traced **manually via georeference.ai** referencing a Wikipedia ecoregion map, from the georeferenced raster `Ecoregion_IM1304_powered_by_soar.tiff`. Approximate. |
-
-**Archived, not on the map yet:** `Reservoir.zip` (Bhukosh reservoirs — the
-intended recipe filters `area_ha >= 100` before `-simplify 6% keep-shapes`) and
-`gondwana.png` (raster of the historical Gondwana region). To re-run a shapefile
-transform, unzip the archive locally — the extracted `Rivers/` and `Reservoir/`
-folders are git-ignored.
+**Archived, not on the map yet:** `Reservoir.zip` (Bhukosh reservoirs — intended
+recipe filters `area_ha >= 100` before `-simplify 6% keep-shapes`) and `gondwana.png`
+(an earlier raster of the Gond region). Unzip archives locally to re-run a shapefile
+transform; the extracted `Rivers/` and `Reservoir/` folders are git-ignored.
