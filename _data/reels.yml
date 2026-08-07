@@ -334,7 +334,9 @@
     A lot of geological factors that apply to Sikkim also apply to eastern Nepal and western Bhutan. But since I am covering Indian states I have focused in Sikkim. Although I would like to also focus on geology of other countries in Asia in future.
 
 - id: himalayan-foreland-basin
-  # cover: TODO add /assets/covers/himalayan-foreland-basin.jpg to feature on the homepage slider
+  cover: /assets/covers/himalayan-foreland-basin.jpg
+  cover_fit: contain
+  cover_credit: 'Himalayan foreland basin (schematic cross-section) by Mikenorton · [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) via Wikimedia Commons'
   date: 2026-08-06
   overlay_title: "The world's largest foreland basin built the Indo-Gangetic Plain 🏔🌾"
   reel_url:
@@ -348,9 +350,31 @@
   references:
     - "Bhattacharjee, S., Bookhagen, B., & Sinha, R. (2022). Sediment-transport rates from decadal to millennial timescales across the Indo-Gangetic Plain: Impacts of tectonics, climatic processes, and vegetation cover. Earth-Science Reviews, 233, 104165."
   body: |
-    The **Himalayan Foreland Basin** is the largest foreland basin in the world. As the Himalaya rose, their sheer weight bent the Indian subcontinent's crust downward into a long, bowl-like depression. Rivers pouring off the mountains filled that bowl with fertile, eroded sediment — building a flat, extremely fertile **alluvial plain**.
+    The **Himalayan Foreland Basin** is the largest foreland basin in the world — and it built one of the most important landscapes in Asia.
 
-    Every fold-mountain belt grows a foreland basin — the **Alps** and the **Andes** have theirs too — but the sheer size of the Himalaya makes this one stretch about **2,400 km**. The sediment it has trapped over millions of years is the **Indo-Gangetic Plain**: roughly **700,000 km²** across northern India, eastern Pakistan, southern Nepal and Bangladesh, named after the **Indus** and **Ganges** river systems, and home to over **800 million people** — one of the most densely populated regions on Earth.
+    ## How the basin formed
+
+    When continents collide and a mountain range is thrust up, that range is so heavy that it presses the crust in front of it *downward* — think of setting a bowling ball on a mattress. As the Himalaya rose, their sheer weight bent the northern edge of the Indian subcontinent's crust into a long, shallow, bowl-like depression running along the foot of the mountains. That depression is the foreland basin.
+
+    ## From a bowl to the most fertile plain on Earth
+
+    A bowl at the foot of the highest mountains on the planet is a perfect trap. Rivers pouring off the Himalaya carry enormous volumes of eroded rock and sediment, and as they slow on reaching the lowlands they drop it into the basin. Over millions of years, that fill built a flat, extremely fertile **alluvial plain**.
+
+    That plain is the **Indo-Gangetic Plain** — a massive flatland spanning about **700,000 km²**, named after the **Indus** and **Ganges** river systems that drain it. It stretches across northern India, eastern Pakistan, southern Nepal and Bangladesh, and its alluvial soils support over **800 million people**, making it one of the most densely populated regions on Earth.
+
+    ## Not unique — just the biggest
+
+    Foreland basins aren't special to the Himalaya. *Every* fold-mountain belt grows one alongside it — the **Alps** in Europe and the **Andes** in South America have theirs too. What sets this one apart is scale: because the Himalaya are so immense, their foreland basin stretches for about **2,400 km** along the mountain front.
+
+    ## A self-sustaining feedback loop
+
+    Here's the detail I find most elegant — the basin didn't fill just once. As sediment piled in, its own **weight bent the crust down even further**, opening fresh space for yet more sediment. Combined with the Himalaya's continued uplift still shedding material off the mountains, this set up a **self-sustaining feedback**: subsidence making room, erosion supplying the fill. It kept the Indo-Gangetic Plain topped up with fresh, fertile alluvium for millions of years.
+
+    ## A note on the simplifications
+
+    I've simplified some ideas here to build a basic geological picture. One worth flagging: in the reel I call the **asthenosphere** "semi-liquid." In reality it's almost entirely *solid* rock — but under enormous heat it turns soft and ductile, and although the immense pressure keeps it from truly melting, it deforms and flows very slowly over geological timescales.
+
+    If you'd like to go deeper, the Government of India's **National Data Repository (NDR)** has a detailed description of the Himalayan Foreland Basin (search for it — it's usually one of the first results). I normally cite only published scientific literature, but the **Wikipedia** pages on the Himalayan Foreland Basin and the Indo-Gangetic Plain are well-written, accessible introductions too.
   caption: |
     Himalayan foreland basin is the largest foreland basin of the world which was created through downward bend of the Indian subcontinents crust under the sheer weight of rising Himalayan range. This foreland basin creates a bowl like depression which then allows the river waters along with all the fertile erosion and sediments to accumulate and create a flat extremely fertile alluvial plain. The resulting Indo-Gangetic Plain is a massive, highly fertile flatland in South Asia spanning 700,000 km². Named after the Indus and Ganges river systems, it stretches across northern India, eastern Pakistan, southern Nepal, and Bangladesh. Formed by alluvial deposits, it is home to over 800 million people, making it one of the most densely populated regions on Earth. #science #didyouknow #geology #nature #himalayas
   pinned_comment: |
