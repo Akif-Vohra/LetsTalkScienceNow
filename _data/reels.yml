@@ -484,7 +484,7 @@
   youtube_url:
   youtube_id:
   image: /stories/bookland-check-digits/cover.svg
-  category: technology
+  category: everyday-science
   tags: [books, funfact, trivia, countries, mathisfun, computerscience]
   caption: |
     Did you know about the fictional countries "bookland" and "musicland" 😆 #books #funfact #trivia #countries
@@ -560,7 +560,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earth-moon-true-scale/cover.svg
-  category: astronomy
+  category: space
   series: moon-explained
   tags: [science, funfact, sun, moon, nature]
   caption: |
@@ -585,7 +585,7 @@
   youtube_url:
   youtube_id:
   image: /stories/mongol-yam-postal/cover.svg
-  category: technology
+  category: everyday-science
   tags: [didyouknow, history, mongol, communication, military]
   caption: |
     The Yam (or Örtöö) was a vast and highly efficient postal relay system established by the Mongol Empire. It featured a network of way stations spaced every 20 to 30 miles, providing messengers with food, shelter, and fresh horses, enabling communications to travel up to 200 miles a day.#didyouknow #history #mongol #communication #military
@@ -597,7 +597,7 @@
   youtube_url:
   youtube_id:
   image: /stories/fidget-spinner-physics/cover.svg
-  category: technology
+  category: everyday-science
   tags: [science, funfact, physic]
   caption: |
     I tried to find out why does fidget spinner spin so long? In the process I found about ball bearings, moment of inertia and angular momentum. #science #funfact #physic
@@ -609,7 +609,7 @@
   youtube_url:
   youtube_id:
   image: /stories/wagon-wheel-effect/cover.svg
-  category: technology
+  category: everyday-science
   tags: [science, opticalillusion, perception, didyouknow, physics]
   caption: |
     The wagon wheel effect is a visual illusion where a rotating, spoked object appears to spin slower than its actual speed, stop entirely, or spin in reverse. It most commonly occurs when viewing continuous rotation through intermittent frames (like in a movie or under a flashing light), or occasionally with the naked eye.#science #opticalillusion #perception #didyouknow #physics
@@ -669,7 +669,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earth-moon-sun-model/cover.svg
-  category: astronomy
+  category: space
   series: moon-explained
   tags: [science, funfact, space, earth, moon]
   caption: |
@@ -682,7 +682,7 @@
   youtube_url:
   youtube_id:
   image: /stories/categories-of-science/cover.svg
-  category: technology
+  category: everyday-science
   tags: [science, didyouknow, naturalscience, formalscience, socialscience]
   caption: |
     I tried to find out on what basis are the main branches of science divided. I.e formal science, natural science, social science. I forgot to mention in video but as always if you find mistakes in my understanding please correct me #science #didyouknow #naturalscience #formalscience #socialscience
@@ -694,7 +694,7 @@
   youtube_url:
   youtube_id:
   image: /stories/why-eclipses-are-rare/cover.svg
-  category: astronomy
+  category: space
   series: moon-explained
   tags: [science, funfact, moon, sun, solareclipse]
   caption: |
@@ -707,7 +707,7 @@
   youtube_url:
   youtube_id:
   image: /stories/moon-tidal-locking/cover.svg
-  category: astronomy
+  category: space
   series: moon-explained
   tags: [science, funfact, moon, earth, space]
   caption: |
@@ -744,7 +744,7 @@
   youtube_url:
   youtube_id:
   image: /stories/earthshine/cover.svg
-  category: astronomy
+  category: space
   series: moon-explained
   tags: [science, funfact, moon, space, earth]
   caption: |
@@ -757,7 +757,7 @@
   youtube_url:
   youtube_id:
   image: /stories/milky-way-band/cover.svg
-  category: astronomy
+  category: space
   tags: [science, funfact, space, milkywaygalaxy, explorepage]
   caption: |
     We are inside the Milky Way, so when we look across its disk, billions of distant stars merge into a glowing band.
@@ -798,7 +798,7 @@
   youtube_url:
   youtube_id:
   image: /stories/history-vs-prehistory/cover.svg
-  category: technology
+  category: everyday-science
   tags: [science, funfact, didyouknow, history, prehistory]
   caption: |
     The fundamental difference between history and prehistory is the invention and use of written records. Prehistory refers to the vast time period before humans developed systems of writing, whereas history encompasses the period from the invention of writing to the present day. That's why history started roughly around 3-5 thousand years ago in different parts of the world depending on when first writing systems emerged. #science #funfact #didyouknow #history #prehistory

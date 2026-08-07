@@ -7,11 +7,15 @@ biology:
   name: Biology
   tint: tint-nature
   summary: "Animals, plants, the human body, and the living systems all around us."
-astronomy:
-  name: Astronomy
+space:
+  name: Space
   tint: tint-space
   summary: "The Moon, planets, stars, and our place in the wider cosmos."
-technology:
-  name: Technology
+everyday-science:
+  name: Everyday Science
   tint: tint-ingenuity
-  summary: "Engineering, materials, inventions, and the history of science."
+  summary: "The science behind everyday things — inventions, materials, physics you can see, and the history of ideas."
+computer-science:
+  name: Computer Science
+  tint: tint-compsci
+  summary: "Algorithms, data, computation, and the ideas that make machines think."

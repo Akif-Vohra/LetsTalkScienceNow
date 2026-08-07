@@ -51,7 +51,7 @@ Each reel entry:
 4. It now appears automatically on the homepage feed, `/stories/`, and its category/series pages.
 
 ### Categories & Series
-- Every story/reel carries a `category:` (one of `geology`, `biology`, `astronomy`, `technology`).
+- Every story/reel carries a `category:` (one of `geology`, `biology`, `space`, `everyday-science`, `computer-science`).
 - `/categories/` + `/categories/<slug>/`, `/series/` + `/series/<slug>/` — all data-driven from `_data/categories.yml` / `_data/series.yml` (each: `name`, `summary`, categories also `tint`).
 - A category/series page is a tiny file in `categories/` or `series/` (`layout: category`/`series`, front-matter `category:`/`series:`, `permalink:`). **When a series gains its first story, create its page file** or the listing link 404s. (The four category pages already exist.)
 - Series with **zero** stories are auto-hidden from listings.

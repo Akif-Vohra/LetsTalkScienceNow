@@ -26,6 +26,7 @@
   --t-nature:#2fa25c;
   --t-space:#6c5ce7;
   --t-ingenuity:#f0873c;
+  --t-compsci:#3f5bd9;
 
   /* Hero sky */
   --sky:linear-gradient(180deg,#f2faff 0%,#eaf5ff 42%,#ffffff 100%);
@@ -176,6 +177,7 @@ p{line-height:1.7;}
 .pill-nature{background:var(--t-nature);}
 .pill-space{background:var(--t-space);}
 .pill-ingenuity{background:var(--t-ingenuity);}
+.pill-compsci{background:var(--t-compsci);}
 
 /* Text link */
 .text-link{color:var(--blue);font-family:var(--font-head);font-weight:600;font-size:.92rem;}
@@ -234,6 +236,7 @@ p{line-height:1.7;}
 .tint-nature{--tint:var(--t-nature);}
 .tint-space{--tint:var(--t-space);}
 .tint-ingenuity{--tint:var(--t-ingenuity);}
+.tint-compsci{--tint:var(--t-compsci);}
 
 /* Topic cards */
 .topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--sp-md);}
