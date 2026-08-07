@@ -11,6 +11,19 @@ add_on_map: true
 latlng: [26.2, 91.7]
 age_ma: 20
 feature_type: "River"
+gallery:
+  - src: /assets/covers/brahmaputra/dibrugarh-bank.jpg
+    caption: "The Brahmaputra's bank at Dibrugarh, Assam"
+    credit: "Deepjyoti Borah · CC BY-SA 4.0"
+  - src: /assets/covers/brahmaputra/arunachal-hills.jpg
+    caption: "The Arunachal hills seen across the Brahmaputra"
+    credit: "AjayDas · CC BY-SA 4.0"
+  - src: /assets/covers/brahmaputra/boat.jpg
+    caption: "A boat on the braided Brahmaputra"
+    credit: "বিশ্বজিৎ বৈশ্য · CC BY-SA 4.0"
+  - src: /assets/covers/brahmaputra/dibru-saikhowa.jpg
+    caption: "The river bank near Dibru-Saikhowa"
+    credit: "দিব্য দত্ত · CC BY-SA 4.0"
 shape: /assets/geo/features/brahmaputra-river.geojson   # river course from the GSI rivers layer
 ---
 

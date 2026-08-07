@@ -13,6 +13,19 @@ add_on_map: true
 latlng: [27.39, 95.62]
 age_ma: 30
 feature_type: "Oilfield"
+gallery:
+  - src: /assets/covers/digboi/oil-equipment.jpg
+    caption: "Vintage drilling and pumping gear at the Digboi Oil Museum"
+    credit: "Subhashish Panigrahi · CC BY-SA 3.0"
+  - src: /assets/covers/digboi/exhibit.jpg
+    caption: "Preserved oil-field machinery on display at Digboi"
+    credit: "Subhashish Panigrahi · CC BY-SA 3.0"
+  - src: /assets/covers/digboi/centenary.jpg
+    caption: "The Digboi Centenary Museum marks a century of oil, 1901–2001"
+    credit: "Subhashish Panigrahi · CC BY-SA 3.0"
+  - src: /assets/covers/digboi/museum.jpg
+    caption: "Inside the museum at Digboi, India's first oil town"
+    credit: "Subhashish Panigrahi · CC BY-SA 3.0"
 ---
 
 For about a century, Assam was India's leading oil-producing state — and for the first five decades after the first commercially successful well was drilled in **1890**, it was the *only* state producing oil in India. Digboi's refinery, running since 1901, is the **oldest continuously operating refinery in the world**.
