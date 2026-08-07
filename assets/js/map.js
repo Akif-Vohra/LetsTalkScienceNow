@@ -170,6 +170,46 @@
     });
   })();
 
+  // Search by name: type to filter pins, arrow/enter or click to focus one. A match
+  // is revealed even if a category/time filter had hidden its marker.
+  (function buildSearch() {
+    var box = document.getElementById('pin-search');
+    var list = document.getElementById('pin-results');
+    if (!box || !list) return;
+    var shown = [], active = -1;
+    function close() { list.hidden = true; list.innerHTML = ''; shown = []; active = -1; }
+    function render() {
+      var q = box.value.trim().toLowerCase();
+      if (!q) { close(); return; }
+      shown = pins.filter(function (p) { return p.title.toLowerCase().indexOf(q) > -1; }).slice(0, 8);
+      list.innerHTML = shown.length
+        ? shown.map(function (p, i) { return '<li data-i="' + i + '">' + p.title + '<span class="ps-type">' + (p.type || '') + '</span></li>'; }).join('')
+        : '<li class="ps-empty">No matches</li>';
+      list.hidden = false; active = -1;
+    }
+    function pick(p) {
+      if (!map.hasLayer(p.marker)) p.marker.addTo(map);   // reveal even if a filter hid it
+      focusPin(p);
+      box.value = ''; close();
+    }
+    function highlight() {
+      for (var i = 0; i < list.children.length; i++) list.children[i].classList.toggle('is-active', i === active);
+    }
+    box.addEventListener('input', render);
+    box.addEventListener('keydown', function (e) {
+      if (list.hidden || !shown.length) return;
+      if (e.key === 'ArrowDown')      { active = Math.min(active + 1, shown.length - 1); e.preventDefault(); highlight(); }
+      else if (e.key === 'ArrowUp')   { active = Math.max(active - 1, 0);                 e.preventDefault(); highlight(); }
+      else if (e.key === 'Enter')     { pick(shown[active > -1 ? active : 0]);            e.preventDefault(); }
+      else if (e.key === 'Escape')    { close(); }
+    });
+    list.addEventListener('click', function (e) {
+      var li = e.target.closest('li[data-i]');
+      if (li) pick(shown[+li.getAttribute('data-i')]);
+    });
+    document.addEventListener('click', function (e) { if (!e.target.closest('.pinsearch')) close(); });
+  })();
+
   // India outline — sourced from DataMeet Community Maps (github.com/datameet/maps).
   fetch(window.MAP.geojson)
     .then(function (r) { return r.json(); })
