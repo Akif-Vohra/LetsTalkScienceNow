@@ -8,6 +8,9 @@ age_label: "Proterozoic"
 summary: "A gorge where the Narmada river runs between soaring cliffs of ancient marble."
 sources:
   - text: "Geological Survey of India — National Geological Monument"
+add_on_map: true
+latlng: [23.13, 79.80]
+age_ma: 1000
 ---
 
 At Bhedaghat the Narmada river has carved a deep gorge through **Proterozoic marble** — limestone and dolomite that were buried, heated and recrystallised into marble long ago. The pale cliffs rise steeply on either side of the water, and the site is recognised by the Geological Survey of India as a **National Geological Monument**.

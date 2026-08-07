@@ -8,6 +8,9 @@ age_label: "Quaternary · a living, shifting landform"
 summary: "One of the world's largest river islands — built, moved and eroded by the restless Brahmaputra."
 sources:
   - text: "Geological Survey of India"
+add_on_map: true
+latlng: [26.95, 94.17]
+age_ma: 0.005
 ---
 
 Majuli is **one of the largest river islands in the world**, a broad expanse of land held within the braided channels of the mighty Brahmaputra in Assam. Unlike a mountain or a craton, it is a **young and impermanent landform**: built entirely of river-borne sand and silt, and constantly reshaped as the Brahmaputra shifts its course.

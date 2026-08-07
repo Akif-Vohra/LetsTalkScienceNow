@@ -9,6 +9,10 @@ summary: "A slab of some of Earth's oldest continental crust — and possibly on
 sources:
   - text: "Geological Survey of India"
   - text: "Peer-reviewed geological research"
+add_on_map: true
+latlng: [22.3, 85.8]
+age_ma: 3200
+map_title: "Singhbhum Craton"
 ---
 
 The Singhbhum Craton is one of India's ancient continental nuclei — a block of crust with rocks dating back to the **Archean, older than three billion years**. Cratons like this are the stable cores around which continents grow, and they preserve some of the oldest rock records on Earth.

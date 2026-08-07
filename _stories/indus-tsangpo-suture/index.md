@@ -9,6 +9,10 @@ summary: "The seam where India was welded to Asia — and where the floor of a v
 sources:
   - text: "Peer-reviewed geological research"
   - text: "Geological Survey of India"
+add_on_map: true
+latlng: [34.2, 77.6]
+age_ma: 50
+map_title: "Indus–Tsangpo Suture Zone"
 ---
 
 The Indus–Tsangpo Suture Zone marks the **tectonic seam** where the Indian plate collided with Eurasia and stuck fast, beginning around 50 million years ago. It is, quite literally, the line along which two continents were joined.

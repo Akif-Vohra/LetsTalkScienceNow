@@ -104,8 +104,9 @@ description: An interactive map of the geological features of the Indian subcont
   // Liquid-generated data for map.js (a static asset can't run Liquid).
   window.MAP = {
     pins: [
-      {%- for pin in site.data.map -%}
-      { title: {{ pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.story | prepend: "/stories/" | append: "/" | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %} },
+      {%- assign mappins = site.stories | where_exp: "s", "s.add_on_map" -%}
+      {%- for pin in mappins -%}
+      { title: {{ pin.map_title | default: pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.url | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %} },
       {%- endfor -%}
     ],
     geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }},

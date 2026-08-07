@@ -8,6 +8,9 @@ age_label: "Neoarchean · ~2.7 billion years"
 summary: "An ancient greenstone belt that hosted one of the deepest mines humans have ever dug in pursuit of gold."
 sources:
   - text: "Geological Survey of India"
+add_on_map: true
+latlng: [12.96, 78.28]
+age_ma: 2700
 ---
 
 Kolar sits on a **greenstone belt** of the Dharwar Craton — a band of Neoarchean volcanic and sedimentary rocks, roughly 2.7 billion years old, that were folded and metamorphosed deep in Earth's early history. Threaded through these ancient rocks are the gold-bearing quartz veins that made the region famous.

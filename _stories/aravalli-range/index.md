@@ -8,6 +8,11 @@ age_label: "Proterozoic · ~2.5–1 billion years"
 summary: "One of the oldest mountain systems on Earth — now worn down to low ridges, but once a towering Proterozoic range."
 sources:
   - text: "Geological Survey of India"
+add_on_map: true
+latlng: [25.5, 73.5]
+age_ma: 1800
+shape: /assets/geo/features/aravalli-range.geojson
+map_title: "Aravalli Range"
 ---
 
 The Aravalli Range is among the **oldest fold-mountain systems in the world**. It was built during the Proterozoic, through the long Aravalli–Delhi cycle of mountain-building that welded together some of the crust of northwestern India roughly two and a half to one billion years ago.
