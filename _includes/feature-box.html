@@ -9,13 +9,13 @@
 {%- endcomment -%}
 {%- assign a = page.age_ma -%}
 {%- assign ageStr = page.age -%}
-{%- unless ageStr -%}
+{%- unless ageStr -%}{%- if a -%}
   {%- if a == 0 -%}{%- assign ageStr = 'Present-day' -%}
   {%- elsif a >= 1000 -%}{%- assign ageStr = a | divided_by: 1000.0 | append: ' Ga' -%}
   {%- elsif a >= 1 -%}{%- assign ageStr = a | round | append: ' Ma' -%}
   {%- else -%}{%- assign ageStr = a | times: 1000 | round | append: ' ka' -%}
   {%- endif -%}
-{%- endunless -%}
+{%- endif -%}{%- endunless -%}
 {%- assign per = page.period_or_era -%}
 {%- unless per -%}
   {%- for p in site.data.periods -%}

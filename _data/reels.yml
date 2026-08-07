@@ -982,3 +982,9 @@
     A good free resource is "Major Tectonic Features of Peninsular India", published by eGyanKosh (IGNOU).
 
     You can also read the review article "Archean Crustal Evolution and Craton Formation in Peninsular India: New Insights from the Singhbhum, Dharwar and Bastar Cratons" by C. Manikyamba, Dewashish Upadhyay, and M. Ram Mohan, published in the Proceedings of the Indian National Science Academy (2024).
+
+- id: how-geodata-works
+  date: 2026-08-07
+  category: computer-science
+  overlay_title: "How software actually handles geodata"
+  summary: "Vector vs raster, coordinate systems, and the file formats — the fundamentals I picked up building the interactive geological map of India."

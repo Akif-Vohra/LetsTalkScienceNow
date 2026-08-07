@@ -32,8 +32,11 @@ layout: default
         {% include feature-box.html title=reel.overlay_title location=reel.location %}
         {% if reel.summary %}<p class="story__lead">{{ reel.summary }}</p>{% endif %}
 
+        {%- assign page_body = content | strip -%}
         {% if reel.body %}
         <div class="prose story__body">{{ reel.body | markdownify }}</div>
+        {% elsif page_body != '' %}
+        <div class="prose story__body">{{ content }}</div>
         {% elsif reel.caption %}
         <div class="prose prose--pre">{{ reel.caption | strip | escape }}</div>
         {% endif %}
