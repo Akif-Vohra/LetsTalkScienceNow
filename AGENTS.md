@@ -88,6 +88,7 @@ Relevant front-matter fields:
 - `feature_type:` string from a controlled vocabulary — drives the **category + pin colour** (see `catOf` in map.js).
 - `shape:` *(optional)* `/assets/geo/features/<x>.geojson` — an outline drawn + zoomed-to on click. Polygons render filled; lines/rivers render as a thick stroke.
 - `map_title:` *(optional)* short label when the page title is long/catchy.
+- `gallery:` *(optional)* list of `{src, caption?, credit?}`. If present, clicking the pin opens a photo **popover above the marker** (slider: ‹ › / arrow keys / Esc, click-outside to close). Emitted into `window.MAP` by map.html; handled by `openGallery` in map.js. Pins without it behave normally. GIFs animate (they're `<img>`).
 - `age:` / `period_or_era:` *(optional)* string overrides for the fact-card.
 
 To **add a map feature**: a `geo-feature` story = a 2-paragraph note + those fields

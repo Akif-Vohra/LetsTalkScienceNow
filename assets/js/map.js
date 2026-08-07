@@ -111,6 +111,48 @@
   function markActive(p) {                              // colour it, if its marker is on the map
     if (p.marker._icon) p.marker._icon.classList.add('pin--active');
   }
+  // Photo popover: pins that carry a `gallery` open a little slider anchored above them.
+  var galItems = [], galIdx = 0, galPopup = null;
+  function galRender() {
+    var el = galPopup && galPopup.getElement();
+    if (!el) return;
+    var item = galItems[galIdx];
+    var img = el.querySelector('.pin-gallery__img');
+    var cap = el.querySelector('.pin-gallery__cap');
+    var count = el.querySelector('.pin-gallery__count');
+    if (img) img.src = item.src;
+    if (cap) cap.innerHTML = [item.caption, item.credit].filter(Boolean).join(' &middot; ');
+    if (count) count.textContent = (galIdx + 1) + ' / ' + galItems.length;
+  }
+  function galStep(d) {
+    if (galItems.length < 2) return;
+    galIdx = (galIdx + d + galItems.length) % galItems.length;
+    galRender();
+  }
+  function openGallery(p) {
+    galItems = p.gallery; galIdx = 0;
+    var multi = galItems.length > 1;
+    var html = '<div class="pin-gallery">' +
+      '<div class="pin-gallery__frame"><img class="pin-gallery__img" alt=""></div>' +
+      (multi ? '<button class="pin-gallery__nav pin-gallery__prev" type="button" aria-label="Previous photo">‹</button>' +
+               '<button class="pin-gallery__nav pin-gallery__next" type="button" aria-label="Next photo">›</button>' : '') +
+      '<div class="pin-gallery__bar"><span class="pin-gallery__count"></span><span class="pin-gallery__cap"></span></div>' +
+    '</div>';
+    galPopup = L.popup({ className: 'pin-gallery-popup', maxWidth: 260, minWidth: 260, autoPanPadding: [30, 70], offset: [0, -22] })
+      .setLatLng(p.latlng).setContent(html).openOn(map);
+    galRender();
+    var el = galPopup.getElement();
+    var prev = el.querySelector('.pin-gallery__prev'), next = el.querySelector('.pin-gallery__next');
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); galStep(-1); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); galStep(1); });
+  }
+  document.addEventListener('keydown', function (e) {   // arrows page the open gallery; Esc closes it
+    if (!galPopup || !galPopup.isOpen()) return;
+    if (e.key === 'ArrowLeft') galStep(-1);
+    else if (e.key === 'ArrowRight') galStep(1);
+    else if (e.key === 'Escape') map.closePopup(galPopup);
+  });
+
   function focusPin(p) {
     if (activePin && activePin.marker._icon) activePin.marker._icon.classList.remove('pin--active');
     activePin = p;
@@ -118,6 +160,8 @@
     loadStory(p);
     showShape(p);                                       // shape pins get framed by the outline's fitBounds
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
+    if (p.gallery && p.gallery.length) openGallery(p);  // photo pins get a slider above the pin
+    else map.closePopup();                              // no photos → make sure no stale gallery lingers
   }
   pins.forEach(function (p) {
     p.cat = catOf(p.type);
