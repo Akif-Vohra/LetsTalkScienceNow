@@ -6,12 +6,13 @@ description: About Let's Talk Science Now and Akif — making science simple, vi
 ---
 
 <style>
-  .about-grid{display:flex;gap:var(--sp-2xl);align-items:flex-start;}
-  .about-photo{flex:0 0 300px;width:300px;height:auto;border-radius:18px;box-shadow:var(--shadow);display:block;}
+  .about-grid{display:flex;gap:var(--sp-xl);align-items:flex-start;max-width:880px;margin:0 auto;}
+  .about-photo{flex:0 0 280px;width:280px;height:auto;border-radius:18px;box-shadow:var(--shadow);display:block;}
   .about-text{flex:1 1 auto;min-width:0;}
   @media (max-width:768px){
-    .about-grid{flex-direction:column;gap:var(--sp-lg);}
+    .about-grid{flex-direction:column;align-items:center;gap:var(--sp-lg);text-align:center;}
     .about-photo{width:240px;flex-basis:auto;}
+    .about-text .prose{max-width:none;}
   }
 </style>
 

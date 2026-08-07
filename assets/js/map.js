@@ -23,7 +23,7 @@
     { key: 'lakes',     label: 'Lakes',            color: '#12a5b3' },
     { key: 'coasts',    label: 'Coasts & islands', color: '#22a06b' },
     { key: 'deserts',   label: 'Deserts',          color: '#e6a417' },
-    { key: 'economic',  label: 'Economic',         color: '#c2455e' }
+    { key: 'economic',  label: 'Mining & energy',  color: '#c2455e' }
   ];
   var CAT = {};
   CATS.forEach(function (c) { CAT[c.key] = c; });
