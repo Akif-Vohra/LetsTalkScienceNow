@@ -51,14 +51,17 @@ description: An interactive map of the geological features of the Indian subcont
   .pin--active svg{filter:drop-shadow(0 0 7px rgba(244,81,30,.95));}
 
   /* Category filter chips (built in map.js; --cat is the category colour) */
-  .typefilter{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--line);}
-  .typechip{display:inline-flex;align-items:center;gap:.3rem;font:600 .68rem/1 var(--font-sans);
-    padding:.2rem .5rem;border-radius:999px;border:1px solid var(--line);background:#fff;
+  .typefilter{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--line);}
+  .typechip{display:inline-flex;align-items:center;gap:.26rem;font:600 .64rem/1 var(--font-sans);
+    padding:.16rem .44rem;border-radius:999px;border:1px solid var(--line);background:#fff;
     color:var(--muted);cursor:pointer;transition:opacity .12s,border-color .12s,color .12s;}
-  .typechip::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--cat);}
+  .typechip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cat);}
   .typechip.is-on{border-color:var(--cat);color:var(--ink);}
   .typechip:not(.is-on){opacity:.5;}
   .typechip:not(.is-on)::before{background:var(--muted);}
+  /* "All" reset chip: no colour dot, neutral highlight when active. */
+  .typechip--all::before{display:none;}
+  .typechip--all.is-on{border-color:var(--ink);color:var(--ink);}
   .leaflet-tooltip.pin-label{display:none;background:rgba(17,17,17,.72);color:#fff;border:none;
     box-shadow:none;font:600 12px/1.2 var(--font-sans);padding:2px 7px;border-radius:5px;white-space:nowrap;}
   .leaflet-tooltip.pin-label::before{display:none;}   /* drop the little arrow */

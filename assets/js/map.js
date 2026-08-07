@@ -122,26 +122,44 @@
   map.on('zoomend', refreshIcons);
   toggleLabels();
 
-  // Category filter — a chip per category present; toggling one re-runs the filter.
+  // Category filter. "All" (default) shows everything; from All a click isolates one
+  // category; further clicks add/remove; emptying it snaps back to All.
   var activeCats = {};
   (function buildChips() {
     var bar = document.getElementById('typefilter');
     if (!bar) return;
-    var present = {};
-    pins.forEach(function (p) { present[p.cat] = true; });
-    CATS.forEach(function (c) {
-      if (!present[c.key]) return;
-      activeCats[c.key] = true;
+    var present = CATS.filter(function (c) { return pins.some(function (p) { return p.cat === c.key; }); });
+    var chips = {};
+    present.forEach(function (c) { activeCats[c.key] = true; });
+
+    function isAll()  { return present.every(function (c) { return activeCats[c.key]; }); }
+    function isNone() { return present.every(function (c) { return !activeCats[c.key]; }); }
+    function showAll() { present.forEach(function (c) { activeCats[c.key] = true; }); }
+    function sync() {
+      present.forEach(function (c) { chips[c.key].classList.toggle('is-on', activeCats[c.key]); });
+      chips.all.classList.toggle('is-on', isAll());
+      update();
+    }
+
+    var all = document.createElement('button');
+    all.className = 'typechip typechip--all is-on';
+    all.textContent = 'All';
+    all.addEventListener('click', function () { showAll(); sync(); });
+    bar.appendChild(all);
+    chips.all = all;
+
+    present.forEach(function (c) {
       var chip = document.createElement('button');
       chip.className = 'typechip is-on';
       chip.style.setProperty('--cat', c.color);
       chip.textContent = c.label;
       chip.addEventListener('click', function () {
-        activeCats[c.key] = !activeCats[c.key];
-        chip.classList.toggle('is-on', activeCats[c.key]);
-        update();
+        if (isAll()) present.forEach(function (x) { activeCats[x.key] = (x.key === c.key); });  // isolate
+        else { activeCats[c.key] = !activeCats[c.key]; if (isNone()) showAll(); }               // add/remove
+        sync();
       });
       bar.appendChild(chip);
+      chips[c.key] = chip;
     });
   })();
 
@@ -273,11 +291,11 @@
 
     if (tA <= 0 && tB >= 1) {
       ageEl.textContent = 'All time';
-      eonEl.textContent = 'Archean → present';
+      eonEl.textContent = 'Archean Eon → present';
     } else {
       ageEl.textContent = fmtAge(ageOld) + ' – ' + fmtAge(ageYoung);
       var so = inWin[0] || segOf(ageOld), sy = inWin[inWin.length - 1] || so;
-      eonEl.textContent = so === sy ? segLabel(so) : (so.name + ' → ' + sy.name);
+      eonEl.textContent = so === sy ? segLabel(so) : (segLabel(so) + ' → ' + segLabel(sy));
     }
     var loA = ageYoung <= 0 ? -1 : ageYoung * (1 - 1e-4); // pad a hair so a feature sitting exactly
     var hiA = ageOld * (1 + 1e-4);                        // on a boundary (e.g. Deccan at 66 Ma) counts
