@@ -12,6 +12,7 @@ add_on_map: true
 latlng: [22.4, 76.5]
 age_ma: 66
 feature_type: "Rift valley (graben)"
+shape: /assets/geo/features/narmada-river.geojson   # river course from the GSI rivers layer
 ---
 
 The Narmada flows west to the Arabian Sea along a **down-faulted trough** between the Vindhya and Satpura ranges, following the deep **Son–Narmada lineament** — one of the oldest and most persistent fracture lines in the Indian crust.

@@ -74,7 +74,11 @@
       .then(function (geo) {
         activeShape = L.geoJSON(geo, {
           interactive: false,
-          style: { color: '#1667c6', weight: 2, opacity: 0.9, fillColor: '#1667c6', fillOpacity: 0.15 }
+          style: function (feat) {                        // rivers (lines) draw thicker, no fill; regions (polygons) get a filled outline
+            var line = feat.geometry.type.indexOf('LineString') > -1;
+            return { color: '#1667c6', weight: line ? 3.5 : 2, opacity: 0.9,
+                     fillColor: '#1667c6', fillOpacity: line ? 0 : 0.15 };
+          }
         }).addTo(map);
         activeShapePin = p;
         map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14 });  // frame it; cap lets tiny ones (Lonar) zoom in

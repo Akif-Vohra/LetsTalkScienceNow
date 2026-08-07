@@ -12,6 +12,7 @@ add_on_map: true
 latlng: [17.92, 73.66]
 age_ma: 20
 feature_type: "River"
+shape: /assets/geo/features/krishna-river.geojson   # river course from the GSI rivers layer
 ---
 
 From a spring at **Mahabaleshwar**, the Krishna runs east across the Deccan lava plateau to the Bay of Bengal, gathering the Bhima, Tungabhadra and other tributaries on the way. It carves deep gorges through basalt and older crystalline rock before spreading into its delta.
