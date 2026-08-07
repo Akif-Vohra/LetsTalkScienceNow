@@ -11,12 +11,6 @@ layout: default
 
     <div class="story__grid{% unless reel.youtube_id %} story__grid--single{% endunless %}">
 
-      <header class="story__header">
-        <p class="eyebrow">{{ topic.name }}{% if reel.series %} &middot; {{ site.data.series[reel.series].name }}{% endif %}</p>
-        <h1 class="story__title">{{ reel.overlay_title }}</h1>
-        {% if reel.location %}<p class="story__meta">{{ reel.location }}</p>{% endif %}
-      </header>
-
       {% if reel.youtube_id %}
       <aside class="story__aside">
         <div class="video-embed">
@@ -35,7 +29,7 @@ layout: default
 
       <div class="story__main">
 
-        {% include feature-box.html %}
+        {% include feature-box.html title=reel.overlay_title location=reel.location %}
         {% if reel.summary %}<p class="story__lead">{{ reel.summary }}</p>{% endif %}
 
         {% if reel.body %}
