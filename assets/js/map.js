@@ -17,7 +17,7 @@
     { key: 'mountains', label: 'Mountains',        color: '#9c6b3f' },
     { key: 'plateaus',  label: 'Plateaus',         color: '#b07d2b' },
     { key: 'volcanic',  label: 'Volcanic',         color: '#d94a3d' },
-    { key: 'impact',    label: 'Impact',           color: '#5d6d7e' },
+    { key: 'impact',    label: 'Impact craters',   color: '#5d6d7e' },
     { key: 'structure', label: 'Cratons & basins', color: '#8155b0' },
     { key: 'rivers',    label: 'Rivers',           color: '#2b7fd4' },
     { key: 'lakes',     label: 'Lakes',            color: '#12a5b3' },

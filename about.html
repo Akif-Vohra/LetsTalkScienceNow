@@ -5,6 +5,16 @@ title: About
 description: About Let's Talk Science Now and Akif — making science simple, visual, and fascinating, with a focus on the Indian subcontinent and Asia.
 ---
 
+<style>
+  .about-grid{display:flex;gap:var(--sp-2xl);align-items:flex-start;}
+  .about-photo{flex:0 0 300px;width:300px;height:auto;border-radius:18px;box-shadow:var(--shadow);display:block;}
+  .about-text{flex:1 1 auto;min-width:0;}
+  @media (max-width:768px){
+    .about-grid{flex-direction:column;gap:var(--sp-lg);}
+    .about-photo{width:240px;flex-basis:auto;}
+  }
+</style>
+
 <header class="page-head">
   <div class="container">
     <p class="eyebrow">About</p>
@@ -13,17 +23,20 @@ description: About Let's Talk Science Now and Akif — making science simple, vi
 </header>
 
 <section class="section">
-  <div class="container">
-    <div class="prose story__body" style="max-width:68ch;">
-      <p>I am fascinated by Science. I would like to raise awareness about the scientific heritage of the world, with a particular focus on the Indian subcontinent and the Asian continent, by explaining them in as simple a manner as possible. I would like to increase scientific discussions in society.</p>
-      <p>I post the things I learn so we can learn together. If you find my mistakes, please correct me! 🌻</p>
-      <p><strong>Let's Talk Science Now</strong> is where I share those things — short visual stories, an <a href="{{ '/geological-map-of-india/' | relative_url }}">interactive geological map of India</a>, and deeper write-ups with sources and pathways to keep exploring.</p>
-      <p style="font-family:var(--font-head);font-weight:600;font-size:1.2rem;color:var(--ink);margin-top:var(--sp-md);">So, let's talk science <span style="color:#f4511e;">now</span>?</p>
-    </div>
-    <div class="hero__actions" style="margin-top:var(--sp-lg);">
-      <a class="btn btn-primary" href="{{ '/stories/' | relative_url }}">Explore the stories</a>
-      <a class="btn btn-ghost btn-ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">{%- include icon-instagram.svg -%}Instagram</a>
-      <a class="btn btn-ghost btn-yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}YouTube</a>
+  <div class="container about-grid">
+    <img class="about-photo" src="{{ '/assets/img/akif.jpg' | relative_url }}" width="570" height="760" alt="Akif reading a book in a park">
+    <div class="about-text">
+      <div class="prose story__body" style="max-width:60ch;">
+        <p>I am fascinated by Science. I would like to raise awareness about the scientific heritage of the world, with a particular focus on the Indian subcontinent and the Asian continent, by explaining them in as simple a manner as possible. I would like to increase scientific discussions in society.</p>
+        <p>I post the things I learn so we can learn together. If you find my mistakes, please correct me! 🌻</p>
+        <p><strong>Let's Talk Science Now</strong> is where I share those things — short visual stories, an <a href="{{ '/geological-map-of-india/' | relative_url }}">interactive geological map of India</a>, and deeper write-ups with sources and pathways to keep exploring.</p>
+        <p style="font-family:var(--font-head);font-weight:600;font-size:1.2rem;color:var(--ink);margin-top:var(--sp-md);">So, let's talk science <span style="color:#f4511e;">now</span>?</p>
+      </div>
+      <div class="hero__actions" style="margin-top:var(--sp-lg);">
+        <a class="btn btn-primary" href="{{ '/stories/' | relative_url }}">Explore the stories</a>
+        <a class="btn btn-ghost btn-ig" href="https://instagram.com/{{ site.instagram_username }}" target="_blank" rel="noopener">{%- include icon-instagram.svg -%}Instagram</a>
+        <a class="btn btn-ghost btn-yt" href="{{ site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}YouTube</a>
+      </div>
     </div>
   </div>
 </section>

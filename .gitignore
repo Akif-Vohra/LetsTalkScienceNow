@@ -21,3 +21,6 @@ assets/geo/Reservoir/
 
 # Soar.earth raster (traced into features/thar-desert.geojson), kept local, not in git
 assets/geo/Ecoregion_IM1304_powered_by_soar.tiff
+
+# large source photo (optimised copy lives at assets/img/akif.jpg)
+/img.png
