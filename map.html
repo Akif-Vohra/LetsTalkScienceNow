@@ -24,12 +24,19 @@ description: An interactive map of the geological features of the Indian subcont
     .reader{height:70vh;}
   }
 
-  /* Pin labels — permanent tooltips, revealed only once zoomed in (see LABEL_ZOOM in map.js). */
-  /* Selected pin — pop it forward with a scale-up + glow so it's clear which we're reading. */
-  .pin{transition:transform .12s ease;transform-origin:50% 100%;}
-  .pin--active{transform:scale(1.4);z-index:1000 !important;}
-  .pin--active svg path{fill:#f4511e;}
-  .pin--active svg{filter:drop-shadow(0 0 6px rgba(244,81,30,.9));}
+  /* Pin labels: permanent tooltips shown only when zoomed in (LABEL_ZOOM in map.js). */
+  /* Dot vs teardrop icon (map.js swaps at PIN_ZOOM); both grow + turn coral when active. */
+  .pin{transition:transform .12s ease;cursor:pointer;background:transparent;border:0;}
+  .pin--dot{box-sizing:border-box;width:12px;height:12px;border-radius:50%;background:#1667c6;
+    border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.4);}
+  .pin--dot:hover{transform:scale(1.4);}
+  .pin--dot.pin--active{background:#f4511e;transform:scale(1.7);z-index:1000 !important;
+    box-shadow:0 0 9px rgba(244,81,30,.95);}
+  .pin--drop{transform-origin:50% 100%;}
+  .pin--drop:hover{transform:scale(1.1);}
+  .pin--drop.pin--active{transform:scale(1.4);z-index:1000 !important;}
+  .pin--drop.pin--active svg path{fill:#f4511e;}
+  .pin--drop.pin--active svg{filter:drop-shadow(0 0 6px rgba(244,81,30,.9));}
   .leaflet-tooltip.pin-label{display:none;background:rgba(17,17,17,.72);color:#fff;border:none;
     box-shadow:none;font:600 12px/1.2 var(--font-sans);padding:2px 7px;border-radius:5px;white-space:nowrap;}
   .leaflet-tooltip.pin-label::before{display:none;}   /* drop the little arrow */

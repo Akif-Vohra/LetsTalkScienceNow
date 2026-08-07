@@ -1,27 +1,27 @@
 /* Interactive geology map + time-window slider.
-   Data (pins, geojson URL) is injected by map.html as window.MAP — this file is
-   pure logic and carries no Liquid, so it can live as a static, cacheable asset. */
+   Pin/geojson data comes from map.html as window.MAP (keeps this file Liquid-free
+   and cacheable). */
 (function () {
   var pins = window.MAP.pins;
 
   var map = L.map('map', { zoomSnap: 0.5 }).setView([21, 82], 4);
 
-  // Satellite imagery only — no Esri boundaries/places overlay. Our own
-  // india.geojson provides the border instead.
+  // Satellite base only; the border comes from our own india.geojson (added below).
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
   }).addTo(map);
 
-  // Small teardrop pin — the familiar marker shape, scaled down so many features stay tidy.
-  var pinIcon = L.divIcon({
-    className: 'pin',
+  // Dot when zoomed out, teardrop pin when zoomed in (swapped at PIN_ZOOM).
+  var dropIcon = L.divIcon({
+    className: 'pin pin--drop',
     html: '<svg width="20" height="28" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg">' +
           '<path d="M12 0C5.4 0 0 5.4 0 12c0 8.4 12 22 12 22s12-13.6 12-22C24 5.4 18.6 0 12 0z" ' +
           'fill="#1667c6" stroke="#fff" stroke-width="1.5"/>' +
           '<circle cx="12" cy="12" r="4" fill="#fff"/></svg>',
     iconSize: [20, 28], iconAnchor: [10, 28], popupAnchor: [0, -24]
   });
-  // Major rivers (GSI, via Bhukosh) — optional context overlay, toggled from the layer control.
+  var dotIcon = L.divIcon({ className: 'pin pin--dot', html: '', iconSize: [12, 12], iconAnchor: [6, 6] });
+  // Rivers overlay (GSI/Bhukosh), toggled from the layer control.
   var rivers = L.geoJSON(null, {
     interactive: false, attribution: 'Rivers &copy; GSI (Bhukosh)',
     style: { color: '#3d8bd6', weight: 1, opacity: 0.7 }
@@ -30,10 +30,10 @@
   L.control.layers(null, { 'Rivers': rivers }, { collapsed: false }).addTo(map);
 
   var reader = document.getElementById('reader');
-  var activeShape = null, activeShapePin = null;        // only the last-clicked feature's outline is drawn
+  var activeShape = null, activeShapePin = null;        // only the last-clicked outline is shown
   function showShape(p) {
     if (activeShape) { map.removeLayer(activeShape); activeShape = null; activeShapePin = null; }
-    if (!p.shape) return;                               // point-features (crater, volcano, lake) have no outline
+    if (!p.shape) return;                               // point features have no outline
     fetch(p.shape)
       .then(function (r) { return r.json(); })
       .then(function (geo) {
@@ -42,7 +42,7 @@
           style: { color: '#1667c6', weight: 2, opacity: 0.9, fillColor: '#1667c6', fillOpacity: 0.15 }
         }).addTo(map);
         activeShapePin = p;
-        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14 });  // frame the whole feature (cap lets tiny ones like Lonar zoom right in)
+        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14 });  // frame it; cap lets tiny ones (Lonar) zoom in
       })
       .catch(function () {});
   }
@@ -58,22 +58,32 @@
       .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
   }
 
-  var LABEL_ZOOM = 6, FOCUS_ZOOM = 7;                   // labels appear at 6; a bare pin-click zooms to 7
-  var activePin = null;                                 // highlight only the pin we're currently reading
+  var LABEL_ZOOM = 6, FOCUS_ZOOM = 7, PIN_ZOOM = 6;    // <PIN_ZOOM: dots; >=PIN_ZOOM: teardrops (+ labels)
+  function iconFor() { return map.getZoom() >= PIN_ZOOM ? dropIcon : dotIcon; }
+  function refreshIcons() {                             // swap dot <-> teardrop as you cross PIN_ZOOM
+    var ic = iconFor();
+    pins.forEach(function (p) { if (p.marker && p.marker.options.icon !== ic) p.marker.setIcon(ic); });
+    if (activePin) markActive(activePin);              // setIcon rebuilt the element — re-apply the highlight
+  }
+  var activePin = null;                                 // the pin we're currently reading
+  function markActive(p) {                              // colour it, if its marker is on the map
+    if (p.marker._icon) p.marker._icon.classList.add('pin--active');
+  }
   function focusPin(p) {
     if (activePin && activePin.marker._icon) activePin.marker._icon.classList.remove('pin--active');
-    if (p.marker._icon) p.marker._icon.classList.add('pin--active');
     activePin = p;
+    markActive(p);
     loadStory(p);
     showShape(p);                                       // shape pins get framed by the outline's fitBounds
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
   }
   pins.forEach(function (p) {
-    p.marker = L.marker(p.latlng, { icon: pinIcon }).on('click', function () { focusPin(p); });
+    p.marker = L.marker(p.latlng, { icon: iconFor() }).on('click', function () { focusPin(p); });
     p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [6, -12] });
   });
   function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
   map.on('zoomend', toggleLabels);
+  map.on('zoomend', refreshIcons);
   toggleLabels();
 
   // India outline — sourced from DataMeet Community Maps (github.com/datameet/maps).
@@ -84,9 +94,9 @@
         interactive: false,
         style: { color: '#000000', weight: 1.5, opacity: 0.9, fill: false }
       }).addTo(map);
-      map.invalidateSize();                                       // container is a flex half — re-measure
-      map.fitBounds(india.getBounds(), { padding: [20, 20] });   // frame the whole country
-      map.setZoom(map.getZoom() + 0.5);                           // then nudge a bit closer in
+      map.invalidateSize();                                       // container is a flex half; re-measure
+      map.fitBounds(india.getBounds(), { padding: [20, 20] });   // frame the country
+      map.setZoom(map.getZoom() + 0.5);                           // nudge a bit closer
     });
 
   // --- Time slider -------------------------------------------------------
@@ -167,7 +177,7 @@
     lab.addEventListener('click', function () { pickSeg(s); });
     names.appendChild(lab);
   });
-  // A few numeric boundaries — spaced enough not to collide.
+  // Numeric boundary ticks, spaced so they don't collide.
   var ticks = document.getElementById('eon-ticks');
   [4000, 2500, 541, 66, AGE_MIN].forEach(function (v) {
     var s = document.createElement('span');
@@ -223,4 +233,6 @@
   startH.addEventListener('input', update);
   endH.addEventListener('input', update);
   update();
+
+  window.LTSN = { map: map, pins: pins };   // console handles for debugging
 })();
