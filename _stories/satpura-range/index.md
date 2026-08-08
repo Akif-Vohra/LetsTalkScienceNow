@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [22.4, 78.4]
 age_ma: 250
 feature_type: "Block mountains (horst)"
+gallery:
+  - src: /assets/covers/satpura/pachmarhi-valley.jpg
+    caption: "The cliffed valleys of Pachmarhi, in the Satpura horst"
+    credit: "Abhayashok · CC BY-SA 3.0"
+  - src: /assets/covers/satpura/misty-hills.jpg
+    caption: "Mist over the Satpura hills at Pachmarhi"
+    credit: "Yedunair · CC BY-SA 4.0"
+  - src: /assets/covers/satpura/dhupgarh.jpg
+    caption: "Dhupgarh, the highest point of the Satpura Range"
+    credit: "Kmohankar · CC BY-SA 4.0"
+  - src: /assets/covers/satpura/bee-falls.jpg
+    caption: "Bee Falls dropping through the Satpura sandstone"
+    credit: "BSSKrishnaS · CC BY-SA 4.0"
 ---
 
 The Satpuras are a classic **block mountain (horst)**: a slab of old crust standing high between the down-faulted **Narmada** and **Tapi** rifts. Their rocks span Precambrian gneiss, **Gondwana sandstones** and Deccan basalt, and the range runs east–west against the usual grain of Indian relief.

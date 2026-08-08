@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [30.5, 77.5]
 age_ma: 10
 feature_type: "Fold hills (molasse)"
+gallery:
+  - src: /assets/covers/siwalik/kasauli.jpg
+    caption: "The Shivalik foothills from Kasauli, Himachal"
+    credit: "Pankajchib2507 · CC BY-SA 4.0"
+  - src: /assets/covers/siwalik/kasauli-dusk.jpg
+    caption: "Dusk over the Shivalik hills at Kasauli"
+    credit: "Vijitgrover77 · CC BY-SA 4.0"
+  - src: /assets/covers/siwalik/sukhna.jpg
+    caption: "The Shivalik range behind Chandigarh's Sukhna Lake"
+    credit: "Unpetitprole · CC BY-SA 4.0"
+  - src: /assets/covers/siwalik/plains-edge.jpg
+    caption: "The low Shivalik ridges at the plains' edge"
+    credit: "UnpetitproleX · CC BY-SA 4.0"
 map_title: "Siwalik Hills"
 ---
 

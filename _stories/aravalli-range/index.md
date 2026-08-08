@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [25.5, 73.5]
 age_ma: 1800
 feature_type: "Fold mountains (relict orogen)"
+gallery:
+  - src: /assets/covers/aravalli/kumbhalgarh.jpg
+    caption: "Kumbhalgarh Fort riding the Aravalli ridgeline"
+    credit: "Rishabh jain 24feb · CC BY-SA 4.0"
+  - src: /assets/covers/aravalli/mount-abu.jpg
+    caption: "Mount Abu, the Aravalli's highest tableland"
+    credit: "Karan Dhawan India · CC BY-SA 4.0"
+  - src: /assets/covers/aravalli/udaipur.jpg
+    caption: "The worn Aravalli hills around Udaipur"
+    credit: "TeshTesh · CC BY-SA 4.0"
+  - src: /assets/covers/aravalli/guru-shikhar.jpg
+    caption: "Guru Shikhar, the range's highest summit"
+    credit: "Im pyadav · CC BY-SA 4.0"
 shape: /assets/geo/features/aravalli-range.geojson
 map_title: "Aravalli Range"
 ---
