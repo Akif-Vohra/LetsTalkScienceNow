@@ -62,7 +62,58 @@
     style: { color: '#3d8bd6', weight: 1, opacity: 0.7 }
   });
   fetch(window.MAP.rivers).then(function (r) { return r.json(); }).then(function (geo) { rivers.addData(geo); });
-  L.control.layers(null, { 'Rivers': rivers }, { collapsed: false }).addTo(map);
+
+  // Soil overlay (FAO–UNESCO Soil Map). The FAO 'DOMSOI' code's first letter is the major
+  // soil group; we bucket those into the soil types Indian geography actually names.
+  var SOILS = [
+    { key: 'alluvial', label: 'Alluvial (Fluvisols)',            color: '#8ca84e' },
+    { key: 'black',    label: 'Black cotton (Vertisols)',        color: '#4a4a4a' },
+    { key: 'red',      label: 'Red (Acrisols / Nitosols)',       color: '#c0492f' },
+    { key: 'laterite', label: 'Laterite (Ferralsols)',           color: '#7a3b2e' },
+    { key: 'brown',    label: 'Brown / forest (Cambisols, Luvisols)', color: '#b5813f' },
+    { key: 'desert',   label: 'Sandy desert (Arenosols)',        color: '#e3c766' },
+    { key: 'arid',     label: 'Arid (Xerosols / Yermosols)',     color: '#d9c9a3' },
+    { key: 'mountain', label: 'Mountain / stony (Lithosols)',    color: '#9aa0a6' },
+    { key: 'saline',   label: 'Saline / alkaline (Solonchaks)',  color: '#cbb8d6' },
+    { key: 'wetland',  label: 'Wetland & other soils',           color: '#6f93a6' },
+    { key: 'glacier',  label: 'Glacier / ice',                   color: '#e6eef2' },
+    { key: 'water',    label: 'Water',                           color: '#4a90c2' }
+  ];
+  var SOILC = {}; SOILS.forEach(function (s) { SOILC[s.key] = s; });
+  var SOIL_LETTER = { J:'alluvial', V:'black', A:'red', N:'red', F:'laterite', B:'brown', L:'brown',
+                      Q:'desert', X:'arid', Y:'arid', I:'mountain', U:'mountain', Z:'saline', S:'saline' };
+  function soilClass(code) {
+    if (!code) return 'wetland';
+    var two = code.slice(0, 2);
+    if (two === 'GL') return 'glacier';
+    if (two === 'WR') return 'water';
+    return SOIL_LETTER[code.charAt(0)] || 'wetland';   // everything else -> catch-all bucket
+  }
+  var soil = L.geoJSON(null, {
+    interactive: false, attribution: 'Soil: FAO–UNESCO Soil Map of the World',
+    style: function (f) {
+      var c = SOILC[soilClass((f.properties || {}).DOMSOI)];
+      return { color: '#ffffff', weight: 0.3, opacity: 0.5, fillColor: c.color, fillOpacity: 0.55 };
+    }
+  });
+  var soilLoaded = false;
+  function loadSoil() {                                  // fetch only on first toggle-on (it's ~250 KB)
+    if (soilLoaded) return; soilLoaded = true;
+    fetch(window.MAP.soil).then(function (r) { return r.json(); })
+      .then(function (geo) { soil.addData(geo); soil.bringToBack(); });   // keep it under the outline + pins
+  }
+  var soilLegend = L.control({ position: 'bottomleft' });
+  soilLegend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'soil-legend');
+    div.innerHTML = '<h4>Soil types</h4>' + SOILS.map(function (s) {
+      return '<span class="sl-row"><i style="background:' + s.color + '"></i>' + s.label + '</span>';
+    }).join('');
+    return div;
+  };
+
+  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil }, { collapsed: false }).addTo(map);
+  map.on('overlayadd',    function (e) { if (e.layer === soil) { loadSoil(); soilLegend.addTo(map); } });
+  map.on('overlayremove', function (e) { if (e.layer === soil) { map.removeControl(soilLegend); } });
 
   var reader = document.getElementById('reader');
   var activeShape = null, activeShapePin = null;        // only the last-clicked outline is shown
