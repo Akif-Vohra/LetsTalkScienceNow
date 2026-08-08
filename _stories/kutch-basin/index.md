@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [23.7, 69.8]
 age_ma: 160
 feature_type: "Rift basin"
+gallery:
+  - src: /assets/covers/kutch/kala-dungar.jpg
+    caption: "The view from Kala Dungar over the Rann — the basin's northern rim"
+    credit: "Raman Patel · CC BY 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/kutch/frog-rock.jpg
+    caption: "A wind-sculpted sandstone boulder near Dholavira"
+    credit: "Nagarjun Kandukuru from Bangalore, India · CC BY 2.0 · via Wikimedia Commons"
+  - src: /assets/covers/kutch/wild-ass.jpg
+    caption: "Indian wild asses on the Little Rann, within the Kutch basin"
+    credit: "Bindu Gopal Rao · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/kutch/dholavira.jpg
+    caption: "Dholavira — a Harappan city built on the Kutch basin"
+    credit: "Bhuppigraphy · CC BY-SA 4.0 · via Wikimedia Commons"
 map_title: "Kutch Basin"
 ---
 

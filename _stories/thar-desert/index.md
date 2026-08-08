@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [27.0, 71.5]
 age_ma: 0.1
 feature_type: "Desert (aeolian)"
+gallery:
+  - src: /assets/covers/thar/camel.jpg
+    caption: "A camel in the Thar, the great desert of Rajasthan"
+    credit: "Vyacheslav Argenberg · CC BY 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/thar/dunes.jpg
+    caption: "Wind-built dunes of the Thar"
+    credit: "Antoine Taveneaux · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/thar/jaisalmer.jpg
+    caption: "Walking the golden dunes near Jaisalmer"
+    credit: "Xaby · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/thar/folk.jpg
+    caption: "Desert folk with their camels in the Thar"
+    credit: "Drashti04 · CC BY-SA 4.0 · via Wikimedia Commons"
 shape: /assets/geo/features/thar-desert.geojson   # WWF Thar ecoregion, traced via georeference.ai
 ---
 
