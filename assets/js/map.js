@@ -141,14 +141,56 @@
     return div;
   };
 
-  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic }, { collapsed: false }).addTo(map);
+  // Active faults & thrusts (GEM Global Active Faults DB), coloured by slip type.
+  var FAULTS = [
+    { key: 'thrust', label: 'Thrust / reverse fault',  color: '#d64536' },
+    { key: 'strike', label: 'Strike-slip fault',       color: '#8155b0' },
+    { key: 'normal', label: 'Normal fault',            color: '#2b7fd4' },
+    { key: 'fold',   label: 'Fold (anticline/syncline)', color: '#9c6b3f' }
+  ];
+  var FAULTC = {}; FAULTS.forEach(function (f) { FAULTC[f.key] = f; });
+  function faultClass(t) {
+    t = t || '';
+    if (/Thrust|Reverse/.test(t))              return 'thrust';
+    if (/Anticline|Syncline/.test(t))          return 'fold';
+    if (/Dextral|Sinistral|Transform/.test(t)) return 'strike';
+    if (/Normal/.test(t))                      return 'normal';
+    return 'other';
+  }
+  var faults = L.geoJSON(null, {
+    interactive: false, attribution: 'Active faults data: GEM Global Active Faults Database (CC BY-SA)',
+    style: function (f) {
+      var k = faultClass((f.properties || {}).slip_type);
+      var c = FAULTC[k] || { color: '#888' };
+      return { color: c.color, weight: k === 'thrust' ? 2.2 : 1.6, opacity: 0.9,
+               dashArray: k === 'fold' ? '4,3' : null };
+    }
+  });
+  var faultsLoaded = false;
+  function loadFaults() {
+    if (faultsLoaded) return; faultsLoaded = true;
+    fetch(window.MAP.faults).then(function (r) { return r.json(); })
+      .then(function (geo) { faults.addData(geo); faults.bringToFront(); });   // lines sit above the fill overlays
+  }
+  var faultsLegend = L.control({ position: 'bottomleft' });
+  faultsLegend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'map-legend');
+    div.innerHTML = '<h4>Active faults and thrusts</h4>' + FAULTS.map(function (f) {
+      return '<span class="sl-row"><i class="ln" style="background:' + f.color + '"></i>' + f.label + '</span>';
+    }).join('');
+    return div;
+  };
+
+  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
     if (e.layer === soil)    { loadSoil();    soilLegend.addTo(map); }
     if (e.layer === seismic) { loadSeismic(); seisLegend.addTo(map); }
+    if (e.layer === faults)  { loadFaults();  faultsLegend.addTo(map); }
   });
   map.on('overlayremove', function (e) {
     if (e.layer === soil)    map.removeControl(soilLegend);
     if (e.layer === seismic) map.removeControl(seisLegend);
+    if (e.layer === faults)  map.removeControl(faultsLegend);
   });
 
   var reader = document.getElementById('reader');
