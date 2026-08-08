@@ -15,16 +15,16 @@ feature_type: "Block mountains"
 gallery:
   - src: /assets/covers/anamudi/rajamala.jpg
     caption: "Anamudi, South India's highest peak, seen from Rajamala"
-    credit: "Jiths · CC BY 2.0"
+    credit: "Jiths · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/anamudi/eravikulam.jpg
     caption: "The shola-grassland of Eravikulam, below Anamudi"
-    credit: "Jaseem Hamza · CC BY 3.0"
+    credit: "Jaseem Hamza · CC BY 3.0 · via Wikimedia Commons"
   - src: /assets/covers/anamudi/green-hills.jpg
     caption: "Rolling green slopes around Anamudi, Munnar"
-    credit: "Jaseem Hamza · CC BY 3.0"
+    credit: "Jaseem Hamza · CC BY 3.0 · via Wikimedia Commons"
   - src: /assets/covers/anamudi/massif.jpg
     caption: "The Anamudi massif above the Munnar hills"
-    credit: "Jaseem Hamza · CC BY 3.0"
+    credit: "Jaseem Hamza · CC BY 3.0 · via Wikimedia Commons"
 ---
 
 Anamudi tops out at 2,695 m in the **Anaimalai–Eravikulam highlands**, the loftiest point of peninsular India. Its height belongs to the young uplift of the **Western Ghats**, though the rock itself is ancient — a dome of **charnockite**, a tough Precambrian granulite that resists erosion and stands above rolling montane grassland.

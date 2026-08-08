@@ -15,16 +15,16 @@ feature_type: "Escarpment range"
 gallery:
   - src: /assets/covers/vindhya/bhimbetka-shelter.jpg
     caption: "A Bhimbetka rock shelter in the Vindhyan sandstone"
-    credit: "Bernard Gagnon · CC BY-SA 3.0"
+    credit: "Bernard Gagnon · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/vindhya/bhimbetka-paintings.jpg
     caption: "Prehistoric paintings under a Vindhyan sandstone overhang"
-    credit: "Bernard Gagnon · CC BY-SA 3.0"
+    credit: "Bernard Gagnon · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/vindhya/rock-art.jpg
     caption: "Rock art at Bhimbetka — a horseman in ochre"
-    credit: "Marjolein Katsma · CC BY-SA 2.0"
+    credit: "Marjolein Katsma · CC BY-SA 2.0 · via Wikimedia Commons"
   - src: /assets/covers/vindhya/sandstone.jpg
     caption: "Weathered Vindhyan sandstone at Bhimbetka"
-    credit: "Bernard Gagnon · CC BY-SA 3.0"
+    credit: "Bernard Gagnon · CC BY-SA 3.0 · via Wikimedia Commons"
 ---
 
 The Vindhyas are less a single chain than a long line of **scarps and plateaus** capped by the **Vindhyan Supergroup** — sandstones, shales and limestones deposited in a shallow sea and barely altered since. Their hard, near-flat sandstone tops give the range its distinctive tabletop profile.

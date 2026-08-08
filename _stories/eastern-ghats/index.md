@@ -17,16 +17,16 @@ feature_type: "Fold mountains (mobile belt)"
 gallery:
   - src: /assets/covers/eastern-ghats/sunrise.jpg
     caption: "Sunrise over the layered ridges of the Eastern Ghats"
-    credit: "Drashokk · CC BY-SA 4.0"
+    credit: "Drashokk · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/eastern-ghats/araku-train.jpg
     caption: "The railway winding through the Ghats at Araku"
-    credit: "Adityamadhav83 · CC BY-SA 3.0"
+    credit: "Adityamadhav83 · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/eastern-ghats/misty-valley.jpg
     caption: "Mist over the Eastern Ghats at Araku Valley"
-    credit: "Sarath Kuchi · CC BY-SA 2.0"
+    credit: "Sarath Kuchi · CC BY-SA 2.0 · via Wikimedia Commons"
   - src: /assets/covers/eastern-ghats/tribals-araku.jpg
     caption: "Tribal life in the misty hills of Araku"
-    credit: "Drashokk · CC BY-SA 4.0"
+    credit: "Drashokk · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 The Eastern Ghats are a broken, discontinuous range of ancient **high-grade metamorphic rock** along India's east coast. Because most of the original mountain range has long since eroded away, the rocks now exposed once lay **deep beneath it** — subjected to immense heat and pressure that gave them their striking textures, mineral assemblages, and appearance.

@@ -15,16 +15,16 @@ feature_type: "Mountain pass"
 gallery:
   - src: /assets/covers/nathula/pass-scene.jpg
     caption: "Nathu La, on the old India–Tibet trade route"
-    credit: "Abhishek Dey · CC BY-SA 4.0"
+    credit: "Abhishek Dey · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/nathula/pass.jpg
     caption: "The arduous climb to Nathu La, Sikkim"
-    credit: "Mr. Debapriya Hore · CC BY-SA 4.0"
+    credit: "Mr. Debapriya Hore · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/nathula/border-sign.jpg
     caption: "A caution sign near the border pass"
-    credit: "shankar s · CC BY 2.0"
+    credit: "shankar s · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/nathula/october.jpg
     caption: "Nathu La in October"
-    credit: "Vijayanand7 · CC BY-SA 4.0"
+    credit: "Vijayanand7 · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Nathu La sits at roughly 4,300 m on the Himalayan crest east of Gangtok. Like other passes here it is a saddle in crust thrust up during the India–Asia collision, threading between peaks toward the edge of the **Tibetan plateau**.

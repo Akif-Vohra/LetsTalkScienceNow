@@ -15,16 +15,16 @@ shape: /assets/geo/features/ganga-river.geojson   # river course from the GSI ri
 gallery:
   - src: /assets/covers/ganga/gomukh.jpg
     caption: "Gomukh — the glacier snout where the Ganga emerges"
-    credit: "Debashish Mahapatra · CC BY-SA 3.0"
+    credit: "Debashish Mahapatra · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/ganga/bhagirathi.jpg
     caption: "The Bhagirathi, the Ganga's headstream, at Gangotri"
-    credit: "Atarax42 · CC BY-SA 3.0"
+    credit: "Atarax42 · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/ganga/varanasi.jpg
     caption: "The river on the plains at Varanasi"
-    credit: "Babasteve · CC BY 2.0"
+    credit: "Babasteve · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/ganga/ganges-delta.jpg
     caption: "The Ganga–Brahmaputra delta from orbit"
-    credit: "European Space Agency (ESA)"
+    credit: "European Space Agency (ESA) · via Wikimedia Commons"
 ---
 
 The Ganga gathers from Himalayan glaciers above Gangotri, joins its headstreams at Devprayag, spills onto the plains at Haridwar, and then flows some 2,500 km across the **Indo-Gangetic Plain** to the Bay of Bengal.

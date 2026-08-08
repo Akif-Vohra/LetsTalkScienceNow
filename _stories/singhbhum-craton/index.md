@@ -16,16 +16,16 @@ feature_type: "Craton (shield)"
 gallery:
   - src: /assets/covers/singhbhum/subarnarekha.jpg
     caption: "The Subarnarekha River winding through the ancient Singhbhum terrain at Ghatshila"
-    credit: "4T15.D3 · CC0"
+    credit: "4T15.D3 · CC0 · via Wikimedia Commons"
   - src: /assets/covers/singhbhum/dalma-hills.jpg
     caption: "The Dalma Hills, a Proterozoic volcanic range, above Jamshedpur"
-    credit: "Kharbaan Ghaltaan · CC BY-SA 4.0"
+    credit: "Kharbaan Ghaltaan · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/singhbhum/copper-smelter.jpg
     caption: "The Ghatshila copper smelter — Singhbhum is India's oldest copper belt"
-    credit: "darrylkeith · CC BY-SA 3.0"
+    credit: "darrylkeith · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/singhbhum/galudih-barrage.jpg
     caption: "The Galudih Barrage on the Subarnarekha at dusk"
-    credit: "4T15.D3 · CC0"
+    credit: "4T15.D3 · CC0 · via Wikimedia Commons"
 map_title: "Singhbhum Craton"
 ---
 

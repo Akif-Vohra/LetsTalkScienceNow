@@ -15,16 +15,16 @@ feature_type: "Mountain pass"
 gallery:
   - src: /assets/covers/zoji-la/sonamarg-lake.jpg
     caption: "An alpine lake at Sonamarg, gateway to Zoji La"
-    credit: "Rohit Sharma · CC BY-SA 4.0"
+    credit: "Rohit Sharma · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/zoji-la/pass-truck.jpg
     caption: "A truck on the rough Zoji La pass road"
-    credit: "Narender9 · CC BY-SA 4.0"
+    credit: "Narender9 · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/zoji-la/pass-road.jpg
     caption: "The cliff-edge road over Zoji La"
-    credit: "Yogeshgupta26 · public domain"
+    credit: "Yogeshgupta26 · public domain · via Wikimedia Commons"
   - src: /assets/covers/zoji-la/vishansar.jpg
     caption: "Vishansar Lake near Sonamarg"
-    credit: "Rohit Sharma · CC BY-SA 4.0"
+    credit: "Rohit Sharma · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Zoji La, at about 3,500 m, breaches the **Great Himalayan wall** between Sonamarg and Dras. It is a low point in a barrier raised by continental collision, and marks a sharp climatic threshold — green, monsoon-fed slopes to the west, cold high desert to the east.

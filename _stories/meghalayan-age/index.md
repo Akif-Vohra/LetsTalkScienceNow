@@ -11,15 +11,15 @@ feature_type: "Plateau"
 gallery:
   - src: /assets/covers/meghalayan/mawmluh-cave.jpg
     caption: "Mawmluh Cave — its stalagmite defines the Meghalayan Age"
-    credit: "Wann Majaw · CC0"
+    credit: "Wann Majaw · CC0 · via Wikimedia Commons"
   - src: /assets/covers/meghalayan/root-bridge.jpg
     caption: "A living root bridge, grown from rubber-fig roots"
-    credit: "Joydeep Chakraborty · CC BY-SA 4.0"
+    credit: "Joydeep Chakraborty · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/meghalayan/nohkalikai-falls.jpg
     caption: "Nohkalikai Falls plunges from the Cherrapunji plateau"
-    credit: "Vikramjit Kakati · CC BY-SA 4.0"
+    credit: "Vikramjit Kakati · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/meghalayan/misty-valley.jpg
     caption: "Mist in the gorges below Cherrapunji, among the wettest places on Earth"
-    credit: "BroKholi94 · CC BY-SA 4.0"
+    credit: "BroKholi94 · CC BY-SA 4.0 · via Wikimedia Commons"
 map_title: "Meghalaya"
 ---

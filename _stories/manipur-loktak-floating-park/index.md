@@ -10,15 +10,15 @@ feature_type: "Lake"
 gallery:
   - src: /assets/covers/loktak/phumdi.jpg
     caption: "A floating 'phumdi' and fishing structures on Loktak Lake"
-    credit: "ch_15march · CC BY 2.0"
+    credit: "ch_15march · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/loktak/island-reflection.jpg
     caption: "An island mirrored in Loktak's still water"
-    credit: "ch_15march · CC BY 2.0"
+    credit: "ch_15march · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/loktak/expanse.jpg
     caption: "The wide expanse of Loktak, Manipur's great wetland"
-    credit: "ch_15march · CC BY 2.0"
+    credit: "ch_15march · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/loktak/island.jpg
     caption: "One of the lake's forested islands"
-    credit: "ch_15march · CC BY 2.0"
+    credit: "ch_15march · CC BY 2.0 · via Wikimedia Commons"
 map_title: "Loktak Lake, Manipur"
 ---

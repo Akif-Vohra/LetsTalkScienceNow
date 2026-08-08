@@ -15,16 +15,16 @@ feature_type: "River island"
 gallery:
   - src: /assets/covers/majuli/stilt-house.jpg
     caption: "A stilt house on Majuli, the great river island"
-    credit: "Sanghamitra Bordoloi · CC BY-SA 4.0"
+    credit: "Sanghamitra Bordoloi · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/majuli/sunset-river.jpg
     caption: "Sunset over Majuli, the world's largest river island"
-    credit: "Udit Kapoor · CC BY-SA 4.0"
+    credit: "Udit Kapoor · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/majuli/masks.jpg
     caption: "A traditional Ganesha mask from Majuli's satras"
-    credit: "Afughat · CC BY-SA 4.0"
+    credit: "Afughat · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/majuli/tuni-bridge.jpg
     caption: "A bridge across Majuli's wetlands"
-    credit: "Afughat · CC BY-SA 4.0"
+    credit: "Afughat · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Majuli is **one of the largest river islands in the world**, a broad expanse of land held within the braided channels of the mighty Brahmaputra in Assam. Unlike a mountain or a craton, it is a **young and impermanent landform**: built entirely of river-borne sand and silt, and constantly reshaped as the Brahmaputra shifts its course.

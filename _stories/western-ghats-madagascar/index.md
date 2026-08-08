@@ -10,16 +10,16 @@ feature_type: "Escarpment (rifted margin)"
 gallery:
   - src: /assets/covers/western-ghats/crest.jpg
     caption: "The forested crest of the Western Ghats"
-    credit: "Vijay Sundararaman Iyer · CC BY-SA 4.0"
+    credit: "Vijay Sundararaman Iyer · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/western-ghats/meesapulimala.jpg
     caption: "Meesapulimala, among the Ghats' highest peaks"
-    credit: "Sivakumar1605 · CC BY-SA 4.0"
+    credit: "Sivakumar1605 · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/western-ghats/peak-lake.jpg
     caption: "A peak and lake in the high Western Ghats"
-    credit: "User:Arulmatp · CC BY-SA 3.0"
+    credit: "User:Arulmatp · CC BY-SA 3.0 · via Wikimedia Commons"
   - src: /assets/covers/western-ghats/munnar-tea.jpg
     caption: "Tea gardens carpeting the Munnar hills"
-    credit: "Ingo Mehling · CC BY-SA 4.0"
+    credit: "Ingo Mehling · CC BY-SA 4.0 · via Wikimedia Commons"
 map_title: "Western Ghats"
 shape: /assets/geo/features/western-ghats.geojson   # IUCN hotspot strip, traced via georeference.ai
 shape_credit: "traced from a Western Ghats figure (Molur et&nbsp;al. 2010, IUCN)"

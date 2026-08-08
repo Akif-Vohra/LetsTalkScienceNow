@@ -15,16 +15,16 @@ feature_type: "Coalfield"
 gallery:
   - src: /assets/covers/jharia/open-pit.jpg
     caption: "An open-cast coal mine at Jharia, India's largest coalfield"
-    credit: "international accountability project · CC BY 2.0"
+    credit: "international accountability project · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/jharia/pit-aerial.jpg
     caption: "Inside a Jharia pit — the coalfield has burned underground for over a century"
-    credit: "international accountability project · CC BY 2.0"
+    credit: "international accountability project · CC BY 2.0 · via Wikimedia Commons"
   - src: /assets/covers/jharia/coal-fire.jpg
     caption: "An excavator cutting into a burning coal seam at Jharia"
-    credit: "TripodStories-AB · CC BY-SA 4.0"
+    credit: "TripodStories-AB · CC BY-SA 4.0 · via Wikimedia Commons"
   - src: /assets/covers/jharia/miners-1948.jpg
     caption: "Coal miners in the Jharia field, 1948 — much of the early workforce was tribal"
-    credit: "Akhaury Ahan Praneet · CC BY-SA 4.0"
+    credit: "Akhaury Ahan Praneet · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Jharia holds the country's best **coking (metallurgical) coal**, laid down in a **Gondwana rift basin** of the Damodar Valley some 280 million years ago, when cold-climate forests accumulated in a subsiding trough. These Permian seams feed India's steel industry.
