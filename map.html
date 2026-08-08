@@ -67,12 +67,12 @@ description: An interactive map of the geological features of the Indian subcont
   .pinsearch__results li.is-active,.pinsearch__results li:hover{background:var(--blue-50,#eef4fd);}
   .pinsearch__results .ps-type{color:var(--muted);font-size:.76rem;white-space:nowrap;}
   .pinsearch__results .ps-empty{color:var(--muted);cursor:default;justify-content:flex-start;}
-  /* Soil-type legend (shows only while the Soil overlay is on) */
-  .soil-legend{background:rgba(255,255,255,.95);padding:.5rem .6rem;border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.28);
+  /* Overlay legends (shown only while their layer is on) — shared by soil + seismic */
+  .map-legend{background:rgba(255,255,255,.95);padding:.5rem .6rem;border-radius:8px;box-shadow:0 1px 8px rgba(0,0,0,.28);
     font-family:var(--font-body);max-width:232px;max-height:46vh;overflow-y:auto;}
-  .soil-legend h4{margin:0 0 .35rem;font-size:.8rem;font-family:var(--font-head);color:var(--ink);}
-  .soil-legend .sl-row{display:flex;align-items:center;gap:.42rem;font-size:.72rem;color:#333;margin:.14rem 0;}
-  .soil-legend .sl-row i{width:14px;height:14px;border-radius:3px;flex:0 0 auto;border:1px solid rgba(0,0,0,.15);}
+  .map-legend h4{margin:0 0 .35rem;font-size:.8rem;font-family:var(--font-head);color:var(--ink);}
+  .map-legend .sl-row{display:flex;align-items:center;gap:.42rem;font-size:.72rem;color:#333;margin:.14rem 0;}
+  .map-legend .sl-row i{width:14px;height:14px;border-radius:3px;flex:0 0 auto;border:1px solid rgba(0,0,0,.15);}
   /* Photo popover above a selected pin (Leaflet popup, restyled) */
   .pin-gallery-popup .leaflet-popup-content-wrapper{padding:0;overflow:hidden;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.28);}
   .pin-gallery-popup .leaflet-popup-content{margin:0;width:400px!important;line-height:0;}
@@ -207,7 +207,8 @@ description: An interactive map of the geological features of the Indian subcont
     ],
     geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }},
     rivers: {{ '/assets/geo/rivers.geojson' | relative_url | jsonify }},
-    soil: {{ '/assets/geo/soil.geojson' | relative_url | jsonify }}
+    soil: {{ '/assets/geo/soil.geojson' | relative_url | jsonify }},
+    seismic: {{ '/assets/geo/seismic.geojson' | relative_url | jsonify }}
   };
 </script>
 <script src="{{ '/assets/js/map.js' | relative_url }}?{{ site.time | date: '%s' }}"></script>

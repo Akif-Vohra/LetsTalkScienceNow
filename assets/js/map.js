@@ -104,16 +104,52 @@
   }
   var soilLegend = L.control({ position: 'bottomleft' });
   soilLegend.onAdd = function () {
-    var div = L.DomUtil.create('div', 'soil-legend');
+    var div = L.DomUtil.create('div', 'map-legend');
     div.innerHTML = '<h4>Soil types</h4>' + SOILS.map(function (s) {
       return '<span class="sl-row"><i style="background:' + s.color + '"></i>' + s.label + '</span>';
     }).join('');
     return div;
   };
 
-  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil }, { collapsed: false }).addTo(map);
-  map.on('overlayadd',    function (e) { if (e.layer === soil) { loadSoil(); soilLegend.addTo(map); } });
-  map.on('overlayremove', function (e) { if (e.layer === soil) { map.removeControl(soilLegend); } });
+  // Seismic-zone overlay (BIS Zones II–V). Same toggle+legend pattern as soil.
+  var SEIS = [
+    { key: 'V',   label: 'Zone V — Very severe', color: '#d64536' },
+    { key: 'IV',  label: 'Zone IV — Severe',     color: '#ef8a3a' },
+    { key: 'III', label: 'Zone III — Moderate',  color: '#e8c33c' },
+    { key: 'II',  label: 'Zone II — Low',        color: '#66a55b' }
+  ];
+  var SEISC = {}; SEIS.forEach(function (s) { SEISC[s.key] = s; });
+  var seismic = L.geoJSON(null, {
+    interactive: false, attribution: 'Seismic zones: BIS / data.gov.in',
+    style: function (f) {
+      var c = SEISC[(f.properties || {}).zone] || { color: '#888' };
+      return { color: '#ffffff', weight: 0.4, opacity: 0.5, fillColor: c.color, fillOpacity: 0.5 };
+    }
+  });
+  var seisLoaded = false;
+  function loadSeismic() {
+    if (seisLoaded) return; seisLoaded = true;
+    fetch(window.MAP.seismic).then(function (r) { return r.json(); })
+      .then(function (geo) { seismic.addData(geo); seismic.bringToBack(); });
+  }
+  var seisLegend = L.control({ position: 'bottomleft' });
+  seisLegend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'map-legend');
+    div.innerHTML = '<h4>Seismic zones</h4>' + SEIS.map(function (s) {
+      return '<span class="sl-row"><i style="background:' + s.color + '"></i>' + s.label + '</span>';
+    }).join('');
+    return div;
+  };
+
+  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic }, { collapsed: false }).addTo(map);
+  map.on('overlayadd', function (e) {
+    if (e.layer === soil)    { loadSoil();    soilLegend.addTo(map); }
+    if (e.layer === seismic) { loadSeismic(); seisLegend.addTo(map); }
+  });
+  map.on('overlayremove', function (e) {
+    if (e.layer === soil)    map.removeControl(soilLegend);
+    if (e.layer === seismic) map.removeControl(seisLegend);
+  });
 
   var reader = document.getElementById('reader');
   var activeShape = null, activeShapePin = null;        // only the last-clicked outline is shown
