@@ -19,6 +19,6 @@ gallery:
     credit: "Kingshuk Mondal · CC BY 4.0"
   - src: /assets/covers/arunachal/sela-pass.jpg
     caption: "The 13,700-ft Sela Pass, West Kameng"
-    credit: "Abhishek Gaurav, from Tezpur university, Assam · CC BY-SA 4.0"
+    credit: "Abhishek Gaurav · CC BY-SA 4.0"
 map_title: "Eastern Himalayan Syntaxis"
 ---

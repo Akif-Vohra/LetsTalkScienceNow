@@ -13,9 +13,9 @@ latlng: [27.39, 88.83]
 age_ma: 50
 feature_type: "Mountain pass"
 gallery:
-  - src: /assets/covers/nathula/stairs.jpg
-    caption: "The stairway at Nathu La, on the old India–Tibet trade route"
-    credit: "Nathu_La-Stairs.JPG: Self (User:Ambuj.Saxena) derivative work: Mfield (talk) · public domain"
+  - src: /assets/covers/nathula/pass-scene.jpg
+    caption: "Nathu La, on the old India–Tibet trade route"
+    credit: "Abhishek Dey · CC BY-SA 4.0"
   - src: /assets/covers/nathula/pass.jpg
     caption: "The arduous climb to Nathu La, Sikkim"
     credit: "Mr. Debapriya Hore · CC BY-SA 4.0"

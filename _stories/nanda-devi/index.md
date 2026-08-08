@@ -24,8 +24,8 @@ gallery:
     caption: "A lenticular cloud over the Nanda Devi massif"
     credit: "Ashutosh Mohan · CC BY-SA 4.0"
   - src: /assets/covers/nanda-devi/ranikhet.jpg
-    caption: "The Himalayan skyline from Ranikhet"
-    credit: "Original: Harshit SR Derivative work: UnpetitproleX · CC BY-SA 4.0"
+    caption: "Nanda Devi on the skyline from Ranikhet"
+    credit: "Harshit SR · CC BY-SA 4.0"
 ---
 
 At 7,816 m, Nanda Devi is the tallest summit wholly inside India. It sits inside a spectacular **glacial sanctuary** — a ring of high peaks enclosing a basin drained by the Rishiganga — carved from Himalayan crystalline rock uplifted in the collision.

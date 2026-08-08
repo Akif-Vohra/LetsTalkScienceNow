@@ -10,7 +10,7 @@ feature_type: "Ophiolite"
 gallery:
   - src: /assets/covers/nagaland/dzukou-green.jpg
     caption: "The green sweep of the Dzukou Valley"
-    credit: "Original: Samudra Bikash Hazarika Derivative work: UnpetitproleX · CC BY-SA 4.0"
+    credit: "Samudra Bikash Hazarika · CC BY-SA 4.0"
   - src: /assets/covers/nagaland/dzukou-dusk.jpg
     caption: "Dusk over the Dzukou Valley, near Viswema"
     credit: "পাপৰি বৰা · CC BY-SA 4.0"

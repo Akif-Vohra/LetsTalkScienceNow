@@ -10,7 +10,7 @@ feature_type: "Fold mountains (Himalaya)"
 gallery:
   - src: /assets/covers/sikkim/gurudongmar.jpg
     caption: "Gurudongmar Lake, one of the highest lakes on Earth"
-    credit: "Original: Yoghya Derivative work: UnpetitproleX · CC BY-SA 4.0"
+    credit: "Abhishek · CC BY-SA 4.0"
   - src: /assets/covers/sikkim/yumthang.jpg
     caption: "The Yumthang Valley of flowers, North Sikkim"
     credit: "soumyajit pramanick · CC BY-SA 2.0"

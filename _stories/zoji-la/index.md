@@ -21,7 +21,7 @@ gallery:
     credit: "Narender9 · CC BY-SA 4.0"
   - src: /assets/covers/zoji-la/pass-road.jpg
     caption: "The cliff-edge road over Zoji La"
-    credit: "Yogeshgupta26 at English Wikipedia · public domain"
+    credit: "Yogeshgupta26 · public domain"
   - src: /assets/covers/zoji-la/vishansar.jpg
     caption: "Vishansar Lake near Sonamarg"
     credit: "Rohit Sharma · CC BY-SA 4.0"
