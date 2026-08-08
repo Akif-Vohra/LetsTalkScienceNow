@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [17.92, 73.66]
 age_ma: 20
 feature_type: "River"
+gallery:
+  - src: /assets/covers/krishna/nagarjuna-sagar.jpg
+    caption: "The Nagarjuna Sagar Dam on the Krishna"
+    credit: "Srikar Kashyap · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/krishna/prakasam-barrage.jpg
+    caption: "The Prakasam Barrage and the Krishna at Vijayawada"
+    credit: "iMahesh · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/krishna/fishing-boat.jpg
+    caption: "A fishing boat on the Krishna near Vijayawada"
+    credit: "iMahesh · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/krishna/river.jpg
+    caption: "The Krishna below the Deccan hills"
+    credit: "Trusharm512 · CC BY-SA 4.0 · via Wikimedia Commons"
 shape: /assets/geo/features/krishna-river.geojson   # river course from the GSI rivers layer
 ---
 

@@ -11,6 +11,19 @@ add_on_map: true
 latlng: [34.1, 77.65]
 age_ma: 20
 feature_type: "River"
+gallery:
+  - src: /assets/covers/indus/ladakh-gorge.jpg
+    caption: "The Indus winding through the barren mountains of Ladakh"
+    credit: "Bernard Gagnon · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/indus/leh-valley.jpg
+    caption: "The Indus valley near Leh"
+    credit: "KennyOMG · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/indus/bridge.jpg
+    caption: "A bridge over the Indus in Ladakh"
+    credit: "Bernard Gagnon · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/indus/turquoise.jpg
+    caption: "Glacial-turquoise water of the upper Indus"
+    credit: "Bernard Gagnon · CC BY-SA 4.0 · via Wikimedia Commons"
 shape: /assets/geo/features/indus-river.geojson   # full course from Natural Earth (trans-boundary)
 ---
 

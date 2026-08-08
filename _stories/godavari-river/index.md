@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [19.93, 73.53]
 age_ma: 20
 feature_type: "River"
+gallery:
+  - src: /assets/covers/godavari/ghat.jpg
+    caption: "The Godavari at the Rajahmundry ghats"
+    credit: "Adivaitha · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/godavari/sunset.jpg
+    caption: "Sunset over the Godavari at Rajahmundry"
+    credit: "Pavan santhosh.s · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/godavari/rail-bridge.jpg
+    caption: "The river spanned by the Rajahmundry rail bridge"
+    credit: "Radhika41 · CC BY 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/godavari/monsoon.jpg
+    caption: "The Godavari in full monsoon flow"
+    credit: "Adityamadhav83 · CC BY 4.0 · via Wikimedia Commons"
 shape: /assets/geo/features/godavari-river.geojson   # river course, extracted from the GSI rivers layer
 ---
 
