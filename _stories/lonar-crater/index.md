@@ -13,6 +13,19 @@ add_on_map: true
 latlng: [19.976, 76.508]
 age_ma: 0.05
 feature_type: "Impact crater"
+gallery:
+  - src: /assets/covers/lonar/sunset.jpg
+    caption: "Sunset over Lonar Crater Lake, a ~50,000-year-old meteorite crater"
+    credit: "Rohit Sharma · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/lonar/rim.jpg
+    caption: "The forested rim enclosing the crater lake"
+    credit: "Biswas Dibyendu · CC0 · via Wikimedia Commons"
+  - src: /assets/covers/lonar/basin.jpg
+    caption: "The near-circular basin gouged out of the Deccan basalt"
+    credit: "Biswas Dibyendu · CC0 · via Wikimedia Commons"
+  - src: /assets/covers/lonar/crater.jpg
+    caption: "Lonar's crater lake, salty and alkaline"
+    credit: "Biswas Dibyendu · CC0 · via Wikimedia Commons"
 shape: /assets/geo/features/lonar-crater.geojson
 ---
 
