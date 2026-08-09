@@ -52,7 +52,7 @@
     if (/lake/i.test(t))                                                                      return 'lakes';
     if (/lagoon|salt marsh|coral|island arc/i.test(t))                                        return 'coasts';
     if (/desert/i.test(t))                                                                    return 'deserts';
-    if (/coalfield|diamond|copper|iron-ore|oilfield|gold field/i.test(t))                     return 'economic';
+    if (/coalfield|diamond|copper|iron-ore|oilfield|gold field|mine|zinc|lead|barytes/i.test(t)) return 'economic';
     return 'structure';                                                                       // fallback bucket
   }
   // Each category gets a small glyph (drawn in a 24×24 box). Filled shapes take the

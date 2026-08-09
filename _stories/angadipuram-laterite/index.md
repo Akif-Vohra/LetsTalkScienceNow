@@ -8,6 +8,7 @@ summary: "The place where the rock 'laterite' was named — now a National Geolo
 sources:
   - text: "Geological Survey of India — National Geological Monuments"
 add_on_map: true
+gsi_heritage: true
 latlng: [10.98, 76.20]
 age_ma: 5
 age: "Cenozoic lateritic weathering profile"

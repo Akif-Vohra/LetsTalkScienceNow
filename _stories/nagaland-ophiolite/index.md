@@ -4,6 +4,7 @@ reel: nagaland-ophiolite
 permalink: /stories/nagaland-ophiolite/
 title: Nagaland's ancient ocean floor
 add_on_map: true
+gsi_heritage: true
 latlng: [25.9, 94.8]
 age_ma: 120
 feature_type: "Ophiolite"

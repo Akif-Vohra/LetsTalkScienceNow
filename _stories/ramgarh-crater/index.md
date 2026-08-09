@@ -12,6 +12,7 @@ sources:
     url: "https://www.nature.com/articles/nindia.2020.120"
   - text: "Geological Survey of India"
 add_on_map: true
+gsi_heritage: true
 latlng: [25.338, 76.625]
 age_ma: 460
 age: "Impact age uncertain (recent U–Pb estimates ≈ 530–395 Ma)"

@@ -9,6 +9,7 @@ summary: "An ancient greenstone belt that hosted one of the deepest mines humans
 sources:
   - text: "Geological Survey of India"
 add_on_map: true
+gsi_heritage: true
 latlng: [12.96, 78.28]
 age_ma: 2700
 feature_type: "Gold field (greenstone belt)"

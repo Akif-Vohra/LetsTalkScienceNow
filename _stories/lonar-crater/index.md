@@ -10,6 +10,7 @@ sources:
   - text: "Geological Survey of India"
   - text: "Ramsar Convention on Wetlands"
 add_on_map: true
+gsi_heritage: true
 latlng: [19.976, 76.508]
 age_ma: 0.05
 feature_type: "Impact crater"

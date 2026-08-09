@@ -9,6 +9,7 @@ summary: "A cluster of small islands fringed with dramatic columns of basalt —
 sources:
   - text: "Geological Survey of India — National Geological Monument"
 add_on_map: true
+gsi_heritage: true
 latlng: [13.38, 74.67]
 age_ma: 88
 feature_type: "Columnar basalt (volcanic)"

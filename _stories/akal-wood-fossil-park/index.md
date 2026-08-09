@@ -8,6 +8,7 @@ summary: "A Jurassic petrified forest in the Thar — ~180-million-year-old tree
 sources:
   - text: "Geological Survey of India — National Geological Monuments"
 add_on_map: true
+gsi_heritage: true
 latlng: [26.75, 70.78]
 age_ma: 180
 feature_type: "Petrified forest (fossil wood)"
