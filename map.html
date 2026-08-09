@@ -91,12 +91,10 @@ description: An interactive map of the geological features of the Indian subcont
   .typechip{display:inline-flex;align-items:center;gap:.26rem;font:600 .64rem/1 var(--font-sans);
     padding:.16rem .44rem;border-radius:999px;border:1px solid var(--line);background:#fff;
     color:var(--muted);cursor:pointer;transition:opacity .12s,border-color .12s,color .12s;}
-  .typechip::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cat);}
+  .typechip .tc-ico{width:14px;height:14px;flex:0 0 auto;margin-left:-1px;}
   .typechip.is-on{border-color:var(--cat);color:var(--ink);}
   .typechip:not(.is-on){opacity:.5;}
-  .typechip:not(.is-on)::before{background:var(--muted);}
-  /* "All" reset chip: no colour dot, neutral highlight when active. */
-  .typechip--all::before{display:none;}
+  /* "All" reset chip: no glyph, neutral highlight when active. */
   .typechip--all.is-on{border-color:var(--ink);color:var(--ink);}
   .leaflet-tooltip.pin-label{display:none;background:rgba(17,17,17,.72);color:#fff;border:none;
     box-shadow:none;font:600 12px/1.2 var(--font-sans);padding:2px 7px;border-radius:5px;white-space:nowrap;}

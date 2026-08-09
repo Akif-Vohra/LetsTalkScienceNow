@@ -63,6 +63,11 @@
       + '<g fill="' + c + '" stroke="' + c + '" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">' + g + '</g>'
       + '</svg>';
   }
+  function chipGlyph(c) {                                // same glyph, coloured, for the filter chips (no white badge)
+    var g = GLYPH[c.key]; if (!g) return '';
+    return '<svg class="tc-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="' + c.color
+      + '" stroke="' + c.color + '" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">' + g + '</g></svg>';
+  }
   var iconCache = {};                                    // one shared icon instance per (category, size)
   function iconFor(p) {
     var size = map.getZoom() >= PIN_ZOOM ? 28 : 19;      // small when zoomed out, larger when in
@@ -349,7 +354,8 @@
       var chip = document.createElement('button');
       chip.className = 'typechip is-on';
       chip.style.setProperty('--cat', c.color);
-      chip.textContent = c.label;
+      chip.innerHTML = chipGlyph(c);
+      chip.appendChild(document.createTextNode(c.label));
       chip.addEventListener('click', function () {
         if (isAll()) present.forEach(function (x) { activeCats[x.key] = (x.key === c.key); });  // isolate
         else { activeCats[c.key] = !activeCats[c.key]; if (isNone()) showAll(); }               // add/remove
