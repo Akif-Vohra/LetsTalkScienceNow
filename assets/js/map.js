@@ -413,6 +413,7 @@
   // Category filter. "All" (default) shows everything; from All a click isolates one
   // category; further clicks add/remove; emptying it snaps back to All.
   var activeCats = {};
+  var gsiOnly = false;   // "GSI National Geological Monuments only" toggle
   (function buildChips() {
     var bar = document.getElementById('typefilter');
     if (!bar) return;
@@ -628,8 +629,8 @@
     }
     var loA = ageYoung <= 0 ? -1 : ageYoung * (1 - 1e-4); // pad a hair so a feature sitting exactly
     var hiA = ageOld * (1 + 1e-4);                        // on a boundary (e.g. Deccan at 66 Ma) counts
-    pins.forEach(function (p) {                           // show features inside the time window AND an active category
-      if (p.age >= loA && p.age <= hiA && activeCats[p.cat]) p.marker.addTo(map);
+    pins.forEach(function (p) {                           // show features inside the time window, an active category, and (if on) GSI-only
+      if (p.age >= loA && p.age <= hiA && activeCats[p.cat] && (!gsiOnly || p.gsi)) p.marker.addTo(map);
       else map.removeLayer(p.marker);
     });
     if (activeShapePin && !map.hasLayer(activeShapePin.marker) && activeShape) {
@@ -638,6 +639,13 @@
   }
   startH.addEventListener('input', update);
   endH.addEventListener('input', update);
+  var gsiCb = document.getElementById('gsi-only');
+  var gsiChip = document.getElementById('gsi-chip');
+  if (gsiCb) gsiCb.addEventListener('change', function () {
+    gsiOnly = gsiCb.checked;
+    if (gsiChip) gsiChip.classList.toggle('is-on', gsiOnly);
+    update();
+  });
   update();
 
   // Deep-link: open the feature named in the URL hash (#slug), revealing it even if a filter hid it.

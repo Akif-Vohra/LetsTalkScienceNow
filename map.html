@@ -92,6 +92,8 @@ description: An interactive map of the geological features of the Indian subcont
   .pin-gallery__count{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);white-space:nowrap;font-variant-numeric:tabular-nums;}
   .pin-gallery-popup a.leaflet-popup-close-button{color:#fff;top:4px;right:6px;font-size:20px;z-index:3;}
   .typefilter{display:flex;flex-wrap:wrap;gap:.28rem;margin-top:var(--sp-md);padding-top:var(--sp-sm);border-top:1px solid var(--line);}
+  .gsi-chip{--cat:#8a6d3b;margin-top:var(--sp-sm);text-align:left;}
+  .gsi-chip input{width:14px;height:14px;accent-color:#8a6d3b;cursor:pointer;flex:0 0 auto;margin:0;}
   .typechip{display:inline-flex;align-items:center;gap:.28rem;font:600 .72rem/1 var(--font-head);
     padding:.28rem .6rem;border-radius:999px;border:1px solid var(--line);background:#fff;
     color:var(--muted);cursor:pointer;transition:opacity .12s,border-color .12s,color .12s;}
@@ -182,6 +184,7 @@ description: An interactive map of the geological features of the Indian subcont
           <p class="timebar__key"><strong>Ma</strong> = million years ago &middot; <strong>Ga</strong> = billion &middot; <strong>ka</strong> = thousand</p>
         </div>
         <div class="typefilter" id="typefilter"></div>
+        <label class="typechip gsi-chip" id="gsi-chip"><input type="checkbox" id="gsi-only"> Show only National Geological Monuments designated by GSI</label>
       </div>
       <div id="reader" class="reader">
         <div class="reader__empty">Tap a feature on the map to read its story here.</div>
@@ -205,7 +208,7 @@ description: An interactive map of the geological features of the Indian subcont
     pins: [
       {%- assign mappins = site.stories | where_exp: "s", "s.add_on_map" -%}
       {%- for pin in mappins -%}
-      { title: {{ pin.map_title | default: pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.url | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}, type: {{ pin.feature_type | jsonify }}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %}{% if pin.gallery %}, gallery: [{% for g in pin.gallery %}{ src: {{ g.src | relative_url | jsonify }}{% if g.caption %}, caption: {{ g.caption | jsonify }}{% endif %}{% if g.credit %}, credit: {{ g.credit | jsonify }}{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}]{% endif %} },
+      { title: {{ pin.map_title | default: pin.title | jsonify }}, latlng: [{{ pin.latlng[0] }}, {{ pin.latlng[1] }}], url: {{ pin.url | relative_url | jsonify }}, age: {{ pin.age_ma | default: 0 }}, type: {{ pin.feature_type | jsonify }}{% if pin.gsi_heritage %}, gsi: true{% endif %}{% if pin.shape %}, shape: {{ pin.shape | relative_url | jsonify }}{% endif %}{% if pin.gallery %}, gallery: [{% for g in pin.gallery %}{ src: {{ g.src | relative_url | jsonify }}{% if g.caption %}, caption: {{ g.caption | jsonify }}{% endif %}{% if g.credit %}, credit: {{ g.credit | jsonify }}{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}]{% endif %} },
       {%- endfor -%}
     ],
     geojson: {{ '/assets/geo/india.geojson' | relative_url | jsonify }},
