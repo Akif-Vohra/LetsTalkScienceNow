@@ -65,19 +65,3 @@ description: >-
   </div>
 </section>
 
-<!-- SERIES -->
-<section class="section">
-  <div class="container">
-    <div class="section-head split">
-      <div>
-        <p class="eyebrow">Featured Series</p>
-        <h2>Build understanding, story by story.</h2>
-      </div>
-      <a class="text-link" href="{{ '/series/' | relative_url }}">Browse all series →</a>
-    </div>
-    <div class="series-grid">
-      {% for entry in site.data.series %}{% assign sslug = entry[0] %}{% assign scount = site.data.reels | where: "series", sslug | size %}{% if scount > 0 %}{% include series-card.html slug=sslug %}{% endif %}{% endfor %}
-    </div>
-  </div>
-</section>
-
