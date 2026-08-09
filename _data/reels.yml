@@ -1012,3 +1012,32 @@
   category: computer-science
   overlay_title: "How software actually handles geodata"
   summary: "Vector vs raster, coordinate systems, and the file formats — the fundamentals I picked up building the interactive geological map of India."
+
+- id: dhala-impact-structure
+  date: 2026-08-09
+  category: geology
+  overlay_title: "Dhala — India's largest and oldest meteorite scar 🌠"
+  youtube_url: https://www.youtube.com/shorts/KpNO4Td8Ofk
+  youtube_id: KpNO4Td8Ofk
+  location: "Shivpuri district, Madhya Pradesh"
+  summary: "India's largest confirmed impact structure — a ~2-billion-year-old crater struck by an ultra-rare ureilite meteorite, since eroded into a raised scar."
+  references:
+    - "Pati, J. K. et al. — research on the Dhala impact structure, Bundelkhand craton"
+    - "Geological Survey of India"
+    - "NASA — near-Earth object / atmospheric-entry estimates"
+  body: |
+    Dhala, in the **Shivpuri district of Madhya Pradesh**, is the **largest known impact structure in South Asia** and one of the **oldest known on Earth** — roughly **2 billion years old**, formed when a meteorite slammed into the surface.
+
+    ## Struck by an ultra-rare meteorite
+
+    Dhala is the only impact structure confirmed to have been made by a **ureilite**. Ureilites are extremely rare meteorites thought to come from **differentiated planetesimals and asteroids** of the early Solar System — bodies that partly melted and separated into layers, so ureilite material includes rock derived from deep in the parent body's interior.
+
+    ## Why Earth keeps so few craters
+
+    Two things erase Earth's impact record. First, the **atmosphere**: NASA estimates that space rocks smaller than about **25 m** (~82 ft) mostly burn up on entry, doing little or no damage. Second, **time and geology**: even the larger strikes — Earth has been hit by thousands of asteroids over 1 km across in its history — leave craters that **erosion, tectonics, and volcanism** slowly reshape, or erase completely.
+
+    ## A crater turned inside-out
+
+    Strangely, Dhala today is a **raised patch of terrain**, not the circular depression you'd expect of a crater. Around **2 billion years of erosion** have stripped away the original crater — rim and all. The high ground at its centre is the **central uplift**: rock that rebounded upward during the impact and then collapsed, later left standing as the softer surrounding rock wore away. What survives is a **deeply eroded remnant**, not the crater as it first looked.
+
+    *As always, if you spot mistakes in my explanation, please correct me. 🙏🏼*
