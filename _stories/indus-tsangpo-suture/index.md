@@ -13,6 +13,19 @@ add_on_map: true
 latlng: [34.2, 77.6]
 age_ma: 50
 feature_type: "Suture zone"
+gallery:
+  - src: /assets/covers/industsangpo/moonland.jpg
+    caption: "The lunar 'moonland' of Lamayuru, on the Indus–Tsangpo suture"
+    credit: "Ingo Mehling · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/industsangpo/badlands.jpg
+    caption: "Eroded lake-bed badlands along the suture zone"
+    credit: "Ingo Mehling · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/industsangpo/ridges.jpg
+    caption: "Bare folded ridges where two continents joined"
+    credit: "Ingo Mehling · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/industsangpo/lamayuru.jpg
+    caption: "The Lamayuru moonscape, Ladakh"
+    credit: "Ingo Mehling · CC BY-SA 4.0 · via Wikimedia Commons"
 map_title: "Indus–Tsangpo Suture Zone"
 ---
 

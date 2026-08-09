@@ -12,6 +12,19 @@ add_on_map: true
 latlng: [13.38, 74.67]
 age_ma: 88
 feature_type: "Columnar basalt (volcanic)"
+gallery:
+  - src: /assets/covers/stmarys/columns.jpg
+    caption: "The columnar basalt of St Mary's Islands, split into polygonal pillars"
+    credit: "Krishnakulkarni36 · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/stmarys/outcrops.jpg
+    caption: "Basalt outcrops on the island beach"
+    credit: "Shravan Kamath94 · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/stmarys/shore.jpg
+    caption: "The rocky St Mary's shore"
+    credit: "Shravan Kamath94 · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/stmarys/spit.jpg
+    caption: "The sand spit of St Mary's Islands"
+    credit: "Shravan Kamath94 · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 St. Mary's Islands are famous for their **columnar basalt**: lava that cooled and contracted into striking polygonal columns, standing like a natural pavement of stone pillars. The Geological Survey of India has recognised them as a **National Geological Monument**.

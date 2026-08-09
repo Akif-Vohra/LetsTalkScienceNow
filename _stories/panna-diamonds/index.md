@@ -12,6 +12,16 @@ add_on_map: true
 latlng: [24.72, 80.18]
 age_ma: 1100
 feature_type: "Diamond deposit"
+gallery:
+  - src: /assets/covers/panna/falls.jpg
+    caption: "The Pawai (Chaandee) falls near Panna, pouring over horizontal strata"
+    credit: "Ms Sarah Welch · CC0 · via Wikimedia Commons"
+  - src: /assets/covers/panna/plateau.jpg
+    caption: "The rocky plateau edge of the Panna region"
+    credit: "Ms Sarah Welch · CC0 · via Wikimedia Commons"
+  - src: /assets/covers/panna/strata.jpg
+    caption: "Layered rock at the Pawai falls"
+    credit: "Ms Sarah Welch · CC0 · via Wikimedia Commons"
 ---
 
 Panna's diamonds come from the **Majhgawan pipe**, a deeply eroded volcanic vent of kimberlite-like rock over a billion years old that carried diamonds up from the mantle. Weathering has washed some into the surrounding Vindhyan gravels, which are also worked.

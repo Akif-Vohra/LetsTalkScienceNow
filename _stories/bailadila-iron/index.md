@@ -13,6 +13,13 @@ add_on_map: true
 latlng: [18.66, 81.23]
 age_ma: 3000
 feature_type: "Iron-ore range (BIF)"
+gallery:
+  - src: /assets/covers/bailadila/mining.jpg
+    caption: "Open-cast iron-ore mining in the Bailadila hills"
+    credit: "Jithin.hill · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/bailadila/range.jpg
+    caption: "The Bailadila range at Dantewada, Chhattisgarh"
+    credit: "Jithin.hill · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Bailadila — "the hump of the ox" — is a ridge of **banded iron formation**, iron and silica laid down on the floor of an Archean sea when the young Earth's oceans first took up oxygen. Later enrichment has left ore of unusually high grade.
