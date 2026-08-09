@@ -231,17 +231,58 @@
     return div;
   };
 
-  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
+  // Agro-ecological regions (ICAR–NBSS&LUP, 20 zones). These are really a physiographic
+  // partition of India (Himalayas, Deccan, Ghats, plains…); soft fills just separate
+  // neighbours and the full region name shows on hover — the names are messy/typo'd, so
+  // we don't bucket them into false categories.
+  var AGRO_PAL = ['#8ec6c5','#d9a86c','#a8c686','#c98b8b','#7fa8d0','#cbb26a','#9a8fbf','#87b6a3',
+                  '#d0a3b0','#b7c47f','#7bb0b7','#caa27a','#9ab0d4','#b59ac0'];
+  function agroName(s) {                                  // ALL-CAPS, typo'd source → readable
+    s = (s || '').replace(/\s+/g, ' ').trim().toLowerCase()
+         .replace(/e[gc]o[- ]?region/g, 'eco-region')
+         .replace(/sub\s*a?humid/g, 'sub-humid')
+         .replace(/\bplatu\b/g, 'plateau');
+    return s.replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+  var agroeco = L.geoJSON(null, {
+    attribution: 'Agro-ecological regions: ICAR–NBSS&LUP / data.gov.in',
+    style: function (f) {
+      var i = ((f.properties || {}).ae_regcode || 1) - 1;
+      return { color: '#ffffff', weight: 0.6, opacity: 0.7,
+               fillColor: AGRO_PAL[i % AGRO_PAL.length], fillOpacity: 0.5 };
+    },
+    onEachFeature: function (f, layer) {
+      layer.bindTooltip(agroName((f.properties || {}).physio_reg), { sticky: true, direction: 'top' });
+    }
+  });
+  var agroLoaded = false;
+  function loadAgro() {
+    if (agroLoaded) return; agroLoaded = true;
+    fetch(window.MAP.agroeco).then(function (r) { return r.json(); })
+      .then(function (geo) { agroeco.addData(geo); agroeco.bringToBack(); });
+  }
+  var agroLegend = L.control({ position: 'bottomleft' });
+  agroLegend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'map-legend');
+    div.innerHTML = '<h4>Agro-ecological regions</h4>' +
+      '<p style="font-size:.72rem;color:#333;margin:.1rem 0 0;line-height:1.35;">' +
+      "India's 20 physiographic–ecological zones (ICAR–NBSS&amp;LUP). Hover a zone for its name.</p>";
+    return div;
+  };
+
+  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
     if (e.layer === soil)     { loadSoil();    soilLegend.addTo(map); }
     if (e.layer === seismic)  { loadSeismic(); seisLegend.addTo(map); }
     if (e.layer === faults)   { loadFaults();  faultsLegend.addTo(map); }
+    if (e.layer === agroeco)  { loadAgro();    agroLegend.addTo(map); }
     if (e.layer === rainfall) { rainfall.bringToBack(); rainLegend.addTo(map); }
   });
   map.on('overlayremove', function (e) {
     if (e.layer === soil)     map.removeControl(soilLegend);
     if (e.layer === seismic)  map.removeControl(seisLegend);
     if (e.layer === faults)   map.removeControl(faultsLegend);
+    if (e.layer === agroeco)  map.removeControl(agroLegend);
     if (e.layer === rainfall) map.removeControl(rainLegend);
   });
 
