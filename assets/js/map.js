@@ -8,10 +8,20 @@
   // Keep the Leaflet credit but drop the default Ukrainian-flag prefix.
   map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
 
-  // Satellite base only; the border comes from our own india.geojson (added below).
-  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+  // Base layers: satellite (default) + a grayscale hillshade for terrain relief. The
+  // border comes from our own india.geojson (added below). Both are free Esri basemaps.
+  var satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
     attribution: 'Imagery &copy; Esri, Maxar, Earthstar Geographics', maxZoom: 19
   }).addTo(map);
+  // "Terrain relief" = a colour topo base with a hillshade multiplied over it → colour + 3-D relief.
+  // Tune the look in map.html via the .hillshade-blend CSS (blend mode / contrast).
+  var reliefColour = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Topographic &copy; Esri, USGS, NOAA', maxZoom: 19
+  });
+  var hillshade = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Elevation/World_Hillshade/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Hillshade &copy; Esri', maxNativeZoom: 16, maxZoom: 19, className: 'hillshade-blend'
+  });
+  var terrain = L.layerGroup([reliefColour, hillshade]);
 
   // Feature categories: colour the pins and drive the filter chips. Every feature_type
   // maps to one of these by keyword (see catOf).
@@ -270,7 +280,7 @@
     return div;
   };
 
-  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
+  L.control.layers({ 'Satellite': satellite, 'Terrain relief': terrain }, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
     if (e.layer === soil)     { loadSoil();    soilLegend.addTo(map); }
     if (e.layer === seismic)  { loadSeismic(); seisLegend.addTo(map); }

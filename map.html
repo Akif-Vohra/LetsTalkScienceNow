@@ -48,6 +48,9 @@ description: An interactive map of the geological features of the Indian subcont
   /* Pin labels: permanent tooltips shown only when zoomed in (LABEL_ZOOM in map.js). */
   /* Dot (zoomed out) vs teardrop (zoomed in) — SVGs tinted by category in map.js.
      Selected pin turns coral + glows. */
+  /* "Terrain relief" base: hillshade multiplied over the colour topo → colour + 3-D relief.
+     Bump contrast/saturation here to taste. */
+  .hillshade-blend{mix-blend-mode:multiply;filter:contrast(1.35) saturate(1.15) brightness(1.02);}
   .pin{transition:transform .12s ease;cursor:pointer;background:transparent;border:0;
     filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}   /* gentle lift off the satellite */
   .pin:hover{transform:scale(1.18);}
