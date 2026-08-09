@@ -41,18 +41,35 @@
     if (/coalfield|diamond|copper|iron-ore|oilfield|gold field/i.test(t))                     return 'economic';
     return 'structure';                                                                       // fallback bucket
   }
-  // A dot when zoomed out, a teardrop when zoomed in — both tinted by category.
-  function dotSvg(c)  { return '<svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="7" r="5" fill="' + c + '" stroke="#fff" stroke-width="2"/></svg>'; }
-  function dropSvg(c) { return '<svg width="20" height="28" viewBox="0 0 24 34" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12c0 8.4 12 22 12 22s12-13.6 12-22C24 5.4 18.6 0 12 0z" fill="' + c + '" stroke="#fff" stroke-width="1.5"/><circle cx="12" cy="12" r="4" fill="#fff"/></svg>'; }
-  var iconCache = {};                                    // one shared icon instance per (dot|drop, colour)
+  // Each category gets a small glyph (drawn in a 24×24 box). Filled shapes take the
+  // category colour; open shapes (fill:none) are stroked in it — see badgeSvg's <g>.
+  var GLYPH = {
+    mountains: '<path d="M4 17.5 L9 8 L12.5 13 L16 7 L20 17.5 Z"/>',
+    plateaus:  '<path d="M5 17.5 L7.5 9 L16.5 9 L19 17.5 Z"/>',
+    volcanic:  '<path d="M5.5 18 L9.5 9 L14.5 9 L18.5 18 Z"/><circle cx="12" cy="6.4" r="1.4"/>',
+    impact:    '<circle cx="12" cy="12" r="6.6" fill="none" stroke-width="2"/><circle cx="12" cy="12" r="2.3"/>',
+    structure: '<rect x="5" y="8.7" width="14" height="2.2" rx="1.1"/><rect x="5" y="12.9" width="14" height="2.2" rx="1.1"/><rect x="6.6" y="17.1" width="10.8" height="2.2" rx="1.1"/>',
+    rivers:    '<path d="M4.5 9 C7 9 7 15 9.5 15 S12 9 14.5 9 17 15 19.5 15" fill="none" stroke-width="2.1"/>',
+    lakes:     '<path d="M12 5.4 C9 9.6 7.4 11.6 7.4 13.9 a4.6 4.6 0 0 0 9.2 0 C16.6 11.6 15 9.6 12 5.4 Z"/>',
+    coasts:    '<path d="M8 13.2 a4 3.2 0 0 1 8 0 Z"/><path d="M4.5 16.8 q3.6 2.3 7 0 t7 0" fill="none" stroke-width="1.8"/>',
+    deserts:   '<path d="M4 16.6 C6.6 11.4 9.6 11.4 12 16.6 C14 12.6 15.8 12.6 20 16.6 Z"/>',
+    economic:  '<path d="M12 6 L17.6 11 L12 18.5 L6.4 11 Z"/>'
+  };
+  function badgeSvg(cat, size) {
+    var c = (CAT[cat] || {}).color || '#1667c6';
+    var g = GLYPH[cat] || GLYPH.structure;
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">'
+      + '<circle class="badge" cx="12" cy="12" r="11" fill="#fff" stroke="rgba(0,0,0,.2)" stroke-width="1"/>'
+      + '<g fill="' + c + '" stroke="' + c + '" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">' + g + '</g>'
+      + '</svg>';
+  }
+  var iconCache = {};                                    // one shared icon instance per (category, size)
   function iconFor(p) {
-    var drop = map.getZoom() >= PIN_ZOOM;
-    var color = (CAT[p.cat] || {}).color || '#1667c6';
-    var key = (drop ? 'd' : 'o') + color;
+    var size = map.getZoom() >= PIN_ZOOM ? 28 : 19;      // small when zoomed out, larger when in
+    var key = p.cat + size;
     if (!iconCache[key]) {
-      iconCache[key] = drop
-        ? L.divIcon({ className: 'pin pin--drop', html: dropSvg(color), iconSize: [20, 28], iconAnchor: [10, 28] })
-        : L.divIcon({ className: 'pin pin--dot',  html: dotSvg(color),  iconSize: [14, 14], iconAnchor: [7, 7] });
+      iconCache[key] = L.divIcon({ className: 'pin pin--badge', html: badgeSvg(p.cat, size),
+                                   iconSize: [size, size], iconAnchor: [size / 2, size / 2] });
     }
     return iconCache[key];
   }
@@ -295,7 +312,7 @@
   pins.forEach(function (p) {
     p.cat = catOf(p.type);
     p.marker = L.marker(p.latlng, { icon: iconFor(p) }).on('click', function () { focusPin(p); });
-    p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [6, -12] });
+    p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [14, 0] });
   });
   function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
   map.on('zoomend', toggleLabels);
