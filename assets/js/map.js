@@ -5,6 +5,8 @@
   var pins = window.MAP.pins;
 
   var map = L.map('map', { zoomSnap: 0.5 }).setView([21, 82], 4);
+  // Keep the Leaflet credit but drop the default Ukrainian-flag prefix.
+  map.attributionControl.setPrefix('<a href="https://leafletjs.com" target="_blank" rel="noopener">Leaflet</a>');
 
   // Satellite base only; the border comes from our own india.geojson (added below).
   L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
