@@ -128,8 +128,10 @@ p{line-height:1.7;}
 .btn-social svg{width:1.05em;height:1.05em;flex:none;}
 .btn-social--ig svg{color:#e4405f;}
 .btn-social--yt svg{color:#ff0000;}
+.btn-social--gh svg{color:var(--ink);}
 .btn-social--ig:hover{border-color:#e4405f;}
 .btn-social--yt:hover{border-color:#ff0000;}
+.btn-social--gh:hover{border-color:var(--ink);}
 
 /* Site header / navigation */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:saturate(180%) blur(10px);border-bottom:1px solid var(--line);}
