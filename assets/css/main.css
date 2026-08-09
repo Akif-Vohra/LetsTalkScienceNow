@@ -118,6 +118,8 @@ p{line-height:1.7;}
 .btn-primary:hover{background:var(--blue-deep);transform:translateY(-2px);box-shadow:var(--shadow-hover);}
 .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line);box-shadow:var(--shadow);}
 .btn-ghost:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+.btn-cover{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.55);backdrop-filter:blur(4px);}
+.btn-cover:hover{background:rgba(255,255,255,.22);border-color:#fff;transform:translateY(-2px);}
 .btn svg{width:1.1em;height:1.1em;flex:none;}
 .btn-ig svg{color:#e4405f;}
 .btn-yt svg{color:#ff0000;}
