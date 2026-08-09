@@ -207,16 +207,40 @@
     return div;
   };
 
-  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults }, { collapsed: false }).addTo(map);
+  // Rainfall overlay — a pre-coloured image (WorldClim annual precipitation, clipped to India).
+  // The PNG carries its own transparency; Leaflet loads it only when the layer is toggled on.
+  var rainfall = L.imageOverlay(window.MAP.rainfall, [[6, 66], [38, 98]], {
+    interactive: false, opacity: 1, attribution: 'Rainfall: WorldClim 2.1 (CC BY 4.0)'
+  });
+  var RAINBANDS = [
+    { label: '&gt; 4,000 mm — very wet', color: 'rgb(47,127,184)' },
+    { label: '2,000–4,000 mm',          color: 'rgb(52,166,160)' },
+    { label: '1,000–2,000 mm',          color: 'rgb(108,191,107)' },
+    { label: '500–1,000 mm',            color: 'rgb(188,217,119)' },
+    { label: '250–500 mm',              color: 'rgb(232,210,122)' },
+    { label: '&lt; 250 mm — arid',      color: 'rgb(239,199,155)' }
+  ];
+  var rainLegend = L.control({ position: 'bottomleft' });
+  rainLegend.onAdd = function () {
+    var div = L.DomUtil.create('div', 'map-legend');
+    div.innerHTML = '<h4>Annual rainfall</h4>' + RAINBANDS.map(function (b) {
+      return '<span class="sl-row"><i style="background:' + b.color + '"></i>' + b.label + '</span>';
+    }).join('');
+    return div;
+  };
+
+  L.control.layers(null, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
-    if (e.layer === soil)    { loadSoil();    soilLegend.addTo(map); }
-    if (e.layer === seismic) { loadSeismic(); seisLegend.addTo(map); }
-    if (e.layer === faults)  { loadFaults();  faultsLegend.addTo(map); }
+    if (e.layer === soil)     { loadSoil();    soilLegend.addTo(map); }
+    if (e.layer === seismic)  { loadSeismic(); seisLegend.addTo(map); }
+    if (e.layer === faults)   { loadFaults();  faultsLegend.addTo(map); }
+    if (e.layer === rainfall) { rainfall.bringToBack(); rainLegend.addTo(map); }
   });
   map.on('overlayremove', function (e) {
-    if (e.layer === soil)    map.removeControl(soilLegend);
-    if (e.layer === seismic) map.removeControl(seisLegend);
-    if (e.layer === faults)  map.removeControl(faultsLegend);
+    if (e.layer === soil)     map.removeControl(soilLegend);
+    if (e.layer === seismic)  map.removeControl(seisLegend);
+    if (e.layer === faults)   map.removeControl(faultsLegend);
+    if (e.layer === rainfall) map.removeControl(rainLegend);
   });
 
   var reader = document.getElementById('reader');

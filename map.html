@@ -208,7 +208,8 @@ description: An interactive map of the geological features of the Indian subcont
     rivers: {{ '/assets/geo/rivers.geojson' | relative_url | jsonify }},
     soil: {{ '/assets/geo/soil.geojson' | relative_url | jsonify }},
     seismic: {{ '/assets/geo/seismic.geojson' | relative_url | jsonify }},
-    faults: {{ '/assets/geo/faults.geojson' | relative_url | jsonify }}
+    faults: {{ '/assets/geo/faults.geojson' | relative_url | jsonify }},
+    rainfall: {{ '/assets/geo/rainfall.png' | relative_url | jsonify }} + "?{{ site.time | date: '%s' }}"
   };
 </script>
 <script src="{{ '/assets/js/map.js' | relative_url }}?{{ site.time | date: '%s' }}"></script>
