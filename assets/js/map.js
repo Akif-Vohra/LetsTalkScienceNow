@@ -45,6 +45,8 @@
     if (/plateau/i.test(t))                                                                   return 'plateaus';
     if (/impact|crater/i.test(t))                                                             return 'impact';
     if (/basalt|volcano|columnar/i.test(t))                                                   return 'volcanic';
+    if (/glacier/i.test(t))                                                                   return 'mountains';
+    if (/cave|karst|laterite/i.test(t))                                                       return 'plateaus';
     if (/craton|suture|ophiolite|rift|foreland|sedimentary basin|gondwana|fossil/i.test(t))   return 'structure';
     if (/river|delta|floodplain|badlands|waterfall|gorge/i.test(t))                           return 'rivers';
     if (/lake/i.test(t))                                                                      return 'lakes';
