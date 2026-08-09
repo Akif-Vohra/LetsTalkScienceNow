@@ -343,8 +343,13 @@ p{line-height:1.7;}
 .big-idea__text{font-family:var(--font-head);font-weight:500;font-size:1.12rem;line-height:1.55;color:var(--ink);}
 
 /* Feature fact card (map features): geological type + age, in the light-blue box */
-.factcard{max-width:65ch;margin:var(--sp-lg) auto 0;padding:1.3rem 1.6rem;border-radius:16px;background:var(--blue-soft);border-left:4px solid var(--blue);}
-.factcard__title{font-family:var(--font-head);font-weight:600;font-size:1.9rem;line-height:1.1;letter-spacing:-.01em;color:var(--ink);}
+.factcard{position:relative;max-width:65ch;margin:var(--sp-lg) auto 0;padding:1.3rem 1.6rem;border-radius:16px;background:var(--blue-soft);border-left:4px solid var(--blue);}
+.factcard__share{position:absolute;top:.9rem;right:1rem;display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;color:var(--blue-deep);background:var(--surface);border:1px solid var(--line);border-radius:9px;cursor:pointer;transition:background .15s,border-color .15s,color .15s;}
+.factcard__share:hover,.factcard__share[aria-expanded="true"]{border-color:var(--blue);background:#fff;}
+.factcard__share-menu{position:absolute;top:2.9rem;right:1rem;z-index:20;min-width:172px;padding:.3rem;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:0 10px 26px rgba(22,71,140,.16);display:flex;flex-direction:column;gap:.15rem;}
+.factcard__share-item{display:block;width:100%;text-align:left;font:500 .9rem/1.2 var(--font-head);color:var(--ink);background:none;border:0;border-radius:7px;padding:.55rem .65rem;cursor:pointer;text-decoration:none;}
+.factcard__share-item:hover{background:var(--blue-50,#eef4fd);color:var(--blue-deep);}
+.factcard__title{font-family:var(--font-head);font-weight:600;font-size:1.9rem;line-height:1.1;letter-spacing:-.01em;color:var(--ink);padding-right:2.4rem;}
 .factcard__loc{color:var(--muted);font-size:.98rem;margin-top:.2rem;}
 .factcard__type{font-family:var(--font-head);font-weight:600;font-size:1.1rem;color:var(--ink);margin-top:.9rem;}
 .factcard__age{font-family:var(--font-head);font-weight:500;font-size:.95rem;color:var(--blue-deep);margin-top:.15rem;}

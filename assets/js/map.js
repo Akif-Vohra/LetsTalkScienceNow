@@ -334,6 +334,7 @@
     else if (e.key === 'Escape') map.closePopup(galPopup);
   });
 
+  function slugOf(url) { return (url || '').replace(/\/+$/, '').split('/').pop(); }  // /stories/gondwana/ -> gondwana
   function focusPin(p) {
     if (activePin && activePin.marker._icon) activePin.marker._icon.classList.remove('pin--active');
     activePin = p;
@@ -343,9 +344,11 @@
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
     if (p.gallery && p.gallery.length) openGallery(p);  // photo pins get a slider above the pin
     else map.closePopup();                              // no photos → make sure no stale gallery lingers
+    if (p.slug) history.replaceState(null, '', '#' + p.slug);   // deep-link: reflect the open feature in the URL
   }
   pins.forEach(function (p) {
     p.cat = catOf(p.type);
+    p.slug = slugOf(p.url);
     p.marker = L.marker(p.latlng, { icon: iconFor(p) }).on('click', function () { focusPin(p); });
     p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [14, 0] });
   });
@@ -583,6 +586,18 @@
   startH.addEventListener('input', update);
   endH.addEventListener('input', update);
   update();
+
+  // Deep-link: open the feature named in the URL hash (#slug), revealing it even if a filter hid it.
+  function openFromHash() {
+    var slug = decodeURIComponent((location.hash || '').replace(/^#/, ''));
+    if (!slug || (activePin && activePin.slug === slug)) return;
+    var p = pins.filter(function (x) { return x.slug === slug; })[0];
+    if (!p) return;
+    if (!map.hasLayer(p.marker)) p.marker.addTo(map);
+    focusPin(p);
+  }
+  openFromHash();                                       // honour a hash present on first load
+  window.addEventListener('hashchange', openFromHash);  // and back/forward or a pasted link
 
   window.LTSN = { map: map, pins: pins };   // console handles for debugging
 })();

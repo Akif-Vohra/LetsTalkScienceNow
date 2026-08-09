@@ -7,6 +7,6 @@
     {{ content }}
   </main>
   {%- include footer.html -%}
-  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}?{{ site.time | date: '%s' }}"></script>
 </body>
 </html>
