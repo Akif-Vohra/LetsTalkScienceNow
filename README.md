@@ -62,3 +62,17 @@ Suggestions from Instagram followers (@lets.talk.science.now) for where the app 
 - A **trivia section** for each location.
 - A **quiz with 3D topography** (via Mapbox / Cesium).
 - Show India's landmass **drifting into position over time** — its relative position paired with the year of formation — to make the whole process easier to grasp.
+
+## Licence
+
+This repository combines three kinds of material, under different terms:
+
+- **Code** — the Jekyll templates, JavaScript, CSS, and scripts — is [MIT](LICENSE).
+  Reuse it freely, keeping the copyright notice.
+- **Original content** — the articles, story write-ups, site copy, and the photos and
+  graphics created by the author — is [CC BY-SA 4.0](LICENSE-CONTENT.md). Reuse with
+  credit; any derivative must stay open under the same licence.
+- **Third-party data and images** — the map's GeoJSON overlays and the gallery
+  photographs — are **not covered by the above**. Each keeps its own licence, credited
+  in [`assets/geo/README.md`](assets/geo/README.md) and in every image caption (several
+  are CC BY-SA, others CC BY / CC0 / public domain).
