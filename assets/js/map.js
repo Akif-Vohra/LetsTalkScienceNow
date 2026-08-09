@@ -69,8 +69,12 @@
       + '" stroke="' + c.color + '" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round">' + g + '</g></svg>';
   }
   var iconCache = {};                                    // one shared icon instance per (category, size)
+  function pinSize() {                                   // grow the badges as you zoom in
+    var z = map.getZoom();
+    return z < 5.5 ? 15 : (z < 7 ? 21 : 28);             // all-India (small) -> region -> local
+  }
   function iconFor(p) {
-    var size = map.getZoom() >= PIN_ZOOM ? 28 : 19;      // small when zoomed out, larger when in
+    var size = pinSize();
     var key = p.cat + size;
     if (!iconCache[key]) {
       iconCache[key] = L.divIcon({ className: 'pin pin--badge', html: badgeSvg(p.cat, size),
