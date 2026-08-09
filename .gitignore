@@ -27,3 +27,8 @@ assets/geo/Ecoregion_IM1304_powered_by_soar.tiff
 assets/geo/INDIA_SOIL_MAP_FAO.geojson
 assets/geo/DSMW/
 assets/geo/Seismic_Zones/
+
+# GLiM (Global Lithological Map) File Geodatabase + other raw geo sources — kept local, not shipped
+assets/geo/LiMW_GIS 2015.gdb/
+assets/geo/Agro_Ecological_regions/
+assets/geo/Agroclimatic_regions/
