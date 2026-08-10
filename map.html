@@ -5,7 +5,7 @@ permalink: /geological-map-of-india/
 description: An interactive map of the geological features of the Indian subcontinent.
 ---
 
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+<link rel="stylesheet" href="{{ '/assets/leaflet/leaflet.css' | relative_url }}">
 
 <style>
   /* Map page: map fills the left, right column stacks controls + story reader. */
@@ -201,7 +201,7 @@ description: An interactive map of the geological features of the Indian subcont
   </aside>
 </section>
 
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<script src="{{ '/assets/leaflet/leaflet.js' | relative_url }}"></script>
 <script>
   // Liquid-generated data for map.js (a static asset can't run Liquid).
   window.MAP = {

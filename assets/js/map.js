@@ -101,7 +101,11 @@
     interactive: false, attribution: 'Rivers &copy; GSI (Bhukosh)',
     style: { color: '#3d8bd6', weight: 1, opacity: 0.7 }
   });
-  fetch(window.MAP.rivers).then(function (r) { return r.json(); }).then(function (geo) { rivers.addData(geo); });
+  var riversLoaded = false;
+  function loadRivers() {                                 // fetch only on first toggle-on (it's ~200 KB)
+    if (riversLoaded) return; riversLoaded = true;
+    fetch(window.MAP.rivers).then(function (r) { return r.json(); }).then(function (geo) { rivers.addData(geo); });
+  }
 
   // Soil overlay (FAO–UNESCO Soil Map). The FAO 'DOMSOI' code's first letter is the major
   // soil group; we bucket those into the soil types Indian geography actually names.
@@ -284,6 +288,7 @@
 
   L.control.layers({ 'Satellite': satellite, 'Terrain relief': terrain }, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
+    if (e.layer === rivers)   loadRivers();
     if (e.layer === soil)     { loadSoil();    soilLegend.addTo(map); }
     if (e.layer === seismic)  { loadSeismic(); seisLegend.addTo(map); }
     if (e.layer === faults)   { loadFaults();  faultsLegend.addTo(map); }
