@@ -13,6 +13,7 @@ add_on_map: true
 latlng: [14.47, 78.82]
 age_ma: 1600
 feature_type: "Sedimentary basin (Proterozoic)"
+shape: /assets/geo/features/cuddapah-basin.geojson
 gallery:
   - src: /assets/covers/cuddapah/gorge.jpg
     caption: "The Gandikota gorge, cut by the Pennar through Cuddapah-basin sandstone"
