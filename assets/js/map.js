@@ -31,6 +31,9 @@
     { key: 'volcanic',  label: 'Volcanic',         color: '#d94a3d' },
     { key: 'impact',    label: 'Impact craters',   color: '#5d6d7e' },
     { key: 'structure', label: 'Cratons & basins', color: '#8155b0' },
+    { key: 'tectonic',  label: 'Tectonic structures', color: '#b5603a' },
+    { key: 'fossils',   label: 'Fossils',         color: '#7f9a33' },
+    { key: 'rocks',     label: 'Rocks & minerals', color: '#9c6f8e' },
     { key: 'rivers',    label: 'Rivers',           color: '#2b7fd4' },
     { key: 'lakes',     label: 'Lakes',            color: '#12a5b3' },
     { key: 'coasts',    label: 'Coasts & islands', color: '#22a06b' },
@@ -47,10 +50,13 @@
     if (/basalt|volcano|columnar/i.test(t))                                                   return 'volcanic';
     if (/glacier/i.test(t))                                                                   return 'mountains';
     if (/cave|karst|laterite/i.test(t))                                                       return 'plateaus';
-    if (/craton|suture|ophiolite|rift|foreland|sedimentary basin|gondwana|fossil/i.test(t))   return 'structure';
+    if (/fossil|stromatolite|petrified/i.test(t))                                             return 'fossils';
+    if (/gneiss|granite|charnockite|syenite|tuff|conglomerate|quartzite|gossan/i.test(t))     return 'rocks';
+    if (/suture|ophiolite|fault|unconformity|thrust|graben/i.test(t))                         return 'tectonic';
+    if (/craton|rift|foreland|sedimentary basin|gondwana|shield|basin/i.test(t))             return 'structure';
+    if (/red-sediment|coastal cliff|lagoon|salt marsh|coral|island arc/i.test(t))            return 'coasts';
     if (/river|delta|floodplain|badlands|waterfall|gorge/i.test(t))                           return 'rivers';
     if (/lake/i.test(t))                                                                      return 'lakes';
-    if (/lagoon|salt marsh|coral|island arc/i.test(t))                                        return 'coasts';
     if (/desert/i.test(t))                                                                    return 'deserts';
     if (/coalfield|diamond|copper|iron-ore|oilfield|gold field|mine|zinc|lead|barytes/i.test(t)) return 'economic';
     return 'structure';                                                                       // fallback bucket
@@ -67,7 +73,10 @@
     lakes:     '<path d="M12 5.4 C9 9.6 7.4 11.6 7.4 13.9 a4.6 4.6 0 0 0 9.2 0 C16.6 11.6 15 9.6 12 5.4 Z"/>',
     coasts:    '<path d="M8 13.2 a4 3.2 0 0 1 8 0 Z"/><path d="M4.5 16.8 q3.6 2.3 7 0 t7 0" fill="none" stroke-width="1.8"/>',
     deserts:   '<path d="M4 16.6 C6.6 11.4 9.6 11.4 12 16.6 C14 12.6 15.8 12.6 20 16.6 Z"/>',
-    economic:  '<path d="M12 6 L17.6 11 L12 18.5 L6.4 11 Z"/>'
+    economic:  '<path d="M12 6 L17.6 11 L12 18.5 L6.4 11 Z"/>',
+    tectonic:  '<path d="M4 15 L11 15 L11 9 L20 9" fill="none" stroke-width="2.2"/>',
+    fossils:   '<path d="M12 12 C12 10.3 14.6 10.3 14.6 12 C14.6 15.2 9.8 15.2 9.8 11.2 C9.8 6.4 16.8 6.4 16.8 12" fill="none" stroke-width="2"/>',
+    rocks:     '<path d="M7 19 L5.5 10.5 L11 6 L14.5 8.5 L18.5 14 L15 19 Z" fill="none" stroke-width="1.8"/>'
   };
   function badgeSvg(cat, size) {
     var c = (CAT[cat] || {}).color || '#1667c6';

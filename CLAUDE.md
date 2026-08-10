@@ -105,9 +105,9 @@ To **add a map feature**: a `geo-feature` story = a 2-paragraph note + those fie
   change one, change the other.
 
 ### Categories & filter
-`CATS` in map.js defines ~10 categories (Mountains, Plateaus, Volcanic, Impact
-craters, Cratons & basins, Rivers, Lakes, Coasts & islands, Deserts, Mining &
-energy). `catOf(feature_type)` maps a type string → category by keyword. Chips
+`CATS` in map.js defines ~13 categories (Mountains, Plateaus, Volcanic, Impact
+craters, Cratons & basins, Tectonic structures, Fossils, Rocks & minerals, Rivers,
+Lakes, Coasts & islands, Deserts, Mining & energy). `catOf(feature_type)` maps a type string → category by keyword. Chips
 filter (multi-select + an "All" chip; from All, a click **isolates** one); pins are
 tinted per category.
 
