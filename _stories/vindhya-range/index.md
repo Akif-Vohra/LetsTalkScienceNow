@@ -12,6 +12,7 @@ add_on_map: true
 latlng: [23.5, 78.0]
 age_ma: 1400
 feature_type: "Escarpment range"
+shape: /assets/geo/features/vindhya-range.geojson
 gallery:
   - src: /assets/covers/vindhya/bhimbetka-shelter.jpg
     caption: "A Bhimbetka rock shelter in the Vindhyan sandstone"

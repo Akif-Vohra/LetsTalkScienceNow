@@ -14,6 +14,7 @@ add_on_map: true
 latlng: [18.5, 83.0]
 age_ma: 1300
 feature_type: "Fold mountains (mobile belt)"
+shape: /assets/geo/features/eastern-ghats.geojson
 gallery:
   - src: /assets/covers/eastern-ghats/sunrise.jpg
     caption: "Sunrise over the layered ridges of the Eastern Ghats"

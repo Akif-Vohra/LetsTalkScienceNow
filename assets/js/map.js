@@ -329,7 +329,8 @@
           }
         }).addTo(map);
         activeShapePin = p;
-        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14 });  // frame it; cap lets tiny ones (Lonar) zoom in
+        map.invalidateSize();   // re-measure first — the container can size late (deep-link / flex)
+        map.fitBounds(activeShape.getBounds(), { padding: [40, 40], maxZoom: 14, animate: false });  // instant fit — animated fitBounds can get dropped, leaving the map stuck at min zoom
       })
       .catch(function () {});
   }
