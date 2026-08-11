@@ -14,6 +14,13 @@ gsi_category: "Fossil Park"
 sources:
   - text: "Geological Survey of India — National Geological Monuments"
   - text: "Major geologic events of the Cauvery Basin, India and their correlation with global signatures (2017), Geoscience Frontiers"
+gallery:
+  - src: /assets/covers/sathanur-fossil-wood/log3.jpg
+    caption: "The park's long petrified conifer trunk, railed off along a walkway"
+    credit: "அமுதவளன் ஞானாதிக்கம் · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/sathanur-fossil-wood/entrance.jpg
+    caption: "The entrance to the National Fossil Wood Park at Sathanur"
+    credit: "Arivazhagan.ma · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 Near Sathanur lies a single fossil tree trunk about 18 metres long, a conifer whose wood has turned entirely to stone. It was found in 1940 by the geologist M. S. Krishnan of the Geological Survey of India, and more logs of the same age sit in the ground at villages within about 10 kilometres. The wood dates to the Cretaceous, roughly 100 million years ago (some accounts put it at over 120), long before flowering plants took over the land.

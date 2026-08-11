@@ -14,6 +14,16 @@ gsi_category: "Fossil Park"
 sources:
   - text: "Geological Survey of India — National Geological Monuments"
   - text: "Sonnerat, P. (1782). Voyage aux Indes orientales et à la Chine. Early account of the Tiruvakkarai fossil wood"
+gallery:
+  - src: /assets/covers/tiruvakkarai-fossil-wood/log.jpg
+    caption: "A petrified tree trunk lying in the park, its wood turned to reddish stone"
+    credit: "Ranjith Kumar Inbasekaran · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/tiruvakkarai-fossil-wood/logs.jpg
+    caption: "Stone stumps of petrified wood standing in the fossil park at Tiruvakkarai"
+    credit: "Ranjith Kumar Inbasekaran · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/tiruvakkarai-fossil-wood/closeup.jpg
+    caption: "Close view of the petrified wood, the original grain preserved in silica"
+    credit: "Sakthibalan · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 The park at Tiruvakkarai holds about 200 fossil tree trunks lying on and just under the ground, ranging from 3 to 15 metres long and up to 5 metres around, all of them turned to stone. The logs have no branches or leaves, and they lie embedded in a pale rock called the Cuddalore Sandstone. Their wood was petrified about 20 million years ago, in the Miocene, which makes this a much younger petrified forest than the Cretaceous logs at Sathanur.

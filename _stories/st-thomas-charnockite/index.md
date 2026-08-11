@@ -19,6 +19,19 @@ sources:
   - text: "Rajesh, H.M. & Santosh, M. (2004), Charnockitic magmatism in southern India, Journal of Earth System Science 113(4)"
   - text: "Subramaniam, A.P. (1959), Charnockites and granulites of southern India: a review, Bulletin of the Geological Society of Denmark 17"
   - text: "Global type area charnockites in southern India revisited (2021), Geoscience Frontiers"
+gallery:
+  - src: /assets/covers/st-thomas-charnockite/hill.jpg
+    caption: "St. Thomas Mount, the low rocky hill rising above southwest Chennai"
+    credit: "SnapMeUp · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/st-thomas-charnockite/rock.jpg
+    caption: "Bare charnockite bedrock exposed on the summit of St. Thomas Mount"
+    credit: "Nvvchar · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/st-thomas-charnockite/outcrop.jpg
+    caption: "Close view of the charnockite, dark rock streaked with quartz and feldspar"
+    credit: "Nvvchar · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/st-thomas-charnockite/pallavaram.jpg
+    caption: "A charnockite rock face at the nearby Pallavaram quarry, part of the type locality"
+    credit: "Nvvchar · CC BY-SA 3.0 · via Wikimedia Commons"
 ---
 
 St. Thomas Mount is a low, rocky hill on the southwest side of Chennai, in Tamil Nadu. The dark, coarse rock it is built from is charnockite, and this hill is where that rock got its name and its scientific definition.

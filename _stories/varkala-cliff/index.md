@@ -17,6 +17,16 @@ sources:
   - text: "Natural Heritage of Varkala, UNESCO World Heritage Centre Tentative List (2019)"
   - text: "The Tertiary sequence of Varkala coastal cliffs, southwestern India: an ideal site for Global Geopark (2022), Geosystems and Geoenvironment"
   - text: "Conservation of the Varkala coastal cliff, a National Geoheritage site along the southwestern coast of India: a geo-environmental approach (2025), Ocean & Coastal Management"
+gallery:
+  - src: /assets/covers/varkala-cliff/cliff2.jpg
+    caption: "The red laterite-capped cliff dropping straight to the beach at Varkala"
+    credit: "Lukas Vacovsky · CC BY-SA 3.0 · via Wikimedia Commons"
+  - src: /assets/covers/varkala-cliff/cliff3.jpg
+    caption: "The line of cliffs running along the shore, red sediment showing through the greenery"
+    credit: "Ganesh Mohan T · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/varkala-cliff/cliff1.jpg
+    caption: "Cafes and palms crowding the cliff top above Varkala beach at dusk"
+    credit: "Krissubh · CC BY-SA 4.0 · via Wikimedia Commons"
 ---
 
 The cliffs at Varkala are a wall of red and buff rock rising straight out of the beach, running for a few kilometres along the Kerala shore. On a coast that is otherwise low, sandy and flat, they are the only real cliffs, which is what makes them worth a second look.
