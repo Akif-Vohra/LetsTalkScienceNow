@@ -10,29 +10,43 @@ description: An interactive map of the geological features of the Indian subcont
 <style>
   /* Map page: map fills the left, right column stacks controls + story reader. */
   .map-page{padding-block:var(--sp-md) var(--sp-xl);}
-  .mapsplit{display:flex;width:100vw;margin-inline:calc(50% - 50vw);height:min(82vh,860px);}
-  /* Left column: intro header sits above the map (shares the top row with the right controls). */
-  .leftcol{flex:1 1 62%;min-width:0;height:100%;display:flex;flex-direction:column;}
-  .map-intro{flex:0 0 auto;padding:0 var(--sp-md) var(--sp-sm);}
+  .mapsplit{display:flex;height:min(82vh,860px);padding:0 var(--sp-md);}
+  /* Left column holds the map; right column holds the story reader. */
+  .leftcol{flex:1 1 65%;min-width:0;height:100%;box-sizing:border-box;display:flex;flex-direction:column;
+    border-top:1px solid var(--line);}
+  .map-intro{padding:0 var(--sp-md) var(--sp-sm);}
   .map-intro h2{font-size:1.3rem;margin:0;line-height:1.2;}
   .map-intro h2 span{font-weight:400;font-size:.88rem;color:var(--muted);}
   .beta-badge{display:inline-block;vertical-align:middle;font:700 .64rem/1 var(--font-head);letter-spacing:.07em;
     text-transform:uppercase;color:#b8340f;background:#fbe4da;border:1px solid #f2b39c;
     padding:.2rem .44rem;border-radius:5px;}
   .leftcol #map{flex:1 1 auto;min-height:0;overflow:hidden;}
-  /* Right column: controls pinned on top, story scrolls below. */
-  .rightcol{flex:1 1 38%;min-width:0;height:100%;display:flex;flex-direction:column;
-    border-left:1px solid var(--line);background:var(--surface);}
-  .controls{flex:0 0 auto;padding:var(--sp-md) var(--sp-lg) var(--sp-sm);border-bottom:1px solid var(--line);}
-  .controls__title{font-size:1.35rem;margin:0 0 var(--sp-sm);line-height:1.15;}
-  .controls .timebar{margin-top:var(--sp-sm);}
-  .controls .timebar__names{display:none;}   /* rotated period names don't fit the column; readout shows the period */
+  /* Top strip: readout line, then a row — slider 50% · search 20% · tag filters 30%.
+     Slider + search are grouped so the search centers on the bar (not on the tall tag column). */
+  .maptop-readout{padding:0 var(--sp-md);margin-bottom:.15rem;}
+  /* maptop mirrors the map/story split below: slider+search = 65% (map width, search's right
+     edge on the map edge), tag filters = 35% (story width). No gap across the 65/35 boundary. */
+  .maptop{display:flex;gap:0;align-items:flex-start;padding:0 var(--sp-md);}
+  .maptop-ss{flex:65 1 0;min-width:0;display:flex;gap:var(--sp-md);align-items:center;}
+  .maptop-ss .timebar{flex:50 1 0;min-width:0;margin:0;}
+  .maptop-ss .pinsearch{flex:20 1 0;min-width:0;margin:0;}
+  .maptop-filters{flex:0 0 35%;min-width:0;box-sizing:border-box;display:flex;flex-direction:column;gap:.35rem;padding:0 var(--sp-md) var(--sp-md) var(--sp-lg);}
+  .maptop-filters .typefilter{margin:0;padding:0;border:0;gap:.22rem;}
+  .maptop-filters .gsi-chip{margin:0;}
+  .maptop-filters .typechip{font-size:.58rem;padding:.16rem .4rem;gap:.18rem;}
+  .maptop-filters .typechip .tc-ico{width:11px;height:11px;}
+  @media (max-width:768px){ .maptop,.maptop-ss{flex-direction:column;align-items:stretch;} .maptop-ss .timebar,.maptop-ss .pinsearch,.maptop-filters{flex:1 1 auto;width:100%;} }
+  /* Right column: the story reader fills it. */
+  .rightcol{flex:1 1 35%;min-width:0;height:100%;box-sizing:border-box;display:flex;flex-direction:column;
+    border-left:1px solid var(--line);border-top:1px solid var(--line);padding-top:var(--sp-sm);background:var(--surface);}
   .reader{flex:1 1 auto;min-height:0;overflow-y:auto;background:var(--surface);}
   .reader .story__cover{display:none;}   /* photos live in the pin's carousel — reclaim the space for reading */
   .reader .back-link{display:none;}          /* no "all stories" link inside the panel */
   /* Reel-backed stories: in the narrow panel, stack (text, then video) instead of the
      wide 2-column grid that squeezes the text. Standalone story pages keep 2 columns. */
   #reader .story{padding-top:6px;}   /* the reader has its own controls above; just a hair of breathing room */
+  #reader .story__lead{margin-top:var(--sp-sm);}   /* tighter than the standalone page's sp-lg gap */
+  #reader .prose{margin-top:var(--sp-md);}          /* lead -> body: trim the standalone page's big top gap */
   #reader .story__grid{grid-template-columns:1fr;grid-template-areas:"main" "aside";column-gap:0;}
   #reader .story__aside{position:static;top:auto;margin-top:var(--sp-md);}
   .reader__empty{display:flex;align-items:center;justify-content:center;height:100%;
@@ -62,7 +76,7 @@ description: An interactive map of the geological features of the Indian subcont
   .pinsearch{position:relative;margin-bottom:var(--sp-sm);}
   .pinsearch input{width:100%;box-sizing:border-box;padding:.5rem .7rem;font:inherit;font-size:.95rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);}
   .pinsearch input:focus{outline:2px solid var(--blue-deep);outline-offset:-1px;}
-  .pinsearch__results{position:absolute;z-index:600;left:0;right:0;top:calc(100% + 3px);margin:0;padding:.25rem;list-style:none;
+  .pinsearch__results{position:absolute;z-index:1000;left:0;right:0;top:calc(100% + 3px);margin:0;padding:.25rem;list-style:none;
     background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:0 8px 22px rgba(0,0,0,.14);max-height:260px;overflow-y:auto;}
   .pinsearch__results li{padding:.4rem .55rem;border-radius:6px;cursor:pointer;font-size:.92rem;display:flex;justify-content:space-between;gap:.6rem;align-items:baseline;}
   .pinsearch__results li.is-active,.pinsearch__results li:hover{background:var(--blue-50,#eef4fd);}
@@ -117,6 +131,10 @@ description: An interactive map of the geological features of the Indian subcont
   .timebar__scale{position:relative;height:26px;}
   .timebar__bands{position:absolute;inset:0;border-radius:6px;overflow:hidden;}
   .timebar__bands span{position:absolute;top:0;height:100%;cursor:pointer;}
+  /* Period/eon name printed inside its band (replaces the rotated label row). */
+  .seg-lab{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    font:700 .6rem/1 var(--font-head);letter-spacing:.02em;pointer-events:none;overflow:hidden;
+    white-space:nowrap;text-shadow:0 1px 1px rgba(0,0,0,.15);}
   /* Selected window — a box between the two handles; bands outside it are dimmed. */
   .timebar__bands span{opacity:.4;transition:opacity .1s;}
   .timebar__bands span.in-window{opacity:1;}
@@ -153,39 +171,42 @@ description: An interactive map of the geological features of the Indian subcont
 </style>
 
 <section class="section map-page">
+  <div class="map-intro">
+    <h2>Interactive map of the geological features of India <span class="beta-badge">Beta</span> <span>(Use the slider to filter features by geological time period.)</span></h2>
+  </div>
+  <div class="timebar__readout maptop-readout">
+    <span class="t-age" id="t-age">Present</span>
+    <span class="t-eon" id="t-eon">Phanerozoic Eon</span>
+  </div>
+  <div class="maptop">
+    <div class="maptop-ss">
+      <div class="timebar">
+        <div class="timebar__ticks" id="eon-ticks"></div>
+        <div class="timebar__scale">
+          <div class="timebar__bands" id="eon-bands"></div>
+          <div class="timebar__window" id="time-window"></div>
+          <input type="range" id="time-start" min="0" max="10000" value="0"
+                 aria-label="Older edge of the time window — drag">
+          <input type="range" id="time-end" min="0" max="10000" value="10000"
+                 aria-label="Younger edge of the time window — drag">
+        </div>
+        <p class="timebar__key"><strong>Ma</strong> = million years ago &middot; <strong>Ga</strong> = billion &middot; <strong>ka</strong> = thousand</p>
+      </div>
+      <div class="pinsearch">
+        <input type="search" id="pin-search" placeholder="Search features by name…" autocomplete="off" aria-label="Search features by name">
+        <ul class="pinsearch__results" id="pin-results" hidden></ul>
+      </div>
+    </div>
+    <div class="maptop-filters">
+      <div class="typefilter" id="typefilter"></div>
+      <label class="typechip gsi-chip" id="gsi-chip"><input type="checkbox" id="gsi-only"> Show only National Geological Monuments designated by GSI</label>
+    </div>
+  </div>
   <div class="mapsplit">
     <div class="leftcol">
-      <div class="map-intro">
-        <h2>Interactive map of the geological features of India <span class="beta-badge">Beta</span> <span>(Use the slider to filter features by geological time period.)</span></h2>
-      </div>
       <div id="map"></div>
     </div>
     <div class="rightcol">
-      <div class="controls">
-        <div class="pinsearch">
-          <input type="search" id="pin-search" placeholder="Search features by name…" autocomplete="off" aria-label="Search features by name">
-          <ul class="pinsearch__results" id="pin-results" hidden></ul>
-        </div>
-        <div class="timebar">
-          <div class="timebar__readout">
-            <span class="t-age" id="t-age">Present</span>
-            <span class="t-eon" id="t-eon">Phanerozoic Eon</span>
-          </div>
-          <div class="timebar__ticks" id="eon-ticks"></div>
-          <div class="timebar__scale">
-            <div class="timebar__bands" id="eon-bands"></div>
-            <div class="timebar__window" id="time-window"></div>
-            <input type="range" id="time-start" min="0" max="10000" value="0"
-                   aria-label="Older edge of the time window — drag">
-            <input type="range" id="time-end" min="0" max="10000" value="10000"
-                   aria-label="Younger edge of the time window — drag">
-          </div>
-          <div class="timebar__names" id="eon-names"></div>
-          <p class="timebar__key"><strong>Ma</strong> = million years ago &middot; <strong>Ga</strong> = billion &middot; <strong>ka</strong> = thousand</p>
-        </div>
-        <div class="typefilter" id="typefilter"></div>
-        <label class="typechip gsi-chip" id="gsi-chip"><input type="checkbox" id="gsi-only"> Show only National Geological Monuments designated by GSI</label>
-      </div>
       <div id="reader" class="reader">
         <div class="reader__empty">Tap a feature on the map to read its story here.</div>
       </div>

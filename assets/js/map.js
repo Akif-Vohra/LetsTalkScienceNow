@@ -581,23 +581,29 @@
     return (a / 1000).toFixed(1) + ' Ga';
   }
 
-  // Build the coloured bands + rotated names once.
+  // Build the coloured bands with their names/symbols printed directly inside (saves the label row).
   var bands = document.getElementById('eon-bands');
-  var names = document.getElementById('eon-names');
+  var SEG_ABBR = { Cambrian: 'Cm', Ordovician: 'O', Silurian: 'S', Devonian: 'D', Carboniferous: 'C',
+                   Permian: 'P', Triassic: 'Tr', Jurassic: 'J', Cretaceous: 'K', Paleogene: 'Pg',
+                   Neogene: 'N', Quaternary: 'Q' };
+  function inkFor(hex) {                                 // dark text on light bands, white on dark ones
+    var c = hex.replace('#', '');
+    var L = (0.299 * parseInt(c.substr(0, 2), 16) + 0.587 * parseInt(c.substr(2, 2), 16) + 0.114 * parseInt(c.substr(4, 2), 16)) / 255;
+    return L > 0.6 ? '#1c2733' : '#ffffff';
+  }
   SEG.forEach(function (s) {
     var seg = document.createElement('span');
     seg.style.left = (s.start * 100) + '%'; seg.style.width = (s.w * 100) + '%';
     seg.style.background = s.color;
     seg.title = 'Select ' + s.name;
     seg.addEventListener('click', function () { pickSeg(s); });
+    var lab = document.createElement('span');
+    lab.className = 'seg-lab';
+    lab.style.color = inkFor(s.color);
+    lab.textContent = s.eon === 'Phanerozoic' ? (SEG_ABBR[s.name] || s.name) : s.name;  // eons in full, periods as symbols
+    seg.appendChild(lab);
     bands.appendChild(seg);
     s.el = seg;
-    var lab = document.createElement('span');
-    lab.style.left = (s.start * 100) + '%';
-    lab.style.cursor = 'pointer';
-    lab.textContent = s.name;
-    lab.addEventListener('click', function () { pickSeg(s); });
-    names.appendChild(lab);
   });
   // Numeric boundary ticks, spaced so they don't collide.
   var ticks = document.getElementById('eon-ticks');
