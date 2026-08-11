@@ -23,6 +23,8 @@ A reel becomes a story page. The pipeline is data-driven — you rarely touch la
 
 The `id` is the slug — it ties the reel, the story folder, and the map pin together, and becomes the URL `/stories/<id>/`.
 
+**Before you write the article, read [`writing-voice.md`](writing-voice.md).** It's the house voice for every explanation on the site — teach in plain language, explain the *why*, don't just describe. It's a two-minute read and it applies whether you're a person or an AI assistant.
+
 ## The map
 
 `/geological-map-of-india/` is a split view: the map on the left, a story reader on the right that loads a story when you click a pin (fetched on demand, not all at once).

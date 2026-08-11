@@ -26,6 +26,7 @@ plugins:
 exclude:
   - README.md
   - CLAUDE.md
+  - writing-voice.md
   - Gemfile
   - Gemfile.lock
   - design/

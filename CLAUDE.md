@@ -20,6 +20,8 @@ bundle exec jekyll serve      # http://127.0.0.1:4000
 
 ## The content model (most important section)
 
+**Voice:** all written explanations (story bodies, geo-feature articles) must **teach in plain language** — the brand is *learning and explaining*, not encyclopedic description. Follow **`writing-voice.md`** (repo root — the 5 moves + hard rules) whenever writing or rewriting article prose. Reel captions stay verbatim.
+
 **`_data/reels.yml` is the single source of truth** for all story content — one entry per reel. The pages are thin and data-driven; you rarely write HTML to add content.
 
 Each reel entry:
@@ -134,8 +136,6 @@ Credit table — keep it updated when adding outlines). How outlines get made:
 - **Cache-busting:** `map.js` (map.html) and `main.css` (head.html) load with
   `?{{ site.time }}` — the browser/preview pane caches JS/CSS hard and would show
   stale builds otherwise. **Keep it.**
-- **Disputed borders are never named** in comments/data; place border-sensitive pins
-  on the Indian side and describe features geologically.
 - **Attribution/licensing:** each traced geojson carries a `_source` member + a README
   credit. Some are **share-alike** — the Gondwana image is **CC BY-SA 4.0**, so its
   derived outline must stay CC BY-SA + keep attribution. Credit **Akif Vohra** for the
