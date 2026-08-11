@@ -8,26 +8,28 @@ LetsTalkScienceNow aims to explain, increase awareness, and instil further curio
 for science by using as easy and as relatable language as possible — even for an
 audience without a science background. Every written explanation — story bodies and
 geo-feature articles — should *teach*, in simple, plain language, in the same voice
-as the reels. Encyclopedic reference prose ("X is a…") is the failure mode we
-are fixing.
+as the reels. It is fine to open with a short, plain description to ground the
+reader. The failure mode we are fixing is prose that *only* describes and never
+explains how or why. You do not have to open with a hook or a question; a
+straightforward description first is good, as long as the teaching follows.
 
 ## The one test
 
-Read a paragraph and ask: does it explain **how or why** something is the way it is —
+Read a paragraph and ask: does it explain **how or why** something is the way it is,
 or does it only say **what it is**? If it only labels and describes, it isn't
 teaching yet.
 
-**Before (encyclopedic):**
+**Only describing (stops too soon):**
 > The Gulf of Mannar is a warm, shallow sea studded with a chain of low coral
 > islands and fringing reefs. Its clear, sediment-poor water and gentle shelf let
 > corals, seagrass meadows and pearl-oyster beds flourish.
 
-**After (teaching-first):**
-> Why does a coral reef grow *here*, of all places? Corals are fussy. They need
-> water that's warm, shallow, and above all **clear** — sunlight has to reach them,
-> and mud would choke them. The Gulf of Mannar is exactly that: a warm, shallow
-> shelf with almost no muddy river water pouring in. So reefs, seagrass meadows and
-> pearl-oyster beds thrive along its chain of low coral islands.
+**Describing, then teaching (what we want):**
+> The Gulf of Mannar is a warm, shallow sea studded with low coral islands and
+> fringing reefs. Corals are picky about where they live: the tiny animals that
+> build a reef rely on algae that need sunlight, so the water has to stay clear and
+> shallow. No big river pours mud into this gulf, so the light reaches the seabed,
+> and the reefs, seagrass and pearl-oyster beds thrive.
 
 ## The 5 moves
 
