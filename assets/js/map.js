@@ -407,6 +407,7 @@
     if (activePin && activePin.marker._icon) activePin.marker._icon.classList.remove('pin--active');
     activePin = p;
     markActive(p);
+    reader.style.setProperty('--feat', (CAT[p.cat] || {}).color || '#1667c6');  // theme the reader by category colour
     loadStory(p);
     showShape(p);                                       // shape pins get framed by the outline's fitBounds
     if (!p.shape) map.setView(p.latlng, Math.max(map.getZoom(), FOCUS_ZOOM));  // point pins: center + zoom in
