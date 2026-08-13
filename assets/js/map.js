@@ -295,8 +295,27 @@
     return div;
   };
 
-  L.control.layers({ 'Satellite': satellite, 'Terrain relief': terrain }, { 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
+  // Mountain ranges (GMBA Mountain Inventory v2), drawn as relief patches: a warm brown
+  // multiplied over the satellite so the imagery's own ridge-and-valley shading shows
+  // through, giving the hills a 3-D look. Name shows on hover.
+  var ranges = L.geoJSON(null, {
+    attribution: 'Mountain ranges: GMBA Inventory v2.0 (CC BY 4.0)',
+    style: { className: 'range-hill', color: '#5f3d1e', weight: 1, opacity: 0.55,
+             fillColor: '#a8702f', fillOpacity: 0.62 },
+    onEachFeature: function (f, layer) {
+      layer.bindTooltip((f.properties || {}).name || '', { sticky: true, direction: 'top' });
+    }
+  });
+  var rangesLoaded = false;
+  function loadRanges() {
+    if (rangesLoaded) return; rangesLoaded = true;
+    fetch(window.MAP.ranges).then(function (r) { return r.json(); })
+      .then(function (geo) { ranges.addData(geo); ranges.bringToBack(); });
+  }
+
+  L.control.layers({ 'Satellite': satellite, 'Terrain relief': terrain }, { 'Mountain ranges': ranges, 'Rivers': rivers, 'Soil types': soil, 'Seismic zones': seismic, 'Active faults and thrusts': faults, 'Agro-ecological regions': agroeco, 'Annual rainfall': rainfall }, { collapsed: false }).addTo(map);
   map.on('overlayadd', function (e) {
+    if (e.layer === ranges)   loadRanges();
     if (e.layer === rivers)   loadRivers();
     if (e.layer === soil)     { loadSoil();    soilLegend.addTo(map); }
     if (e.layer === seismic)  { loadSeismic(); seisLegend.addTo(map); }
@@ -347,7 +366,7 @@
       .catch(function () { reader.innerHTML = '<div class="reader__empty">Couldn’t load this story.</div>'; });
   }
 
-  var LABEL_ZOOM = 6, FOCUS_ZOOM = 7, PIN_ZOOM = 6;    // <PIN_ZOOM: dots; >=PIN_ZOOM: teardrops (+ labels)
+  var LABEL_ZOOM = 7.5, FOCUS_ZOOM = 7, PIN_ZOOM = 6;  // pins grow at PIN_ZOOM; names only appear at LABEL_ZOOM
   function refreshIcons() {                             // swap dot <-> teardrop as you cross PIN_ZOOM
     pins.forEach(function (p) {
       if (!p.marker) return;
@@ -420,6 +439,14 @@
     p.slug = slugOf(p.url);
     p.marker = L.marker(p.latlng, { icon: iconFor(p) }).on('click', function () { focusPin(p); });
     p.marker.bindTooltip(p.title, { permanent: true, direction: 'right', className: 'pin-label', offset: [14, 0] });
+    p.marker.on('mouseover', function () {                 // hover always reveals the name, even zoomed out
+      var el = p.marker.getTooltip() && p.marker.getTooltip().getElement();
+      if (el) el.classList.add('pin-label--hover');
+    });
+    p.marker.on('mouseout', function () {
+      var el = p.marker.getTooltip() && p.marker.getTooltip().getElement();
+      if (el) el.classList.remove('pin-label--hover');
+    });
   });
   function toggleLabels() { map.getContainer().classList.toggle('show-labels', map.getZoom() >= LABEL_ZOOM); }
   map.on('zoomend', toggleLabels);

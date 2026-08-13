@@ -78,6 +78,9 @@ description: An interactive map of the geological features of the Indian subcont
   /* "Terrain relief" base: hillshade multiplied over the colour topo → colour + 3-D relief.
      Bump contrast/saturation here to taste. */
   .hillshade-blend{mix-blend-mode:multiply;filter:contrast(1.35) saturate(1.15) brightness(1.02);}
+  /* Mountain-range relief patches: multiply the brown over the satellite so the imagery's
+     own terrain shading reads through as 3-D hills. */
+  .range-hill{mix-blend-mode:multiply;}
   .pin{transition:transform .12s ease;cursor:pointer;background:transparent;border:0;
     filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}   /* gentle lift off the satellite */
   .pin:hover{transform:scale(1.18);}
@@ -135,6 +138,7 @@ description: An interactive map of the geological features of the Indian subcont
     box-shadow:none;font:600 12px/1.2 var(--font-head);padding:2px 7px;border-radius:5px;white-space:nowrap;}
   .leaflet-tooltip.pin-label::before{display:none;}   /* drop the little arrow */
   .leaflet-container.show-labels .leaflet-tooltip.pin-label{display:block;}
+  .leaflet-tooltip.pin-label.pin-label--hover{display:block;}   /* hover reveals a single pin's name at any zoom */
 
   /* Time slider */
   .timebar{margin-top:var(--sp-sm);}
@@ -251,6 +255,7 @@ description: An interactive map of the geological features of the Indian subcont
     seismic: {{ '/assets/geo/seismic.geojson' | relative_url | jsonify }},
     faults: {{ '/assets/geo/faults.geojson' | relative_url | jsonify }},
     agroeco: {{ '/assets/geo/agro-ecological.geojson' | relative_url | jsonify }},
+    ranges: {{ '/assets/geo/mountain-ranges.geojson' | relative_url | jsonify }},
     rainfall: {{ '/assets/geo/rainfall.png' | relative_url | jsonify }} + "?{{ site.time | date: '%s' }}"
   };
 </script>
