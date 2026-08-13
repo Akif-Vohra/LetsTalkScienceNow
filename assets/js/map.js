@@ -300,8 +300,8 @@
   // through, giving the hills a 3-D look. Name shows on hover.
   var ranges = L.geoJSON(null, {
     attribution: 'Mountain ranges: GMBA Inventory v2.0 (CC BY 4.0)',
-    style: { className: 'range-hill', color: '#5f3d1e', weight: 1, opacity: 0.55,
-             fillColor: '#a8702f', fillOpacity: 0.62 },
+    style: { className: 'range-hill', color: '#5f3d1e', weight: 1, opacity: 0.7,
+             fillColor: '#a86f34', fillOpacity: 0.95 },
     onEachFeature: function (f, layer) {
       layer.bindTooltip((f.properties || {}).name || '', { sticky: true, direction: 'top' });
     }

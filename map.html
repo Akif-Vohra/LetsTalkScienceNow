@@ -78,9 +78,9 @@ description: An interactive map of the geological features of the Indian subcont
   /* "Terrain relief" base: hillshade multiplied over the colour topo → colour + 3-D relief.
      Bump contrast/saturation here to taste. */
   .hillshade-blend{mix-blend-mode:multiply;filter:contrast(1.35) saturate(1.15) brightness(1.02);}
-  /* Mountain-range relief patches: multiply the brown over the satellite so the imagery's
-     own terrain shading reads through as 3-D hills. */
-  .range-hill{mix-blend-mode:multiply;}
+  /* Mountain ranges drawn as the classic sharp sawtooth symbol: a solid brown fill
+     stamped with mountain "teeth" (SVG pattern defined in the hidden svg below). */
+  .range-hill{fill:url(#mtn-teeth);}
   .pin{transition:transform .12s ease;cursor:pointer;background:transparent;border:0;
     filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));}   /* gentle lift off the satellite */
   .pin:hover{transform:scale(1.18);}
@@ -188,6 +188,12 @@ description: An interactive map of the geological features of the Indian subcont
 </style>
 
 <section class="section map-page">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+    <pattern id="mtn-teeth" width="16" height="12" patternUnits="userSpaceOnUse">
+      <rect width="16" height="12" fill="#a86f34"/>
+      <path d="M0 12 L8 2 L16 12 Z" fill="#7a4a1c"/>
+    </pattern>
+  </defs></svg>
   <div class="map-intro">
     <h2>Interactive map of the geological features of India <span class="beta-badge">Beta</span> <span>(Use the slider to filter features by geological time period.)</span></h2>
   </div>
