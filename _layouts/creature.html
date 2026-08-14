@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- comment -%}
+  A prehistoric-animal page: a species whose fossils were found in India. Facts live in
+  this page's front matter + markdown body. Outputs <article class="story"> so it reuses
+  the story CSS and loads into the /prehistoric-animals-of-india/ reader panel.
+{%- endcomment -%}
+<article class="story">
+  <div class="container">
+
+    <a class="back-link" href="{{ '/prehistoric-animals-of-india/' | relative_url }}">&larr; Back to the map</a>
+
+    <div class="story__grid story__grid--single">
+      <div class="story__main">
+
+        <aside class="factcard">
+          <h1 class="factcard__title"><em>{{ page.title }}</em></h1>
+          {% if page.group %}<p class="factcard__type">{{ page.group }}{% if page.clade %} &middot; {{ page.clade }}{% endif %}</p>{% endif %}
+          {% if page.age_label %}<p class="factcard__age">{{ page.age_label }}</p>{% endif %}
+          {% if page.location %}<p class="factcard__loc">Fossils found: {{ page.location }}</p>{% endif %}
+        </aside>
+
+        {% if page.summary %}<p class="story__lead">{{ page.summary }}</p>{% endif %}
+
+        <div class="prose story__body">{{ content }}</div>
+
+        {% if page.sources %}
+        <section class="refs">
+          <h2>Sources</h2>
+          <ul>
+            {% for s in page.sources %}<li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>{% endfor %}
+          </ul>
+        </section>
+        {% endif %}
+
+      </div><!-- /story__main -->
+    </div><!-- /story__grid -->
+
+  </div>
+</article>

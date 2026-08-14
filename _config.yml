@@ -17,6 +17,9 @@ github_url: "https://github.com/Akif-Vohra/LetsTalkScienceNow"
 collections:
   stories:
     output: true
+  creatures:            # prehistoric animals — pins on /prehistoric-animals-of-india/
+    output: true
+    permalink: /creatures/:name/
 
 plugins:
   - jekyll-seo-tag
