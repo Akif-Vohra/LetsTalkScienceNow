@@ -14,11 +14,15 @@ layout: default
       {% if reel.youtube_id %}
       <aside class="story__aside">
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/{{ reel.youtube_id }}"
-                  title="{{ reel.overlay_title | escape }}"
-                  loading="lazy"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowfullscreen></iframe>
+          {%- comment -%} No embed — link out to YouTube. The page loads nothing from YouTube,
+          so no third-party cookies are set; Google only receives data if the visitor follows the link. {%- endcomment -%}
+          <a class="yt-facade"
+             href="{% if reel.youtube_url %}{{ reel.youtube_url }}{% else %}https://youtu.be/{{ reel.youtube_id }}{% endif %}"
+             target="_blank" rel="noopener"
+             aria-label="Watch “{{ reel.overlay_title | escape }}” on YouTube (opens in a new tab)">
+            <span class="yt-facade__play" aria-hidden="true"></span>
+            <span class="yt-facade__note">Watch on YouTube &nearr;</span>
+          </a>
         </div>
         <div class="story__links">
           <a class="btn btn-ghost btn-yt" href="{{ reel.youtube_url | default: site.youtube_url }}" target="_blank" rel="noopener">{%- include icon-youtube.svg -%}Watch on YouTube</a>
