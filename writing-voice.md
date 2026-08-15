@@ -87,6 +87,9 @@ note beats a padded one propped up by a weak source.
 **Never cite:**
 - Blogs and geotourism sites, Medium or other personal posts, tourism portals, SEO /
   content-farm articles.
+- Company or operator websites and corporate / press material (a mining firm, dam
+  authority, tour operator, and the like) — promotional, not independent. Find an
+  independent source for the same fact.
 - Predatory or low-tier open-access journals. Tells: a publisher that emails soliciting
   papers, promises near-instant review, has an editorial board you can't verify, or takes
   a fee to publish with little scrutiny (e.g. SciRP).
