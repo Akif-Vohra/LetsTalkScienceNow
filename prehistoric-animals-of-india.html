@@ -57,6 +57,23 @@ description: An interactive map of the prehistoric animals whose fossils were fo
   .pin--active svg circle.badge{stroke:#f4511e;stroke-width:2.4;}
   .pin--active svg{filter:drop-shadow(0 0 6px rgba(244,81,30,.9));}
 
+  /* Photo popover above a selected pin (Leaflet popup, restyled) — ported from the geology map */
+  .pin-gallery-popup .leaflet-popup-content-wrapper{padding:0;overflow:hidden;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.28);}
+  .pin-gallery-popup .leaflet-popup-content{margin:0;width:400px!important;line-height:0;}
+  .pin-gallery{position:relative;background:#111;}
+  .pin-gallery__frame{position:relative;width:100%;aspect-ratio:4/3;background:#111;}
+  .pin-gallery__img{width:100%;height:100%;object-fit:contain;display:block;}
+  .pin-gallery__nav{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border:0;border-radius:50%;
+    background:rgba(0,0,0,.5);color:#fff;font-size:1.2rem;line-height:30px;cursor:pointer;z-index:2;transition:background .12s;}
+  .pin-gallery__nav:hover{background:rgba(0,0,0,.8);}
+  .pin-gallery__prev{left:6px;}.pin-gallery__next{right:6px;}
+  .pin-gallery__bar{display:flex;justify-content:space-between;align-items:baseline;gap:.7rem;padding:.6rem .75rem;
+    background:#0b0b0b;color:#fff;font-family:var(--font-body);line-height:1.4;}
+  .pin-gallery__cap{font-size:.86rem;font-weight:500;color:#fff;text-align:right;flex:1;letter-spacing:.005em;}
+  .pin-gallery__cap a{color:#fff;text-decoration:underline;text-underline-offset:2px;}
+  .pin-gallery__count{font-size:.8rem;font-weight:600;color:rgba(255,255,255,.72);white-space:nowrap;font-variant-numeric:tabular-nums;}
+  .pin-gallery-popup a.leaflet-popup-close-button{color:#fff;top:4px;right:6px;font-size:20px;z-index:3;}
+
   .pinsearch{position:relative;margin-bottom:var(--sp-sm);}
   .pinsearch input{width:100%;box-sizing:border-box;padding:.5rem .7rem;font:inherit;font-size:.95rem;border:1px solid var(--line);border-radius:8px;background:var(--surface);}
   .pinsearch input:focus{outline:2px solid var(--blue-deep);outline-offset:-1px;}
@@ -145,7 +162,7 @@ description: An interactive map of the prehistoric animals whose fossils were fo
     creatures: [
       {%- assign cs = site.creatures | where_exp: "c", "c.add_on_map" -%}
       {%- for c in cs -%}
-      { title: {{ c.title | jsonify }}, latlng: [{{ c.latlng[0] }}, {{ c.latlng[1] }}], url: {{ c.url | relative_url | jsonify }}, age: {{ c.age_ma | default: 0 }}, group: {{ c.group | jsonify }}, clade: {{ c.clade | jsonify }} },
+      { title: {{ c.title | jsonify }}, latlng: [{{ c.latlng[0] }}, {{ c.latlng[1] }}], url: {{ c.url | relative_url | jsonify }}, age: {{ c.age_ma | default: 0 }}, group: {{ c.group | jsonify }}, clade: {{ c.clade | jsonify }}{% if c.gallery %}, gallery: [{% for g in c.gallery %}{ src: {{ g.src | relative_url | jsonify }}{% if g.caption %}, caption: {{ g.caption | jsonify }}{% endif %}{% if g.credit %}, credit: {{ g.credit | jsonify }}{% endif %} }{% unless forloop.last %},{% endunless %}{% endfor %}]{% endif %} },
       {%- endfor -%}
     ]
   };

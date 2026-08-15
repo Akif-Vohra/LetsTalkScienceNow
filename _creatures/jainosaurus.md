@@ -11,6 +11,13 @@ latlng: [23.12, 79.9]
 age_ma: 68
 sources:
   - text: "List of Indian and Madagascan dinosaurs, Wikipedia"
+gallery:
+  - src: /assets/covers/jainosaurus/jainosaurus-life.png
+    caption: "Life restoration"
+    credit: "Ansh Saxena · CC BY-SA 4.0 · via Wikimedia Commons"
+  - src: /assets/covers/jainosaurus/jainosaurus-skeletal.jpg
+    caption: "Skeletal reconstruction"
+    credit: "DaDinoNerdBoi · CC BY 4.0 · via Wikimedia Commons"
 ---
 
 Jainosaurus was a titanosaur sauropod, a large four-legged plant-eater, known from central India's Lameta beds. It shared its world with the last Indian predators in the final chapter before the dinosaurs' extinction.
