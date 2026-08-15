@@ -24,7 +24,7 @@ layout: default
 
         {% if page.sources %}
         <section class="refs">
-          <h2>Sources</h2>
+          <h2>Further reading sources</h2>
           <ul>
             {% for s in page.sources %}<li>{% if s.url %}<a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.text }}</a>{% else %}{{ s.text }}{% endif %}</li>{% endfor %}
           </ul>
