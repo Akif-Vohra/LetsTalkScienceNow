@@ -9,7 +9,6 @@ summary: "India's classic copper district, where hot underground fluids seeded c
 sources:
   - text: "Li, X.-C., Zhou, M.-F., Williams-Jones, A.E., Yang, Y.-H. & Gao, J.-F. (2018), Timing and genesis of Cu–(Au) mineralization in the Khetri Copper Belt, northwestern India: constraints from in situ U–Pb ages and Sm–Nd isotopes of monazite-(Ce), Mineralium Deposita"
     url: "https://link.springer.com/article/10.1007/s00126-018-0823-3"
-  - text: "Hindustan Copper Limited (operator of the Khetri Copper Complex)"
 add_on_map: true
 latlng: [27.98, 75.78]
 age_ma: 835
@@ -36,4 +35,4 @@ Deposits made this way are rich in iron oxides and copper (with a little gold), 
 
 Working out when the copper actually formed took careful dating. Tiny crystals of a mineral called monazite grew as the ore-forming fluids passed through, and their uranium-lead clock reads about 835 million years, so the metal was introduced late in the Proterozoic, long after the host sediments were laid down. As with many deposits of this kind, the finer points of how and exactly when it formed are still debated.
 
-People have drawn copper from this belt since antiquity, and it remains India's most important copper-mining region, worked today by Hindustan Copper. The ore that rewards all that effort is, in the end, a record of ancient hot water moving through deep rock and leaving its metal behind.
+People have drawn copper from this belt since antiquity, and it remains one of India's most important copper-mining regions, still worked today. The ore that rewards all that effort is, in the end, a record of ancient hot water moving through deep rock and leaving its metal behind.
