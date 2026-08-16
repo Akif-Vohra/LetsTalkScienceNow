@@ -14,6 +14,7 @@ sources:
   - text: "Giosan, L., Clift, P.D., Macklin, M.G., Fuller, D.Q., et al. (2012), Fluvial landscapes of the Harappan civilization, PNAS 109(26), E1688-E1694"
     url: "https://doi.org/10.1073/pnas.1112743109"
 add_on_map: true
+custom_writeup: true
 latlng: [27.0, 71.5]
 age_ma: 0.1
 feature_type: "Desert (aeolian)"

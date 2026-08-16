@@ -13,6 +13,7 @@ sources:
   - text: "The Ramgarh Terrestrial Impact Structure in Rajasthan State: a 'Geoheritage Site and Geopark' Candidate from North-Central India (2021), Geoheritage"
     url: "https://link.springer.com/article/10.1007/s12371-021-00601-8"
 add_on_map: true
+custom_writeup: true
 gsi_heritage: true
 latlng: [25.338, 76.625]
 age_ma: 460

@@ -14,6 +14,7 @@ sources:
   - text: "Sambhar Lake, Ramsar Sites Information Service (Ramsar site no. 464, designated 1990)"
     url: "https://rsis.ramsar.org/ris/464"
 add_on_map: true
+custom_writeup: true
 latlng: [26.95, 75.08]
 age_ma: 0.01
 feature_type: "Salt lake (playa)"

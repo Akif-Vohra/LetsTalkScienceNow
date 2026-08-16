@@ -12,6 +12,7 @@ sources:
   - text: "Ahmad, T., Deb, M., Tarney, J. & Raza, M. (2008), Proterozoic Mafic Volcanism in the Aravalli-Delhi Orogen, North-western India: Geochemistry and Tectonic Framework, Journal of the Geological Society of India 72(1), 93-111"
     url: "https://www.geosocindia.org/index.php/jgsi/article/view/61348"
 add_on_map: true
+custom_writeup: true
 latlng: [25.5, 73.5]
 age_ma: 1800
 feature_type: "Fold mountains (relict orogen)"

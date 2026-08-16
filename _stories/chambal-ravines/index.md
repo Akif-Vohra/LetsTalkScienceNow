@@ -14,6 +14,7 @@ sources:
   - text: "The Chambal Badlands of Ganga River Basin, India: A Fading Geoheritage Odyssey (2024), Geoheritage"
     url: "https://link.springer.com/article/10.1007/s12371-024-00998-y"
 add_on_map: true
+custom_writeup: true
 latlng: [26.6, 78.2]
 age_ma: 0.1
 feature_type: "Badlands (ravines)"

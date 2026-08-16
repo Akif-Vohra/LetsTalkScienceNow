@@ -10,6 +10,7 @@ sources:
   - text: "Li, X.-C., Zhou, M.-F., Williams-Jones, A.E., Yang, Y.-H. & Gao, J.-F. (2018), Timing and genesis of Cu–(Au) mineralization in the Khetri Copper Belt, northwestern India: constraints from in situ U–Pb ages and Sm–Nd isotopes of monazite-(Ce), Mineralium Deposita"
     url: "https://link.springer.com/article/10.1007/s00126-018-0823-3"
 add_on_map: true
+custom_writeup: true
 latlng: [27.98, 75.78]
 age_ma: 835
 age: "Cu mineralization ~835 Ma (U-Pb monazite); host rocks older Proterozoic"

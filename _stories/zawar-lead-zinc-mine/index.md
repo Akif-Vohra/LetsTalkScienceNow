@@ -12,6 +12,7 @@ sources:
     url: "https://www.sciencedirect.com/science/article/abs/pii/0301926889900028"
   - text: "Craddock, P.T., Gurjar, L.K. & Hegde, K.T.M. (1983), Zinc Production in Medieval India, World Archaeology 15(2), 211-221"
 add_on_map: true
+custom_writeup: true
 latlng: [24.35, 73.74]
 age_ma: 1700
 age: "Palaeoproterozoic ore (Pb-Pb model age ~1700 Ma)"
